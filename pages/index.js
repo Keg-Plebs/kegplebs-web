@@ -3,7 +3,6 @@ import Image from 'next/image'
 
 import Nav from '../components/Nav'
 import Main from '../components/Main'
-import Dapp from '../components/Dapp'
 import Story from '../components/Story'
 import Showcase from '../components/Showcase'
 import Brewverse from '../components/Brewverse'
