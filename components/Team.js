@@ -9,12 +9,19 @@ import shdw from '../public/bitchass.jpeg';
 import jefftheworm from '../public/jefftheworm.jpeg';
 
 import sectionStyles from '../styles/Section.module.css';
-import { team, container, card, img, heading, name, twitter, title } from '../styles/Team.module.css';
+import { 
+    team, 
+    container, 
+    card, 
+    img, 
+    heading, 
+    name, 
+    twitter, 
+    title 
+} from '../styles/Team.module.css';
 
 const Team = () => {
-    
     const size = 350;
-
 
     return(
         <div className={`${sectionStyles.main} ${team}`}>
