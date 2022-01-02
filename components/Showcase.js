@@ -1,39 +1,21 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 
-import Raincoat from '../public/raincoat.PNG'
-import Goggs from '../public/goggs.PNG'
-import Flowers from '../public/flowers.jpeg'
-import Drooly from '../public/drooly.jpeg'
-import Cowb from '../public/cowb.PNG'
-import Hipp from '../public/hipp.PNG'
-import Vort from '../public/vort.jpg'
-import Space from '../public/space.JPG'
-import Hoodee from '../public/hoodee.JPG'
-import Bitchass from '../public/bitchass.jpeg'
+import { 
+    Bitchass, 
+    Raincoat, 
+    Goggs, 
+    Flowers, 
+    Drooly, 
+    Cowb, 
+    Hipp, 
+    Vort, 
+    Space, 
+    Hoodee 
+} from '../public/images';
 
 import sectionStyles from '../styles/Section.module.css';
 import { showcase, first, second, imgContainer } from '../styles/Showcase.module.css';
-
-const useOnScreen = (ref) => {
-
-    const [isIntersecting, setIntersecting] = useState(false)
-  
-    let observer = null; 
-  
-    useEffect(() => {
-        observer = new IntersectionObserver(
-            ([entry]) => {
-                setIntersecting(entry.isIntersecting)
-            }
-        )
-        observer.observe(ref.current)
-        // Remove the observer as soon as the component is unmounted
-        return () => { observer.disconnect() }
-    }, [])
-  
-    return isIntersecting
-}
 
 const Showcase = () => {
     const size = 275;
@@ -41,8 +23,6 @@ const Showcase = () => {
     const ref = useRef();
     const firstSlide = useRef();
     const secondSlide = useRef();
-
-    const isVisible = useOnScreen(ref);
     
     useEffect(() => {
         const width = ref.current.offsetWidth;
@@ -59,15 +39,10 @@ const Showcase = () => {
             const firstScroll = os;
             const secondScroll = os + -.4 * width;
 
-            console.log(isVisible)
             firstSlide.current.style.transform = `translateX(-${firstScroll}px)`;
             secondSlide.current.style.transform = `translateX(${secondScroll}px)`
-
-
-            if(isVisible) {
-                // would only like to move the two if we're viewing this comp
-            }
         };
+
     }, []);
 
    
