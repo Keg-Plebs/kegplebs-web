@@ -1,3 +1,36 @@
 .showcase {
+    position: relative;
     background-color: skyblue;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.first {
+    top: 250px;
+    left: 40vw;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 270px;
+    width: 3000px;
+}
+
+.second {
+    top: 520px;
+    left: -30vw;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background-color: orange;
+    height: 270px;
+    width:3000px;
+}
+
+.imgContainer {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height:275px;
+    width: 275px;
 }
