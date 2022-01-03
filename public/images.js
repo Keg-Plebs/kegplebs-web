@@ -8,3 +8,4 @@ export { default as Hipp } from './hipp.PNG';
 export { default as Vort } from './vort.jpg';
 export { default as Space } from './space.JPG';
 export { default as Hoodee } from './hoodee.JPG';
+export { default as Jeff } from './jefftheworm.jpeg';
