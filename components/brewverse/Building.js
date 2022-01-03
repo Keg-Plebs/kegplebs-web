@@ -1,29 +1,30 @@
+import { useState } from 'react'
 import { useTexture } from '@react-three/drei'
-import { useEffect, useRef, useState } from 'react'
-import { useThree } from '@react-three/fiber'
-import { SVGLoader } from 'three/examples/jsm/loaders/SVGLoader'
+import * as THREE from 'three'
 
-const Building = ({ src, src_select, ...rest }) => {
+const Building = ({ src, srcSelect, ...rest }) => {
 
-    const ref = useRef()
-
-    var texture
-    var texture_select
+    let texture
+    let textureSelect
     if (src) {
         texture = useTexture(src)
     }
 
-    if (src_select) {
-        texture_select = useTexture(src_select)
+    if (srcSelect) {
+        textureSelect = useTexture(srcSelect)
     }
 
-    const [hovered, hover] = useState(false)
-    const [clicked, click] = useState(false)
+    // Fix artifacting from transparency
+    texture.anisotropy = 0;
+    texture.magFilter = THREE.NearestFilter;
+    texture.minFilter = THREE.NearestFilter;
 
-    // Updates the cursor based on hovered
-    // useEffect(() => {
-    //     document.body.style.cursor = hovered ? 'pointer' : 'auto'
-    // }, [hovered])
+    textureSelect.anisotropy = 0;
+    textureSelect.magFilter = THREE.NearestFilter;
+    textureSelect.minFilter = THREE.NearestFilter;
+    
+
+    const [hovered, hover] = useState(false)
 
     // https://stackoverflow.com/questions/35005603/get-color-of-the-texture-at-uv-coordinate
 
@@ -32,13 +33,13 @@ const Building = ({ src, src_select, ...rest }) => {
     const height = texture.image.height
 
     // Stores the image data
-    var texture_data
+    let texture_data
 
     // Creates an internal canvas to draw the texture to
-    var canvas = document.createElement('canvas');
+    let canvas = document.createElement('canvas');
 
     // Creates an img element for referencing the texture from the canvas
-    var img = document.createElement('img')
+    let img = document.createElement('img')
 
     // Setups the img and canvas to the texture
     img.src = src
@@ -46,7 +47,7 @@ const Building = ({ src, src_select, ...rest }) => {
     canvas.height = height
 
     // Gets the context of the canvas
-    var ctx = canvas.getContext('2d')
+    let ctx = canvas.getContext('2d')
 
     // Waits for the image to load before drawing it
     img.onload = () => {
@@ -61,16 +62,12 @@ const Building = ({ src, src_select, ...rest }) => {
     return (
         <sprite
             {...rest}
-            ref={ref}
-            onClick={(event) =>
-                click(!clicked)
-            }
             onPointerMove={(event) => {
 
                 // Checks if texture_data has been loaded.
                 // If the pixel is transparent hover is set to false and the cursor is pointer 
                 if (texture_data && isTransparent(event, texture_data.data, width, height)) {
-                    document.body.style.cursor = 'auto'
+                    document.body.style.cursor = 'grab'
                     hover(false)
 
                     // Otherwise, hover is set to true and the cursor is auto
@@ -80,10 +77,19 @@ const Building = ({ src, src_select, ...rest }) => {
                 }
             }}
             onPointerLeave={(event) => {
-                document.body.style.cursor = 'auto'
+                document.body.style.cursor = 'grab'
                 hover(false)
+
+            }}
+            onPointerDown={(event) => {
+                document.body.style.cursor = 'pointer'
             }}>
-            <spriteMaterial map={texture_select && hovered ? texture_select : texture} />
+            {texture ?
+                <spriteMaterial 
+                    ps 
+                    map={textureSelect && hovered ? textureSelect : texture} /> :
+                <></>
+            }
         </sprite>
 
         // Can alternatively create the image with a planeGeometry
@@ -114,11 +120,11 @@ const isTransparent = (event, data, width, height) => {
     // https://stackoverflow.com/questions/35454432/finding-image-pixel-coordinates-integers-from-uv-values-floats-of-obj-file
 
     // Computes the pixel coordinates based on the UV coordinates from the raycast
-    var x = Math.floor((event.uv.x * width) - 0.5)
-    var y = Math.floor(((1 - event.uv.y) * height) - 0.5)
+    let x = Math.floor((event.uv.x * width) - 0.5)
+    let y = Math.floor(((1 - event.uv.y) * height) - 0.5)
 
     // Gets the alpha value of the pixel
-    var alpha = getAlphaValue(x, y, data, width)
+    let alpha = getAlphaValue(x, y, data, width)
 
     // Returns true if the alpha value is zero
     if (alpha == 0) {
@@ -132,7 +138,7 @@ const getAlphaValue = (x, y, data, width) => {
     // https://stackoverflow.com/questions/55236399/canvas-getimagedata-returns-wrong-pixel-color-value-in-ff
 
     // Computes the index of the pixel in the image data array
-    var i = (y * width + x) << 2;
+    let i = (y * width + x) << 2;
 
     // Returns the value of the alpha component at the offset
     return data[i + 3]
