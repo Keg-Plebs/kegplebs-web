@@ -12,7 +12,11 @@ import {
     Vort, 
     Space, 
     Hoodee,
-    Jeff
+    Jeff,
+    Puffer,
+    Paris,
+    Glow,
+    Cam
 } from '../public/images';
 
 import sectionStyles from '../styles/Section.module.css';
@@ -61,7 +65,7 @@ const Showcase = () => {
                         <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Drooly} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
                         <Image src={Cowb} quality={100} priority={true} width={size} height={size}></Image>
@@ -79,7 +83,13 @@ const Showcase = () => {
                         <Image src={Hoodee} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Jeff} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Paris} quality={100} priority={true} width={size} height={size}></Image>
+                    </div>
+                    <div className={imgContainer}>
+                        <Image src={Puffer} quality={100} priority={true} width={size} height={size}></Image>
+                    </div>
+                    <div className={imgContainer}>
+                        <Image src={Cam} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
                         <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
@@ -96,7 +106,7 @@ const Showcase = () => {
                         <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Drooly} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
                         <Image src={Cowb} quality={100} priority={true} width={size} height={size}></Image>
