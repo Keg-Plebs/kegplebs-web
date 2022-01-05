@@ -8,28 +8,31 @@ import Building from './Building'
 import {
     MAX_ZOOM, INIT_CAM_POS, INIT_ZOOM_LEVEL, INIT_STEP, STEP_FAC, ZOOM_FAC, UP, FAR,
     BACKGROUND_COLOR, BREWERY_POS, DISCORD_POS, BUILDING_SCALE, X_OFFSET, Y_OFFSET,
-    SCENES, KEGPLEBS, KEGPLEBS_SELECT, MAP_SCALE
+    SCENES, MAP_SCALE
 } from '../../lib/constants'
 import Controls from './Controls'
+import { KegPlebsBrewery, KegPlebsBrewerySelect } from '../../public/images'
 
 const Verse = ({ callback }) => {
 
     const buildings = [
         (
             <Building
+                key={0}
                 onClick={
                     (e) => {
                         transitionScene(SCENES.BREWERY, [BREWERY_POS[0], BREWERY_POS[1], INIT_CAM_POS[2]])
                         document.body.style.cursor = 'auto'
                     }
                 }
-                src={KEGPLEBS}
-                srcSelect={KEGPLEBS_SELECT}
+                src={KegPlebsBrewery.src}
+                srcSelect={KegPlebsBrewerySelect.src}
                 position={BREWERY_POS}
                 scale={BUILDING_SCALE} />
         ),
         // (
         //     <Building
+        //         key={1}
         //         onClick={
         //             (e) => {
         //                 transitionScene(SCENES.DISCORD, [DISCORD_POS[0], DISCORD_POS[1], INIT_CAM_POS[2]])
