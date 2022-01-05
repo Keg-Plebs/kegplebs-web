@@ -11,7 +11,12 @@ import {
     Hipp, 
     Vort, 
     Space, 
-    Hoodee 
+    Hoodee,
+    Jeff,
+    Puffer,
+    Paris,
+    Glow,
+    Cam
 } from '../public/images';
 
 import sectionStyles from '../styles/Section.module.css';
@@ -51,72 +56,78 @@ const Showcase = () => {
                 <h1>Sick display of plebs</h1>
                 <div ref={firstSlide} className={first}>
                     <div className={imgContainer}>
-                        <Image src={Goggs}quality={100} width={size} height={size}></Image>
+                        <Image src={Goggs} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Raincoat}quality={100} width={size} height={size}></Image>
+                        <Image src={Raincoat} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Flowers}quality={100} width={size} height={size}></Image>
+                        <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Drooly}quality={100} width={size} height={size}></Image>
+                        <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Cowb}quality={100} width={size} height={size}></Image>
+                        <Image src={Cowb} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Hipp}quality={100} width={size} height={size}></Image>
+                        <Image src={Hipp} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Vort}quality={100} width={size} height={size}></Image>
+                        <Image src={Vort} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Space}quality={100} width={size} height={size}></Image>
+                        <Image src={Space} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Hoodee}quality={100} width={size} height={size}></Image>
+                        <Image src={Hoodee} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Vort}quality={100} width={size} height={size}></Image>
+                        <Image src={Paris} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Bitchass}quality={100} width={size} height={size}></Image>
+                        <Image src={Puffer} quality={100} priority={true} width={size} height={size}></Image>
+                    </div>
+                    <div className={imgContainer}>
+                        <Image src={Cam} quality={100} priority={true} width={size} height={size}></Image>
+                    </div>
+                    <div className={imgContainer}>
+                        <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                 </div>
                 <div ref={secondSlide} className={second}>
                 <div className={imgContainer}>
-                        <Image src={Goggs}quality={100} width={size} height={size}></Image>
+                        <Image src={Goggs} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Raincoat}quality={100} width={size} height={size}></Image>
+                        <Image src={Raincoat} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Flowers}quality={100} width={size} height={size}></Image>
+                        <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Drooly}quality={100} width={size} height={size}></Image>
+                        <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Cowb}quality={100} width={size} height={size}></Image>
+                        <Image src={Cowb} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Hipp}quality={100} width={size} height={size}></Image>
+                        <Image src={Hipp} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Vort}quality={100} width={size} height={size}></Image>
+                        <Image src={Vort} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Space}quality={100} width={size} height={size}></Image>
+                        <Image src={Space} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Hoodee}quality={100} width={size} height={size}></Image>
+                        <Image src={Hoodee} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Vort}quality={100} width={size} height={size}></Image>
+                        <Image src={Jeff} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Bitchass}quality={100} width={size} height={size}></Image>
+                        <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                 </div>
             </div>
