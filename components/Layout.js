@@ -1,9 +1,24 @@
 import styles from '../styles/Layout.module.css';
 import Nav from '../components/Nav';
+import Head from 'next/head';
 
-const Layout = ({children}) => {
+export const siteTitle = 'Keg Plebs'
+
+const Layout = ({ children }) => {
     return (
         <>
+            <Head>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
+                <meta
+                    name="description"
+                    content="Building the Brewverse one beer at a time!"
+                />
+                <meta name="og:title" content={siteTitle} />
+                <link rel="icon" href="/sun.ico" />
+            </Head>
             <Nav />
             <div>
                 <main className={styles.main}>
