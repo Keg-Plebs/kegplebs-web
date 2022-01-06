@@ -12,3 +12,4 @@ export { default as NavIcon } from './KegPlebSun.ico';
 export { default as Opensea } from './openseaicon.png';
 export { default as NeonSign } from './neonSign.png';
 export { default as Etherscan } from './etherscan.png';
+export { default as BrewBackground } from './breweryScene.jpg';
