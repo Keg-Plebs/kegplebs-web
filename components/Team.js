@@ -2,13 +2,14 @@ import Image from 'next/image'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import tsiz from '../public/drooly.jpeg';
-import oozic from '../public/oozic.jpeg';
-import sj from '../public/flowers.jpeg';
-import shdw from '../public/bitchass.jpeg';
-import jefftheworm from '../public/jefftheworm.jpeg';
+import {
+    Drooly,
+    Oozic,
+    Flowers,
+    Bitchass,
+    Jeff
+} from '../public/images';
 
-import sectionStyles from '../styles/Section.module.css';
 import { 
     team, 
     container, 
@@ -19,6 +20,8 @@ import {
     twitter, 
     title 
 } from '../styles/Team.module.css';
+import sectionStyles from '../styles/Section.module.css';
+
 
 const Team = () => {
     const size = 350;
@@ -29,7 +32,7 @@ const Team = () => {
             <div className={container}>
                 <div className={card} id="sj">
                     <div className={img}>
-                        <Image src={sj} quality={100} width={size} height={size}></Image>
+                        <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>SJ</h3>
@@ -39,7 +42,7 @@ const Team = () => {
                 </div>
                 <div className={card} id="oozic">
                     <div className={img}>
-                        <Image src={oozic} quality={100} width={size} height={size}></Image>
+                        <Image src={Oozic} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>IZAAC</h3>
@@ -49,7 +52,7 @@ const Team = () => {
                 </div>
                 <div className={card} id="tsiz">
                     <div className={img}>
-                        <Image src={tsiz} quality={100} width={size} height={size}></Image>
+                        <Image src={Drooly} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>TSIZ</h3>
@@ -61,7 +64,7 @@ const Team = () => {
             <div className={container}>
                 <div className={card} id="shdw">
                     <div className={img}>
-                        <Image src={shdw} quality={100} width={size} height={size}></Image>
+                        <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>SHDW</h3>
@@ -71,7 +74,7 @@ const Team = () => {
                 </div>
                 <div className={card} id="jefftheworm">
                     <div className={img}>
-                        <Image src={jefftheworm} quality={100} width={size} height={size}></Image>
+                        <Image src={Jeff} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>JEFFTHEWORM</h3>
