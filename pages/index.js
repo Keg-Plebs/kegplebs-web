@@ -9,22 +9,31 @@ import Brewverse from '../components/Brewverse'
 import FAQ from '../components/FAQ'
 import Team from '../components/Team'
 import Roadmap from '../components/Roadmap'
-import styles from '../styles/Layout.module.css'
+
+import Mids from '../components/Mids';
+import { container, backgroundImage } from '../styles/Layout.module.css'
 import { siteTitle } from '../components/Layout'
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      
+    <div className={container}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Brewverse></Brewverse>
+      <div className={backgroundImage}>
+
+      </div>
       <Main></Main>
+      <Brewverse></Brewverse>
+      <Mids></Mids>
       <Story></Story>
+      <Mids></Mids>
       <Showcase></Showcase>
+      <Mids></Mids>
       <FAQ></FAQ>
+      <Mids></Mids>
       <Roadmap></Roadmap>
+      <Mids></Mids>
       <Team></Team>
 
     </div>
