@@ -20,7 +20,7 @@ import {
 } from '../public/images';
 
 import sectionStyles from '../styles/Section.module.css';
-import { showcase, first, second, imgContainer } from '../styles/Showcase.module.css';
+import { showcase, first, second, imgContainer, sectionHeader } from '../styles/Showcase.module.css';
 
 const Showcase = () => {
     const size = 275;
@@ -53,7 +53,9 @@ const Showcase = () => {
    
     return(
             <div ref={ref} className={`${sectionStyles.main} ${showcase}`}>
-                <h1>Sick display of plebs</h1>
+                <div className={sectionHeader}>
+                    <h1>KEG PLEBS</h1>
+                </div>
                 <div ref={firstSlide} className={first}>
                     <div className={imgContainer}>
                         <Image src={Goggs} quality={100} priority={true} width={size} height={size}></Image>

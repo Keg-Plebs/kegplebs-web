@@ -1,8 +1,16 @@
 .showcase {
     position: relative;
-    background-color: skyblue;
+    color: white;
+    background-color: black;
     overflow: hidden;
     height: 100vh;
+}
+
+.sectionHeader {
+    padding: 0 7vh;
+    margin-right: auto;
+    letter-spacing: 3px;
+    font-size: 2rem;
 }
 
 .first {
