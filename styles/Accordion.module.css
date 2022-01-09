@@ -1,0 +1,28 @@
+.container {
+    width: 80vw;
+    line-height: 30px;
+    border: 1px solid rgba(209, 213, 219, 0.5);
+}
+
+.container:hover {
+    background-color: #ccc;
+}
+
+.button {
+    font-size: 30px;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    padding: 5px 35px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.content {
+    padding: 35px;
+    background-color: whitesmoke;
+    width: 100%;
+    transition: max-height 0.4s ease-out;
+}
