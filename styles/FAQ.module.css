@@ -1,3 +1,10 @@
 .faq {
     background-color:yellowgreen;
+    transition: 0.4s;
+}
+
+.sectionHeader {
+    font-size: 50px;
+    margin-right: auto;
+    margin-left: 10vw;
 }
