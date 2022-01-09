@@ -8,6 +8,7 @@ import { NavIcon, Opensea, NeonSign, Etherscan } from '../public/images';
 
 import { nav, logoGroup, linkGroup, socialGroup, socialIcons, a, link, li } from '../styles/Nav.module.css';
 import Layout from './Layout';
+import Connect from './Connect';
 
 const Nav = () => {
     return (
@@ -31,6 +32,7 @@ const Nav = () => {
                     <a className={a} href='https://discord.gg/xjfpxWajXH'><FontAwesomeIcon icon={faDiscord} className={socialIcons}/></a>
                     <a className={a} href='#'><Image src={Opensea} quality={100} height={40} width={40}></Image></a>
                     <a className={a} href='#'><Image src={Etherscan} quality={100} height={40} width={40}></Image></a>
+                    <a className={a} href='#'><Connect/></a>
                 </div>
         </nav>
     )

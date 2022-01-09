@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { useTexture } from '@react-three/drei'
 import * as THREE from 'three'
+import { useThree } from '@react-three/fiber'
 
 const Building = ({ src, srcSelect, ...rest }) => {
+
+    const { gl } = useThree()
 
     let texture
     let textureSelect
@@ -15,14 +18,23 @@ const Building = ({ src, srcSelect, ...rest }) => {
     }
 
     // Fix artifacting from transparency
+    // texture.anisotropy = gl.capabilities.getMaxAnisotropy();
     texture.anisotropy = 0;
-    texture.magFilter = THREE.NearestFilter;
-    texture.minFilter = THREE.NearestFilter;
+    // texture.magFilter = THREE.NearestFilter;
+    // texture.minFilter = THREE.NearestFilter;
+    texture.minFilter = THREE.LinearMipMapLinearFilter;
+    texture.magFilter = THREE.LinearFilter;
+    // texture.format = RGBAFormat;
 
+    // textureSelect.anisotropy = gl.capabilities.getMaxAnisotropy();
     textureSelect.anisotropy = 0;
-    textureSelect.magFilter = THREE.NearestFilter;
-    textureSelect.minFilter = THREE.NearestFilter;
-    
+    // texture.magFilter = THREE.NearestFilter;
+    // texture.minFilter = THREE.NearestFilter;
+    // textureSelect.magFilter = THREE.NearestFilter;
+    // textureSelect.minFilter = THREE.NearestFilter;
+    textureSelect.minFilter = THREE.LinearMipMapLinearFilter;
+    textureSelect.magFilter = THREE.LinearFilter;
+
 
     const [hovered, hover] = useState(false)
 
@@ -31,9 +43,10 @@ const Building = ({ src, srcSelect, ...rest }) => {
     // Gets the size of the texture
     const width = texture.image.width
     const height = texture.image.height
+    const aspect = width / height;
 
     // Stores the image data
-    let texture_data
+    let textureData
 
     // Creates an internal canvas to draw the texture to
     let canvas = document.createElement('canvas');
@@ -56,28 +69,34 @@ const Building = ({ src, srcSelect, ...rest }) => {
         ctx.drawImage(img, 0, 0)
 
         // Gets the image data from the canvas context
-        texture_data = ctx.getImageData(0, 0, width, height)
+        textureData = ctx.getImageData(0, 0, width, height)
     }
 
     return (
         <sprite
             {...rest}
+            args={[aspect, 1, 1]}
             onPointerMove={(event) => {
 
                 // Checks if texture_data has been loaded.
                 // If the pixel is transparent hover is set to false and the cursor is pointer 
-                if (texture_data && isTransparent(event, texture_data.data, width, height)) {
-                    document.body.style.cursor = 'grab'
-                    hover(false)
+                if (textureData) {
+                    // Checks if texture_data has been loaded.
+                    // If the pixel is transparent hover is set to false and the cursor is pointer 
+                    if (isTransparent(event, textureData.data, width, height)) {
+                        document.body.style.cursor = 'auto'
+                        hover(false)
 
-                    // Otherwise, hover is set to true and the cursor is auto
-                } else {
-                    document.body.style.cursor = 'pointer'
-                    hover(true)
+                        // Otherwise, hover is set to true and the cursor is auto
+                    }
+                    else {
+                        document.body.style.cursor = 'pointer'
+                        hover(true)
+                    }
                 }
             }}
             onPointerLeave={(event) => {
-                document.body.style.cursor = 'grab'
+                document.body.style.cursor = 'auto'
                 hover(false)
 
             }}
@@ -85,8 +104,11 @@ const Building = ({ src, srcSelect, ...rest }) => {
                 document.body.style.cursor = 'pointer'
             }}>
             {texture ?
-                <spriteMaterial 
-                    ps 
+                <spriteMaterial
+                    transparent
+                    blending={THREE.CustomBlending}
+                    blendSrc={THREE.OneFactor}
+                    blendDst={THREE.OneMinusSrcAlphaFactor}
                     map={textureSelect && hovered ? textureSelect : texture} /> :
                 <></>
             }

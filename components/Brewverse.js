@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react'
+import { Suspense, useState, useRef, useEffect, useLayoutEffect } from 'react'
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
@@ -41,7 +41,7 @@ const Brewverse = () => {
     return (
         <div className={`${sectionStyles.main} ${styles.brewverse}`}>
             <h1>Brewverse is COMING</h1>
-            <div id={styles.canvas_container}>
+            <div className={styles.canvas_container}>
                 <Canvas>
                     <ambientLight color={0xffffff} intensity={0.5} />
                     <Suspense fallback={null} r3f>
