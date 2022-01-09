@@ -1,9 +1,9 @@
 import { useTexture } from '@react-three/drei'
 
-import { BACKGROUND } from '../../lib/constants';
+import { BaseLayer } from '../../public/images';
 
 const Background = () => {
-    const texture = useTexture(BACKGROUND)
+    const texture = useTexture(BaseLayer.src)
 
     const width = texture.image.width;
     const height = texture.image.height;
