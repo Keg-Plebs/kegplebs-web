@@ -1,4 +1,4 @@
-import { Suspense, useState, useRef, useEffect, useLayoutEffect } from 'react'
+import { Suspense, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
@@ -7,8 +7,7 @@ import styles from '../styles/Brewverse.module.css';
 import Interior from './brewverse/Interior'
 import Verse from './brewverse/Verse'
 
-import { DISCORD_LINK, SCENES } from '../utils/constants'
-import useMeasure from 'react-use-measure';
+import { DISCORD_LINK, SCENES } from '../lib/constants'
 
 // https://github.com/pmndrs/react-three-fiber#what-does-it-look-like
 // https://drei.pmnd.rs/?path=/story/controls-mapcontrols--map-controls-scene-st
@@ -41,10 +40,8 @@ const Brewverse = () => {
 
     return (
         <div className={`${sectionStyles.main} ${styles.brewverse}`}>
-            {/* <div className={styles.brewverse}> */}
             <h1>Brewverse is COMING</h1>
-            <div
-                className={styles.canvas_container}>
+            <div id={styles.canvas_container}>
                 <Canvas>
                     <ambientLight color={0xffffff} intensity={0.5} />
                     <Suspense fallback={null} r3f>

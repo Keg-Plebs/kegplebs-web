@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Icon from '../public/mugshots/icon.jpeg'
 import navStyles from '../styles/Nav.module.css';
 import Layout from './Layout';
-import Connect from './Connect';
 
 const Nav = () => {
     return (
