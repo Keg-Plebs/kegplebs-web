@@ -18,7 +18,8 @@ import {
     heading, 
     name, 
     twitter, 
-    title 
+    title,
+    sectionHeader
 } from '../styles/Team.module.css';
 import sectionStyles from '../styles/Section.module.css';
 
@@ -28,7 +29,7 @@ const Team = () => {
 
     return(
         <div className={`${sectionStyles.main} ${team}`}>
-            <h1>THE KEG PLEB SCIENTISTS</h1>
+            <h1 className={sectionHeader}>KEG PLEB SCIENTISTS</h1>
             <div className={container}>
                 <div className={card} id="sj">
                     <div className={img}>

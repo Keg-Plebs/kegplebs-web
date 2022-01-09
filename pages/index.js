@@ -33,7 +33,6 @@ export default function Home() {
       <FAQ></FAQ>
       <Mids></Mids>
       <Roadmap></Roadmap>
-      <Mids></Mids>
       <Team></Team>
 
     </div>
