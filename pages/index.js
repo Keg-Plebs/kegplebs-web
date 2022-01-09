@@ -15,7 +15,6 @@ import { siteTitle } from '../components/Layout'
 export default function Home() {
   return (
     <div className={styles.container}>
-      
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -26,7 +25,6 @@ export default function Home() {
       <FAQ></FAQ>
       <Roadmap></Roadmap>
       <Team></Team>
-
     </div>
   )
 }

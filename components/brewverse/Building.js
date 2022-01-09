@@ -1,8 +1,15 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTexture } from '@react-three/drei'
+import { useThree } from '@react-three/fiber'
 import * as THREE from 'three'
+import { BUILDING_SCALE } from '../../utils/constants'
+import { RGBAFormat } from 'three'
 
 const Building = ({ src, srcSelect, ...rest }) => {
+
+    const { gl } = useThree()
+
+    // console.log('view', viewport)
 
     let texture
     let textureSelect
@@ -15,25 +22,33 @@ const Building = ({ src, srcSelect, ...rest }) => {
     }
 
     // Fix artifacting from transparency
-    texture.anisotropy = 0;
-    texture.magFilter = THREE.NearestFilter;
-    texture.minFilter = THREE.NearestFilter;
+    texture.anisotropy = gl.capabilities.getMaxAnisotropy();
+    // texture.anisotropy = 0;
+    // texture.magFilter = THREE.NearestFilter;
+    // texture.minFilter = THREE.NearestFilter;
+    texture.minFilter = THREE.LinearMipMapLinearFilter;
+    texture.magFilter = THREE.LinearFilter;
+    // texture.format = RGBAFormat;
 
-    textureSelect.anisotropy = 0;
-    textureSelect.magFilter = THREE.NearestFilter;
-    textureSelect.minFilter = THREE.NearestFilter;
-    
+    // textureSelect.anisotropy = gl.capabilities.getMaxAnisotropy();
+    texture.anisotropy = 0;
+    // textureSelect.magFilter = THREE.NearestFilter;
+    // textureSelect.minFilter = THREE.NearestFilter;
+    textureSelect.minFilter = THREE.LinearMipMapLinearFilter;
+    textureSelect.magFilter = THREE.LinearFilter;
+
 
     const [hovered, hover] = useState(false)
 
     // https://stackoverflow.com/questions/35005603/get-color-of-the-texture-at-uv-coordinate
 
     // Gets the size of the texture
-    const width = texture.image.width
-    const height = texture.image.height
+    const width = texture.image.width;
+    const height = texture.image.height;
+    const aspect = width / height;
 
     // Stores the image data
-    let texture_data
+    let textureData;
 
     // Creates an internal canvas to draw the texture to
     let canvas = document.createElement('canvas');
@@ -56,38 +71,47 @@ const Building = ({ src, srcSelect, ...rest }) => {
         ctx.drawImage(img, 0, 0)
 
         // Gets the image data from the canvas context
-        texture_data = ctx.getImageData(0, 0, width, height)
+        textureData = ctx.getImageData(0, 0, width, height)
     }
 
     return (
         <sprite
             {...rest}
+            args={[aspect, 1, 1]}
             onPointerMove={(event) => {
 
-                // Checks if texture_data has been loaded.
-                // If the pixel is transparent hover is set to false and the cursor is pointer 
-                if (texture_data && isTransparent(event, texture_data.data, width, height)) {
-                    document.body.style.cursor = 'grab'
-                    hover(false)
+                if (textureData) {
+                    // Checks if texture_data has been loaded.
+                    // If the pixel is transparent hover is set to false and the cursor is pointer 
+                    if (isTransparent(event, textureData.data, width, height)) {
+                        document.body.style.cursor = 'auto'
+                        hover(false)
 
-                    // Otherwise, hover is set to true and the cursor is auto
-                } else {
-                    document.body.style.cursor = 'pointer'
-                    hover(true)
+                        // Otherwise, hover is set to true and the cursor is auto
+                    }
+                    else {
+                        document.body.style.cursor = 'pointer'
+                        hover(true)
+                    }
                 }
             }}
             onPointerLeave={(event) => {
-                document.body.style.cursor = 'grab'
+                document.body.style.cursor = 'auto'
                 hover(false)
 
             }}
-            onPointerDown={(event) => {
-                document.body.style.cursor = 'pointer'
-            }}>
+            // onPointerDown={(event) => {
+            //     document.body.style.cursor = 'pointer'
+            // }}
+            scale={BUILDING_SCALE}>
             {texture ?
-                <spriteMaterial 
-                    ps 
-                    map={textureSelect && hovered ? textureSelect : texture} /> :
+                <spriteMaterial
+                    map={textureSelect && hovered ? textureSelect : texture}
+                    transparent
+                    blending={THREE.CustomBlending}
+                    blendSrc={THREE.OneFactor}
+                    blendDst={THREE.OneMinusSrcAlphaFactor}
+                /> :
                 <></>
             }
         </sprite>

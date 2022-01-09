@@ -1,18 +1,53 @@
+/* https://stackoverflow.com/questions/1311068/scale-a-div-to-fit-in-window-but-preserve-aspect-ratio */
 .brewverse {
     background-color: whitesmoke;
-    /* width: 100vw; */
-    height: 100vh;
-    /* margin: auto; */
-    /* padding: 5rem 0; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: flex-start; */
-    /* align-items: center; */
-    /* font-size: 1.25rem; */
 }
 
-#canvas_container  {
+/* .brewverse::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+} */
+
+.main {
     width: 100%;
-    height: 100%;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.25rem;
 }
 
+.canvas_container {
+    width: 100vw; 
+    height: 56.25vw; 
+    max-height: 100vh;
+    max-width: 177.78vh; 
+    margin: auto;
+    position: relative;
+    top:0;bottom:0; 
+    left:0;right:0;
+} 
+
+/* .canvas_container {
+    width: 100vw; 
+    height: 100vh;
+} */
+
+/* .brewverse {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+
+.brewverse::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+#canvas_container {
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+} */

@@ -1,15 +1,14 @@
-import { Suspense, useState } from 'react'
-import { OrthographicCamera } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { Suspense, useEffect, useState } from 'react'
+import { OrthographicCamera, PerspectiveCamera } from '@react-three/drei'
+import { useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 
 import Background from './Background'
 import Building from './Building'
 import {
     MAX_ZOOM, INIT_CAM_POS, INIT_ZOOM_LEVEL, INIT_STEP, STEP_FAC, ZOOM_FAC, UP, FAR,
-    BACKGROUND_COLOR, BREWERY_POS, DISCORD_POS, BUILDING_SCALE, X_OFFSET, Y_OFFSET,
-    SCENES, MAP_SCALE
-} from '../../lib/constants'
+    BACKGROUND_COLOR, BREWERY_POS, DISCORD_POS, X_OFFSET, Y_OFFSET, SCENES
+} from '../../utils/constants'
 import Controls from './Controls'
 import { KegPlebsBrewery, KegPlebsBrewerySelect } from '../../public/images'
 
@@ -27,8 +26,7 @@ const Verse = ({ callback }) => {
                 }
                 src={KegPlebsBrewery.src}
                 srcSelect={KegPlebsBrewerySelect.src}
-                position={BREWERY_POS}
-                scale={BUILDING_SCALE} />
+                position={BREWERY_POS} />
         ),
         // (
         //     <Building
@@ -45,6 +43,9 @@ const Verse = ({ callback }) => {
         // )
 
     ]
+
+    const { size, camera, gl } = useThree();
+    gl.setPixelRatio(window.devicePixelRatio)
 
     const [scene, switchScene] = useState(SCENES.VERSE);
     const [camPos, setCamPos] = useState(INIT_CAM_POS);
@@ -68,7 +69,7 @@ const Verse = ({ callback }) => {
     const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
     const transitionScene = (scene, position) => {
-        click(false)
+        // click(false)
         setNewCamPos(position)
         click(true)
         enable(false)
@@ -76,6 +77,9 @@ const Verse = ({ callback }) => {
     }
 
     useFrame((state, delta) => {
+
+        // setZoomLevel(1000 / size.width)
+
         let step = INIT_STEP;
 
         if (clicked) {
@@ -97,23 +101,40 @@ const Verse = ({ callback }) => {
         }
     })
 
+    useEffect(() => {
+
+        const handleResize = () => {
+    
+            // https://gist.github.com/ayamflow/96a1f554c3f88eef2f9d0024fc42940f
+            let dist = camera.position.z;
+            let height = size.height;
+            camera.fov = 2 * Math.atan(height / (2 * dist)) * (180 / Math.PI);
+            camera.updateProjectionMatrix();
+        };
+
+        window.addEventListener('resize', handleResize)
+
+        handleResize();
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     return (
         <>
-            <OrthographicCamera
+            <PerspectiveCamera
                 makeDefault
                 position={camPos}
                 zoom={zoomLevel}
                 up={UP}
-                far={FAR} />
+                far={FAR} 
+            />
             <color attach="background" args={[BACKGROUND_COLOR]} />
-            <group
-                scale={MAP_SCALE}>
-                <Suspense fallback={null} r3f>
-                    <Background />
-                    {buildings}
-                </Suspense>
-                <Controls target={target} enabled={enabled} offsetX={X_OFFSET} offsetY={Y_OFFSET} /> :
-            </group >
+
+            <Suspense fallback={null} r3f>
+                <Background />
+                {buildings}
+            </Suspense>
+            <Controls target={target} enabled={enabled} offsetX={X_OFFSET} offsetY={Y_OFFSET} />
         </>
     )
 }
