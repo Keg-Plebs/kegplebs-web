@@ -20,9 +20,7 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className={backgroundImage}>
-
-      </div>
+      <div className={backgroundImage}></div>
       <Main></Main>
       <Brewverse></Brewverse>
       <Mids></Mids>
@@ -33,7 +31,6 @@ export default function Home() {
       <FAQ></FAQ>
       <Mids></Mids>
       <Roadmap></Roadmap>
-      <Mids></Mids>
       <Team></Team>
 
     </div>

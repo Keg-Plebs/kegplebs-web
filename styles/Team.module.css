@@ -1,5 +1,8 @@
 .team {
-    background-color: violet;
+    background-image: linear-gradient(to top, rgba(0,0,0, 0.4) 0,
+    rgba(0,0,0, 0.4) 65%,
+    rgba(0,0,0, 1) 85%);
+    color: whitesmoke;
 }
 
 .container {
@@ -7,6 +10,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.sectionHeader {
+    letter-spacing: 1px;
+    font-size: 75px;
+    left: 10vw;
 }
 
 .card {
@@ -25,6 +34,7 @@
 }
 
 .heading {
+    color: #e69fc0;
     width: 100%;
     margin: 10px;
     margin-bottom: 0;
@@ -37,7 +47,7 @@
 .twitter {
     margin-left: 15px;
     display: inline;
-    height: 40px;
+    height: 35px;
 }
 
 .twitter:hover {
