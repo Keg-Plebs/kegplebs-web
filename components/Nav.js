@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { NavIcon, Opensea, NeonSign, Etherscan } from '../public/images';
 
-import { nav, logoGroup, linkGroup, socialGroup, socialIcons, a, link, li } from '../styles/Nav.module.css';
+import { nav, logoGroup, linkGroup, socialGroup, socialIcons, a, link, li, connButt } from '../styles/Nav.module.css';
 import Layout from './Layout';
 import Connect from './Connect';
 
