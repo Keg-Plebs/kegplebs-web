@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getCurrentWalletConnected, connectWallet } from '../utils/interact';
+import { button } from '../styles/Connect.module.css';
 
 // https://docs.alchemy.com/alchemy/tutorials/nft-minter#bonus-put-your-nft-minter-to-work
 const Connect = () => {
@@ -40,6 +41,7 @@ const Connect = () => {
     return (
         <button
             onClick={connectWalletPressed}
+            className={button}
         >
             {walletAddress.length > 0 ? (
                 "Connected: " +
