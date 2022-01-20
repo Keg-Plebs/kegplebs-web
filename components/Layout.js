@@ -19,7 +19,6 @@ const Layout = ({ children }) => {
                 <meta name="og:title" content={siteTitle} />
                 <link rel="icon" href="/sun.ico" />
             </Head>
-            <Nav />
             <div>
                 <main className={styles.main}>
                     {children}
