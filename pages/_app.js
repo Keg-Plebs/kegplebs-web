@@ -1,14 +1,17 @@
 import Layout from '../components/Layout';
+import ProviderWrapper from '../components/ProviderWrapper';
 
 import '../styles/globals.css'
 
 
 // wraps around all of the page components
 function MyApp({ Component, pageProps }) {
-  return(
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+  return (
+    <ProviderWrapper>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ProviderWrapper>
   )
 }
 

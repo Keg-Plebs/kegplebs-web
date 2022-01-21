@@ -1,56 +1,75 @@
-import { useState, useEffect } from 'react'
-import { getCurrentWalletConnected, connectWallet } from '../utils/interact';
+import { ethers } from 'ethers'
+import { useState, useEffect, useContext } from 'react'
+import { getCurrentWalletConnected, connectWallet, connectEthereum } from '../utils/interact';
 import { button } from '../styles/Connect.module.css';
+import ProviderContext from './ProviderContext';
 
 // https://docs.alchemy.com/alchemy/tutorials/nft-minter#bonus-put-your-nft-minter-to-work
 const Connect = () => {
 
+    const [hovered, hover] = useState(false);
+    const [connected, connect] = useState(true);
     const [walletAddress, setWallet] = useState("");
-    const [status, setStatus] = useState("");
 
-    useEffect(async () => {
-        const { address, status } = await getCurrentWalletConnected();
-        setWallet(address);
-        setStatus(status);
+    const { provider, setProvider } = useContext(ProviderContext);
 
-        addWalletListener();
-    }, []);
+    
+    // Toggles connection to window.ethereum
+    const toggleConnection = async () => {
 
-    const connectWalletPressed = async () => {
-        const walletResponse = await connectWallet();
-        setWallet(walletResponse.address);
-        setStatus(walletResponse.status);
-    };
+        // Toggles connected
+        connect(!connected)
 
-    function addWalletListener() {
-        if (window.ethereum) {
-            window.ethereum.on("accountsChanged", (accounts) => {
-                if (accounts.length > 0) {
-                    setWallet(accounts[0]);
-                    setStatus("");
-                } else {
-                    setWallet("");
-                    setStatus("");
-                }
-            });
+        // Updates the provider and wallet address if connected
+        if (connected) {
+
+            // Creates a new provider
+            const response = connectEthereum()
+
+            // Gets the wallet address from the response -- the new provider
+            const signer = (await response).getSigner()
+            const address = await signer.getAddress()
+
+            // Updates the provider and wallet address
+            setProvider(response);
+            setWallet(address)
+        
+        // Updates on disconnect
         } else {
-            setStatus("");
+            setProvider(null)
+            setWallet("")
         }
     }
 
     return (
         <button
-            onClick={connectWalletPressed}
+            onPointerOver={() => {
+                hover(true)
+            }}
+            onPointerOut={() => {
+                hover(false)
+            }}
+            onClick={() => {
+                toggleConnection()
+            }}
             className={button}
         >
-            {walletAddress.length > 0 ? (
-                "Connected: " +
-                String(walletAddress).substring(0, 6) +
-                "..." +
-                String(walletAddress).substring(38)
-            ) : (
-                <span>Connect Wallet</span>
-            )}
+            {
+                walletAddress.length > 0 ? (
+
+                    hovered ? (
+                        "Disconnect"
+                    ) : (
+                        "Connected: " +
+                        String(walletAddress).substring(0, 6) +
+                        "..." +
+                        String(walletAddress).substring(38)
+                    )
+
+                ) : (
+                    <span>Connect Wallet</span>
+                )
+            }
         </button>
     )
 }
