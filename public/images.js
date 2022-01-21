@@ -21,6 +21,7 @@ export { default as NeonSign } from './neonSign.png';
 export { default as Etherscan } from './etherscan.png';
 export { default as BrewBackground } from './breweryScene.jpg';
 
+
 // Textures exports for the Brewverse
 export { default as BaseLayer } from './textures/base_layer.JPG';
 export { default as KegPlebsBrewery } from './textures/kegplebs_brewery.png';
