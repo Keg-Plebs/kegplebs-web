@@ -25,12 +25,35 @@
     align-items: center;
 }
 
+.imgContainer {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
 .img {
-    position: relative;
+    position: absolute;
     height: 350px;
     width: 350px;
     border-radius: 25%;
     overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.imgContainer:hover {
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.imgBack {
+    height: 349px;
+    width: 349px;
+    border-radius: 25%;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    color: white;
+    text-align: center;
 }
 
 .heading {

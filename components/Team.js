@@ -7,14 +7,17 @@ import {
     Oozic,
     Flowers,
     Bitchass,
-    Jeff
+    Jeff,
+    Glow
 } from '../public/images';
 
 import { 
     team, 
     container, 
     card, 
-    img, 
+    img,
+    imgBack,
+    imgContainer,
     heading, 
     name, 
     twitter, 
@@ -32,8 +35,13 @@ const Team = () => {
             <h1 className={sectionHeader}>KEG PLEB SCIENTISTS</h1>
             <div className={container}>
                 <div className={card} id="sj">
-                    <div className={img}>
-                        <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
+                    <div className={imgContainer}>
+                        <div className={img}>
+                            <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
+                        <div className={imgBack}>
+                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>SJ</h3>
@@ -42,8 +50,13 @@ const Team = () => {
                     <p className={title}>MARKETING / CO-FOUNDER</p>
                 </div>
                 <div className={card} id="oozic">
-                    <div className={img}>
-                        <Image src={Oozic} quality={100} priority={true} width={size} height={size}></Image>
+                    <div className={imgContainer}>
+                        <div className={img}>
+                            <Image src={Oozic} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
+                        <div className={imgBack}>
+                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>IZAAC</h3>
@@ -52,9 +65,15 @@ const Team = () => {
                     <p className={title}>ART LEAD / CO-FOUNDER</p>
                 </div>
                 <div className={card} id="tsiz">
-                    <div className={img}>
-                        <Image src={Drooly} quality={100} priority={true} width={size} height={size}></Image>
+                    <div className={imgContainer}>
+                        <div className={img}>
+                            <Image src={Drooly} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
+                        <div className={imgBack}>
+                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
                     </div>
+                    
                     <div className={heading}>
                         <h3 className={name}>TSIZ</h3>
                         <a href='https://twitter.com/tsiz_eth'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
@@ -64,8 +83,13 @@ const Team = () => {
             </div>
             <div className={container}>
                 <div className={card} id="shdw">
-                    <div className={img}>
-                        <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
+                    <div className={imgContainer}>
+                        <div className={img}>
+                            <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
+                        <div className={imgBack}>
+                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
                     </div>
                     <div className={heading}>
                         <h3 className={name}>SHDW</h3>
@@ -74,9 +98,15 @@ const Team = () => {
                     <p className={title}>DEVELOPER</p>
                 </div>
                 <div className={card} id="jefftheworm">
-                    <div className={img}>
-                        <Image src={Jeff} quality={100} priority={true} width={size} height={size}></Image>
+                    <div className={imgContainer}>
+                        <div className={img}>
+                            <Image src={Jeff} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
+                        <div className={imgBack}>
+                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                        </div>
                     </div>
+                    
                     <div className={heading}>
                         <h3 className={name}>JEFFTHEWORM</h3>
                         <a href='https://twitter.com/JefftheWorm'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
