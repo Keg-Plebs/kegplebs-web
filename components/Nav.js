@@ -6,9 +6,9 @@ const Scroller = Scroll.scroller;
 import { faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { NavIcon, Opensea, NeonSign, Etherscan } from '../public/images';
+import { NavIcon, Opensea, NeonSign, Etherscan, NavLogo } from '../public/images';
 
-import { nav, logoGroup, linkGroup, socialGroup, socialIcons, a, link, li, connButt } from '../styles/Nav.module.css';
+import { nav, logoGroup, linkGroup, socialGroup, socialIcons, a, link, li } from '../styles/Nav.module.css';
 import Layout from './Layout';
 import Connect from './Connect';
 
@@ -49,7 +49,7 @@ const Nav = () => {
         <nav className={nav}>
                 <div className={logoGroup}>
                     <a onClick={toTop}>
-                        <Image src={NeonSign} quality={100} priority={true} height={75} width={350}></Image>
+                        <Image src={NavLogo} quality={100} priority={true} height={75} width={350}></Image>
                     </a>
                 </div>
                 <ul className={linkGroup}>
