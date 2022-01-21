@@ -1,4 +1,4 @@
-import { ethers } from 'ethers'
+// import { ethers } from 'ethers' ////////// causing problems - we still need?
 import { useState, useEffect, useContext } from 'react'
 import { getCurrentWalletConnected, connectWallet, connectEthereum } from '../utils/interact';
 import { button } from '../styles/Connect.module.css';

@@ -49,7 +49,7 @@ const Nav = () => {
         <nav className={nav}>
                 <div className={logoGroup}>
                     <a onClick={toTop}>
-                        <Image src={NavLogo} quality={100} priority={true} height={75} width={350}></Image>
+                        <Image src={NavLogo} quality={100} priority={true} height={225} width={400}></Image>
                     </a>
                 </div>
                 <ul className={linkGroup}>
