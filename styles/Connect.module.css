@@ -3,15 +3,18 @@
     color: #e69fc0;
     border: 2px solid #e69fc0;
     transition-duration: 0.4s;
-    padding: 15px 20px;
+    /* padding: 15px 20px; */
+    padding: 0px;
     font-size: 20px;
     border-radius: 4px;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-left: 5px;
-  }
+    width: 250px;
+    height: 60px
+}
   
-  .button:hover {
+.button:hover {
     background-color: #e69fc0;
     color: white;
-  }
+}

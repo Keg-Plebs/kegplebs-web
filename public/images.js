@@ -15,11 +15,14 @@ export { default as Paris } from './mugshots/paris.jpeg';
 export { default as Glow } from './mugshots/glow.PNG';
 export { default as Cam } from './mugshots/camera.PNG';
 export { default as Oozic } from './mugshots/oozic.jpeg';
+
+// general
 export { default as NavIcon } from './sun.ico';
 export { default as Opensea } from './openseaicon.png';
 export { default as NeonSign } from './neonSign.png';
 export { default as Etherscan } from './etherscan.png';
 export { default as BrewBackground } from './breweryScene.jpg';
+export { default as Port } from './portrait.png';
 
 
 // Textures exports for the Brewverse
