@@ -23,6 +23,7 @@ export { default as NeonSign } from './neonSign.png';
 export { default as Etherscan } from './etherscan.png';
 export { default as BrewBackground } from './breweryScene.jpg';
 export { default as Port } from './portrait.png';
+export { default as NavLogo } from './navbarLogo.png';
 
 // Textures exports for the Brewverse
 export { default as BaseLayer } from './textures/base_layer.JPG';
