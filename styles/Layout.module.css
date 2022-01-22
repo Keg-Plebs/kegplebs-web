@@ -24,7 +24,7 @@
   height: 100vh;
   width: 100%;
   position: fixed;
-  background-image: linear-gradient(to top left, rgba(90, 62, 75, 0.2), rgba(56, 64, 44, 0.2)100), url('../public/barsceneone.jpg');
+  background-image: linear-gradient(to top left, rgba(143, 124, 38, 0.2), rgba(56, 64, 44, 0.2)100), url('../public/barsceneone.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   z-index: -1;
