@@ -15,6 +15,14 @@ export { default as Paris } from './mugshots/paris.jpeg';
 export { default as Glow } from './mugshots/glow.PNG';
 export { default as Cam } from './mugshots/camera.PNG';
 export { default as Oozic } from './mugshots/oozic.jpeg';
+export { default as Baseball } from './mugshots/baseball.jpg';
+export { default as Budder } from './mugshots/budder.jpg';
+export { default as Doodle } from './mugshots/doodle.PNG';
+export { default as Fancy } from './mugshots/fancy.jpg';
+export { default as Goat } from './mugshots/goatnoise.jpg';
+export { default as Hoodup } from './mugshots/hoodup.PNG';
+export { default as POG } from './mugshots/poggers.PNG';
+export { default as Poodle } from './mugshots/poodle.PNG';
 
 // general
 export { default as NavIcon } from './sun.ico';
@@ -24,6 +32,7 @@ export { default as Etherscan } from './etherscan.png';
 export { default as BrewBackground } from './breweryScene.jpg';
 export { default as Port } from './portrait.png';
 export { default as NavLogo } from './navbarLogo.png';
+export { default as BarBackground } from './barsceneone.jpg';
 
 // Textures exports for the Brewverse
 export { default as BaseLayer } from './textures/base_layer.JPG';
