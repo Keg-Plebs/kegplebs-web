@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { 
@@ -31,7 +31,8 @@ import sectionStyles from '../styles/Section.module.css';
 import { showcase, first, second, third, imgContainer, sectionHeader, showcaseOverlay, desc } from '../styles/Showcase.module.css';
 
 const Showcase = () => {
-    const size = 275;
+    const [screenWidth, setScreenWidth] = useState(20000);
+    const size = screenWidth < 400 ? 150 : 275;
 
     const ref = useRef();
     const firstSlide = useRef();
@@ -59,20 +60,24 @@ const Showcase = () => {
             thirdSlide.current.style.transform = `translateX(-${thirdScroll * 2}px)`
         };
 
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', changeWidth)
+
+        return () => {
+            window.removeEventListener('resize', changeWidth);
+        }
+
     }, []);
 
    
     return(
             <div ref={ref} className={`${sectionStyles.main} ${showcase}`}>
                 <div className={sectionHeader}>
-                    <h1>KEG PLEBS</h1>
+                    <h1>THE PLEBS</h1>
                 </div>
-                <div className={showcaseOverlay}>
-                    <p className={desc}>
-                    Born out of a bad batch of fermented hops, Keg Plebs crawled out of the brew vats and into a local brew shop (of which will remain anonymous...for obvious reasons). In an attempt to blend in, the Keg Plebs took cues from the only people they knew, the local yocals. Don't hate them for their adopted style, interests, or bad habits, what they lack in looks they make up for in personality. Fueled by a variety of apré brews, adrenalin and breakfast burritos, the great Keg Pleb migration has begun. Breweries are now accepting applications for resident keg plebs to man the bar, clean the floors and full send-it as needed.
-                    </p>
-                </div>
-                
                 <div ref={firstSlide} className={first}>
                     <div className={imgContainer}>
                         <Image src={Goggs} quality={100} priority={true} width={size} height={size}></Image>
@@ -184,13 +189,14 @@ const Showcase = () => {
                         <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                 </div>
+                <div className={showcaseOverlay}>
+                    <p className={desc}>
+                    Born out of a bad batch of fermented hops, Keg Plebs crawled out of the brew vats and into a local brew shop (of which will remain anonymous...for obvious reasons). In an attempt to blend in, the Keg Plebs took cues from the only people they knew, the local yocals. Don't hate them for their adopted style, interests, or bad habits, what they lack in looks they make up for in personality. Fueled by a variety of apré brews, adrenalin and breakfast burritos, the great Keg Pleb migration has begun. Breweries are now accepting applications for resident keg plebs to man the bar, clean the floors and full send-it as needed.
+                    </p>
+                </div>
             </div>
     )
 }
-
-
-
-
 
 
 export default Showcase

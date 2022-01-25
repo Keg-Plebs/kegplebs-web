@@ -12,7 +12,7 @@
 }
 
 .logoContainer {
-    margin-top: -25vh;
+    margin-top: -10vh;
     width: 100%;
     padding-left: 50px;
     justify-content: center;
@@ -35,4 +35,26 @@
     line-height: 55px;
     letter-spacing: 1px;
     width: 55vw;
+}
+
+@media screen and (max-width: 1700px) {
+    .main {
+        height: 80vh;
+    }
+
+    .logoContainer {
+        width: 125vw;
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main {
+        height: 80vh;
+    }
+
+    .logoContainer {
+        width: 125vw;
+        padding-left: 10px;
+    }
 }

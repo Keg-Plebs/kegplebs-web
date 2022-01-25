@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { scroller } from 'react-scroll';
-import { useMediaQuery } from '@mui/material/useMediaQuery';
 
 import { faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Opensea, NeonSign, Etherscan, NavLogo } from '../public/images';
-import { nav, centerContent, logoGroup, linkGroup, socialGroup, socialIcons, icons, a, link, li, menu, hamburgButton } from '../styles/Nav.module.css';
+import { nav, logoGroup, linkGroup, socialGroup, socialIcons, icons, a, link, li, menu, hamburgButton } from '../styles/Nav.module.css';
 
 import Connect from './Connect';
 
@@ -22,7 +21,6 @@ const Nav = () => {
 
     useEffect(() => {
         const changeWidth = () => {
-            console.log(window.innerWidth)
             setScreenWidth(window.innerWidth);
         }
 

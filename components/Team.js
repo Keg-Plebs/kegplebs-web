@@ -25,10 +25,24 @@ import {
     sectionHeader
 } from '../styles/Team.module.css';
 import sectionStyles from '../styles/Section.module.css';
+import { useEffect, useState } from 'react';
 
 
 const Team = () => {
-    const size = 350;
+    const [screenWidth, setScreenWidth] = useState(20000);
+    const size = screenWidth < 400 ? 275 : 350;
+
+    useEffect(() => {
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', changeWidth)
+
+        return () => {
+            window.removeEventListener('resize', changeWidth);
+        }
+    }, []);
 
     return(
         <div className={`${sectionStyles.main} ${team}`}>
@@ -76,12 +90,10 @@ const Team = () => {
                     
                     <div className={heading}>
                         <h3 className={name}>TSIZ</h3>
-                        <a href='https://twitter.com/tsiz_eth'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
+                        <a href='https://twitter.com/secondhandgains'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
                     <p className={title}>ADVISOR</p>
                 </div>
-            </div>
-            <div className={container}>
                 <div className={card} id="shdw">
                     <div className={imgContainer}>
                         <div className={img}>
