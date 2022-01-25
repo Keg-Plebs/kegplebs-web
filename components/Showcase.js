@@ -2,21 +2,29 @@ import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 
 import { 
+    Baseball,
     Bitchass, 
-    Raincoat, 
-    Goggs, 
-    Flowers, 
+    Budder,
+    Cam,
+    Cowb,
+    Doodle, 
     Drooly, 
-    Cowb, 
-    Hipp, 
-    Vort, 
-    Space, 
-    Hoodee,
-    Jeff,
-    Puffer,
-    Paris,
+    Fancy,
+    Flowers, 
     Glow,
-    Cam
+    Goat,
+    Goggs, 
+    Hipp, 
+    Hoodee,
+    Hoodup,
+    Jeff,
+    Paris,
+    POG,
+    Poodle,
+    Puffer,
+    Raincoat, 
+    Space, 
+    Vort, 
 } from '../public/images';
 
 import sectionStyles from '../styles/Section.module.css';
@@ -108,28 +116,28 @@ const Showcase = () => {
                 </div>
                 <div ref={secondSlide} className={second}>
                     <div className={imgContainer}>
-                        <Image src={Goggs} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Baseball} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Raincoat} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Budder} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Doodle} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Drooly} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Cowb} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Fancy} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Hipp} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Hoodup} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Vort} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={POG} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
-                        <Image src={Space} quality={100} priority={true} width={size} height={size}></Image>
+                        <Image src={Poodle} quality={100} priority={true} width={size} height={size}></Image>
                     </div>
                     <div className={imgContainer}>
                         <Image src={Hoodee} quality={100} priority={true} width={size} height={size}></Image>
