@@ -1,8 +1,8 @@
 .nav {
   position: fixed;
-  height: 50px;
+  height: 110px;
+  padding: 0 20px;
   width: 100%;
-  padding: 5vh;
   background: #000;
   color: #fff;
   display: flex;
@@ -26,8 +26,37 @@
   margin: 5px 15px;
 }
 
+.scrollLink {
+  color: white;
+  height: 20px;
+  width: 20px;
+}
+
+.logoGroup {
+  position: absolute;
+  left: 0;
+  top: -60px;
+}
+
+.logoGroup:hover {
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
 .linkGroup {
   position: absolute;
+  display: flex;
+  flex-direction: row;
 }
 
 .li {
@@ -36,20 +65,6 @@
 
 .link {
   letter-spacing: 2px;
-}
-
-.scrollLink {
-  color: white;
-  height: 20px;
-  width: 20px;
-}
-
-.logoGroup {
-  margin-right: auto;
-}
-
-.logoGroup:hover {
-  cursor: pointer;
 }
 
 .socialGroup {
@@ -62,7 +77,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   margin: 0 10px;
 }
 
@@ -70,4 +85,60 @@
   color: white;
   display: inline;
   height: 40px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1700px) {
+  .nav {
+    position: relative;
+    flex-direction: column;
+    min-height: 110px;
+    padding: 20px 0;
+    height: auto;
+    margin-bottom: -120px;
+  }
+
+  .logoGroup {
+    position: absolute;
+    display: block;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    color: white;
+  }
+
+  .linkGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .li, .a {
+    margin-top: 15px;
+  }
+
+  .li:nth-of-type(1) {
+    padding-top: 85px;
+  }
+
+  .icons {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
 }
