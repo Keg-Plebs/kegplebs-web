@@ -44,7 +44,6 @@ const Brewverse = () => {
 
     return (
         <div className={`${sectionStyles.main} ${styles.brewverse}`}>
-            <h1>{provider ? "ya" : "naw"}</h1>
             <div className={styles.canvas_container}>
                 <Canvas>
                     <ambientLight color={0xffffff} intensity={0.5} />
