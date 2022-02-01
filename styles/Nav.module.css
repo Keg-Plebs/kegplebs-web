@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.75rem;
-  z-index: 2;
+  z-index: 3;
 }
   
 .nav ul {
@@ -34,7 +34,7 @@
 
 .logoGroup {
   position: absolute;
-  left: 0;
+  left: 25px;
   top: -60px;
 }
 
@@ -71,6 +71,7 @@
   margin-left: auto;
   display: flex;
   flex-direction: row;
+  margin-right: 90px;
 }
 
 .a {
@@ -105,6 +106,7 @@
   .logoGroup {
     position: absolute;
     display: block;
+    left: -30px;
   }
 
   .menu {
@@ -125,7 +127,58 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-left: 0;
+    margin: 0;
+  }
+
+  .li, .a {
+    margin-top: 15px;
+  }
+
+  .li:nth-of-type(1) {
+    padding-top: 85px;
+  }
+
+  .icons {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav {
+    position: relative;
+    flex-direction: column;
+    min-height: 110px;
+    padding: 20px 0;
+    height: auto;
+    margin-bottom: -120px;
+  }
+
+  .logoGroup {
+    position: absolute;
+    display: block;
+    left: -30px;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    color: white;
+  }
+
+  .linkGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
   }
 
   .li, .a {

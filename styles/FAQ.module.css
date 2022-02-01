@@ -1,10 +1,22 @@
 .faq {
     background-color:yellowgreen;
     transition: 0.4s;
+
 }
 
 .sectionHeader {
-    font-size: 50px;
-    margin-right: auto;
-    margin-left: 6vw;
+    font-size: 75px;
+    display: block;
+}
+
+@media screen and (max-width: 400px) {
+    .sectionHeader {
+        margin-left: 0;
+        margin-right: 66vw;
+        padding: 0;
+        margin-top: -75px;
+        margin-bottom: 0px;
+
+        font-size: 50px;
+    }
 }

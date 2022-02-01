@@ -11,3 +11,7 @@ const Roadmap = () => {
 }
 
 export default Roadmap
+
+/**
+ * Put in front of the FAQ
+ */

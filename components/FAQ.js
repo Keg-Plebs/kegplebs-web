@@ -47,3 +47,8 @@ const FAQ = () => {
 }
 
 export default FAQ
+
+/**
+ * answer font bigger
+ * make the background transparent
+ */

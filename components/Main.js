@@ -10,7 +10,6 @@ const Main = () => {
                 <div className={logoContainer}>
                     <Image src={NavLogo} className={logo} quality={100} priority={true}></Image>
                 </div>
-                <h1 className={hook}>Welcome to the Keg Plebs Brewery! Grab a brewski, find a seat and enjoy yourself! All of our plebs will take care of you, and that's a promise. Oh! You don't know who the Keg Plebs are? <br/>Well, let us introduce you -</h1>
             </div>
         </>
     )

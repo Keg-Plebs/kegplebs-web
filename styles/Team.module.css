@@ -30,6 +30,7 @@
     height: 100%;
     transform-style: preserve-3d;
     transition: all 1.0s linear;
+    perspective: 1000;
 }
 
 .img {
@@ -83,4 +84,26 @@
 
 .title {
     margin: 0;
+}
+
+@media screen and (max-width: 400px) {
+    .sectionHeader {
+        font-size: 45px;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .img {
+        height: 275px;
+        width: 275px;
+    }
+
+    .imgBack {
+        height: 274px;
+        width: 274px;
+    }
 }

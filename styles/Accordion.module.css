@@ -1,19 +1,26 @@
 .container {
-    width: 87vw;
     line-height: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+    display: block;
     border: 1px solid rgba(209, 213, 219, 0.5);
 }
 
-.container:hover {
-    background-color: #ccc;
+.holder {
+    width: 100vw;
 }
 
+/* .container:hover {
+    background-color: #ccc;
+} */
+
 .button {
-    font-size: 30px;
+    display: block;
     width: 100%;
+    font-size: 30px;
     position: relative;
     text-align: left;
-    padding: 5px 35px;
+    padding: 5px 90px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -21,8 +28,26 @@
 }
 
 .content {
-    padding: 35px;
-    background-color: whitesmoke;
+    padding: 25px 90px;
+    font-size: 25px;
+    background-color: transparent;
     width: 100%;
     transition: max-height 0.4s ease-out;
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        margin: 0 15px;
+    }
+
+    .content {
+        font-size: 15px;
+        line-height: 20px;
+        padding: 5px
+    }
+    
+    .button {
+        padding: 0 5px;
+        font-size: 20px;
+    }
 }

@@ -12,6 +12,7 @@ import Brewverse from '../components/Brewverse'
 import FAQ from '../components/FAQ'
 import Team from '../components/Team'
 import Roadmap from '../components/Roadmap'
+import Collabs from '../components/Collabs'
 
 import Mids from '../components/Mids';
 import { container, backgroundImage, navElement } from '../styles/Layout.module.css'
@@ -41,9 +42,11 @@ const Home = () => {
         <Mids></Mids>
         <Showcase></Showcase>
         <Mids></Mids>
-        <FAQ></FAQ>
+        <Collabs></Collabs>
         <Mids></Mids>
         <Roadmap></Roadmap>
+        <FAQ></FAQ>
+        <Mids></Mids>
         <Element id='team' name='team' className={navElement}>
           <Team></Team>
         </Element>

@@ -3,65 +3,52 @@
     color: white;
     background-color: black;
     overflow: hidden;
-    height: 100vh;
     padding: 0;
 }
 
 .sectionHeader {
-    margin-left: 6vw;
-    margin-right: auto;
+    z-index: 2;
+    position: relative;
     letter-spacing: 3px;
-    font-size: 2rem;
+    font-size: 35px;
 }
 
 .showcaseOverlay {
+    background-image: linear-gradient(to right, rgba(0,0,0,0)0,rgba(0,0,0, 1) 70%,
+    rgba(0, 0, 0, 1) 100%);
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height:830px;
-    background-image: linear-gradient(to right, rgba(0,0,0,0)0,rgba(0,0,0, 1) 80%,
-    rgba(0, 0, 0, 1) 100%);
+    height: 100%;;
     z-index: 1;
 }
 
-.desc {
-    width: 40%;
-    font-size: 35px;
-    letter-spacing: 1px;
-    line-height: 40px;
-    margin-left: auto;
-    margin-right: 10vw;
-}
-
 .first {
-    top: 175px;
-    left: 35vw;
-    position: absolute;
+    left: 2500px;
+    position: relative;
     display: flex;
     flex-direction: row;
-    height: 270px;
     width: 4500px;
 }
 
 .second {
-    top: 445px;
     left: -30vw;
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: row;
-    height: 270px;
     width:4500px;
 }
 
 .third {
-    top: 720px;
-    left: 40vw;
-    position: absolute;
+    left: 3000px;
+    position: relative;
     display: flex;
     flex-direction: row;
     height: 270px;
     width: 4500px;
+    margin-bottom: 100px;
 }
 
 .imgContainer {
@@ -71,3 +58,66 @@
     height:275px;
     width: 275px;
 }
+
+.desc {
+    font-size: 35px;
+    letter-spacing: 1px;
+    line-height: 40px;
+    margin-top: 3%;
+    margin-left: 55%;
+    margin-right: 30%;
+}
+
+@media screen and (max-width: 1700px) {
+    .showcaseOverlay {
+        position: relative;
+    }
+
+    .third {
+        margin-bottom: 5px;
+    }
+
+    .desc {
+        margin-top: 0;
+        margin-bottom: 75px;
+        text-align: center;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 25px;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .sectionHeader {
+        font-size: 30px;
+        margin-bottom: -35px;
+    }
+
+    .first {
+        left: 2000px;
+    }
+
+    .second {
+        left: 1400px;
+    }
+
+    .third {
+        left: 2200px;
+        margin-bottom: -25px;
+    }
+
+    .desc {
+        margin-top: -65px;
+        font-size: 17px;
+        line-height: 25px;
+        margin-bottom: 35px;
+    }
+
+    .imgContainer {
+        height: 150px;
+        width: 150px;
+    }
+}
+
