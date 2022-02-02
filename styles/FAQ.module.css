@@ -1,12 +1,25 @@
 .faq {
-    background-color:yellowgreen;
+    background-color: black;
     transition: 0.4s;
-
+    padding-top: 550px;
 }
 
 .sectionHeader {
-    font-size: 75px;
-    display: block;
+    height: 200px;
+    width: 400px;
+    background-image: url('../public/FAQ.png');
+    background-size: cover;
+    margin-top: 50px;
+    margin-bottom: 75px;
+}
+
+.sectionBorderImg {
+    height: 1400px;
+    width: 100%;
+    background-image: url("../public/imageBorder.PNG");
+    background-size: cover;
+    z-index: 1;
+    margin-bottom: -600px;
 }
 
 @media screen and (max-width: 400px) {

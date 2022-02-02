@@ -15,7 +15,8 @@
 } */
 
 .button {
-    display: block;
+    display: flex;
+    flex-direction: row;
     width: 100%;
     font-size: 30px;
     position: relative;
@@ -25,14 +26,22 @@
     outline: none;
     cursor: pointer;
     transition: 0.4s;
+    align-items: center;
 }
 
 .content {
     padding: 25px 90px;
     font-size: 25px;
-    background-color: transparent;
+    background-color: #ccc;
     width: 100%;
-    transition: max-height 0.4s ease-out;
+    transition: 1s ease-out;
+    letter-spacing: 1px;
+}
+
+.toggleIcon {
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 400px) {

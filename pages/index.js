@@ -32,21 +32,18 @@ const Home = () => {
         <Element id='top' name='top' className={navElement}>
           <Main></Main>
         </Element>
+        <Showcase></Showcase>
         <Element id='brewverse' name='brewverse' className={navElement}>
           <Brewverse></Brewverse>
         </Element>
         <Mids></Mids>
-        <Element id='about' name='about' className={navElement}>
-          <Story></Story>
-        </Element>
-        <Mids></Mids>
-        <Showcase></Showcase>
-        <Mids></Mids>
+          {/* <Story></Story> */}
         <Collabs></Collabs>
         <Mids></Mids>
-        <Roadmap></Roadmap>
+        <Element id='about' name='about' className={navElement}>
+          <Roadmap></Roadmap>
+        </Element>
         <FAQ></FAQ>
-        <Mids></Mids>
         <Element id='team' name='team' className={navElement}>
           <Team></Team>
         </Element>

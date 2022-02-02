@@ -1,7 +1,7 @@
 import { ethers } from 'ethers'
 import { useState, useContext } from 'react'
 import Web3Modal from 'web3modal'
-import { button } from '../styles/Connect.module.css';
+import { button, buttonWrapper } from '../styles/Connect.module.css';
 import ProviderContext from './ProviderContext';
 
 // https://docs.alchemy.com/alchemy/tutorials/nft-minter#bonus-put-your-nft-minter-to-work
@@ -113,32 +113,35 @@ const Connect = () => {
 	}
 
 	return (
-		<button
-			onPointerOver={() => {
-				hover(true)
-			}}
-			onPointerOut={() => {
-				hover(false)
-			}}
-			onClick={toggleConnection}
-			className={button}
-		>
-			{
-				connection && loggedIn ? (
-					hovered ? (
-						"Disconnect"
-					) : (
-						"Connected: " +
-						String(account).substring(0, 6) +
-						"..." +
-						String(account).substring(38)
-					)
+		<div className={buttonWrapper}>
+			<button
+				onPointerOver={() => {
+					hover(true)
+				}}
+				onPointerOut={() => {
+					hover(false)
+				}}
+				onClick={toggleConnection}
+				className={button}
+			>
+				{
+					connection && loggedIn ? (
+						hovered ? (
+							"Disconnect"
+						) : (
+							"Connected: " +
+							String(account).substring(0, 6) +
+							"..." +
+							String(account).substring(38)
+						)
 
-				) : (
-					<span>Connect Wallet</span>
-				)
-			}
-		</button>
+					) : (
+						// <span>Connect Wallet</span>
+						<></>
+					)
+				}
+			</button>
+		</div>
 	)
 }
 
