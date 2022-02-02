@@ -33,68 +33,70 @@ const Connect = () => {
 	// Connects user to the website
 	const connect = async () => {
 
-		// Gets a new Web3Modal instance and creates a connection
-		const web3Modal = await getWeb3Modal();
-		const connection = await web3Modal.connect();
+		try {
+			// Gets a new Web3Modal instance and creates a connection
+			const web3Modal = await getWeb3Modal();
+			const connection = await web3Modal.connect();
 
-		setConnection(connection);
+			setConnection(connection);
 
-		// Creates an ethers provider using the connection and requests all the
-		// accounts of the wallet. 
-		const provider = new ethers.providers.Web3Provider(connection);
-		await provider.send('eth_requestAccounts', []);
-		const signer = provider.getSigner();
+			// Creates an ethers provider using the connection and requests all the
+			// accounts of the wallet. 
+			const provider = new ethers.providers.Web3Provider(connection);
+			await provider.send('eth_requestAccounts', []);
+			const signer = provider.getSigner();
 
-		// Gets the address of the wallet
-		const address = await signer.getAddress();
+			// Gets the address of the wallet
+			const address = await signer.getAddress();
 
-		setProvider(provider);
-		setAccount(address);
+			setProvider(provider);
+			setAccount(address);
 
-		// Purpose of authentication is to prevent replay attacks.
-		// A replay attack is when private data is intercepted and used to
-		// to "replay" the transaction. By having the user sign a randomly
-		// generated nonce on the server and store it in a database, we're
-		// ensuring that no other person can use the same singature if it is
-		// intercepted by someone. 
+			// Purpose of authentication is to prevent replay attacks.
+			// A replay attack is when private data is intercepted and used to
+			// to "replay" the transaction. By having the user sign a randomly
+			// generated nonce on the server and store it in a database, we're
+			// ensuring that no other person can use the same singature if it is
+			// intercepted by someone. 
 
-		// Authenticates the address by creating a data base entry and unqiue corresponding nonce
-		// on the server
-		let response = await fetch('../../api/authenticate', {
-			method: 'POST',
-			body: JSON.stringify({
-				address
-			}),
-			headers: {
-				'Content-Type': 'application/json'
+			// Authenticates the address by creating a data base entry and unqiue corresponding nonce
+			// on the server
+			let response = await fetch('../../api/authenticate', {
+				method: 'POST',
+				body: JSON.stringify({
+					address
+				}),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			});
+
+			// Receives the generated nonce and prompts the user to sign the nonce
+			const { nonce } = await response.json();
+			const signature = await signer.signMessage('Sign this nonce to connect: ' + nonce);
+
+			// Verifies the signature was signed by the connected address on the server
+			response = await fetch('../../api/verify', {
+				method: 'POST',
+				body: JSON.stringify({
+					address,
+					signature
+				}),
+				headers: {
+					'Content-Type': 'application/json'
+				}
+			});
+
+			// Receives the verification and updates the connection
+			const { verified } = await response.json();
+			if (verified) {
+				setLoggedIn(true);
+			} else {
+				disconnect();
 			}
-		});
 
-		// Receives the generated nonce and prompts the user to sign the nonce
-		const { nonce } = await response.json();
-		const signature = await signer.signMessage('Sign this nonce to connect: ' + nonce);
-
-		// Verifies the signature was signed by the connected address on the server
-		response = await fetch('../../api/verify', {
-			method: 'POST',
-			body: JSON.stringify({
-				address,
-				signature
-			}),
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		});
-
-		// Receives the verification and updates the connection
-		const { verified } = await response.json();
-		if (verified) {
-			setLoggedIn(true);
-		} else {
-			setConnection(false);
-			setProvider(null)
-			setLoggedIn(false);
-			setAccount('')
+		} catch (error) {
+			disconnect();
 		}
 	}
 
