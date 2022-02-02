@@ -23,7 +23,11 @@ export { default as Goat } from './mugshots/goatnoise.jpg';
 export { default as Hoodup } from './mugshots/hoodup.PNG';
 export { default as POG } from './mugshots/poggers.PNG';
 export { default as Poodle } from './mugshots/poodle.PNG';
-
+export { default as Iceman } from './mugshots/iceman.jpg';
+export { default as Nani } from './mugshots/nani.jpg';
+export { default as SmallHat } from './mugshots/smallhat.jpg';
+export { default as Tiger } from './mugshots/tigerking.jpg';
+ 
 // general
 export { default as NavIcon } from './sun.ico';
 export { default as Opensea } from './openseaicon.png';
@@ -33,6 +37,7 @@ export { default as BrewBackground } from './breweryScene.jpg';
 export { default as Port } from './portrait.png';
 export { default as NavLogo } from './navbarLogo.png';
 export { default as BarBackground } from './barsceneone.jpg';
+export { default as SectionBorder } from './imageBorder.PNG';
 
 // Textures exports for the Brewverse
 export { default as BaseLayer } from './textures/base_layer.JPG';

@@ -1,5 +1,10 @@
+
+import Image from 'next/image'
+
+import { SectionBorder } from '../public/images';
+
 import sectionStyles from '../styles/Section.module.css';
-import { faq, sectionHeader, accordion, panel } from '../styles/FAQ.module.css';
+import { faq, sectionHeader, accordion, panel, sectionBorderImg } from '../styles/FAQ.module.css';
 import Accordion from './Accordion';
 
 const FAQ = () => {
@@ -37,12 +42,18 @@ const FAQ = () => {
     }
 
     return(
-        <div className={`${sectionStyles.main} ${faq}`}>
-            <h1 className={sectionHeader}>FAQ</h1>
-            {Object.values(accordionData).map(({question, answer}, i) => {
-                return <Accordion key={i} title={question} content={answer}/>;
-            })}
-        </div>
+        <>
+            <div 
+                className={sectionBorderImg}
+            ></div>
+            <div className={`${sectionStyles.main} ${faq}`}>
+                <div className={sectionHeader}></div>
+                {Object.values(accordionData).map(({question, answer}, i) => {
+                    return <Accordion key={i} title={question} content={answer}/>;
+                })}
+            </div>
+        </>
+        
     )
 }
 

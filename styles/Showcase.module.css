@@ -6,49 +6,70 @@
     padding: 0;
 }
 
-.sectionHeader {
-    z-index: 2;
+.contentContainer {
     position: relative;
-    letter-spacing: 3px;
-    font-size: 35px;
+    overflow: hidden;
+    max-width: 100vw;
+    transform: translate3d(0,0,0);
+}
+
+.sectionHeader {
+    position: relative;
+    margin-left: 48%;
+    z-index: 3;
+    background-image: url('../public/navbarLogo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    width: 40%;
 }
 
 .showcaseOverlay {
-    background-image: linear-gradient(to right, rgba(0,0,0,0)0,rgba(0,0,0, 1) 70%,
+    margin-top: -100px;
+    top: -45px;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,0) 25%,rgba(0,0,0, 1) 55%,
     rgba(0, 0, 0, 1) 100%);
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    height: 100%;;
+    align-items: center;
+
     z-index: 1;
 }
 
 .first {
-    left: 2500px;
+    left: 0;
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 4500px;
+    transform: translate3d(0,0,0);
+    width: 4950px;
+
+    animation: moveSlideshowLeft 35s linear infinite;
 }
 
 .second {
-    left: -30vw;
+    left: -3500px;
     position: relative;
     display: flex;
     flex-direction: row;
-    width:4500px;
+    width:4950px;
+
+    
+    animation: moveSlideshowRight 38s linear infinite;
 }
 
 .third {
-    left: 3000px;
+    left: 0;
     position: relative;
     display: flex;
     flex-direction: row;
-    height: 270px;
-    width: 4500px;
-    margin-bottom: 100px;
+    width: 4950px;
+    margin-bottom: 500px;
+
+    animation: moveSlideshowLeft 25s linear infinite;
 }
 
 .imgContainer {
@@ -60,12 +81,27 @@
 }
 
 .desc {
-    font-size: 35px;
-    letter-spacing: 1px;
-    line-height: 40px;
-    margin-top: 3%;
+    margin-top: -25px;
+    height: 100%;
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 50px;
     margin-left: 55%;
-    margin-right: 30%;
+    margin-right: 8%;
+    text-align: center;
+}
+
+@keyframes moveSlideshowLeft {
+    100% {
+        transform: translateX(-66.66666%);
+    }
+}
+
+@keyframes moveSlideshowRight {
+    100% {
+        transform: translateX(66.66666%);
+    }
 }
 
 @media screen and (max-width: 1700px) {
