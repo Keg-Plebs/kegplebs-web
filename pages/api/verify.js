@@ -14,7 +14,13 @@ const verify = (req, res) => {
     const { address, signature } = req.body;
 
     // Get the nonce from the data base for the address
-    gun.get('root').get('users').get(address).get('nonce').once((nonce) => {
+    gun.get('root').get('users').get(address).once((nonce) => {
+
+        // Responds with an errr if the nonce can't be found
+        if (nonce == null) {
+            res.status(404).json({});
+            return;
+        }
 
         // Creates the message that was signed on the client
         const message = "Sign this nonce to connect: " + nonce;
@@ -30,7 +36,6 @@ const verify = (req, res) => {
         // Send the verification back to the client
         res.status(200).json({ verified });
     });
-
 }
 
 export default verify

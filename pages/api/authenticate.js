@@ -19,8 +19,8 @@ const authenticate = (req, res) => {
     // Update the nonce at that address in the data base,
     // by first setting it to null and re-adding it to ensure
     // that it is properly updated.
-    gun.get('root').get('users').get(address).put(null)
-    gun.get('root').get('users').get(address).put({nonce: nonce})
+    gun.get('root').get('users').get(address).put(null);
+    gun.get('root').get('users').get(address).put(nonce);
 
     // Send the generated nonce back to the client to sign
     res.status(200).json({ nonce })
