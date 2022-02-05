@@ -2,7 +2,23 @@ import { Suspense, useState, useRef, useEffect, useLayoutEffect, useContext } fr
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
-import styles from '../styles/Brewverse.module.css';
+import { 
+    brewverse, 
+    canvas_container, 
+    imageContainer,
+    cloudLeft,
+    cloudRight,
+    cloudGroup,
+    cloudA,
+    one, 
+    two, 
+    three, 
+    four, 
+    five,
+    six,
+    seven,
+    eight
+} from '../styles/Brewverse.module.css';
 
 import Interior from './brewverse/Interior'
 import Verse from './brewverse/Verse'
@@ -43,8 +59,13 @@ const Brewverse = () => {
     }
 
     return (
-        <div className={`${sectionStyles.main} ${styles.brewverse}`}>
-            <div className={styles.canvas_container}>
+        <div className={`${sectionStyles.main} ${brewverse}`}>
+            <div className={imageContainer}>
+                <div className={`${cloudLeft}`}      />
+                <div className={`${cloudRight}`}      />
+            </div>
+
+            <div className={canvas_container}>
                 <Canvas>
                     <ambientLight color={0xffffff} intensity={0.5} />
                     <Suspense fallback={null} r3f>

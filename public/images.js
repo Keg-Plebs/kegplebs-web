@@ -38,6 +38,9 @@ export { default as Port } from './portrait.png';
 export { default as NavLogo } from './navbarLogo.png';
 export { default as BarBackground } from './barsceneone.jpg';
 export { default as SectionBorder } from './imageBorder.PNG';
+export { default as LeftCloud } from './cloudsLeft.png';
+export { default as RightCloud } from './cloudsRight.png';
+
 
 // Textures exports for the Brewverse
 export { default as BaseLayer } from './textures/base_layer.JPG';

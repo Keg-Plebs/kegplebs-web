@@ -1,12 +1,14 @@
 
-import styles from '../styles/Collabs.module.css';
+import { collabsContainer } from '../styles/Collabs.module.css';
 
 const Collabs = () => {
 
 
     return (
         <>
-            <h1>Collabs!</h1>
+            <div className={collabsContainer}>
+                <h1>Collabs!</h1>
+            </div>
         </>
     )
 }

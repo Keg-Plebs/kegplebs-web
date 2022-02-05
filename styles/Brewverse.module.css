@@ -1,6 +1,7 @@
 .brewverse {
     background-color: rgb(0,0,0);
     /* height: 100vh; */
+    overflow: hidden;
 }
 
 .canvas_container {
@@ -12,5 +13,102 @@
     position: relative;
     top:0;bottom:0; 
     left:0;right:0;
+    overflow: hidden;
 } 
 
+.imageContainer {
+    position: absolute;
+    width: 100%;
+    height: 190%;
+    overflow: hidden;
+    margin-top: -500px;
+}
+
+.cloudLeft {
+    position: absolute;
+    overflow: hidden;
+    background-image: url('../public/cloudsLeft.png');
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100vw;
+    top: 0;
+    right: 250px;
+    z-index: 1;
+}
+
+.cloudRight {
+    position: absolute;
+    overflow: hidden;
+    background-image: url('../public/cloudsRight.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 120%;
+    top: -25px;
+    left: -200px;
+    z-index: 1;
+}
+
+.cloudGroup {
+    position: absolute;
+    background-image: url('../public/cloudGroup.png');
+    background-size: cover;
+    width: 1600px;
+    height: 900px;
+    z-index: 2;
+    transform: rotate(-20deg);
+    overflow: hidden;
+}
+
+.cloudA {
+    position: absolute;
+    background-image: url('../public/cloud1.png');
+    background-size: cover;
+    width: 1920px;
+    height: 1080px;
+    z-index: 1;
+    transform: rotate(-25deg);
+    overflow: hidden;
+}
+.three {
+    margin-top: 8%;
+    left: 50%;
+    z-index: 3;
+
+    
+    overflow: hidden;
+}
+
+.four {
+    margin-top: -1%;
+    left: -28%;
+    
+    overflow: hidden;
+}
+
+.five {
+    margin-top: -60vh;
+    left: -25%;
+    
+    overflow: hidden;
+}
+
+.six {
+    margin-top: 0%;
+    left: 25%;
+    
+    overflow: hidden;
+}
+
+.seven {
+    margin-top: 21%;
+    left: -32%;
+    
+    overflow: hidden;
+}
+
+.eight {
+    margin-top: -5%;
+    left: 10%;
+    overflow: hidden;
+}
