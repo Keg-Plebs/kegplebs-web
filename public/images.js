@@ -27,6 +27,7 @@ export { default as Iceman } from './mugshots/iceman.jpg';
 export { default as Nani } from './mugshots/nani.jpg';
 export { default as SmallHat } from './mugshots/smallhat.jpg';
 export { default as Tiger } from './mugshots/tigerking.jpg';
+export { default as Icon } from './mugshots/icon.jpeg';
  
 // general
 export { default as NavIcon } from './sun.ico';

@@ -1,5 +1,14 @@
-.buttonWrapper {
-    width: 230px;
+.buttonWrapperConn {
+    width: 195px;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonWrapperDisc {
+    width: 255px;
     height: 75px;
     display: flex;
     flex-direction: column;
@@ -8,26 +17,39 @@
 }
 
 .button {
-    
     background-color: transparent;
     background-image: url('../public/connectOnly.png');
     background-size: cover;
-    /* color: #e69fc0; */
     border: none;
-    transition-duration: 0.2s;
-    /* padding: 15px 20px; */
     margin-left: 15px;
     margin-right: 15px;
-    width: 215px;
-    height: 60px;
+    width: 180px;
+    height: 45px;
     right: 10px;
 }
 
+.buttonDisconnect {
+    background-color: transparent;
+    background-image: url('../public/DISCONNECT.png');
+    background-size: cover;
+    border: none;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 240px;
+    height: 40px;
+    right: 10px;
+}
+
+.buttonDisconnect:hover {
+    height: 45px;
+    width: 255px;
+    cursor: pointer;
+}
   
 .button:hover {
     /* background-color: #e69fc0;
     color: white; */
-    height: 65px;
-    width: 230px;
+    height: 50px;
+    width: 195px;
     cursor: pointer;
 }

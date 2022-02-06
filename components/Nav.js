@@ -6,18 +6,31 @@ import { faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Opensea, NeonSign, Etherscan, NavLogo } from '../public/images';
-import { nav, logoGroup, linkGroup, socialGroup, socialIcons, icons, a, link, li, menu, hamburgButton } from '../styles/Nav.module.css';
+import { Opensea, Etherscan, NavLogo, Icon } from '../public/images';
+import { 
+    nav, 
+    logoGroup, 
+    linkGroup, 
+    socialGroup, 
+    socialIcons, 
+    icons, 
+    a, 
+    link, 
+    li, 
+    menu, 
+    userInfo, 
+    userIconContainer,
+    userAddi
+} from '../styles/Nav.module.css';
 
 import Connect from './Connect';
 
-const Nav = () => {
+const Nav = props => {
     const [active, setActive] = useState(false);
     const [screenWidth, setScreenWidth] = useState(20000); 
-
-    const handleClick = () => {
-        setActive(!active);
-    }
+    const [userIcon, setUserIcon] = useState('');
+    const [userAddress, setUserAddress] = useState('');
+    const [hovered, setHovered] = useState('false');
 
     useEffect(() => {
         const changeWidth = () => {
@@ -30,6 +43,10 @@ const Nav = () => {
             window.removeEventListener('resize', changeWidth);
         }
     }, []);
+
+    const handleClick = () => {
+        setActive(!active);
+    }
 
     const toBrewverse = () => {
         scroller.scrollTo('brewverse', {
@@ -61,12 +78,28 @@ const Nav = () => {
         })
     }
 
+    const handleIconDisplay = (address, img) => {
+        setUserIcon(Icon);
+        setUserAddress(address);
+    }
+
     return (
         <nav className={nav}>
             <div className={logoGroup}>
                 <a onClick={toTop}>
                     <Image src={NavLogo} quality={100} priority={true} height={225} width={400}></Image>
                 </a>
+                {
+                    userAddress.length > 1 ? (
+                    <div className={userInfo}>
+                        <div className={userIconContainer}>
+                            <Image src={userIcon} quality={100} height={50} width={50}></Image>
+                        </div>
+                        <div className={userAddi}>{ String(userAddress).substring(0, 6) +
+						 	"..." +
+						 	String(userAddress).substring(38) }</div>
+                    </div>) : (<></>)
+                }
             </div>
             {(
                 (active || screenWidth > 1700) && (
@@ -89,7 +122,7 @@ const Nav = () => {
                             <a className={a} href='#'><Image src={Opensea} quality={100} height={40} width={40}></Image></a>
                             <a className={a} href='#'><Image src={Etherscan} quality={100} height={40} width={40}></Image></a>
                         </div>
-                        <a className={a} href='#'><Connect/></a>
+                        <a className={a} href='#'><Connect onConnected={handleIconDisplay}/></a>
                     </div>
                 </>)
             )}
