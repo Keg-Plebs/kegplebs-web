@@ -111,6 +111,8 @@ const Connect = props => {
 			setProvider(null)
 			setLoggedIn(false);
 			setAccount('')
+			
+			props.onConnected('', '');
 		} else {
 			connect();
 		}

@@ -79,7 +79,11 @@ const Nav = props => {
     }
 
     const handleIconDisplay = (address, img) => {
-        setUserIcon(Icon);
+        if(img.length > 0) {
+            setUserIcon(Icon);
+        } else {
+            setUserIcon('');
+        }
         setUserAddress(address);
     }
 
@@ -90,12 +94,13 @@ const Nav = props => {
                     <Image src={NavLogo} quality={100} priority={true} height={225} width={400}></Image>
                 </a>
                 {
-                    userAddress.length > 1 ? (
+                    userAddress.length > 0 ? (
                     <div className={userInfo}>
                         <div className={userIconContainer}>
                             <Image src={userIcon} quality={100} height={50} width={50}></Image>
                         </div>
-                        <div className={userAddi}>{ String(userAddress).substring(0, 6) +
+                        <div className={userAddi}>{ 
+                            String(userAddress).substring(0, 6) +
 						 	"..." +
 						 	String(userAddress).substring(38) }</div>
                     </div>) : (<></>)
