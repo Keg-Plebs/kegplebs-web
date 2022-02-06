@@ -13,15 +13,15 @@
     position: relative;
     top:0;bottom:0; 
     left:0;right:0;
-    overflow: hidden;
 } 
 
 .imageContainer {
     position: absolute;
     width: 100%;
-    height: 190%;
+    height: 170vh;
     overflow: hidden;
-    margin-top: -500px;
+    /* background-color: rgba(224, 233, 128, 0.4); */
+    margin-top: -32vh;
 }
 
 .cloudLeft {
@@ -29,11 +29,15 @@
     overflow: hidden;
     background-image: url('../public/cloudsLeft.png');
     background-repeat: no-repeat;
-    height: 100%;
-    width: 100vw;
-    top: 0;
-    right: 250px;
-    z-index: 1;
+    background-size: cover;
+    height: 110%;
+    width: 100%;
+    z-index: 2;
+    top: -5%; bottom: 0; 
+    right: 15vw;
+
+    animation: moveleftThenRight 20s infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .cloudRight {
@@ -42,73 +46,96 @@
     background-image: url('../public/cloudsRight.png');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
-    width: 120%;
-    top: -25px;
-    left: -200px;
-    z-index: 1;
+    height: 120%;
+    width: 130%;
+    z-index: 2;
+    top: -12%; bottom: 0;
+    left: -26vw;
+
+    animation: moveRightThenLeft 20s infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .cloudGroup {
     position: absolute;
     background-image: url('../public/cloudGroup.png');
     background-size: cover;
-    width: 1600px;
-    height: 900px;
-    z-index: 2;
-    transform: rotate(-20deg);
+    width: 120%;
+    height: 90%;
+    z-index: 1;
     overflow: hidden;
+}
+
+.one {
+    left: 33vw;
+    top: 19vh;
+    transform: rotate(-10deg);
+}
+
+.two {
+    right: 47vw;
+    top: 30vh;
+    transform: rotate(-10deg);
 }
 
 .cloudA {
     position: absolute;
     background-image: url('../public/cloud1.png');
     background-size: cover;
-    width: 1920px;
-    height: 1080px;
+    width: 100%;
+    height: 90%;
     z-index: 1;
-    transform: rotate(-25deg);
     overflow: hidden;
 }
-.three {
-    margin-top: 8%;
-    left: 50%;
-    z-index: 3;
 
-    
+.cloudB {
+    position: absolute;
+    background-image: url('../public/cloud3.png');
+    background-size: cover;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
     overflow: hidden;
+}
+
+.three {
+    top: -40vh;
+    right: 55vw;
+    z-index: 3;
 }
 
 .four {
-    margin-top: -1%;
-    left: -28%;
-    
-    overflow: hidden;
+    height: 120%;
+    top: 12vh;
+    left: 5vw;
+    z-index: 3;
 }
 
 .five {
-    margin-top: -60vh;
-    left: -25%;
-    
-    overflow: hidden;
+    top: -40vh;
+    left: 15vw;
+    z-index: 3;
 }
 
-.six {
-    margin-top: 0%;
-    left: 25%;
-    
-    overflow: hidden;
+@keyframes moveleftThenRight {
+    50% {
+        transform: translateX(50px);
+    } 
+    100% {
+    }
 }
 
-.seven {
-    margin-top: 21%;
-    left: -32%;
-    
-    overflow: hidden;
+@keyframes moveRightThenLeft {
+    50% {
+        transform: translateX(-50px);
+    }
+    100% {
+    }
 }
 
-.eight {
-    margin-top: -5%;
-    left: 10%;
-    overflow: hidden;
-}
+
+
+
+/* 
+    2,732 x 2,048
+*/
