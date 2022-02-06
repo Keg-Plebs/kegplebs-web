@@ -43,10 +43,10 @@ const FAQ = () => {
 
     return(
         <>
-            <div 
-                className={sectionBorderImg}
-            ></div>
             <div className={`${sectionStyles.main} ${faq}`}>
+                <div 
+                    className={sectionBorderImg}
+                ></div>
                 <div className={sectionHeader}></div>
                 {Object.values(accordionData).map(({question, answer}, i) => {
                     return <Accordion key={i} title={question} content={answer}/>;

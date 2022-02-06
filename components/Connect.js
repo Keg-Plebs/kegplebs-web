@@ -1,13 +1,13 @@
 import { ethers } from 'ethers'
 import { useState, useContext } from 'react'
 import Web3Modal from 'web3modal'
-import { button, buttonWrapper } from '../styles/Connect.module.css';
+import { button, buttonWrapperConn, buttonDisconnect, buttonWrapperDisc } from '../styles/Connect.module.css';
 import ProviderContext from './ProviderContext';
 
 // https://docs.alchemy.com/alchemy/tutorials/nft-minter#bonus-put-your-nft-minter-to-work
 // https://mirror.xyz/sha.eth/i6ry1Mxez53z91ef375sMe2rO1NvK2ipACyzKA4SR9g
 
-const Connect = () => {
+const Connect = props => {
 
 	const { provider, setProvider } = useContext(ProviderContext);
 	const [hovered, hover] = useState(false);
@@ -91,12 +91,16 @@ const Connect = () => {
 			const { verified } = await response.json();
 			if (verified) {
 				setLoggedIn(true);
+				props.onConnected(address, '../public/mugshots/icon.jpeg');
 			} else {
 				disconnect();
 			}
 
 		} catch (error) {
-			disconnect();
+			setConnection(false);
+			setProvider(null)
+			setLoggedIn(false);
+			setAccount('')
 		}
 	}
 
@@ -107,13 +111,15 @@ const Connect = () => {
 			setProvider(null)
 			setLoggedIn(false);
 			setAccount('')
+			
+			props.onConnected('', '');
 		} else {
 			connect();
 		}
 	}
 
 	return (
-		<div className={buttonWrapper}>
+		<div className={loggedIn ? buttonWrapperDisc : buttonWrapperConn}>
 			<button
 				onPointerOver={() => {
 					hover(true)
@@ -122,18 +128,19 @@ const Connect = () => {
 					hover(false)
 				}}
 				onClick={toggleConnection}
-				className={button}
+				className={loggedIn ? buttonDisconnect : button }
 			>
 				{
 					connection && loggedIn ? (
-						hovered ? (
-							"Disconnect"
-						) : (
-							"Connected: " +
-							String(account).substring(0, 6) +
-							"..." +
-							String(account).substring(38)
-						)
+						// hovered ? (
+						// 	"Disconnect"
+						// ) : (
+						// 	"Connected: " +
+						// 	String(account).substring(0, 6) +
+						// 	"..." +
+						// 	String(account).substring(38)
+						// )
+						<></>
 
 					) : (
 						// <span>Connect Wallet</span>
