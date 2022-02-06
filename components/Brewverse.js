@@ -10,14 +10,12 @@ import {
     cloudRight,
     cloudGroup,
     cloudA,
+    cloudB,
     one, 
     two, 
     three, 
     four, 
-    five,
-    six,
-    seven,
-    eight
+    five
 } from '../styles/Brewverse.module.css';
 
 import Interior from './brewverse/Interior'
@@ -63,6 +61,11 @@ const Brewverse = () => {
             <div className={imageContainer}>
                 <div className={`${cloudLeft}`}      />
                 <div className={`${cloudRight}`}      />
+                {/* <div className={`${cloudGroup} ${one}`}></div>
+                <div className={`${cloudGroup} ${two}`}></div>
+                <div className={`${cloudA} ${three}`}></div>
+                <div className={`${cloudB} ${four}`}></div>
+                <div className={`${cloudB} ${five}`}></div> */}
             </div>
 
             <div className={canvas_container}>
