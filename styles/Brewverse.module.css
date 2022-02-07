@@ -35,6 +35,7 @@
     z-index: 2;
     top: -5%; bottom: 0; 
     right: 15vw;
+    pointer-events: none;
 
     animation: moveleftThenRight 20s infinite;
     animation-timing-function: ease-in-out;
@@ -51,6 +52,7 @@
     z-index: 2;
     top: -12%; bottom: 0;
     left: -26vw;
+    pointer-events: none;
 
     animation: moveRightThenLeft 20s infinite;
     animation-timing-function: ease-in-out;
