@@ -11,8 +11,6 @@ const Footer = () => {
     return(
         <>
             <div className={footerContainer}>
-                
-                <div className={transparentOverlay}>
                     <div className={footerInformation}>
                         <div className={icons}>
                             <a className={a} href='https://twitter.com/KegPlebs'><FontAwesomeIcon icon={faTwitter} className={socialIcons}/></a>
@@ -22,7 +20,6 @@ const Footer = () => {
                         </div>
                         <p>© Keg Plebs 2021</p>
                     </div>
-                </div>
             </div>
         </>
     )
