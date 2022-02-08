@@ -52,7 +52,7 @@ const Nav = props => {
         scroller.scrollTo('brewverse', {
             duration: 500,
             smooth: true,
-            offset: 100  
+            offset: -50  
         })
     }
 

@@ -15,6 +15,17 @@
     left:0;right:0;
 } 
 
+.sectionHeader {
+    background-image: url('../public/brewverse.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 3;
+    position: absolute;
+    height: 150px;
+    width: 810px;
+    margin-top: 0;
+}
+
 .imageContainer {
     position: absolute;
     width: 100%;
@@ -31,7 +42,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 110%;
-    width: 100%;
+    width: 101%;
     z-index: 2;
     top: -5%; bottom: 0; 
     right: 15vw;
@@ -58,66 +69,6 @@
     animation-timing-function: ease-in-out;
 }
 
-.cloudGroup {
-    position: absolute;
-    background-image: url('../public/cloudGroup.png');
-    background-size: cover;
-    width: 120%;
-    height: 90%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.one {
-    left: 33vw;
-    top: 19vh;
-    transform: rotate(-10deg);
-}
-
-.two {
-    right: 47vw;
-    top: 30vh;
-    transform: rotate(-10deg);
-}
-
-.cloudA {
-    position: absolute;
-    background-image: url('../public/cloud1.png');
-    background-size: cover;
-    width: 100%;
-    height: 90%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.cloudB {
-    position: absolute;
-    background-image: url('../public/cloud3.png');
-    background-size: cover;
-    width: 100%;
-    height: 90%;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.three {
-    top: -40vh;
-    right: 55vw;
-    z-index: 3;
-}
-
-.four {
-    height: 120%;
-    top: 12vh;
-    left: 5vw;
-    z-index: 3;
-}
-
-.five {
-    top: -40vh;
-    left: 15vw;
-    z-index: 3;
-}
 
 @keyframes moveleftThenRight {
     50% {
