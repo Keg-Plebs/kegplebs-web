@@ -4,10 +4,11 @@
     left: 0;
     width: 100vw;
     height: 150px;
+    
+    pointer-events: none;
 }
 
 .footerInformation {
-    pointer-events: auto;
     padding-top: 20px;
     z-index: -1;
     left: 0;
@@ -34,10 +35,15 @@
     flex-direction: row;
 }
 
-.a {
+.icons a {
+    pointer-events: auto;
     display: flex;
     justify-content: center;
     align-items: center;
   
     margin: 0 10px;
+}
+
+.icons a:hover {
+    cursor: pointer;
 }

@@ -1,7 +1,6 @@
 .collabsContainer {
-    margin-top: -550px;
     width: 100%;
-    height: 4200px;
+    height: 330vh;
     display: flex;
     justify-content: center;
     align-items: center;

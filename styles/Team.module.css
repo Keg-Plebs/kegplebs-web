@@ -39,7 +39,7 @@
     position: absolute;
     height: 350px;
     width: 350px;
-    border-radius: 25%;
+    border-radius: 50%;
     overflow: hidden;
     backface-visibility: hidden;
 }
@@ -52,7 +52,7 @@
 .imgBack {
     height: 349px;
     width: 349px;
-    border-radius: 25%;
+    border-radius: 50%;
     overflow: hidden;
     transform: rotateY(180deg);
     color: white;

@@ -37,8 +37,6 @@ const Home = () => {
           <Element id='brewverse' name='brewverse' className={navElement}>
             <Brewverse></Brewverse>
           </Element>
-          <Mids></Mids>
-            {/* <Story></Story> */}
           <Collabs></Collabs>
           <Element id='about' name='about' className={navElement}>
             <Roadmap></Roadmap>
@@ -48,9 +46,9 @@ const Home = () => {
             <Team></Team>
           </Element>
         </div>
-        <div className={footer}>
-          <Footer></Footer>
-        </div>
+      </div>
+      <div className={footer}>
+        <Footer></Footer>
       </div>
     </>
   )
