@@ -15,6 +15,17 @@
     left:0;right:0;
 } 
 
+.sectionHeader {
+    background-image: url('../public/brewverse.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 3;
+    position: absolute;
+    height: 150px;
+    width: 810px;
+    margin-top: 0;
+}
+
 .imageContainer {
     position: absolute;
     width: 100%;
@@ -31,10 +42,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 110%;
-    width: 100%;
+    width: 101%;
     z-index: 2;
     top: -5%; bottom: 0; 
     right: 15vw;
+    pointer-events: none;
 
     animation: moveleftThenRight 20s infinite;
     animation-timing-function: ease-in-out;
@@ -51,6 +63,7 @@
     z-index: 2;
     top: -12%; bottom: 0;
     left: -26vw;
+    pointer-events: none;
 
     animation: moveRightThenLeft 20s infinite;
     animation-timing-function: ease-in-out;

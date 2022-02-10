@@ -5,17 +5,10 @@ import sectionStyles from '../styles/Section.module.css';
 import { 
     brewverse, 
     canvas_container, 
+    sectionHeader,
     imageContainer,
     cloudLeft,
-    cloudRight,
-    cloudGroup,
-    cloudA,
-    cloudB,
-    one, 
-    two, 
-    three, 
-    four, 
-    five
+    cloudRight
 } from '../styles/Brewverse.module.css';
 
 import Interior from './brewverse/Interior'
@@ -58,14 +51,10 @@ const Brewverse = () => {
 
     return (
         <div className={`${sectionStyles.main} ${brewverse}`}>
+            <div className={sectionHeader}></div>
             <div className={imageContainer}>
                 <div className={`${cloudLeft}`}      />
                 <div className={`${cloudRight}`}      />
-                {/* <div className={`${cloudGroup} ${one}`}></div>
-                <div className={`${cloudGroup} ${two}`}></div>
-                <div className={`${cloudA} ${three}`}></div>
-                <div className={`${cloudB} ${four}`}></div>
-                <div className={`${cloudB} ${five}`}></div> */}
             </div>
 
             <div className={canvas_container}>

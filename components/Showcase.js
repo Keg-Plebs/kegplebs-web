@@ -39,31 +39,8 @@ const Showcase = () => {
     const size = screenWidth < 400 ? 150 : 275;
 
     const ref = useRef();
-    const firstSlide = useRef();
-    const secondSlide = useRef();
-    const thirdSlide = useRef();
     
     useEffect(() => {
-        // const width = ref.current.offsetWidth;
-        // window.onscroll = () => {
-
-        //     let h = document.documentElement, 
-        //         b = document.body,
-        //         st = 'scrollTop',
-        //         sh = 'scrollHeight',
-        //         scrollPercentage = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight);
-
-
-        //     const os = scrollPercentage * width;
-        //     const firstScroll = os;
-        //     const secondScroll = os + -.4 * width;
-        //     const thirdScroll = os;
-
-        //     firstSlide.current.style.transform = `translateX(-${firstScroll * .8}px)`;
-        //     secondSlide.current.style.transform = `translateX(${secondScroll}px)`;
-        //     thirdSlide.current.style.transform = `translateX(-${thirdScroll * 2}px)`;
-        // };
-
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
         }
