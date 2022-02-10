@@ -27,7 +27,7 @@
 .cloudLeft {
     position: absolute;
     overflow: hidden;
-    background-image: url('../public/cloudsLeft.png');
+    background-image: url('../public/cloudsLeft.webp');
     background-repeat: no-repeat;
     background-size: cover;
     height: 110%;
@@ -43,7 +43,7 @@
 .cloudRight {
     position: absolute;
     overflow: hidden;
-    background-image: url('../public/cloudsRight.png');
+    background-image: url('../public/cloudsRight.webp');
     background-repeat: no-repeat;
     background-size: cover;
     height: 120%;
@@ -58,7 +58,7 @@
 
 .cloudGroup {
     position: absolute;
-    background-image: url('../public/cloudGroup.png');
+    background-image: url('../public/cloudGroup.webp');
     background-size: cover;
     width: 120%;
     height: 90%;
@@ -80,7 +80,7 @@
 
 .cloudA {
     position: absolute;
-    background-image: url('../public/cloud1.png');
+    background-image: url('../public/cloud1.webp');
     background-size: cover;
     width: 100%;
     height: 90%;
@@ -90,7 +90,7 @@
 
 .cloudB {
     position: absolute;
-    background-image: url('../public/cloud3.png');
+    background-image: url('../public/cloud3.webp');
     background-size: cover;
     width: 100%;
     height: 90%;

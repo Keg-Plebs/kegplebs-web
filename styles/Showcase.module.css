@@ -17,7 +17,7 @@
     position: relative;
     margin-left: 48%;
     z-index: 3;
-    background-image: url('../public/navbarLogo.png');
+    background-image: url('../public/navbarLogo.webp');
     background-repeat: no-repeat;
     background-size: cover;
     height: 650px;
