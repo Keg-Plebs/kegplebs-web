@@ -59,7 +59,7 @@ const Roadmap = () => {
         <div className={`${sectionStyles.main} ${roadmap}`}>
             <div className={contentContainer}>
                 <div className={timeline}>
-                <div className={sectionHeader}></div>
+                    <div className={sectionHeader}></div>
 
                     <div className={`${left} ${one}`}>
                         <h2 className={milestoneHeadings}
