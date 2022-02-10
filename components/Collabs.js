@@ -1,5 +1,7 @@
 
-import { collabsContainer } from '../styles/Collabs.module.css';
+import { collabsContainer, sectionHeader } from '../styles/Collabs.module.css';
+import Tank from './Tank';
+import EtherOrcs from './EtherOrcs';
 
 const Collabs = () => {
 
@@ -7,7 +9,9 @@ const Collabs = () => {
     return (
         <>
             <div className={collabsContainer}>
-                <h1>Collabs!</h1>
+                <div className={sectionHeader}></div>
+                <Tank></Tank>
+                <EtherOrcs></EtherOrcs>
             </div>
         </>
     )

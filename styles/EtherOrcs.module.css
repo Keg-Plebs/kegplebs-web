@@ -1,0 +1,53 @@
+.sectionContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.sectionImage {
+    background-image: url('../public/orcAnnouce.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 40vw;
+    margin-left: 10%;
+}
+
+.sectionText {
+    width: 40%;
+    margin-right: 8%;
+    padding-left: 2%;
+    height: 40vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sectionText h1 {
+    font-size: 45px;
+}
+
+.sectionText p {
+    font-size: 25px;
+    padding: 0 2%;
+}
+
+.digital {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 150px;
+    width: 80%;
+    color: white;
+}
+
+.digital h2 {
+    font-weight: 400;
+    letter-spacing: 5px;
+}

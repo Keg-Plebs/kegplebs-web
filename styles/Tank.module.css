@@ -1,0 +1,66 @@
+.sectionContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    margin-top: 150px;
+}
+
+.sectionHeader {
+
+}
+
+.sectionImage {
+    background-image: url('../public/tankVertAnnounce.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 40vw;
+    margin-right: 10%;
+}
+
+.sectionText {
+    width: 40%;
+    margin-left: 8%;
+    padding-right: 2%;
+    height: 40vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.sectionText h1 {
+    font-size: 45px;
+    
+    line-height: 45px;
+}
+
+.sectionText p {
+    font-size: 25px;
+    padding: 0 2%;
+}
+
+.physical {
+    margin-top: 150px;
+    width: 80%;
+    color: white;
+}
+
+.physical h2 {
+    font-weight: 400;
+    letter-spacing: 5px;
+    
+}
+
+.physical:after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    background-color: white;
+    right: 5%;
+    left: 5%;
+}
