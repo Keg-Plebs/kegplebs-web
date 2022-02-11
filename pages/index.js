@@ -40,7 +40,6 @@ const Home = () => {
           <Mids></Mids>
             {/* <Story></Story> */}
           <Collabs></Collabs>
-          <Mids></Mids>
           <Element id='about' name='about' className={navElement}>
             <Roadmap></Roadmap>
           </Element>
