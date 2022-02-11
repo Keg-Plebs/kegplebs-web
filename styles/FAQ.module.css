@@ -12,13 +12,13 @@
     margin-bottom: 75px;
 }
 
-.sectionBorderImg {
+/* .sectionBorderImg {
     height: 1400px;
     width: 100%;
     background-image: url("../public/imageBorder.webp");
     background-size: cover;
     margin-top: -500px;
-}
+} */
 
 @media screen and (max-width: 400px) {
     .sectionHeader {

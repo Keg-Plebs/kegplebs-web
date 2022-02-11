@@ -47,8 +47,6 @@
 }
   
 .button:hover {
-    /* background-color: #e69fc0;
-    color: white; */
     height: 50px;
     width: 195px;
     cursor: pointer;

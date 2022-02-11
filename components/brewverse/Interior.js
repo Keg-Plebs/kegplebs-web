@@ -1,8 +1,8 @@
 import { OrthographicCamera, useTexture } from '@react-three/drei'
 
 // temp
-const bar = '/Sprites/bar_scene.png'
-const door = '/Sprites/buttons0005.png'
+const bar = '/sun.png'
+const door = '/sun.png'
 
 const Interior = ({ callback }) => {
 
