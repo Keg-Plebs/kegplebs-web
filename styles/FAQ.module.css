@@ -6,12 +6,11 @@
 .sectionHeader {
     height: 175px;
     width: 350px;
-    background-image: url('../public/FAQ.png');
+    background-image: url('../public/FAQ.webp');
     background-size: cover;
     margin-top: 5%;
     margin-bottom: 75px;
 }
-
 
 @media screen and (max-width: 400px) {
     .sectionHeader {

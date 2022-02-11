@@ -19,6 +19,7 @@ const Verse = ({ callback }) => {
         (
             <Building
                 key={0}
+                scale={BUILDING_SCALE}
                 onClick={
                     (e) => {
                         transitionScene(SCENES.BREWERY, [BREWERY_POS[0], BREWERY_POS[1], INIT_CAM_POS[2]])
@@ -28,7 +29,7 @@ const Verse = ({ callback }) => {
                 src={KegPlebsBrewery.src}
                 srcSelect={KegPlebsBrewerySelect.src}
                 position={BREWERY_POS}
-                scale={BUILDING_SCALE} />
+                 />
         ),
         // (
         //     <Building
@@ -107,7 +108,7 @@ const Verse = ({ callback }) => {
             // https://gist.github.com/ayamflow/96a1f554c3f88eef2f9d0024fc42940f
             let dist = camera.position.z;
             let height = size.height;
-            camera.fov = 2 * Math.atan(height / (2 * dist)) * (180 / Math.PI);
+            camera.fov = 2 * Math.atan(height / (2 * dist)) * (200 / Math.PI);
             camera.updateProjectionMatrix();
         };
 

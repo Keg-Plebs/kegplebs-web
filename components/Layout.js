@@ -17,7 +17,7 @@ const Layout = ({ children }) => {
                     content="Building the Brewverse one beer at a time!"
                 />
                 <meta name="og:title" content={siteTitle} />
-                <link rel="icon" href="/sun.ico" />
+                <link rel="icon" href="/sunIcon.webp" />
             </Head>
             <div>
                 <main className={styles.main}>

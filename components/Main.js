@@ -8,10 +8,6 @@ const Main = () => {
         <>
             <div className={`${sectionStyles.main} ${main}`}>
                 <div className={background}>
-                    {/* <div className={logoContainer}>
-                        <Image src={NavLogo} className={logo} quality={100} priority={true}></Image>
-                    </div> */}
-                    
                 </div>
             </div>
         </>

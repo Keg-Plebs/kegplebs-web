@@ -16,7 +16,7 @@
 } 
 
 .sectionHeader {
-    background-image: url('../public/brewverse.png');
+    background-image: url('../public/brewverse.webp');
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 3;
@@ -38,7 +38,7 @@
 .cloudLeft {
     position: absolute;
     overflow: hidden;
-    background-image: url('../public/cloudsLeft.png');
+    background-image: url('../public/cloudsLeft.webp');
     background-repeat: no-repeat;
     background-size: cover;
     height: 110%;
@@ -55,7 +55,7 @@
 .cloudRight {
     position: absolute;
     overflow: hidden;
-    background-image: url('../public/cloudsRight.png');
+    background-image: url('../public/cloudsRight.webp');
     background-repeat: no-repeat;
     background-size: cover;
     height: 120%;
@@ -68,7 +68,6 @@
     animation: moveRightThenLeft 20s infinite;
     animation-timing-function: ease-in-out;
 }
-
 
 @keyframes moveleftThenRight {
     50% {
