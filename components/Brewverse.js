@@ -50,7 +50,7 @@ const Brewverse = () => {
     }
 
     return (
-        <div className={`${sectionStyles.main} ${brewverse}`}>
+        <div className={`${sectionStyles.main} /* ${brewverse}`}>
             <div className={sectionHeader}></div>
             <div className={imageContainer}>
                 <div className={`${cloudLeft}`}      />

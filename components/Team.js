@@ -51,10 +51,10 @@ const Team = () => {
                 <div className={card} id="sj">
                     <div className={imgContainer}>
                         <div className={img}>
-                            <Image src={Flowers} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Flowers} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -66,10 +66,10 @@ const Team = () => {
                 <div className={card} id="oozic">
                     <div className={imgContainer}>
                         <div className={img}>
-                            <Image src={Oozic} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Oozic} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -81,10 +81,10 @@ const Team = () => {
                 <div className={card} id="tsiz">
                     <div className={imgContainer}>
                         <div className={img}>
-                            <Image src={Drooly} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Drooly} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     
@@ -97,10 +97,10 @@ const Team = () => {
                 <div className={card} id="shdw">
                     <div className={imgContainer}>
                         <div className={img}>
-                            <Image src={Bitchass} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Bitchass} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -112,10 +112,10 @@ const Team = () => {
                 <div className={card} id="jefftheworm">
                     <div className={imgContainer}>
                         <div className={img}>
-                            <Image src={Jeff} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Jeff} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} priority={true} width={size} height={size}></Image>
+                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     

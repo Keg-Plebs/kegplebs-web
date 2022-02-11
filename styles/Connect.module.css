@@ -18,7 +18,7 @@
 
 .button {
     background-color: transparent;
-    background-image: url('../public/connectOnly.png');
+    background-image: url('../public/connectOnly.webp');
     background-size: cover;
     border: none;
     margin-left: 15px;
@@ -30,7 +30,7 @@
 
 .buttonDisconnect {
     background-color: transparent;
-    background-image: url('../public/DISCONNECT.png');
+    background-image: url('../public/DISCONNECT.webp');
     background-size: cover;
     border: none;
     margin-left: 15px;
@@ -47,8 +47,6 @@
 }
   
 .button:hover {
-    /* background-color: #e69fc0;
-    color: white; */
     height: 50px;
     width: 195px;
     cursor: pointer;

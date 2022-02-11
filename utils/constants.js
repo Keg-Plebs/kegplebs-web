@@ -14,7 +14,7 @@ export const UP = [0, 0, 1]
 export const FAR = 10000;
 export const MAP_SCALE = [1, 1, 1];
 
-export const BACKGROUND_COLOR = 0x7FCA70;
+export const BACKGROUND_COLOR = 0x0;
 export const BREWERY_POS = [-100, 80, 2];
 export const DISCORD_POS = [350, 200, 2];
 export const BUILDING_SCALE = [600, 600, 1];
