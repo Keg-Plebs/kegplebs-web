@@ -1,5 +1,5 @@
 .team {
-    padding-top: 200px;
+    /* padding-top: 200px; */
     background-image: linear-gradient(to top, rgba(0,0,0, 1) 0,
     rgba(0,0,0, 0.4) 25%,
     rgba(0,0,0, 0.4) 65%,
@@ -57,6 +57,7 @@
     transform: rotateY(180deg);
     color: white;
     text-align: center;
+    backface-visibility: hidden;
 }
 
 .heading {

@@ -130,23 +130,6 @@ const Connect = props => {
 				onClick={toggleConnection}
 				className={loggedIn ? buttonDisconnect : button }
 			>
-				{
-					connection && loggedIn ? (
-						// hovered ? (
-						// 	"Disconnect"
-						// ) : (
-						// 	"Connected: " +
-						// 	String(account).substring(0, 6) +
-						// 	"..." +
-						// 	String(account).substring(38)
-						// )
-						<></>
-
-					) : (
-						// <span>Connect Wallet</span>
-						<></>
-					)
-				}
 			</button>
 		</div>
 	)

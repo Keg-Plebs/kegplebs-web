@@ -127,7 +127,7 @@ const Nav = props => {
                             <a className={a} href='#'><Image src={Opensea} quality={100} height={40} width={40}></Image></a>
                             <a className={a} href='#'><Image src={Etherscan} quality={100} height={40} width={40}></Image></a>
                         </div>
-                        <a className={a} href='#'><Connect onConnected={handleIconDisplay}/></a>
+                        <Connect onConnected={handleIconDisplay}/>
                     </div>
                 </>)
             )}

@@ -5,12 +5,8 @@
     margin-top: 150px;
 }
 
-.sectionHeader {
-
-}
-
 .sectionImage {
-    background-image: url('../public/tankVertAnnounce.png');
+    background-image: url('../public/tankVertAnnounce.webp');
     background-size: cover;
     background-repeat: no-repeat;
     width: 40%;
