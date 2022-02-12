@@ -2,9 +2,9 @@ import { Suspense, useState, useRef, useEffect, useLayoutEffect, useContext } fr
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
-import { 
-    brewverse, 
-    canvas_container, 
+import {
+    brewverse,
+    canvas_container,
     sectionHeader,
     imageContainer,
     cloudLeft,
@@ -13,10 +13,10 @@ import {
     curtain
 } from '../styles/Brewverse.module.css';
 
-import Interior from './brewverse/Interior'
 import Verse from './brewverse/Verse'
 
 import Bar from './Bar';
+import Team from './Team'
 
 import ProviderContext from './ProviderContext';
 
@@ -28,14 +28,15 @@ const Brewverse = () => {
 
     const [scene, switchScene] = useState(SCENES.VERSE);
 
-    const {provider, setProvider} = useContext(ProviderContext);
+    const { provider, setProvider } = useContext(ProviderContext);
 
     let component;
     let myClass;
 
+    // Changes the scene component in the Canvas
     switch (scene) {
         case SCENES.DISCORD:
-            window.location = DISCORD_LINK
+            window.location = DISCORD_LINK  // Goes to the Discord
             component = <></>
             break;
         case SCENES.VERSE:
@@ -46,11 +47,7 @@ const Brewverse = () => {
         case SCENES.BREWERY:
             myClass = `${sceneChange}`;
             component =
-                <Interior
-                    callback={
-                        () => switchScene(SCENES.VERSE)
-                    } />
-
+                <></>
             break;
         default:
             component = <></>
@@ -60,27 +57,25 @@ const Brewverse = () => {
         <div className={`${sectionStyles.main} /* ${brewverse}`}>
             <div className={sectionHeader}></div>
             <div className={imageContainer}>
-                <div className={`${cloudLeft}`}      />
-                <div className={`${cloudRight}`}      />
+                <div className={`${cloudLeft}`} />
+                <div className={`${cloudRight}`} />
             </div>
 
             <div className={canvas_container}>
-                {
-                    <div 
-                        id={curtain}
-                        className={myClass}
-                    >
-                    </div>
-                }
-                {
-                    false ? <Bar></Bar> : <></>
-                }
-                <Canvas>
-                    <ambientLight color={0xffffff} intensity={0.5} />
-                    <Suspense fallback={null} r3f>
-                        {component}
-                    </Suspense>
-                </Canvas>
+                <div
+                    id={curtain}
+                    className={myClass}
+                >
+                    {
+                        scene === SCENES.BREWERY ? <Team></Team> :
+                            <Canvas>
+                                <Suspense fallback={null} r3f>
+                                    {component}
+                                </Suspense>
+                            </Canvas>
+                    }
+                </div>
+
             </div>
         </div>
     )

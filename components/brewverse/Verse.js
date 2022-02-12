@@ -15,6 +15,7 @@ import { KegPlebsBrewery, KegPlebsBrewerySelect } from '../../public/images'
 
 const Verse = ({ callback }) => {
 
+    // List of all the buildings on the map
     const buildings = [
         (
             <Building
@@ -47,8 +48,9 @@ const Verse = ({ callback }) => {
 
     ]
 
+    // Gets the size of the viewport, scene camera and webGL renderer fomr three.js
     const { size, camera, gl } = useThree();
-    gl.setPixelRatio(window.devicePixelRatio)
+    gl.setPixelRatio(window.devicePixelRatio)   // Sets the pixel ratio of the renderer
 
     const [scene, switchScene] = useState(SCENES.VERSE);
     const [camPos, setCamPos] = useState(INIT_CAM_POS);
@@ -57,7 +59,9 @@ const Verse = ({ callback }) => {
     const [zoomLevel, setZoomLevel] = useState(INIT_ZOOM_LEVEL)
     const [clicked, click] = useState(false)
     const [enabled, enable] = useState(true)
+    const [intensity, setInensity] = useState(1)
 
+    // Damping function for transition between two vectors
     const damp = (from, to, step, delta) => {
 
         let result = []
@@ -69,8 +73,10 @@ const Verse = ({ callback }) => {
         return result
     }
 
+    // Compares two arrays by converting to JSON and checking if the JSON are equal
     const equals = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
+    // Transitions to the next scene
     const transitionScene = (scene, position) => {
         click(false)
         setNewCamPos(position)
@@ -84,19 +90,20 @@ const Verse = ({ callback }) => {
 
         if (clicked) {
 
-            step = STEP_FAC * step * step
+            // step = STEP_FAC * step * step
 
-            let curPos = damp(camPos, newCamPos, step, delta)
-            let curZoom = THREE.MathUtils.damp(zoomLevel, MAX_ZOOM, step * ZOOM_FAC, delta)
+            let curPos = damp(camPos, newCamPos, step, 3 * delta)
+            let curZoom = THREE.MathUtils.damp(zoomLevel, MAX_ZOOM, step * ZOOM_FAC, 3 * delta)
+            setInensity(THREE.MathUtils.damp(intensity, 0, step, 3 * delta))
 
             setCamPos(curPos)
             setTarget([curPos[0], curPos[1], 0])
             setZoomLevel(curZoom)
 
             if (equals(camPos, newCamPos)) {
-                callback(scene)
                 click(false)
                 enable(true)
+                callback(scene)
             }
         }
     })
@@ -116,17 +123,22 @@ const Verse = ({ callback }) => {
 
         handleResize();
 
-        return () => window.removeEventListener('resize', handleResize)
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+
     }, [])
 
     return (
         <>
+            
             <PerspectiveCamera
                 makeDefault
                 position={camPos}
                 zoom={zoomLevel}
                 up={UP}
                 far={FAR} />
+            <ambientLight color={0xffffff} intensity={intensity} />
             <color attach="background" args={[BACKGROUND_COLOR]} />
             <Suspense fallback={null} r3f>
                 <Background />
