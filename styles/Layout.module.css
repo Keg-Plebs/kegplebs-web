@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 }
 
 .main {
@@ -29,12 +30,4 @@
 
 .navElement {
   width: 100%;
-}
-
-.footer {
-  
-  z-index: -2;
-  height: 150px;
-  width: 100vw;
-  background-color: black;
 }

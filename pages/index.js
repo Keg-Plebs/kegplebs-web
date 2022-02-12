@@ -47,9 +47,7 @@ const Home = () => {
           </Element>
         </div>
       </div>
-      <div className={footer}>
-        <Footer></Footer>
-      </div>
+      <Footer></Footer>
     </>
   )
 }

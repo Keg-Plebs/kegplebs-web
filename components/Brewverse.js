@@ -8,11 +8,15 @@ import {
     sectionHeader,
     imageContainer,
     cloudLeft,
-    cloudRight
+    cloudRight,
+    sceneChange,
+    curtain
 } from '../styles/Brewverse.module.css';
 
 import Interior from './brewverse/Interior'
 import Verse from './brewverse/Verse'
+
+import Bar from './Bar';
 
 import ProviderContext from './ProviderContext';
 
@@ -27,6 +31,7 @@ const Brewverse = () => {
     const {provider, setProvider} = useContext(ProviderContext);
 
     let component;
+    let myClass;
 
     switch (scene) {
         case SCENES.DISCORD:
@@ -34,10 +39,12 @@ const Brewverse = () => {
             component = <></>
             break;
         case SCENES.VERSE:
+            myClass = ``;
             component =
                 <Verse callback={(newScene) => switchScene(newScene)} />
             break;
         case SCENES.BREWERY:
+            myClass = `${sceneChange}`;
             component =
                 <Interior
                     callback={
@@ -58,6 +65,16 @@ const Brewverse = () => {
             </div>
 
             <div className={canvas_container}>
+                {
+                    <div 
+                        id={curtain}
+                        className={myClass}
+                    >
+                    </div>
+                }
+                {
+                    false ? <Bar></Bar> : <></>
+                }
                 <Canvas>
                     <ambientLight color={0xffffff} intensity={0.5} />
                     <Suspense fallback={null} r3f>

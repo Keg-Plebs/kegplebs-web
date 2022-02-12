@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ReactCSSTransitionGroup from 'react-transition-group';
 
 import sectionStyles from '../styles/Section.module.css';
 import { 
@@ -61,6 +62,8 @@ const Roadmap = () => {
                 <div className={timeline}>
                     <div className={sectionHeader}></div>
 
+                    
+
                     <div className={`${left} ${one}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -73,6 +76,7 @@ const Roadmap = () => {
                             {data.one.milestone}
                         </h2>
                         {
+                            
                             <p className={milestoneInfo}
                                 style={{ 
                                     display: hovered === 'one' ? "flex" : "none"
@@ -95,8 +99,7 @@ const Roadmap = () => {
                             hovered === 'two' ? 
                             <p className={milestoneInfo}
                             style={{ 
-                                display: hovered === 'two' ? "flex" : "none",
-                                transition: "1s"
+                                display: hovered === 'two' ? "flex" : "none"
                             }}
                             >{data.two.desc}</p> : 
                             <></>
