@@ -1,10 +1,14 @@
 
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import {
     sectionContainer,
     sectionHeader,
     sectionImage,
     sectionText,
-    physical
+    physical,
+    arrow
 } from '../styles/Tank.module.css';
 
 
@@ -26,7 +30,7 @@ const Tank = () => {
                 <div className={sectionImage}></div>
             </div>
             <div className={physical}>
-                    <h2>PHYSICAL</h2>
+                    <h2><FontAwesomeIcon className={arrow} icon={faArrowUp}/>PHYSICAL</h2>
             </div>
         </>
     )

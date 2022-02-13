@@ -10,7 +10,11 @@ import {
     cloudLeft,
     cloudRight,
     sceneChange,
-    curtain
+    curtain,
+    moveCloudsLeft,
+    moveCloudsRight,
+    cloudLeftInfinite,
+    cloudRightInfinite
 } from '../styles/Brewverse.module.css';
 
 import Verse from './brewverse/Verse'
@@ -24,7 +28,7 @@ import { DISCORD_LINK, SCENES } from '../lib/constants'
 
 // https://github.com/pmndrs/react-three-fiber#what-does-it-look-like
 // https://drei.pmnd.rs/?path=/story/controls-mapcontrols--map-controls-scene-st
-const Brewverse = () => {
+const Brewverse = props => {
 
     const [scene, switchScene] = useState(SCENES.VERSE);
 
@@ -32,6 +36,8 @@ const Brewverse = () => {
 
     let component;
     let myClass;
+    const leftCloudClass = scene === SCENES.BREWERY ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
+    let rightCloudClass = scene === SCENES.BREWERY ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
 
     // Changes the scene component in the Canvas
     switch (scene) {
@@ -41,11 +47,13 @@ const Brewverse = () => {
             break;
         case SCENES.VERSE:
             myClass = ``;
+            props.enterBrewverse(false)
             component =
                 <Verse callback={(newScene) => switchScene(newScene)} />
             break;
         case SCENES.BREWERY:
             myClass = `${sceneChange}`;
+            props.enterBrewverse(true);
             component =
                 <></>
             break;
@@ -55,10 +63,20 @@ const Brewverse = () => {
 
     return (
         <div className={`${sectionStyles.main} /* ${brewverse}`}>
-            <div className={sectionHeader}></div>
+            <div className={sectionHeader}
+                style={{
+                    display: scene === SCENES.BREWERY ? 'none' : 'block'
+                }}
+            ></div>
             <div className={imageContainer}>
-                <div className={`${cloudLeft}`} />
-                <div className={`${cloudRight}`} />
+                <div 
+                    id={`${cloudLeft}`} 
+                    className={leftCloudClass}
+                />
+                <div 
+                    id={`${cloudRight}`} 
+                    className={rightCloudClass}
+                />
             </div>
 
             <div className={canvas_container}>
@@ -67,7 +85,7 @@ const Brewverse = () => {
                     className={myClass}
                 >
                     {
-                        scene === SCENES.BREWERY ? <Team></Team> :
+                        scene === SCENES.BREWERY ? <Bar></Bar> :
                             <Canvas>
                                 <Suspense fallback={null} r3f>
                                     {component}

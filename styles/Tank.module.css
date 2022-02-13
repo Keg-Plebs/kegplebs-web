@@ -46,6 +46,12 @@
     color: white;
 }
 
+.arrow {
+    height: 25px;
+    margin-right: 10px;
+
+}
+
 .physical h2 {
     font-weight: 400;
     letter-spacing: 5px;
