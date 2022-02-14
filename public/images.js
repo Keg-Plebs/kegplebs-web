@@ -32,7 +32,7 @@ export { default as Icon } from './mugshots/icon.webp';
 // general
 export { default as NavIcon } from './sunIcon.webp';
 export { default as Opensea } from './openseaicon.webp';
-export { default as NeonSign } from './neonSign.png';
+export { default as NeonSign } from './neonSign.webp';
 export { default as Etherscan } from './etherscan.webp';
 export { default as BrewBackground } from './breweryScene.webp';
 export { default as Port } from './portrait.webp';
