@@ -34,11 +34,12 @@ const Brewverse = props => {
     const { provider, setProvider } = useContext(ProviderContext);
     
     let component;
-    const isBreweryScene = scene === SCENES.BREWERY;
+    const isBrewery = scene === SCENES.BREWERY;
+    const isVerse = scene === SCENES.VERSE;
 
-    const myClass = isBreweryScene ? `${sceneChange}` : ``;
-    const leftCloudClass = isBreweryScene ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
-    const rightCloudClass = isBreweryScene ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
+    const myClass = (isBrewery || isVerse) ? `${sceneChange}` : ``;
+    const leftCloudClass = isBrewery ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
+    const rightCloudClass = isBrewery ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
 
     // Changes the scene component in the Canvas
     switch (scene) {
@@ -84,7 +85,7 @@ const Brewverse = props => {
                     className={myClass}
                 >
                     {
-                        scene === SCENES.BREWERY ? <Bar></Bar> :
+                        scene === SCENES.BREWERY ? <Bar exitBrewery={() => switchScene(SCENES.VERSE)}></Bar> :
                             <Canvas>
                                 <Suspense fallback={null} r3f>
                                     {component}
