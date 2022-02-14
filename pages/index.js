@@ -21,7 +21,7 @@ const Home = () => {
   const [brewverseEntered, setBrewverseEntered] = useState(false)
 
   const handleEnterBrewverse = bool => {
-    setBrewverseEntered(bool);
+    // setBrewverseEntered(bool);
   }
 
   return (

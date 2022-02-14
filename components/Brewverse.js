@@ -1,4 +1,4 @@
-import { Suspense, useState, useRef, useEffect, useLayoutEffect, useContext } from 'react'
+import { Suspense, useState, componentWillMount, componentWillUnmount, useContext } from 'react'
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
@@ -29,15 +29,16 @@ import { DISCORD_LINK, SCENES } from '../lib/constants'
 // https://github.com/pmndrs/react-three-fiber#what-does-it-look-like
 // https://drei.pmnd.rs/?path=/story/controls-mapcontrols--map-controls-scene-st
 const Brewverse = props => {
-
     const [scene, switchScene] = useState(SCENES.VERSE);
 
     const { provider, setProvider } = useContext(ProviderContext);
-
+    
     let component;
-    let myClass;
-    const leftCloudClass = scene === SCENES.BREWERY ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
-    let rightCloudClass = scene === SCENES.BREWERY ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
+    const isBreweryScene = scene === SCENES.BREWERY;
+
+    const myClass = isBreweryScene ? `${sceneChange}` : ``;
+    const leftCloudClass = isBreweryScene ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
+    const rightCloudClass = isBreweryScene ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
 
     // Changes the scene component in the Canvas
     switch (scene) {
@@ -46,13 +47,11 @@ const Brewverse = props => {
             component = <></>
             break;
         case SCENES.VERSE:
-            myClass = ``;
             props.enterBrewverse(false)
             component =
                 <Verse callback={(newScene) => switchScene(newScene)} />
             break;
         case SCENES.BREWERY:
-            myClass = `${sceneChange}`;
             props.enterBrewverse(true);
             component =
                 <></>

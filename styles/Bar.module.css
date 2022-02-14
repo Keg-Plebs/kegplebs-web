@@ -2,11 +2,22 @@
 
 .background {
     position: fixed;
-    height: 100vh;
+    
+    height: 92vh;
     width: 100vw;
-    top: 0; bottom: 0;
+    bottom: 0;
     left: 0; right: 0;
     background-image: url('../public/interior/doorclosed_wide.webp');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+}
+
+.door {
+    background-color: transparent;
+    position: absolute;
+    left: 14vw;
+    top: 9vh;
+    width: 20vw;
+    height: 68vh;
+    cursor: pointer;
 }

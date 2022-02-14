@@ -1,4 +1,5 @@
 
+import { useEffect } from 'react';
 import {
     background,
     door,
@@ -7,6 +8,13 @@ import {
 
 const Bar = () => {
 
+    useEffect( () => {
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.body.style.overflow = 'visible';
+        }
+    }, []);
 
     return(
         <>
