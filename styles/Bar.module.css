@@ -1,13 +1,25 @@
 
-
-.background {
+.open {
     position: fixed;
     
     height: 92vh;
     width: 100vw;
     bottom: 0;
     left: 0; right: 0;
-    background-image: url('../public/interior/doorclosed_wide.webp');
+    background-image: linear-gradient(to top rgba(0,0,0,0.4), rgba(0,0,0,0.2) 100%), url('../public/interior/dooropen_wide.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.closed {
+    position: fixed;
+    
+    height: 92vh;
+    width: 100vw;
+    bottom: 0;
+    left: 0; right: 0;
+    background-image: linear-gradient(to top rgba(0,0,0,0.4), rgba(0,0,0,0.2) 100%), url('../public/interior/doorclosed_wide.webp');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -19,5 +31,85 @@
     top: 9vh;
     width: 20vw;
     height: 68vh;
+
     cursor: pointer;
+    z-index: 1;
+}
+
+.bartender {
+    position: absolute;
+    top: 5vh;
+    left: 24vw;
+    height: 55vh;
+    width: 55vw;
+    background-image: url('../public/interior/Bartender.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bartenderSelect {
+    background-color: transparent;
+    position: absolute;
+
+    width: 13vw;
+    height: 34.5vh;
+    left: 60vw;
+    top: 21vh;
+    cursor: pointer;
+}
+
+.bartenderSelect:hover {
+    box-shadow: 5px 5px 15px, -5px 5px 15px;
+}
+
+.sorryBubble {
+    position: absolute;
+    background-image: url('../public/interior/sorryBubble.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    top: -2vh;
+    left: 22vw;
+    height: 55vh;
+    width: 55vw;
+    
+    pointer-events: none;
+}
+
+.exitOption {
+    position: absolute;
+    background-image: url('../public/interior/exit.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    left: 21vw;
+    top: -12vh;
+    height: 40vh;
+    width: 40vw;
+
+    pointer-events: none;
+}
+
+.exitClick {
+    background-color: transparent;
+    position: absolute;
+
+    left: 21vw;
+    height: 8vh;
+    width: 8vw;
+    cursor: pointer;
+}
+
+.cheersOption {
+    position: absolute;
+    background-image: url('../public/interior/cheers.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    top: -2vh;
+    left: 22vw;
+    height: 55vh;
+    width: 55vw;
+    
+    pointer-events: none;
 }
