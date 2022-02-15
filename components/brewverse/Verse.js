@@ -13,7 +13,7 @@ import {
 import Controls from './Controls'
 import { KegPlebsBrewery, KegPlebsBrewerySelect } from '../../public/images'
 
-const Verse = ({ callback }) => {
+const Verse = ({ enterBrewery, callback }) => {
 
     // List of all the buildings on the map
     const buildings = [
@@ -23,6 +23,7 @@ const Verse = ({ callback }) => {
                 scale={BUILDING_SCALE}
                 onClick={
                     (e) => {
+                        enterBrewery()
                         transitionScene(SCENES.BREWERY, [BREWERY_POS[0], BREWERY_POS[1], INIT_CAM_POS[2]])
                         document.body.style.cursor = 'auto'
                     }
