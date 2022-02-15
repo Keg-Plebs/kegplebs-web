@@ -1,5 +1,6 @@
 .sectionContainer {
     width: 100vw;
+    height: 135vh;
     display: flex;
     flex-direction: row;
 }
@@ -36,6 +37,11 @@
 .sectionText p {
     font-size: 25px;
     padding: 0 2%;
+}
+
+.arrow {
+    height: 25px;
+    margin-left: 10px;
 }
 
 .digital {

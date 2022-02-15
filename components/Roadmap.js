@@ -58,12 +58,11 @@ const Roadmap = () => {
 
     return(
         <div className={`${sectionStyles.main} ${roadmap}`}>
+            
+            <div className={sectionHeader}></div>
             <div className={contentContainer}>
+                
                 <div className={timeline}>
-                    <div className={sectionHeader}></div>
-
-                    
-
                     <div className={`${left} ${one}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -75,36 +74,35 @@ const Roadmap = () => {
                         >
                             {data.one.milestone}
                         </h2>
-                        {
-                            
-                            <p className={milestoneInfo}
-                                style={{ 
-                                    display: hovered === 'one' ? "flex" : "none"
-                                }}
-                            >{data.one.desc}</p> 
-                        }
                     </div>
+                    {
+                        <p className={milestoneInfo}
+                            style={{ 
+                                display: hovered === 'one' ? "flex" : "none"
+                            }}
+                        >{data.one.desc}</p> 
+                    }
                     <div className={`${left} ${two}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
                                 setHovered('two')
                             }}
                             onPointerOut={() => {
-                                setHovered('');
+                                setHovered(''); 
                             }}
                         >
                             {data.two.milestone}
                         </h2>
-                        {
-                            hovered === 'two' ? 
-                            <p className={milestoneInfo}
-                            style={{ 
-                                display: hovered === 'two' ? "flex" : "none"
-                            }}
-                            >{data.two.desc}</p> : 
-                            <></>
-                        }
                     </div>
+                    {
+                        hovered === 'two' ? 
+                        <p className={milestoneInfo}
+                        style={{ 
+                            display: hovered === 'two' ? "flex" : "none"
+                        }}
+                        >{data.two.desc}</p> : 
+                        <></>
+                    }
                     <div className={`${left} ${three}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -116,16 +114,16 @@ const Roadmap = () => {
                         >
                             {data.three.milestone}
                         </h2>
-                        {
-                            hovered === 'three' ? 
-                            <p className={milestoneInfo}
-                            style={{ 
-                                display: hovered === 'three' ? "flex" : "none"
-                            }}
-                            >{data.three.desc}</p> : 
-                            <></>
-                        }
                     </div>
+                    {
+                        hovered === 'three' ? 
+                        <p className={milestoneInfo}
+                        style={{ 
+                            display: hovered === 'three' ? "flex" : "none"
+                        }}
+                        >{data.three.desc}</p> : 
+                        <></>
+                    }
                     <div className={`${left} ${four}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -137,16 +135,16 @@ const Roadmap = () => {
                         >
                             {data.four.milestone}
                         </h2>
-                        {
-                            hovered === 'four' ? 
-                            <p className={milestoneInfo}
-                                style={{ 
-                                    display: hovered === 'four' ? "flex" : "none"
-                                }}
-                            >{data.four.desc}</p> : 
-                            <></>
-                        }
                     </div>
+                    {
+                        hovered === 'four' ? 
+                        <p className={milestoneInfo}
+                            style={{ 
+                                display: hovered === 'four' ? "flex" : "none"
+                            }}
+                        >{data.four.desc}</p> : 
+                        <></>
+                    }
                     <div className={`${left} ${five}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -158,16 +156,16 @@ const Roadmap = () => {
                         >
                             {data.five.milestone}
                         </h2>
-                        {
-                            hovered === 'five' ? 
-                            <p className={milestoneInfo}
-                                style={{ 
-                                    display: hovered === 'five' ? "flex" : "none"
-                                }}
-                            >{data.five.desc}</p> : 
-                            <></>
-                        }
                     </div>
+                    {
+                        hovered === 'five' ? 
+                        <p className={milestoneInfo}
+                            style={{ 
+                                display: hovered === 'five' ? "flex" : "none"
+                            }}
+                        >{data.five.desc}</p> : 
+                        <></>
+                    }
                     <div className={`${left} ${six}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -179,16 +177,16 @@ const Roadmap = () => {
                         >
                             {data.six.milestone}
                         </h2>
-                        {
-                            hovered === 'six' ? 
-                            <p className={milestoneInfo}
-                                style={{ 
-                                    display: hovered === 'six' ? "flex" : "none"
-                                }}
-                            >{data.six.desc}</p> : 
-                            <></>
-                        }
                     </div>
+                    {
+                        hovered === 'six' ? 
+                        <p className={milestoneInfo}
+                            style={{ 
+                                display: hovered === 'six' ? "flex" : "none"
+                            }}
+                        >{data.six.desc}</p> : 
+                        <></>
+                    }
                     <div className={`${left} ${seven}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -200,16 +198,16 @@ const Roadmap = () => {
                         >
                             {data.seven.milestone}
                         </h2>
-                        {
-                            hovered === 'seven' ? 
-                            <p className={milestoneInfo}
-                                style={{ 
-                                    display: hovered === 'seven' ? "flex" : "none"
-                                }}
-                            >{data.seven.desc}</p> : 
-                            <></>
-                        }
                     </div>
+                    {
+                        hovered === 'seven' ? 
+                        <p className={milestoneInfo}
+                            style={{ 
+                                display: hovered === 'seven' ? "flex" : "none"
+                            }}
+                        >{data.seven.desc}</p> : 
+                        <></>
+                    }
                 </div>
                 <div className={rightImg}></div>
                 <div className={beerDrip}></div>

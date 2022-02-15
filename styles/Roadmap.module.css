@@ -7,6 +7,7 @@
 }
 
 .contentContainer {
+    margin-top: 0vh;
     width: 100%;
     height: 100%;
     display: flex;
@@ -14,6 +15,7 @@
 }
 
 .timeline {
+    position: relative;
     width: 50%;
     height: 100%;
     /* background-color: aquamarine; */
@@ -23,14 +25,16 @@
 }
 
 .sectionHeader {
-    position: relative;
     z-index: 2;
+    position: absolute;
+    display: block;
     background-image: url('../public/ROADMAP.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    left: 11vw;
     height: 150px;
-    width: 750px;
-    margin-bottom: 3.5vw;
+    width: 700px;
+    padding: 0;
 }
 
 .milestoneHeadings {
@@ -41,7 +45,7 @@
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 5px;
-    font-size: 1.15vw;
+    font-size: 2.05vh;
 }
 
 .milestoneHeadings:hover {
@@ -60,8 +64,7 @@
     letter-spacing: 2px;
     pointer-events: none;
     position: absolute;
-    margin-right: auto;
-    margin-left: -2.5%;
+    margin-left: 50vw;
     top: 25%;
     width: 82vw;
     height: 62vh;
@@ -73,28 +76,54 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: ease-in-out 2s;
+    transition: display 2s;
 }
 
 
 .one {
-    margin-top: 2.5%;
-    top: 33vw;
+    top: 29%;
+    position: absolute;
+}
+
+.two {
+    top: 38%;
+    position: absolute;
+}
+
+.three {
+    top: 47%;
+    position: absolute;
+}
+
+.four {
+    top: 56%;
+    position: absolute;
+}
+
+.five {
+    top: 65%;
+    position: absolute;
+}
+
+.six {
+    top: 74%;
+    position: absolute;
+}
+
+.seven {
+    top: 83%;
+    position: absolute;
 }
 
 .one::after {
     content: '';
-    position: absolute;
     height: 6px;
     background-color: black;
-    top: 33vh;
-    right: 35%;
-    left: 20%;
+    position: absolute;
+    top: 4vh;
+    right: 5%;
+    left: 17%;
     
-}
-
-.two {
-    top: 40vh;
 }
 
 .two::after {
@@ -102,13 +131,9 @@
     position: absolute;
     height: 6px;
     background-color: black;
-    top: 41vh;
-    right: 35%;
-    left: 24%;
-}
-
-.three {
-    top: 48vh;
+    top: 4vh;
+    right: 5%;
+    left: 22%;
 }
 
 .three::after {
@@ -116,9 +141,9 @@
     position: absolute;
     height: 6px;
     background-color: black;
-    top: 49vh;
-    right: 35%;
-    left: 40%;
+    top: 4vh;
+    right: 5%;
+    left: 49%;
 }
 
 .four::after {
@@ -126,9 +151,9 @@
     position: absolute;
     height: 6px;
     background-color: black;
-    top: 57vh;
-    right: 35%;
-    left: 32%;
+    top: 4vh;
+    right: 5%;
+    left: 36%;
 }
 
 .five::after {
@@ -136,8 +161,8 @@
     position: absolute;
     height: 6px;
     background-color: black;
-    top: 65vh;
-    right: 35%;
+    top: 4vh;
+    right: 5%;
     left: 26%;
 }
 
@@ -146,9 +171,9 @@
     position: absolute;
     height: 6px;
     background-color: black;
-    top: 73vh;
-    right: 35%;
-    left: 31%;
+    top: 4vh;
+    right: 5%;
+    left: 33%;
 }
 
 .seven::after {
@@ -156,9 +181,9 @@
     position: absolute;
     height: 6px;
     background-color: black;
-    top: 81vh;
-    right: 35%;
-    left: 32%;
+    top: 4vh;
+    right: 5%;
+    left: 35%;
 }
 
 .rightImg {
@@ -170,7 +195,7 @@
     transform: rotateY(180deg);
     margin-right: -40vw;
     width: 80%;
-    height: 100%;
+    height: 100vh;
     margin-left: -20%;;
 }
 

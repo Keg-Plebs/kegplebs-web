@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  height: 110px;
+  height: 85px;
   width: 100%;
   background: #000;
   color: #fff;
@@ -8,7 +8,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   z-index: 4;
 }
   
@@ -125,7 +125,7 @@
 .socialIcons {
   color: white;
   display: inline;
-  height: 40px;
+  height: 30px;
 }
 
 .icons {
@@ -133,7 +133,7 @@
   flex-direction: row;
 }
 
-@media screen and (max-width: 1700px) {
+/* @media screen and (max-width: 1700px) {
   .nav {
     position: relative;
     flex-direction: column;
@@ -234,4 +234,4 @@
     margin: 0;
     padding: 0;
   }
-}
+} */

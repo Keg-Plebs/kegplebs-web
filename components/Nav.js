@@ -32,6 +32,8 @@ const Nav = props => {
     const [userAddress, setUserAddress] = useState('');
     const [hovered, setHovered] = useState('false');
 
+    const screen = 1700;
+
     useEffect(() => {
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
@@ -91,7 +93,7 @@ const Nav = props => {
         <nav className={nav}>
             <div className={logoGroup}>
                 <a onClick={toTop}>
-                    <Image src={NavLogo} quality={100} priority={true} height={225} width={400}></Image>
+                    <Image src={NavLogo} quality={100} priority={true} height={200} width={355}></Image>
                 </a>
                 {
                     userAddress.length > 0 ? (
@@ -107,7 +109,7 @@ const Nav = props => {
                 }
             </div>
             {(
-                (active || screenWidth > 1700) && (
+                (active || screenWidth > screen) && (
                 <>
                     <ul className={linkGroup}>
                         <li className={li}>
@@ -124,8 +126,8 @@ const Nav = props => {
                         <div className={icons}>
                             <a className={a} href='https://twitter.com/KegPlebs'><FontAwesomeIcon icon={faTwitter} className={socialIcons}/></a>
                             <a className={a} href='https://discord.gg/xjfpxWajXH'><FontAwesomeIcon icon={faDiscord} className={socialIcons}/></a>
-                            <a className={a} href='#'><Image src={Opensea} quality={100} height={40} width={40}></Image></a>
-                            <a className={a} href='#'><Image src={Etherscan} quality={100} height={40} width={40}></Image></a>
+                            <a className={a} href='#'><Image src={Opensea} quality={100} height={30} width={30}></Image></a>
+                            <a className={a} href='#'><Image src={Etherscan} quality={100} height={30} width={30}></Image></a>
                         </div>
                         <Connect onConnected={handleIconDisplay}/>
                     </div>

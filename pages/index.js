@@ -26,9 +26,8 @@ const Home = () => {
 
   return (
     <>
-      {
-        brewverseEntered ? <></> : <Nav />
-      }
+      
+      <Nav />
       <div className={container}>
         <Head>
           <title>{siteTitle}</title>
