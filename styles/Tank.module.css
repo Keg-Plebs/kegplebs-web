@@ -75,3 +75,52 @@
     right: 5%;
     left: 5%;
 }
+
+@media screen and (max-width: 400px) {
+    .sectionContainer {
+        margin-top: 10vh;
+        width: 80vw;
+    }
+
+    .physical {
+        font-size: 1rem;
+        margin-top: 5vh;
+    }
+
+    .arrow {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .sectionContainer {
+        flex-direction: column;
+    }
+
+    .sectionText {
+        margin-left: 0;
+        width: 80vw;
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    .sectionText h1 {
+        font-size: 1.5rem;
+        line-height: 1.6rem;
+        margin-top: 35vh;
+        margin-bottom: 35vh;
+    }
+
+    .sectionText p {
+
+        font-size: 1rem;
+        line-height: 1rem;
+        width: 80vw;
+    }
+
+    .sectionImage {
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+        margin-top: -34vh;
+    }
+}

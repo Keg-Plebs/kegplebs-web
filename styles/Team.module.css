@@ -16,7 +16,7 @@
 
 .sectionHeader {
     letter-spacing: 3px;
-    font-size: 75px;
+    font-size: 5rem;
     left: 10vw;
 }
 
@@ -34,6 +34,8 @@
     transform-style: preserve-3d;
     transition: all 1.0s linear;
     perspective: 1000;
+    display: flex;
+    justify-content: center;
 }
 
 .img {
@@ -92,7 +94,7 @@
 
 @media screen and (max-width: 400px) {
     .sectionHeader {
-        font-size: 45px;
+        font-size: 3rem;
         width: 100vw;
         text-align: center;
     }
@@ -102,12 +104,12 @@
     }
 
     .img {
-        height: 275px;
-        width: 275px;
+        height: 150px;
+        width: 150px;
     }
 
     .imgBack {
-        height: 274px;
-        width: 274px;
+        height: 149px;
+        width: 149px;
     }
 }

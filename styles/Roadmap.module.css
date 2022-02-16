@@ -215,3 +215,66 @@
     margin-left: 0;
     top: 15%;
 }
+
+@media screen and (max-width: 400px) {
+
+    .sectionHeader {
+        height: 17vw;
+        width: 80vw;
+        margin-bottom: 0;
+    }
+
+    .timeline {
+        justify-content: center;
+        margin-top: -10vh;
+        margin-left: 0;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .left {
+        margin-left: 0;
+    }
+
+    .milestoneHeadings {
+        font-size: 1rem;
+    }
+
+    .one::after {
+        display: none;
+    }
+
+    .two::after {
+        display: none;
+    }
+
+    .three::after {
+        display: none;
+    }
+
+    .four::after {
+        display: none;
+    }
+
+    .five::after {
+        display: none;
+    }
+
+    .six::after {
+        display: none;
+    }
+
+    .rightImg {
+        display: none;
+    }
+
+    .beerDrip {
+        display: none;
+    }
+
+    .beerFoam {
+        width: 140vw;
+        height: 100vh;
+        top: 30vh;
+    }
+}

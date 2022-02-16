@@ -4,8 +4,8 @@
 }
 
 .sectionHeader {
-    height: 120px;
-    width: 240px;
+    height: 6vw;
+    width: 12vw;
     background-image: url('../public/FAQ.webp');
     background-size: cover;
     margin-top: 5%;
@@ -15,11 +15,11 @@
 @media screen and (max-width: 400px) {
     .sectionHeader {
         margin-left: 0;
-        margin-right: 66vw;
         padding: 0;
-        margin-top: -75px;
-        margin-bottom: 0px;
 
-        font-size: 50px;
+        width: 50vw;
+        height: 25vw;
+        margin: 5vw 0;
+        margin-top: -10vw;
     }
 }

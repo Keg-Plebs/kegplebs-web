@@ -19,3 +19,16 @@
     height: 120px;
     width: 720px;
 }
+
+@media screen and (max-width: 400px) {
+    .collabsContainer {
+        margin-bottom: -40vh;
+    }
+
+    .sectionHeader {
+        margin-top: 0;
+        width: 70vw;
+        height: 5vh;
+        margin-bottom: 15vh;
+    }
+}

@@ -132,7 +132,7 @@
   flex-direction: row;
 }
 
-/* @media screen and (max-width: 1700px) {
+@media screen and (max-width: 1700px) {
   .nav {
     position: relative;
     flex-direction: column;
@@ -233,4 +233,4 @@
     margin: 0;
     padding: 0;
   }
-} */
+}
