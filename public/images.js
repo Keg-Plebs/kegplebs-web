@@ -55,6 +55,11 @@ export { default as TwentyFour } from './mugshots/twentyfour.webp';
 export { default as TwentyFive } from './mugshots/twentyfive.webp';
 export { default as TwentySix } from './mugshots/twentysix.webp';
 export { default as TwentySeven } from './mugshots/twentyseven.webp';
+export { default as TheOozic } from './mugshots/oozicsquareopt.webp';
+export { default as TheSJ } from './mugshots/sjsquareopt.webp';
+export { default as TheTSIZ } from './mugshots/tomtomsquareopt.webp';
+export { default as TheJeff } from './mugshots/jeffsquareopt.webp';
+export { default as TheShdw } from './mugshots/bishsquareopt.webp';
  
 // general
 export { default as NavIcon } from './sunIcon.webp';

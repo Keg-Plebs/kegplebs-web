@@ -8,7 +8,11 @@ import {
     Flowers,
     Bitchass,
     Jeff,
-    Glow
+    TheOozic,
+    TheJeff,
+    TheSJ,
+    TheShdw,
+    TheTSIZ
 } from '../public/images';
 
 import { 
@@ -22,7 +26,7 @@ import {
     name, 
     twitter, 
     title,
-    sectionHeader
+    sectionHeader,
 } from '../styles/Team.module.css';
 import sectionStyles from '../styles/Section.module.css';
 import { useEffect, useState } from 'react';
@@ -54,7 +58,7 @@ const Team = () => {
                             <Image src={Flowers} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheSJ} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -69,7 +73,7 @@ const Team = () => {
                             <Image src={Oozic} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheOozic} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -84,7 +88,7 @@ const Team = () => {
                             <Image src={Drooly} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheTSIZ} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     
@@ -100,7 +104,7 @@ const Team = () => {
                             <Image src={Bitchass} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheShdw} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -115,7 +119,7 @@ const Team = () => {
                             <Image src={Jeff} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheJeff} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     
