@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import ReactCSSTransitionGroup from 'react-transition-group';
 
 import sectionStyles from '../styles/Section.module.css';
@@ -24,6 +24,24 @@ import {
 
 const Roadmap = () => {
     const [hovered, setHovered] = useState('');
+    const [screenWidth, setScreenWidth] = useState(20000);
+    const mobile = screenWidth < 500 ? true : false;
+
+    const ref = useRef();
+    
+    useEffect(() => {
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', changeWidth)
+
+        return () => {
+            window.removeEventListener('resize', changeWidth);
+        }
+
+    }, []);
+
 
     const data = {
         'one': {
@@ -80,6 +98,75 @@ const Roadmap = () => {
         }
     }
 
+    const infoTags = {
+        "one": ( <div 
+                className={milestoneInfo}
+                style={{ display: hovered === 'one' ? "flex" : "none"}}
+            >
+                {   
+                    Object.values(data.one.desc).map((child, key) => {
+                        return <p key={key}>{child}</p> 
+                    })
+                }
+            </div> 
+        ),
+        "two": (<div 
+                    className={milestoneInfo}
+                    style={{ display: hovered === 'two' ? "flex" : "none" }}
+                >
+                    { 
+                        Object.values(data.two.desc).map((child, key) => {
+                            return <p key={key}>{child}</p> 
+                        })
+                    }
+                </div>
+        ),
+        "three": (<div 
+                    className={milestoneInfo}
+                    style={{ display: hovered === 'three' ? "flex" : "none" }}
+                >
+                    { 
+                        Object.values(data.three.desc).map((child, key) => {
+                            return <p key={key}>{child}</p> 
+                        })
+                    }
+                </div>
+        ),
+        "four": (<div 
+                    className={milestoneInfo}
+                    style={{ display: hovered === 'four' ? "flex" : "none" }}
+                >
+                    { 
+                        Object.values(data.four.desc).map((child, key) => {
+                            return <p key={key}>{child}</p> 
+                        })
+                    }
+                </div>
+        ),
+        "five": (<div 
+                    className={milestoneInfo}
+                    style={{ display: hovered === 'five' ? "flex" : "none" }}
+                >
+                    { 
+                        Object.values(data.five.desc).map((child, key) => {
+                            return <p key={key}>{child}</p> 
+                        })
+                    }
+                </div>
+        ),
+        "six": (<div 
+                    className={milestoneInfo}
+                    style={{ display: hovered === 'six' ? "flex" : "none" }}
+                >
+                    { 
+                        Object.values(data.six.desc).map((child, key) => {
+                            return <p key={key}>{child}</p> 
+                        })
+                    }
+                </div>
+        )
+    }
+
     return(
         <div className={`${sectionStyles.main} ${roadmap}`}>
             
@@ -98,17 +185,14 @@ const Roadmap = () => {
                         >
                             {data.one.milestone}
                         </h2>
-                    </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: hovered === 'one' ? "flex" : "none"}}
-                    >
-                        {   
-                            Object.values(data.one.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
+                        {
+                            mobile ? infoTags.one : <></>
                         }
                     </div>
+                    {
+                        mobile ? <></> : infoTags.one
+                    }
+
                     <div className={`${left} ${two}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -120,17 +204,13 @@ const Roadmap = () => {
                         >
                             {data.two.milestone}
                         </h2>
-                    </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: hovered === 'two' ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.two.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
+                        {
+                            mobile ? infoTags.two : <></>
                         }
                     </div>
+                    {
+                        mobile ? <></> : infoTags.two
+                    }
                     
                     <div className={`${left} ${three}`}>
                         <h2 className={milestoneHeadings}
@@ -143,17 +223,13 @@ const Roadmap = () => {
                         >
                             {data.three.milestone}
                         </h2>
-                    </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: hovered === 'three' ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.three.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
+                    {
+                            mobile ? infoTags.three : <></>
                         }
                     </div>
+                    {
+                        mobile ? <></> : infoTags.three
+                    }
                     
                     <div className={`${left} ${four}`}>
                         <h2 className={milestoneHeadings}
@@ -166,17 +242,14 @@ const Roadmap = () => {
                         >
                             {data.four.milestone}
                         </h2>
-                    </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: hovered === 'four' ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.four.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
+                        {
+                            mobile ? infoTags.four : <></>
                         }
                     </div>
+                    {
+                        mobile ? <></> : infoTags.four
+                    }
+                    
                     <div className={`${left} ${five}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -188,19 +261,13 @@ const Roadmap = () => {
                         >
                             {data.five.milestone}
                         </h2>
-                    </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: hovered === 'five' ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.five.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
+                        {
+                            mobile ? infoTags.five : <></>
                         }
                     </div>
-
-
+                    {
+                        mobile ? <></> : infoTags.five
+                    }
                     <div className={`${left} ${six}`}>
                         <h2 className={milestoneHeadings}
                             onPointerOver={() => {
@@ -212,18 +279,13 @@ const Roadmap = () => {
                         >
                             {data.six.milestone}
                         </h2>
-                    </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: hovered === 'six' ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.six.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
+                        {
+                            mobile ? infoTags.six : <></>
                         }
                     </div>
-                    
+                    {
+                        mobile ? <></> : infoTags.six
+                    }
                 </div>
                 <div className={rightImg}></div>
                 <div className={beerDrip}></div>

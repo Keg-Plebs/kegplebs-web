@@ -20,7 +20,7 @@
     width: 720px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .collabsContainer {
         margin-bottom: -40vh;
     }

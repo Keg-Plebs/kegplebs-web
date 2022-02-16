@@ -5,7 +5,6 @@ import EtherOrcs from './EtherOrcs';
 
 const Collabs = () => {
 
-
     return (
         <>
             <div className={collabsContainer}>

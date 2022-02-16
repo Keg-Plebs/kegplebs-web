@@ -106,20 +106,15 @@
     }
 }
 
-/* @media screen and (max-width: 1700px) {
-    
 
-
-} */
-
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 
 
     .sectionHeader {
         height: 20vh;
         width: 100vw;
-        margin-top: -65vh;
-        margin-bottom: 60vh;
+        margin-top: -60vh;
+        margin-bottom: 55vh;
         margin-left: 2vh;
     }
 
@@ -130,7 +125,7 @@
     }
 
     .first {
-        margin-top: 15vh;
+        margin-top: 20vh;
         width: 2700px;
     }
 

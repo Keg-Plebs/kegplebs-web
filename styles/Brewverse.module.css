@@ -69,8 +69,8 @@
     background-image: url('../public/cloudsLeft.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 150vh;
-    width: 241vh;
+    height: 80vw;
+    width: 120vw;
     z-index: 2;
     top: -7vh; bottom: 0; 
     right: 15vw;
@@ -84,10 +84,10 @@
     background-image: url('../public/cloudsRight.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 155vh;
-    width: 250vh;
+    height: 80vw;
+    width: 125vw;
     z-index: 2;
-    top: -12vh; bottom: 0;
+    top: -14vh; bottom: 0;
     left: -16vw;
     pointer-events: none;
 }
@@ -140,7 +140,7 @@
     100%{opacity: 1;}
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .sectionHeader {
         width: 60vw;
         height: 5vh;

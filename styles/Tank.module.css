@@ -76,7 +76,7 @@
     left: 5%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
     .sectionContainer {
         margin-top: 10vh;
         width: 80vw;
@@ -107,13 +107,13 @@
         font-size: 1.5rem;
         line-height: 1.6rem;
         margin-top: 35vh;
-        margin-bottom: 35vh;
+        margin-bottom: 40vh;
     }
 
     .sectionText p {
 
         font-size: 1rem;
-        line-height: 1rem;
+        line-height: 1.1rem;
         width: 80vw;
     }
 

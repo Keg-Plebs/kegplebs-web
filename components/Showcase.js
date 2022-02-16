@@ -2,33 +2,14 @@ import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { 
-    Baseball,
-    Bitchass, 
     Budder,
-    Cam,
-    Cowb,
-    Doodle, 
-    Drooly, 
-    Fancy,
-    Flowers, 
-    Glow,
     Goat,
-    Goggs, 
-    Hipp, 
-    Hoodee,
-    Hoodup,
-    Jeff,
-    Paris,
     POG,
-    Poodle,
     Puffer,
     Raincoat, 
     Space, 
-    Vort, 
-    Iceman,
     Nani,
     SmallHat,
-    Tiger,
     One,
     Two,
     Three,
@@ -63,7 +44,7 @@ import { showcase, first, second, third, imgContainer, sectionHeader, showcaseOv
 
 const Showcase = () => {
     const [screenWidth, setScreenWidth] = useState(20000);
-    const size = screenWidth < 400 ? 150 : 250;
+    const size = screenWidth < 500 ? 150 : 250;
 
     const ref = useRef();
     
