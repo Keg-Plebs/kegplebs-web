@@ -4,6 +4,7 @@
     background-color: black;
     overflow: hidden;
     padding: 0;
+    margin-bottom: -100px;
 }
 
 .contentContainer {
@@ -16,6 +17,7 @@
 .sectionHeader {
     position: relative;
     margin-left: 48%;
+    margin-top: 5%;
     z-index: 3;
     background-image: url('../public/navbarLogo.webp');
     background-repeat: no-repeat;
@@ -45,7 +47,7 @@
     display: flex;
     flex-direction: row;
     transform: translate3d(0,0,0);
-    width: 4950px;
+    width: 4500px;
 
     animation: moveSlideshowLeft 35s linear infinite;
 }
@@ -55,7 +57,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    width:4950px;
+    width:4500px;
 
     
     animation: moveSlideshowRight 38s linear infinite;
@@ -66,7 +68,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 4950px;
+    width: 4500px;
     margin-bottom: 400px;
 
     animation: moveSlideshowLeft 25s linear infinite;
@@ -76,19 +78,19 @@
     margin: 0;
     padding: 0;
     position: relative;
-    height:275px;
-    width: 275px;
+    height:250px;
+    width: 250px;
 }
 
 .desc {
     margin-top: -25px;
     height: 100%;
-    font-size: 25px;
+    font-size: 1.3rem;
     font-weight: 300;
     letter-spacing: 2px;
-    line-height: 50px;
-    margin-left: 55%;
-    margin-right: 8%;
+    line-height: 2rem;
+    margin-left: 60%;
+    margin-right: 10%;
     text-align: center;
 }
 
@@ -104,51 +106,49 @@
     }
 }
 
-@media screen and (max-width: 1700px) {
+
+@media screen and (max-width: 500px) {
+
+
+    .sectionHeader {
+        height: 20vh;
+        width: 100vw;
+        margin-top: -60vh;
+        margin-bottom: 55vh;
+        margin-left: 2vh;
+    }
+
     .showcaseOverlay {
         position: relative;
+
+        background-image: none;
+    }
+
+    .first {
+        margin-top: 20vh;
+        width: 2700px;
+    }
+
+    .second {
+        width: 2700px;
+        left: -1900px;
     }
 
     .third {
-        margin-bottom: 5px;
+        width: 2700px;
+        margin-bottom: 5vh;
     }
 
     .desc {
+        font-size: 0.8rem;
+        line-height: 25px;
+        margin-bottom: 5vh;
+
         margin-top: 0;
-        margin-bottom: 75px;
         text-align: center;
         width: 80vw;
         margin-left: auto;
         margin-right: auto;
-        font-size: 25px;
-    }
-
-}
-
-@media screen and (max-width: 400px) {
-    .sectionHeader {
-        font-size: 30px;
-        margin-bottom: -35px;
-    }
-
-    .first {
-        left: 2000px;
-    }
-
-    .second {
-        left: 1400px;
-    }
-
-    .third {
-        left: 2200px;
-        margin-bottom: -25px;
-    }
-
-    .desc {
-        margin-top: -65px;
-        font-size: 17px;
-        line-height: 25px;
-        margin-bottom: 35px;
     }
 
     .imgContainer {

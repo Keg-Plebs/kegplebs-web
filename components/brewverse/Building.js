@@ -1,14 +1,12 @@
 import { useState } from 'react'
 import { useTexture } from '@react-three/drei'
-import * as THREE from 'three'
-import { useThree } from '@react-three/fiber'
 
 const Building = ({ src, srcSelect, ...rest }) => {
 
-    const { gl } = useThree()
-
     let texture
     let textureSelect
+
+    // Sets the textures of the building
     if (src) {
         texture = useTexture(src)
     }
@@ -16,25 +14,6 @@ const Building = ({ src, srcSelect, ...rest }) => {
     if (srcSelect) {
         textureSelect = useTexture(srcSelect)
     }
-
-    // Fix artifacting from transparency
-    // texture.anisotropy = gl.capabilities.getMaxAnisotropy();
-    texture.anisotropy = 0;
-    // texture.magFilter = THREE.NearestFilter;
-    // texture.minFilter = THREE.NearestFilter;
-    texture.minFilter = THREE.LinearMipMapLinearFilter;
-    texture.magFilter = THREE.LinearFilter;
-    // texture.format = RGBAFormat;
-
-    // textureSelect.anisotropy = gl.capabilities.getMaxAnisotropy();
-    textureSelect.anisotropy = 0;
-    // texture.magFilter = THREE.NearestFilter;
-    // texture.minFilter = THREE.NearestFilter;
-    // textureSelect.magFilter = THREE.NearestFilter;
-    // textureSelect.minFilter = THREE.NearestFilter;
-    textureSelect.minFilter = THREE.LinearMipMapLinearFilter;
-    textureSelect.magFilter = THREE.LinearFilter;
-
 
     const [hovered, hover] = useState(false)
 
@@ -73,7 +52,7 @@ const Building = ({ src, srcSelect, ...rest }) => {
     }
 
     return (
-        <sprite
+        <mesh
             {...rest}
             args={[aspect, 1, 1]}
             onPointerMove={(event) => {
@@ -81,6 +60,7 @@ const Building = ({ src, srcSelect, ...rest }) => {
                 // Checks if texture_data has been loaded.
                 // If the pixel is transparent hover is set to false and the cursor is pointer 
                 if (textureData) {
+
                     // Checks if texture_data has been loaded.
                     // If the pixel is transparent hover is set to false and the cursor is pointer 
                     if (isTransparent(event, textureData.data, width, height)) {
@@ -103,16 +83,14 @@ const Building = ({ src, srcSelect, ...rest }) => {
             onPointerDown={(event) => {
                 document.body.style.cursor = 'pointer'
             }}>
+            <planeGeometry/>
             {texture ?
-                <spriteMaterial
+                <meshStandardMaterial
                     transparent
-                    blending={THREE.CustomBlending}
-                    blendSrc={THREE.OneFactor}
-                    blendDst={THREE.OneMinusSrcAlphaFactor}
                     map={textureSelect && hovered ? textureSelect : texture} /> :
                 <></>
             }
-        </sprite>
+        </mesh>
 
         // Can alternatively create the image with a planeGeometry
         /*
@@ -138,6 +116,7 @@ const Building = ({ src, srcSelect, ...rest }) => {
     )
 }
 
+// Checks if the hovered pixel is transparent
 const isTransparent = (event, data, width, height) => {
     // https://stackoverflow.com/questions/35454432/finding-image-pixel-coordinates-integers-from-uv-values-floats-of-obj-file
 
@@ -156,6 +135,7 @@ const isTransparent = (event, data, width, height) => {
     return false
 }
 
+// Gets the alpha value of the pixel
 const getAlphaValue = (x, y, data, width) => {
     // https://stackoverflow.com/questions/55236399/canvas-getimagedata-returns-wrong-pixel-color-value-in-ff
 

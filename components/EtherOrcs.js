@@ -1,17 +1,21 @@
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 import {
     sectionContainer,
     sectionHeader,
     sectionText,
     sectionImage,
-    digital
+    digital,
+    arrow
 } from '../styles/EtherOrcs.module.css';
  
 const EtherOrcs = () => {
     return(
         <>
             <div className={digital}>
-                    <h2>DIGITAL</h2>
+                    <h2>DIGITAL<FontAwesomeIcon className={arrow} icon={faArrowDown}/></h2>
             </div>
             <div className={sectionContainer}>
                 <div className={sectionImage}></div>

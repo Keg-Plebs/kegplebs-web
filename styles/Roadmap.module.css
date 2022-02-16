@@ -7,6 +7,7 @@
 }
 
 .contentContainer {
+    margin-top: 0vh;
     width: 100%;
     height: 100%;
     display: flex;
@@ -14,6 +15,7 @@
 }
 
 .timeline {
+    position: relative;
     width: 50%;
     height: 100%;
     /* background-color: aquamarine; */
@@ -23,25 +25,27 @@
 }
 
 .sectionHeader {
-    position: relative;
     z-index: 2;
+    position: absolute;
+    display: block;
     background-image: url('../public/ROADMAP.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 150px;
-    width: 750px;
-    margin-bottom: 3.5vw;
+    height: 120px;
+    width: 560px;
+    padding: 0;
+    
 }
 
 .milestoneHeadings {
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: 500;
     display: inline-block;
-    background-color: whitesmoke;
+    background-color: white;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 5px;
-    font-size: 1.15vw;
+    font-size: 1.5rem;
 }
 
 .milestoneHeadings:hover {
@@ -54,112 +58,124 @@
     width: 55vw;
     padding: 0;
     margin-left: 28vw;
+    text-transform: uppercase;
 }
 
 .milestoneInfo {
     letter-spacing: 2px;
     pointer-events: none;
     position: absolute;
-    display: none;
-    margin-right: auto;
-    margin-left: -2.5%;
+    margin-left: 50vw;
     top: 25%;
     width: 82vw;
     height: 62vh;
-    background-color: rgba(0,0,0, 0.95);
+    background-color: rgba(0,0,0, 0.9);
     border-radius: 25px;
     z-index: 2;
     color: white;
-    padding: 150px 650px;
+    padding: 2% 10%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: 1s ease-in-out;
+    transition: display 2s;
+}
+
+.milestoneInfo p {
+    text-align: left;
+    text-transform: uppercase;
 }
 
 
 .one {
-    margin-top: 2.5%;
-    top: 33vw;
+    top: 29%;
+    position: absolute;
+}
+
+.two {
+    top: 40%;
+    position: absolute;
+}
+
+.three {
+    top: 51%;
+    position: absolute;
+}
+
+.four {
+    top: 62%;
+    position: absolute;
+}
+
+.five {
+    top: 73%;
+    position: absolute;
+}
+
+.six {
+    top: 84%;
+    position: absolute;
 }
 
 .one::after {
     content: '';
+    height: 4px;
+    background-color: whitesmoke;
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 33vh;
-    right: 35%;
-    left: 20%;
+    top: 5vh;
+    right: -20%;
+    left: 22%;
     
-}
-
-.two {
-    top: 40vh;
 }
 
 .two::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 41vh;
-    right: 35%;
-    left: 24%;
-}
-
-.three {
-    top: 48vh;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 30%;
 }
 
 .three::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 49vh;
-    right: 35%;
-    left: 40%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 21%;
 }
 
 .four::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 57vh;
-    right: 35%;
-    left: 32%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 21%;
 }
 
 .five::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 65vh;
-    right: 35%;
-    left: 26%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 23%;
 }
 
 .six::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 73vh;
-    right: 35%;
-    left: 31%;
-}
-
-.seven::after {
-    content: '';
-    position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 81vh;
-    right: 35%;
-    left: 32%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 22%;
 }
 
 .rightImg {
@@ -171,8 +187,8 @@
     transform: rotateY(180deg);
     margin-right: -40vw;
     width: 80%;
-    height: 100%;
-    margin-left: -20%;;
+    height: 100vh;
+    margin-left: -7%;
 }
 
 .beerDrip {
@@ -181,9 +197,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    width: 80%;
-    height: 100%;
-    top: 35%;
+    width: 100%;
+    height: 120%;
+    top: 15%;
     left: 9%;
 }
 
@@ -198,4 +214,94 @@
     height: 140%;
     margin-left: 0;
     top: 15%;
+}
+
+@media screen and (max-width: 500px) {
+    .roadmap {
+        position: relative;
+    }
+
+    .sectionHeader {
+        height: 17vw;
+        width: 80vw;
+        margin-bottom: 0;
+    }
+
+    .timeline {
+        justify-content: center;
+        margin-top: -10vh;
+        margin-left: 0;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .milestoneHeadings {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .milestoneHeadings:hover {
+        cursor: pointer;
+        left: 0;
+        position: relative;
+    }
+
+    .milestoneInfo {
+        margin-left: 0;
+        font-size: 0.75rem;
+        position: absolute;
+        top: 0;
+        height: 60vh;
+    }
+
+    .milestoneInfo p{
+        text-align: center
+    }
+
+    .left {
+        position: absolute;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one::after {
+        display: none;
+    }
+
+    .two::after {
+        display: none;
+    }
+
+    .three::after {
+        display: none;
+    }
+
+    .four::after {
+        display: none;
+    }
+
+    .five::after {
+        display: none;
+    }
+
+    .six::after {
+        display: none;
+    }
+
+    .rightImg {
+        display: none;
+    }
+
+    .beerDrip {
+        display: none;
+    }
+
+    .beerFoam {
+        width: 140vw;
+        height: 100vh;
+        top: 30vh;
+    }
 }

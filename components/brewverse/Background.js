@@ -1,18 +1,20 @@
 import { useTexture } from '@react-three/drei'
-import { useThree } from '@react-three/fiber';
 
 import { BaseLayer } from '../../public/images';
 
 const Background = () => {
-    const texture = useTexture(BaseLayer.src)
-    // const { size, gl } = useThree()
 
-    const width = texture.image.width;
-    const height = texture.image.height;
+    // Creates a Texture object from the image for the mesh
+    const texture = useTexture(BaseLayer.src)
+
+    // Gets the width and height from the texture
+    const width = BaseLayer.width;
+    const height = BaseLayer.height;
     
     return (
         <>
-            <sprite
+            <mesh
+                // THIS WILL BE NECESSARY IF WE DECIDE TO MOVE THE MAP
                 // onPointerDown={(event) => {
                 //     document.body.style.cursor = 'grabbing'
                 // }}
@@ -26,10 +28,9 @@ const Background = () => {
                 //     document.body.style.cursor = 'grab'
                 // }}
                 scale={[width, height, 1 ]}>
-                {/* <planeGeometry /> */}
-                {/* <meshStandardMaterial map={texture} transparent/> */}
-                <spriteMaterial map={texture} />
-            </sprite>
+                <planeGeometry />
+                <meshStandardMaterial map={texture} transparent/>
+            </mesh>
         </>
     )
 }

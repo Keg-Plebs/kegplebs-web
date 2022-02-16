@@ -5,6 +5,7 @@ import { scroller } from 'react-scroll';
 import { faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import Passport from '../public/pdfs/Pleb_Passport_2.pdf';
 
 import { Opensea, Etherscan, NavLogo, Icon } from '../public/images';
 import { 
@@ -31,6 +32,8 @@ const Nav = props => {
     const [userIcon, setUserIcon] = useState('');
     const [userAddress, setUserAddress] = useState('');
     const [hovered, setHovered] = useState('false');
+
+    const screen = 1700;
 
     useEffect(() => {
         const changeWidth = () => {
@@ -60,7 +63,7 @@ const Nav = props => {
         scroller.scrollTo('about', {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: -5
         })
     }
 
@@ -74,7 +77,8 @@ const Nav = props => {
     const toTop = () => {
         scroller.scrollTo('top', {
             duration: 500,
-            smooth: true
+            smooth: true,
+            offset: -100
         })
     }
 
@@ -91,7 +95,7 @@ const Nav = props => {
         <nav className={nav}>
             <div className={logoGroup}>
                 <a onClick={toTop}>
-                    <Image src={NavLogo} quality={100} priority={true} height={225} width={400}></Image>
+                    <Image src={NavLogo} quality={100} priority={true} height={190} width={337}></Image>
                 </a>
                 {
                     userAddress.length > 0 ? (
@@ -107,11 +111,11 @@ const Nav = props => {
                 }
             </div>
             {(
-                (active || screenWidth > 1700) && (
+                (active || screenWidth > screen) && (
                 <>
                     <ul className={linkGroup}>
                         <li className={li}>
-                            <span className={link}><a onClick={toBrewverse} href="#">BREWVERSE</a></span>
+                            <span className={link}><a onClick={toBrewverse} href="#">MINT</a></span>
                         </li>
                         <li className={li}>
                             <span className={link}><a onClick={toAbout} href="#">ABOUT</a></span>
@@ -119,13 +123,16 @@ const Nav = props => {
                         <li className={li}>
                             <span className={link}><a onClick={toTeam} href="#">TEAM</a></span>
                         </li>
+                        <li className={li}>
+                            <span className={link}><a href='/pdfs/Pleb_Passport_2.pdf'>PLEBPASS</a></span>
+                        </li>
                     </ul>
                     <div className={socialGroup}>
                         <div className={icons}>
                             <a className={a} href='https://twitter.com/KegPlebs'><FontAwesomeIcon icon={faTwitter} className={socialIcons}/></a>
                             <a className={a} href='https://discord.gg/xjfpxWajXH'><FontAwesomeIcon icon={faDiscord} className={socialIcons}/></a>
-                            <a className={a} href='#'><Image src={Opensea} quality={100} height={40} width={40}></Image></a>
-                            <a className={a} href='#'><Image src={Etherscan} quality={100} height={40} width={40}></Image></a>
+                            <a className={a} href='#'><Image src={Opensea} quality={100} height={30} width={30}></Image></a>
+                            <a className={a} href='#'><Image src={Etherscan} quality={100} height={30} width={30}></Image></a>
                         </div>
                         <Connect onConnected={handleIconDisplay}/>
                     </div>

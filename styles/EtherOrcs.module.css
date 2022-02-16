@@ -1,5 +1,6 @@
 .sectionContainer {
     width: 100vw;
+    height: 135vh;
     display: flex;
     flex-direction: row;
 }
@@ -30,24 +31,81 @@
 }
 
 .sectionText h1 {
-    font-size: 45px;
+    font-size: 3rem;
+    
+    line-height: 3.5rem;
 }
 
 .sectionText p {
-    font-size: 25px;
+    font-size: 1.2rem;
     padding: 0 2%;
+}
+
+.arrow {
+    height: 25px;
+    margin-left: 10px;
 }
 
 .digital {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-bottom: 150px;
+    margin-bottom: 5%;
     width: 80%;
     color: white;
 }
 
 .digital h2 {
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .sectionContainer {
+        margin-top: 10vh;
+        width: 80vw;
+    }
+
+    .digital {
+        font-size: 1rem;
+        margin-bottom: 0vh;
+    }
+
+    .arrow {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .sectionContainer {
+        flex-direction: column;
+    }
+
+    .sectionText {
+        margin-left: 0;
+        width: 80vw;
+        position: relative;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .sectionText h1 {
+        font-size: 1.5rem;
+        line-height: 1.6rem;
+        margin-top: 0vh;
+        margin-bottom: 40vh;
+    }
+
+    .sectionText p {
+
+        font-size: 1rem;
+        line-height: 1.1rem;
+        width: 80vw;
+    }
+
+    .sectionImage {
+        position: relative;
+        margin-left: 0;
+        width: 80vw;
+        height: 80vw;
+    }
 }

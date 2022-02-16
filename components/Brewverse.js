@@ -1,69 +1,110 @@
-import { Suspense, useState, useRef, useEffect, useLayoutEffect, useContext } from 'react'
+import { Suspense, useState, componentWillMount, componentWillUnmount, useContext } from 'react'
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
-import { 
-    brewverse, 
-    canvas_container, 
+import {
+    brewverse,
+    canvas_container,
     sectionHeader,
     imageContainer,
     cloudLeft,
-    cloudRight
+    cloudRight,
+    sceneChange,
+    curtain,
+    moveCloudsLeft,
+    moveCloudsRight,
+    cloudLeftInfinite,
+    cloudRightInfinite,
+    mintIndicator
 } from '../styles/Brewverse.module.css';
 
-import Interior from './brewverse/Interior'
 import Verse from './brewverse/Verse'
+
+import Bar from './Bar';
+import Team from './Team'
 
 import ProviderContext from './ProviderContext';
 
-import { DISCORD_LINK, SCENES } from '../lib/constants'
+import { DISCORD_LINK, SCENES } from '../utils/constants'
 
 // https://github.com/pmndrs/react-three-fiber#what-does-it-look-like
 // https://drei.pmnd.rs/?path=/story/controls-mapcontrols--map-controls-scene-st
-const Brewverse = () => {
+const Brewverse = props => {
 
     const [scene, switchScene] = useState(SCENES.VERSE);
+    const [breweryScene, setBreweryScene] = useState(false)
 
-    const {provider, setProvider} = useContext(ProviderContext);
-
+    const { provider, setProvider } = useContext(ProviderContext);
+    
     let component;
+    const isVerse = scene === SCENES.VERSE;
 
+    const myClass = breweryScene ? `${sceneChange}` : ``;
+    
+    const leftCloudClass = breweryScene ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
+    const rightCloudClass = breweryScene ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
+
+
+    // Changes the scene component in the Canvas
     switch (scene) {
         case SCENES.DISCORD:
-            window.location = DISCORD_LINK
+            window.location = DISCORD_LINK  // Goes to the Discord
             component = <></>
             break;
         case SCENES.VERSE:
+            props.enterBrewverse(false)
             component =
-                <Verse callback={(newScene) => switchScene(newScene)} />
+                <Verse enterBrewery={() => setBreweryScene(true)} callback={(newScene) => switchScene(newScene)} />
             break;
         case SCENES.BREWERY:
+            // setBreweryScene(true)
+            props.enterBrewverse(true);
             component =
-                <Interior
-                    callback={
-                        () => switchScene(SCENES.VERSE)
-                    } />
-
+                <></>
             break;
         default:
             component = <></>
     }
 
     return (
-        <div className={`${sectionStyles.main} /* ${brewverse}`}>
-            <div className={sectionHeader}></div>
+        <div className={`${sectionStyles.main} ${brewverse}`}>
+            <div className={sectionHeader}
+                style={{
+                    display: breweryScene ? 'none' : 'block'
+                }}
+            ></div>
             <div className={imageContainer}>
-                <div className={`${cloudLeft}`}      />
-                <div className={`${cloudRight}`}      />
+                <div 
+                    id={`${cloudLeft}`} 
+                    className={leftCloudClass}
+                />
+                <div 
+                    id={`${cloudRight}`} 
+                    className={rightCloudClass}
+                />
             </div>
 
             <div className={canvas_container}>
-                <Canvas>
-                    <ambientLight color={0xffffff} intensity={0.5} />
-                    <Suspense fallback={null} r3f>
-                        {component}
-                    </Suspense>
-                </Canvas>
+                <div
+                    id={curtain}
+                    className={myClass}
+                >
+                    {
+                        breweryScene ? <Bar exitBrewery={() => {
+                            setBreweryScene(false);
+                            switchScene(SCENES.VERSE)
+                        }}></Bar> :
+                            <Canvas>
+                                <Suspense fallback={null} r3f>
+                                    {component}
+                                </Suspense>
+                            </Canvas>
+                    }
+                </div>
+                {
+                    breweryScene ? <></> : <div className={mintIndicator}></div>
+                }
+                
             </div>
         </div>
     )

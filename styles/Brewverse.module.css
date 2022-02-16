@@ -21,9 +21,37 @@
     background-size: cover;
     z-index: 3;
     position: absolute;
-    height: 150px;
-    width: 810px;
+    height: 120px;
+    width: 648px;
     margin-top: 0;
+}
+
+#curtain {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.sceneChange {
+    animation-name: screen-change;
+    animation-duration: 5s;
+}
+
+.mintIndicator {
+    background-image: url('../public/enterarrow.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 13%;
+    width: 10%;
+    position: absolute;
+    z-index: 2;
+    top: 60%;
+    margin-left: 45%;
+
+    pointer-events: none;
+    animation: slowBlink 3s infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .imageContainer {
@@ -35,43 +63,58 @@
     margin-top: -32vh;
 }
 
-.cloudLeft {
+#cloudLeft {
     position: absolute;
     overflow: hidden;
     background-image: url('../public/cloudsLeft.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 110%;
-    width: 101%;
+    height: 80vw;
+    width: 120vw;
     z-index: 2;
-    top: -5%; bottom: 0; 
+    top: -7vh; bottom: 0; 
     right: 15vw;
     pointer-events: none;
-
-    animation: moveleftThenRight 20s infinite;
-    animation-timing-function: ease-in-out;
+    left: -14vw;
 }
 
-.cloudRight {
+#cloudRight {
     position: absolute;
     overflow: hidden;
     background-image: url('../public/cloudsRight.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 120%;
-    width: 130%;
+    height: 80vw;
+    width: 125vw;
     z-index: 2;
-    top: -12%; bottom: 0;
-    left: -26vw;
+    top: -14vh; bottom: 0;
+    left: -16vw;
     pointer-events: none;
+}
 
+.cloudLeftInfinite {
+    animation: moveleftThenRight 20s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.cloudRightInfinite {
     animation: moveRightThenLeft 20s infinite;
     animation-timing-function: ease-in-out;
 }
 
+.moveCloudsLeft {
+    margin-left: -100vw;
+    transition: 8s;
+}
+
+.moveCloudsRight {
+    margin-left: 100vw;
+    transition: 8s;
+}
+
 @keyframes moveleftThenRight {
     50% {
-        transform: translateX(50px);
+        transform: translateX(3vw);
     } 
     100% {
     }
@@ -79,15 +122,49 @@
 
 @keyframes moveRightThenLeft {
     50% {
-        transform: translateX(-50px);
+        transform: translateX(-3vw);
     }
     100% {
     }
 }
 
+@keyframes screen-change {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+    /* 70% {opacity:1;}
+    100% {opacity: 0;} */
+}
 
+@keyframes slowBlink {
+    50% {opacity: 0;}
+    100%{opacity: 1;}
+}
 
+@media screen and (max-width: 500px) {
+    .sectionHeader {
+        width: 60vw;
+        height: 5vh;
+    }
 
-/* 
-    2,732 x 2,048
-*/
+    #cloudLeft {
+        top: 20vh;
+        width: 100vw;
+        height: 50vh;
+        left: -25vw;
+        pointer-events: auto;
+
+    }
+
+    #cloudRight {
+        top: 19vh;
+        width: 130vw;
+        height: 51vh;
+        left: -15vw;
+        pointer-events: auto;
+    }
+
+    .mintIndicator {
+        display: none;
+    }
+}
+
