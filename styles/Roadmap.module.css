@@ -4,6 +4,7 @@
     background-color: transparent;
     position: relative;
     margin-bottom: 14%;
+    margin-top: -100px;
 }
 
 .contentContainer {
@@ -45,7 +46,7 @@
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 5px;
-    font-size: 1.5rem;
+    font-size: 2.5vh;
 }
 
 .milestoneHeadings:hover {
@@ -185,8 +186,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     transform: rotateY(180deg);
-    margin-right: -40vw;
-    width: 80%;
+    margin-right: -25vw;
+    width: 85%;
     height: 100vh;
     margin-left: -7%;
 }

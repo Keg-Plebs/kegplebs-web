@@ -4,7 +4,7 @@
     background-color: black;
     overflow: hidden;
     padding: 0;
-    margin-bottom: -100px;
+    margin-bottom: -250px;
 }
 
 .contentContainer {
@@ -16,8 +16,9 @@
 
 .sectionHeader {
     position: relative;
-    margin-left: 48%;
-    margin-top: 5%;
+    margin-left: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
     z-index: 3;
     background-image: url('../public/navbarLogo.webp');
     background-repeat: no-repeat;
@@ -27,9 +28,8 @@
 }
 
 .showcaseOverlay {
-    margin-top: -100px;
-    top: -45px;
-    height: 100%;
+    top: 0;
+    height: 750px;
     background-image: linear-gradient(to right, rgba(0,0,0,0) 25%,rgba(0,0,0, 1) 55%,
     rgba(0, 0, 0, 1) 100%);
     position: absolute;
@@ -83,12 +83,13 @@
 }
 
 .desc {
-    margin-top: -25px;
+    margin-top: auto;
+    margin-bottom: auto;
     height: 100%;
-    font-size: 1.3rem;
+    font-size: 1vw;
     font-weight: 300;
     letter-spacing: 2px;
-    line-height: 2rem;
+    line-height: 1.7rem;
     margin-left: 60%;
     margin-right: 10%;
     text-align: center;
@@ -106,16 +107,44 @@
     }
 }
 
+@media screen and (max-width: 1700px) {
+    .first, .second, .third {
+        width: 3600px;
+    }
 
-@media screen and (max-width: 500px) {
-
+    .second {
+        left: -2500px;
+    }
 
     .sectionHeader {
-        height: 20vh;
-        width: 100vw;
-        margin-top: -60vh;
-        margin-bottom: 55vh;
-        margin-left: 2vh;
+        position: relative;
+        margin-left: 50%;
+        margin-top: -5%;
+        z-index: 3;
+        background-image: url('../public/navbarLogo.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 80%;
+        width: 40%;
+    }
+
+    .showcaseOverlay {
+        height: 600px;
+    }
+
+    .imgContainer {
+        height: 200px;
+        width: 200px;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .sectionHeader {
+        height: 40vh;
+        width: 80vw;
+        margin-left: 0vw;
+        margin-top: -15vh;
     }
 
     .showcaseOverlay {
@@ -142,9 +171,6 @@
     .desc {
         font-size: 0.8rem;
         line-height: 25px;
-        margin-bottom: 5vh;
-
-        margin-top: 0;
         text-align: center;
         width: 80vw;
         margin-left: auto;

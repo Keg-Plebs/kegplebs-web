@@ -138,6 +138,7 @@
     flex-direction: column;
     min-height: 110px;
     padding: 20px 0;
+    min-height: 85px;
     height: auto;
     margin-bottom: -120px;
   }
@@ -184,6 +185,37 @@
   }
 }
 
+@media screen and (max-width: 1700px) {
+  .nav {
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 7vh;
+  }
+
+  .logoGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 1vw;
+    height: 7vh;
+  }
+
+  .socialGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .li:nth-of-type(1) {
+    padding-top: 0vh;
+    margin-top: 5vh;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .nav {
     position: relative;
@@ -224,11 +256,6 @@
 
   .li, .a {
     margin-top: 15px;
-  }
-
-  .li:nth-of-type(1) {
-    padding-top: 0vh;
-    margin-top: 5vh;
   }
 
   .icons {

@@ -44,7 +44,11 @@ import { showcase, first, second, third, imgContainer, sectionHeader, showcaseOv
 
 const Showcase = () => {
     const [screenWidth, setScreenWidth] = useState(20000);
-    const size = screenWidth < 500 ? 150 : 250;
+    let size;
+
+    if(screenWidth < 800) size = 150
+    else if(screenWidth < 1700) size = 200
+    else size = 250
 
     const ref = useRef();
     

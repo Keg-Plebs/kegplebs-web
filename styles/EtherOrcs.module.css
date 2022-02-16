@@ -1,39 +1,58 @@
 .sectionContainer {
     width: 100vw;
-    height: 135vh;
+    height: 125vh;
     display: flex;
     flex-direction: row;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    margin-right: 8%;
+    padding-left: 2%;
+    height: 85vh;
+}
+
+.visualContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 85vh;
+    margin-left: 10%;
 }
 
 .sectionImage {
     background-image: url('../public/orcAnnounce.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 40%;
-    height: 40vw;
-    margin-left: 10%;
+    
+    height: 90%;
+    width: 100%;
 }
 
 .sectionText {
-    width: 40%;
-    margin-right: 8%;
-    padding-left: 2%;
-    height: 40vw;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: 30px;
+    line-height: 1.7rem;
     letter-spacing: 1px;
     text-align: center;
-    margin-top: 50px;
 }
 
 .sectionText h1 {
     font-size: 3rem;
     
     line-height: 3.5rem;
+    margin-bottom: 0;
 }
 
 .sectionText p {

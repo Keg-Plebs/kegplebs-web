@@ -51,22 +51,12 @@
 
 @media screen and (max-width: 1700px) {
     .main {
-        height: 80vh;
-    }
-
-    .logoContainer {
-        width: 125vw;
-        padding-left: 10px;
+        height: 100vh;
     }
 }
 
 @media screen and (max-width: 500px) {
     .main {
         height: 80vh;
-    }
-
-    .logoContainer {
-        width: 125vw;
-        padding-left: 10px;
     }
 }
