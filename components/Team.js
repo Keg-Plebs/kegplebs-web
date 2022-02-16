@@ -46,7 +46,7 @@ const Team = () => {
 
     return(
         <div className={`${sectionStyles.main} ${team}`}>
-            <h1 className={sectionHeader}>KEG PLEB SCIENTISTS</h1>
+            <h1 className={sectionHeader}>KEG PLEB TEAM</h1>
             <div className={container}>
                 <div className={card} id="sj">
                     <div className={imgContainer}>

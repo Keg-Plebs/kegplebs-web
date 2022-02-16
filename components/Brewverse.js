@@ -25,7 +25,7 @@ import Team from './Team'
 
 import ProviderContext from './ProviderContext';
 
-import { DISCORD_LINK, SCENES } from '../lib/constants'
+import { DISCORD_LINK, SCENES } from '../utils/constants'
 
 // https://github.com/pmndrs/react-three-fiber#what-does-it-look-like
 // https://drei.pmnd.rs/?path=/story/controls-mapcontrols--map-controls-scene-st
@@ -39,7 +39,7 @@ const Brewverse = props => {
     let component;
     const isVerse = scene === SCENES.VERSE;
 
-    const myClass = (breweryScene || isVerse) ? `${sceneChange}` : ``;
+    const myClass = breweryScene ? `${sceneChange}` : ``;
     
     const leftCloudClass = breweryScene ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
     const rightCloudClass = breweryScene ? `${moveCloudsRight}` : `${cloudRightInfinite}`;

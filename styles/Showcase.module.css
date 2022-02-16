@@ -47,7 +47,7 @@
     display: flex;
     flex-direction: row;
     transform: translate3d(0,0,0);
-    width: 4950px;
+    width: 4500px;
 
     animation: moveSlideshowLeft 35s linear infinite;
 }
@@ -57,7 +57,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    width:4950px;
+    width:4500px;
 
     
     animation: moveSlideshowRight 38s linear infinite;
@@ -68,7 +68,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 4950px;
+    width: 4500px;
     margin-bottom: 400px;
 
     animation: moveSlideshowLeft 25s linear infinite;

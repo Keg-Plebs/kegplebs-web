@@ -15,9 +15,9 @@ export const FAR = 10000;
 export const MAP_SCALE = [1, 1, 1];
 
 export const BACKGROUND_COLOR = 0x0;
-export const BREWERY_POS = [-40, 80, 2];
+export const BREWERY_POS = [0, 70, 2];
 export const DISCORD_POS = [350, 200, 2];
-export const BUILDING_SCALE = [600, 600, 1];
+export const BUILDING_SCALE = [500, 500, 1];
 
 export const X_OFFSET = 0;
 export const Y_OFFSET = 0;

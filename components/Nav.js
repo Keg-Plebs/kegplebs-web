@@ -121,6 +121,9 @@ const Nav = props => {
                         <li className={li}>
                             <span className={link}><a onClick={toTeam} href="#">TEAM</a></span>
                         </li>
+                        <li className={li}>
+                            <span className={link}><a href='#'>PASSPORT</a></span>
+                        </li>
                     </ul>
                     <div className={socialGroup}>
                         <div className={icons}>
