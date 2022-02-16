@@ -141,10 +141,10 @@
 
 @media screen and (max-width: 800px) {
     .sectionHeader {
-        height: 40vh;
-        width: 80vw;
+        height: 45vw;
+        width: 75vw;
         margin-left: 0vw;
-        margin-top: -15vh;
+        margin-top: -5vh;
     }
 
     .showcaseOverlay {
@@ -154,7 +154,7 @@
     }
 
     .first {
-        margin-top: 20vh;
+        margin-top: 0vh;
         width: 2700px;
     }
 
@@ -169,8 +169,8 @@
     }
 
     .desc {
-        font-size: 0.8rem;
-        line-height: 25px;
+        font-size: 1.5vh;
+        line-height: 1.85vh;
         text-align: center;
         width: 80vw;
         margin-left: auto;
