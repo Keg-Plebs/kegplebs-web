@@ -5,6 +5,7 @@ import { scroller } from 'react-scroll';
 import { faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import Passport from '../public/pdfs/Pleb_Passport_2.pdf';
 
 import { Opensea, Etherscan, NavLogo, Icon } from '../public/images';
 import { 
@@ -76,7 +77,8 @@ const Nav = props => {
     const toTop = () => {
         scroller.scrollTo('top', {
             duration: 500,
-            smooth: true
+            smooth: true,
+            offset: -100
         })
     }
 
@@ -122,7 +124,7 @@ const Nav = props => {
                             <span className={link}><a onClick={toTeam} href="#">TEAM</a></span>
                         </li>
                         <li className={li}>
-                            <span className={link}><a href='#'>PASSPORT</a></span>
+                            <span className={link}><a href='/pdfs/Pleb_Passport_2.pdf'>PLEBPASS</a></span>
                         </li>
                     </ul>
                     <div className={socialGroup}>

@@ -7,7 +7,7 @@
 }
 
 .contentContainer {
-    margin-top: 4vh;
+    margin-top: 0vh;
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,14 +38,14 @@
 }
 
 .milestoneHeadings {
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     font-weight: 500;
     display: inline-block;
-    background-color: whitesmoke;
+    background-color: white;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 5px;
-    font-size: 2.05vh;
+    font-size: 1.5rem;
 }
 
 .milestoneHeadings:hover {
@@ -58,6 +58,7 @@
     width: 55vw;
     padding: 0;
     margin-left: 28vw;
+    text-transform: uppercase;
 }
 
 .milestoneInfo {
@@ -68,15 +69,21 @@
     top: 25%;
     width: 82vw;
     height: 62vh;
-    background-color: rgba(0,0,0, 0.95);
+    background-color: rgba(0,0,0, 0.88);
     border-radius: 25px;
     z-index: 2;
     color: white;
-    padding: 150px 650px;
+    padding: 2% 10%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: display 2s;
+}
+
+.milestoneInfo p {
+    text-align: left;
+    text-transform: uppercase;
 }
 
 
@@ -86,104 +93,89 @@
 }
 
 .two {
-    top: 38%;
+    top: 40%;
     position: absolute;
 }
 
 .three {
-    top: 47%;
+    top: 51%;
     position: absolute;
 }
 
 .four {
-    top: 56%;
+    top: 62%;
     position: absolute;
 }
 
 .five {
-    top: 65%;
+    top: 73%;
     position: absolute;
 }
 
 .six {
-    top: 74%;
-    position: absolute;
-}
-
-.seven {
-    top: 83%;
+    top: 84%;
     position: absolute;
 }
 
 .one::after {
     content: '';
-    height: 6px;
-    background-color: black;
+    height: 4px;
+    background-color: whitesmoke;
     position: absolute;
-    top: 4vh;
-    right: 5%;
-    left: 17%;
+    top: 5vh;
+    right: -20%;
+    left: 22%;
     
 }
 
 .two::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 4vh;
-    right: 5%;
-    left: 22%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 30%;
 }
 
 .three::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 4vh;
-    right: 5%;
-    left: 49%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 21%;
 }
 
 .four::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 4vh;
-    right: 5%;
-    left: 36%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 21%;
 }
 
 .five::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 4vh;
-    right: 5%;
-    left: 26%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 23%;
 }
 
 .six::after {
     content: '';
     position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 4vh;
-    right: 5%;
-    left: 33%;
-}
-
-.seven::after {
-    content: '';
-    position: absolute;
-    height: 6px;
-    background-color: black;
-    top: 4vh;
-    right: 5%;
-    left: 35%;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 22%;
 }
 
 .rightImg {
@@ -196,7 +188,7 @@
     margin-right: -40vw;
     width: 80%;
     height: 100vh;
-    margin-left: -20%;;
+    margin-left: -7%;
 }
 
 .beerDrip {
@@ -205,9 +197,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    width: 80%;
-    height: 100%;
-    top: 37%;
+    width: 100%;
+    height: 120%;
+    top: 15%;
     left: 9%;
 }
 
