@@ -23,7 +23,7 @@ const Verse = ({ enterBrewery, callback }) => {
                 scale={BUILDING_SCALE}
                 onClick={
                     (e) => {
-                        enterBrewery()
+                        setTimeout(() => enterBrewery(), 500)
                         transitionScene(SCENES.BREWERY, [BREWERY_POS[0], BREWERY_POS[1], INIT_CAM_POS[2]])
                         document.body.style.cursor = 'auto'
                     }

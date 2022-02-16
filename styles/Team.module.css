@@ -25,6 +25,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.2rem;
 }
 
 .imgContainer {
@@ -37,8 +38,8 @@
 
 .img {
     position: absolute;
-    height: 350px;
-    width: 350px;
+    height: 250px;
+    width: 250px;
     border-radius: 50%;
     overflow: hidden;
     backface-visibility: hidden;
@@ -50,8 +51,8 @@
 }
 
 .imgBack {
-    height: 349px;
-    width: 349px;
+    height: 249px;
+    width: 249px;
     border-radius: 50%;
     overflow: hidden;
     transform: rotateY(180deg);
@@ -74,7 +75,7 @@
 .twitter {
     margin-left: 15px;
     display: inline;
-    height: 35px;
+    height: 30px;
 }
 
 .twitter:hover {

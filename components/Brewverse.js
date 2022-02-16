@@ -14,7 +14,8 @@ import {
     moveCloudsLeft,
     moveCloudsRight,
     cloudLeftInfinite,
-    cloudRightInfinite
+    cloudRightInfinite,
+    mintIndicator
 } from '../styles/Brewverse.module.css';
 
 import Verse from './brewverse/Verse'
@@ -36,12 +37,13 @@ const Brewverse = props => {
     const { provider, setProvider } = useContext(ProviderContext);
     
     let component;
-    const isBrewery = scene === SCENES.BREWERY;
     const isVerse = scene === SCENES.VERSE;
 
-    const myClass = (isBrewery || isVerse) ? `${sceneChange}` : ``;
+    const myClass = (breweryScene || isVerse) ? `${sceneChange}` : ``;
+    
     const leftCloudClass = breweryScene ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
     const rightCloudClass = breweryScene ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
+
 
     // Changes the scene component in the Canvas
     switch (scene) {
@@ -65,10 +67,10 @@ const Brewverse = props => {
     }
 
     return (
-        <div className={`${sectionStyles.main} /* ${brewverse}`}>
+        <div className={`${sectionStyles.main} ${brewverse}`}>
             <div className={sectionHeader}
                 style={{
-                    display: scene === SCENES.BREWERY ? 'none' : 'block'
+                    display: breweryScene ? 'none' : 'block'
                 }}
             ></div>
             <div className={imageContainer}>
@@ -88,7 +90,10 @@ const Brewverse = props => {
                     className={myClass}
                 >
                     {
-                        scene === SCENES.BREWERY ? <Bar exitBrewery={() => switchScene(SCENES.VERSE)}></Bar> :
+                        breweryScene ? <Bar exitBrewery={() => {
+                            setBreweryScene(false);
+                            switchScene(SCENES.VERSE)
+                        }}></Bar> :
                             <Canvas>
                                 <Suspense fallback={null} r3f>
                                     {component}
@@ -96,7 +101,10 @@ const Brewverse = props => {
                             </Canvas>
                     }
                 </div>
-
+                {
+                    breweryScene ? <></> : <div className={mintIndicator}></div>
+                }
+                
             </div>
         </div>
     )

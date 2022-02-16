@@ -62,7 +62,7 @@ const Nav = props => {
         scroller.scrollTo('about', {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: -5
         })
     }
 
@@ -93,7 +93,7 @@ const Nav = props => {
         <nav className={nav}>
             <div className={logoGroup}>
                 <a onClick={toTop}>
-                    <Image src={NavLogo} quality={100} priority={true} height={200} width={355}></Image>
+                    <Image src={NavLogo} quality={100} priority={true} height={190} width={337}></Image>
                 </a>
                 {
                     userAddress.length > 0 ? (
@@ -113,7 +113,7 @@ const Nav = props => {
                 <>
                     <ul className={linkGroup}>
                         <li className={li}>
-                            <span className={link}><a onClick={toBrewverse} href="#">BREWVERSE</a></span>
+                            <span className={link}><a onClick={toBrewverse} href="#">MINT</a></span>
                         </li>
                         <li className={li}>
                             <span className={link}><a onClick={toAbout} href="#">ABOUT</a></span>

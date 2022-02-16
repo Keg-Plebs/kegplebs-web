@@ -65,9 +65,7 @@ const Bar = props => {
                     onPointerOut={() => {
                         setDoorState(false);
                     }}
-                    onClick={() => {
-                        setDoorClicked(true);
-                    }}
+                    onClick={handleExitBrewery}
                 ></div>
                 <div className={bartender}></div>
                 <div className={bartenderSelect}
@@ -77,18 +75,18 @@ const Bar = props => {
                     bartenderClicked ? <div className={sorryBubble}></div> : <></>
                     // <div className={mintOptions}></div>
                 }
-                {
+                {/* {
                     doorClicked ? 
-                    <>
+                    <> */}
                         <div className={exitOption}></div> 
-                        <div 
+                        {/* <div 
                             className={exitClick}
                             onClick={handleExitBrewery}
-                        ></div>
-                    </>
+                        ></div> */}
+                    {/* </>
                     : 
                     <></>
-                }
+                } */}
                 {
                     cheers ? <div className={cheersOption}></div> : <></>
                 }

@@ -1,5 +1,5 @@
 .buttonWrapperConn {
-    width: 195px;
+    width: 165px;
     height: 75px;
     display: flex;
     flex-direction: column;
@@ -35,8 +35,8 @@
     border: none;
     margin-left: 15px;
     margin-right: 15px;
-    width: 210px;
-    height: 35px;
+    width: 240px;
+    height: 40px;
     right: 10px;
 }
 
@@ -47,7 +47,7 @@
 }
   
 .button:hover {
-    height: 50px;
-    width: 195px;
+    height: 45px;
+    width: 165px;
     cursor: pointer;
 }

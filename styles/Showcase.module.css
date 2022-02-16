@@ -17,6 +17,7 @@
 .sectionHeader {
     position: relative;
     margin-left: 48%;
+    margin-top: 5%;
     z-index: 3;
     background-image: url('../public/navbarLogo.webp');
     background-repeat: no-repeat;
@@ -77,19 +78,19 @@
     margin: 0;
     padding: 0;
     position: relative;
-    height:275px;
-    width: 275px;
+    height:250px;
+    width: 250px;
 }
 
 .desc {
     margin-top: -25px;
     height: 100%;
-    font-size: 25px;
+    font-size: 1.3rem;
     font-weight: 300;
     letter-spacing: 2px;
-    line-height: 50px;
-    margin-left: 55%;
-    margin-right: 8%;
+    line-height: 2rem;
+    margin-left: 60%;
+    margin-right: 10%;
     text-align: center;
 }
 

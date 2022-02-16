@@ -69,9 +69,9 @@
     background-size: cover;
 
     top: -2vh;
-    left: 22vw;
-    height: 55vh;
-    width: 55vw;
+    left: 20vw;
+    height: 60vh;
+    width: 60vw;
     
     pointer-events: none;
 }
@@ -83,9 +83,9 @@
     background-size: cover;
 
     left: 21vw;
-    top: -12vh;
-    height: 40vh;
-    width: 40vw;
+    top: -9.5vh;
+    height: 35vh;
+    width: 35vw;
 
     pointer-events: none;
 }

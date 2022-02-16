@@ -34,7 +34,6 @@
 .logoGroup {
   position: absolute;
   left: 25px;
-  top: -60px;
   display: flex;
   flex-direction: row;
   justify-content: center;

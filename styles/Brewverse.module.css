@@ -21,8 +21,8 @@
     background-size: cover;
     z-index: 3;
     position: absolute;
-    height: 150px;
-    width: 810px;
+    height: 120px;
+    width: 648px;
     margin-top: 0;
 }
 
@@ -36,6 +36,22 @@
 .sceneChange {
     animation-name: screen-change;
     animation-duration: 2s;
+}
+
+.mintIndicator {
+    background-image: url('../public/mintarrow.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 13%;
+    width: 10%;
+    position: absolute;
+    z-index: 2;
+    top: 60%;
+    margin-left: 45%;
+
+    pointer-events: none;
+    animation: slowBlink 3s infinite;
+    animation-timing-function: ease-in-out;
 }
 
 .imageContainer {
@@ -114,13 +130,10 @@
 @keyframes screen-change {
     0% {opacity: 0;}
     100% {opacity: 1;}
-    /* Waiting time */
-    /* 70% {opacity: 1;} */
-    /* 100% {opacity: 0;} */
 }
 
+@keyframes slowBlink {
+    50% {opacity: 0;}
+    100%{opacity: 1;}
+}
 
-
-/* 
-    2,732 x 2,048
-*/

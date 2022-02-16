@@ -31,13 +31,13 @@
 }
 
 .sectionText h1 {
-    font-size: 45px;
+    font-size: 3rem;
     
-    line-height: 45px;
+    line-height: 4rem;
 }
 
 .sectionText p {
-    font-size: 25px;
+    font-size: 1.2rem;
     padding: 0 2%;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .physical h2 {
-    font-weight: 400;
+    font-weight: 300;
     letter-spacing: 5px;
     
 }

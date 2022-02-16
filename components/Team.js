@@ -30,7 +30,7 @@ import { useEffect, useState } from 'react';
 
 const Team = () => {
     const [screenWidth, setScreenWidth] = useState(20000);
-    const size = screenWidth < 400 ? 275 : 350;
+    const size = screenWidth < 400 ? 150 : 250;
 
     useEffect(() => {
         const changeWidth = () => {
