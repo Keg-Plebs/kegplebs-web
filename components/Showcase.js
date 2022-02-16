@@ -28,7 +28,34 @@ import {
     Iceman,
     Nani,
     SmallHat,
-    Tiger
+    Tiger,
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+    Ten,
+    Eleven,
+    Twelve,
+    Thirteen,
+    Fourteen,
+    Fifteen,
+    Sixteen,
+    Seventeen,
+    Eighteen,
+    Nineteen,
+    Twenty,
+    TwentyOne,
+    TwentyTwo,
+    TwentyThree,
+    TwentyFour,
+    TwentyFive,
+    TwentySix,
+    TwentySeven
 } from '../public/images';
 
 import sectionStyles from '../styles/Section.module.css';
@@ -59,114 +86,114 @@ const Showcase = () => {
                 <div className={contentContainer}>
                     <div className={first}>
                         <div className={imgContainer}>
-                            <Image src={Goggs} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Two} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Raincoat} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Flowers} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Five} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size} ></Image>
+                            <Image src={Seven} quality={100} loading="lazy" width={size} height={size} ></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Cowb} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Eight} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hipp} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Three} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Vort} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={One} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Space} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hoodee} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Six} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Paris} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Nine} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Puffer} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Cam} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Four} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Goggs} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Two} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Raincoat} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Flowers} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Five} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Seven} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Cowb} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Eight} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hipp} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Three} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={second}>
                         <div className={imgContainer}>
-                            <Image src={Baseball} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Ten} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Budder} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Doodle} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Eleven} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Drooly} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Thirteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Fancy} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Fourteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hoodup} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Twelve} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={POG} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hoodee} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Fifteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Poodle} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Sixteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Jeff} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Seventeen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={SmallHat} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Goggs} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Eighteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Baseball} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Ten} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Budder} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Doodle} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Eleven} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Drooly} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Thirteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Fancy} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Fourteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hoodup} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Twelve} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={third}>
@@ -174,55 +201,55 @@ const Showcase = () => {
                             <Image src={Goat} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Iceman} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyOne} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Nani} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Bitchass} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyTwo} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Tiger} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentySix} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hipp} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyThree} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Vort} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyFour} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Space} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentySeven} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hoodee} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Nineteen} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Jeff} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyFive} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Bitchass} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyTwo} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hoodup} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Twenty} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Goat} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Iceman} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyOne} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Nani} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Bitchass} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyTwo} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Tiger} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentySix} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Hipp} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TwentyThree} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={showcaseOverlay}>
