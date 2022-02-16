@@ -1,0 +1,111 @@
+.sectionContainer {
+    width: 100vw;
+    height: 135vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sectionImage {
+    background-image: url('../public/orcAnnounce.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 40vw;
+    margin-left: 10%;
+}
+
+.sectionText {
+    width: 40%;
+    margin-right: 8%;
+    padding-left: 2%;
+    height: 40vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sectionText h1 {
+    font-size: 3rem;
+    
+    line-height: 3.5rem;
+}
+
+.sectionText p {
+    font-size: 1.2rem;
+    padding: 0 2%;
+}
+
+.arrow {
+    height: 25px;
+    margin-left: 10px;
+}
+
+.digital {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+    width: 80%;
+    color: white;
+}
+
+.digital h2 {
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+@media screen and (max-width: 500px) {
+    .sectionContainer {
+        margin-top: 10vh;
+        width: 80vw;
+    }
+
+    .digital {
+        font-size: 1rem;
+        margin-bottom: 0vh;
+    }
+
+    .arrow {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .sectionContainer {
+        flex-direction: column;
+    }
+
+    .sectionText {
+        margin-left: 0;
+        width: 80vw;
+        position: relative;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .sectionText h1 {
+        font-size: 1.5rem;
+        line-height: 1.6rem;
+        margin-top: 0vh;
+        margin-bottom: 40vh;
+    }
+
+    .sectionText p {
+
+        font-size: 1rem;
+        line-height: 1.1rem;
+        width: 80vw;
+    }
+
+    .sectionImage {
+        position: relative;
+        margin-left: 0;
+        width: 80vw;
+        height: 80vw;
+    }
+}

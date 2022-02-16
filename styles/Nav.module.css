@@ -1,29 +1,239 @@
 .nav {
+  position: fixed;
+  height: 85px;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 4;
+}
+  
+.nav ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.nav ul li a {
+  margin: 5px 15px;
+}
+
+.scrollLink {
+  color: white;
+  height: 20px;
+  width: 20px;
+}
+
+.logoGroup {
+  position: absolute;
+  left: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  width: 50px;
+  height: 50px;
+  
+  border-radius: 5px;
+  overflow: hidden;
+  margin-left: -20px;
+  background-color: whitesmoke;
+  transition: 0.5s;
+  align-items: center;
+}
+
+.userInfo:hover {
+  width: 250px;
+  transition: 0.5s;
+}
+
+.userIconContainer {
+  position: absolute;
+  margin-left: 0;
+  margin-right: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 10%;
+  overflow: hidden;
+}
+
+.userAddi {
+  color: black;
+  font-size: 25px;
+  margin-left: 70px;
+  margin-right: auto;
+  letter-spacing: 1px;
+}
+
+.logoGroup:hover {
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+.linkGroup {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+
+.li {
+  margin: 0px 15px;
+}
+
+.link {
+  letter-spacing: 2px;
+}
+
+.socialGroup {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  margin-right: 90px;
+}
+
+.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 10px;
+}
+
+.socialIcons {
+  color: white;
+  display: inline;
+  height: 30px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1700px) {
+  .nav {
     position: relative;
-    height: 50px;
-    width: 100%;
-    padding: 6vh;
-    background: #000;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-  }
-  
-  .nav ul {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-  }
-  
-  .nav ul li a {
-    margin: 5px 15px;
+    flex-direction: column;
+    min-height: 110px;
+    padding: 20px 0;
+    height: auto;
+    margin-bottom: -120px;
   }
 
-.icon {
-    padding-right: 40px;
+  .logoGroup {
+    position: absolute;
+    display: block;
+    left: -30px;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    color: white;
+  }
+
+  .linkGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .li, .a {
+    margin-top: 15px;
+  }
+
+  .li:nth-of-type(1) {
+    padding-top: 85px;
+  }
+
+  .icons {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .nav {
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 7vh;
+  }
+
+  .logoGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    left: 2vw;
+    height: 7vh;
+  }
+
+  .menu {
+    display: block;
+    position: absolute;
+    right: 10px;
+    color: white;
+  }
+
+  .linkGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .socialGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .li, .a {
+    margin-top: 15px;
+  }
+
+  .li:nth-of-type(1) {
+    padding-top: 0vh;
+    margin-top: 5vh;
+  }
+
+  .icons {
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
 }

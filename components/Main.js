@@ -1,11 +1,16 @@
 import sectionStyles from '../styles/Section.module.css'
-import styles from '../styles/Main.module.css';
+import { main, logoContainer, logo, hook, background, slide, slideContent1, slideContent2} from '../styles/Main.module.css';
+import Image from 'next/image';
+import { NavLogo, NeonSign } from '../public/images'
 
 const Main = () => {
     return(
-        <div className={`${sectionStyles.main} ${styles.main}`}>
-            <h1>Welcome To Keg Plebs!</h1>
-        </div>
+        <>
+            <div className={`${sectionStyles.main} ${main}`}>
+                <div className={background}>
+                </div>
+            </div>
+        </>
     )
 }
 

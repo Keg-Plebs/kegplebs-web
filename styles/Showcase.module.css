@@ -1,3 +1,159 @@
 .showcase {
-    background-color: skyblue;
+    position: relative;
+    color: white;
+    background-color: black;
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: -100px;
 }
+
+.contentContainer {
+    position: relative;
+    overflow: hidden;
+    max-width: 100vw;
+    transform: translate3d(0,0,0);
+}
+
+.sectionHeader {
+    position: relative;
+    margin-left: 48%;
+    margin-top: 5%;
+    z-index: 3;
+    background-image: url('../public/navbarLogo.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    width: 40%;
+}
+
+.showcaseOverlay {
+    margin-top: -100px;
+    top: -45px;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,0) 25%,rgba(0,0,0, 1) 55%,
+    rgba(0, 0, 0, 1) 100%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1;
+}
+
+.first {
+    left: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    transform: translate3d(0,0,0);
+    width: 4500px;
+
+    animation: moveSlideshowLeft 35s linear infinite;
+}
+
+.second {
+    left: -3500px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width:4500px;
+
+    
+    animation: moveSlideshowRight 38s linear infinite;
+}
+
+.third {
+    left: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 4500px;
+    margin-bottom: 400px;
+
+    animation: moveSlideshowLeft 25s linear infinite;
+}
+
+.imgContainer {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height:250px;
+    width: 250px;
+}
+
+.desc {
+    margin-top: -25px;
+    height: 100%;
+    font-size: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 2rem;
+    margin-left: 60%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+@keyframes moveSlideshowLeft {
+    100% {
+        transform: translateX(-66.66666%);
+    }
+}
+
+@keyframes moveSlideshowRight {
+    100% {
+        transform: translateX(66.66666%);
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+    .sectionHeader {
+        height: 20vh;
+        width: 100vw;
+        margin-top: -60vh;
+        margin-bottom: 55vh;
+        margin-left: 2vh;
+    }
+
+    .showcaseOverlay {
+        position: relative;
+
+        background-image: none;
+    }
+
+    .first {
+        margin-top: 20vh;
+        width: 2700px;
+    }
+
+    .second {
+        width: 2700px;
+        left: -1900px;
+    }
+
+    .third {
+        width: 2700px;
+        margin-bottom: 5vh;
+    }
+
+    .desc {
+        font-size: 0.8rem;
+        line-height: 25px;
+        margin-bottom: 5vh;
+
+        margin-top: 0;
+        text-align: center;
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .imgContainer {
+        height: 150px;
+        width: 150px;
+    }
+}
+

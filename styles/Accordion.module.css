@@ -1,0 +1,68 @@
+.container {
+    line-height: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+    display: block;
+    border: 1px solid rgba(209, 213, 219, 0.5);
+}
+
+.holder {
+    width: 100vw;
+}
+
+/* .container:hover {
+    background-color: #ccc;
+} */
+
+.button {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 1.4rem;
+    position: relative;
+    text-align: left;
+    padding: 5px 90px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+    align-items: center;
+}
+
+.content {
+    padding: 25px 90px;
+    font-size: 1.2rem;
+    background-color: #ccc;
+    width: 100%;
+    transition: 1s ease-out;
+    letter-spacing: 1px;
+}
+
+.toggleIcon {
+    height: 20px;
+    width: 20px;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        margin: 0 15px;
+    }
+
+    .content {
+        font-size: 15px;
+        line-height: 20px;
+        padding: 10px
+    }
+    
+    .button {
+        padding: 0 10px;
+        font-size: 20px;
+    }
+
+    .toggleIcon {
+        height: 25px;
+        width: 25px;
+        padding: 0 5px;
+    }
+}

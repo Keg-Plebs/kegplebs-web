@@ -1,3 +1,25 @@
 .faq {
-    background-color:yellowgreen;
+    background-color: black;
+    transition: 0.4s;
+}
+
+.sectionHeader {
+    height: 6vw;
+    width: 12vw;
+    background-image: url('../public/FAQ.webp');
+    background-size: cover;
+    margin-top: 5%;
+    margin-bottom: 75px;
+}
+
+@media screen and (max-width: 500px) {
+    .sectionHeader {
+        margin-left: 0;
+        padding: 0;
+
+        width: 30vw;
+        height: 7vh;
+        margin: 5vw 0;
+        margin-top: -10vw;
+    }
 }

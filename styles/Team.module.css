@@ -1,3 +1,116 @@
 .team {
-    background-color: violet;
+    /* padding-top: 200px; */
+    background-image: linear-gradient(to top, rgba(0,0,0, 1) 0,
+    rgba(0,0,0, 0.4) 25%,
+    rgba(0,0,0, 0.4) 65%,
+    rgba(0,0,0, 1) 85%);
+    color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sectionHeader {
+    letter-spacing: 3px;
+    font-size: 5rem;
+    left: 10vw;
+}
+
+.card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.imgContainer {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+    perspective: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    position: absolute;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+}
+
+.imgContainer:hover {
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.imgBack {
+    height: 249px;
+    width: 249px;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: rotateY(180deg);
+    color: white;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.heading {
+    color: #e69fc0;
+    width: 100%;
+    margin: 10px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.twitter {
+    margin-left: 15px;
+    display: inline;
+    height: 30px;
+}
+
+.twitter:hover {
+    opacity: 0.75;
+}
+
+.name {
+    margin: 0;
+}
+
+.title {
+    margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .sectionHeader {
+        font-size: 3rem;
+        width: 100vw;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .imgBack {
+        height: 149px;
+        width: 149px;
+    }
 }

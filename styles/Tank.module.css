@@ -1,0 +1,126 @@
+.sectionContainer {
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    margin-top: 150px;
+}
+
+.sectionImage {
+    background-image: url('../public/tankVertAnnounce.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: 40vw;
+    margin-right: 10%;
+}
+
+.sectionText {
+    width: 40%;
+    margin-left: 8%;
+    padding-right: 2%;
+    height: 40vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.sectionText h1 {
+    font-size: 3rem;
+    
+    line-height: 4rem;
+}
+
+.sectionText p {
+    font-size: 1.2rem;
+    padding: 0 2%;
+}
+
+.socialIcons {
+    color: white;
+    display: inline;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.physical {
+    margin-top: 150px;
+    width: 80%;
+    color: white;
+}
+
+.arrow {
+    height: 25px;
+    margin-right: 10px;
+
+}
+
+.physical h2 {
+    font-weight: 300;
+    letter-spacing: 5px;
+    
+}
+
+.physical:after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    background-color: white;
+    right: 5%;
+    left: 5%;
+}
+
+@media screen and (max-width: 500px) {
+    .sectionContainer {
+        margin-top: 10vh;
+        width: 80vw;
+    }
+
+    .physical {
+        font-size: 1rem;
+        margin-top: 5vh;
+    }
+
+    .arrow {
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    .sectionContainer {
+        flex-direction: column;
+    }
+
+    .sectionText {
+        margin-left: 0;
+        width: 80vw;
+        position: relative;
+        margin-bottom: 0;
+    }
+
+    .sectionText h1 {
+        font-size: 1.5rem;
+        line-height: 1.6rem;
+        margin-top: 35vh;
+        margin-bottom: 40vh;
+    }
+
+    .sectionText p {
+
+        font-size: 1rem;
+        line-height: 1.1rem;
+        width: 80vw;
+    }
+
+    .sectionImage {
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+        margin-top: -34vh;
+    }
+}

@@ -6,12 +6,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 }
 
 .main {
   width: 100%;
   overflow: hidden;
-  padding: 5rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -20,10 +20,14 @@
   font-size: 1.25rem;
 }
 
-.landing {
-  background: cyan;
+.backgroundImage {
+  width: 100%;
+  background-image: linear-gradient(to top left, rgba(143, 124, 38, 0.2), rgba(56, 64, 44, 0.2)100), url('../public/barsceneone.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.dapp {
-  background: rosybrown;
+.navElement {
+  width: 100%;
 }

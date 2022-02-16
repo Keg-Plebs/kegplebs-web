@@ -1,3 +1,307 @@
 .roadmap {
-    background-color: gray;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: relative;
+    margin-bottom: 14%;
+}
+
+.contentContainer {
+    margin-top: 0vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.timeline {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sectionHeader {
+    z-index: 2;
+    position: absolute;
+    display: block;
+    background-image: url('../public/ROADMAP.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 560px;
+    padding: 0;
+    
+}
+
+.milestoneHeadings {
+    letter-spacing: 2px;
+    font-weight: 500;
+    display: inline-block;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+.milestoneHeadings:hover {
+    cursor:pointer;
+    z-index: 3;
+    position: absolute;
+}
+
+.left {
+    width: 55vw;
+    padding: 0;
+    margin-left: 28vw;
+    text-transform: uppercase;
+}
+
+.milestoneInfo {
+    letter-spacing: 2px;
+    pointer-events: none;
+    position: absolute;
+    margin-left: 50vw;
+    top: 25%;
+    width: 82vw;
+    height: 62vh;
+    background-color: rgba(0,0,0, 0.9);
+    border-radius: 25px;
+    z-index: 2;
+    color: white;
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: display 2s;
+}
+
+.milestoneInfo p {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+
+.one {
+    top: 29%;
+    position: absolute;
+}
+
+.two {
+    top: 40%;
+    position: absolute;
+}
+
+.three {
+    top: 51%;
+    position: absolute;
+}
+
+.four {
+    top: 62%;
+    position: absolute;
+}
+
+.five {
+    top: 73%;
+    position: absolute;
+}
+
+.six {
+    top: 84%;
+    position: absolute;
+}
+
+.one::after {
+    content: '';
+    height: 4px;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 5vh;
+    right: -20%;
+    left: 22%;
+    
+}
+
+.two::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 30%;
+}
+
+.three::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 21%;
+}
+
+.four::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 21%;
+}
+
+.five::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 23%;
+}
+
+.six::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background-color: whitesmoke;
+    top: 5vh;
+    right: -20%;
+    left: 22%;
+}
+
+.rightImg {
+    background: transparent;
+    pointer-events: none;
+    background-image: url('../public/beerArmUpdated.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(180deg);
+    margin-right: -40vw;
+    width: 80%;
+    height: 100vh;
+    margin-left: -7%;
+}
+
+.beerDrip {
+    pointer-events: none;
+    background-image: url('../public/roadmapBeerDrip.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    top: 15%;
+    left: 9%;
+}
+
+.beerFoam {
+    pointer-events: none;
+
+    background-image: url('../public/roadmapCloudFoam.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 140%;
+    margin-left: 0;
+    top: 15%;
+}
+
+@media screen and (max-width: 500px) {
+    .roadmap {
+        position: relative;
+    }
+
+    .sectionHeader {
+        height: 17vw;
+        width: 80vw;
+        margin-bottom: 0;
+    }
+
+    .timeline {
+        justify-content: center;
+        margin-top: -10vh;
+        margin-left: 0;
+        width: 100vw;
+        text-align: center;
+    }
+
+    .milestoneHeadings {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .milestoneHeadings:hover {
+        cursor: pointer;
+        left: 0;
+        position: relative;
+    }
+
+    .milestoneInfo {
+        margin-left: 0;
+        font-size: 0.75rem;
+        position: absolute;
+        top: 0;
+        height: 60vh;
+    }
+
+    .milestoneInfo p{
+        text-align: center
+    }
+
+    .left {
+        position: absolute;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .one::after {
+        display: none;
+    }
+
+    .two::after {
+        display: none;
+    }
+
+    .three::after {
+        display: none;
+    }
+
+    .four::after {
+        display: none;
+    }
+
+    .five::after {
+        display: none;
+    }
+
+    .six::after {
+        display: none;
+    }
+
+    .rightImg {
+        display: none;
+    }
+
+    .beerDrip {
+        display: none;
+    }
+
+    .beerFoam {
+        width: 140vw;
+        height: 100vh;
+        top: 30vh;
+    }
 }
