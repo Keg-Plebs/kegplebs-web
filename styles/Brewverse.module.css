@@ -39,7 +39,7 @@
 }
 
 .mintIndicator {
-    background-image: url('../public/mintarrow.webp');
+    background-image: url('../public/enterarrow.webp');
     background-repeat: no-repeat;
     background-size: cover;
     height: 13%;
