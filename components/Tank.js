@@ -7,6 +7,7 @@ import { TankIcon } from '../public/images';
 
 import {
     sectionContainer,
+    sectionHeader,
     sectionImage,
     sectionText,
     mainContent,
@@ -24,11 +25,11 @@ const Tank = () => {
         <>
             <div className={sectionContainer}>
                 <div className={mainContent}>
+                    
+                    <div className={sectionHeader}></div>
                     <div className={sectionText}>
-                        <h1>Introducing Keg Plebs X The Tank Brewing</h1>
-                        <br/>
                         <p>The Tank Brewing Co. is about one thing and one thing only: exceptional craft beer. Our story is one of a homegrown passion for brewing honest, expertly crafted artisanal beer using only the finest ingredients from mash to tap. We call it ‘liquid innovation.’ Every drop is crafted with unparalleled passion for creating beer of only the highest quality.</p>
-                        <br/>
+                  
                         <p>From the purity of the water to the extensive care taken in curating ingredients to every step of the brewing process, every detail is adhered to with the pure love of beer in mind – and it can be tasted in every sip. Bold. Unpretentious. Proudly brewed in the heart of Miami, one of the biggest crypto/NFT hubs in the world.</p>
 
                         <div className={sectionSocialIcons}>
