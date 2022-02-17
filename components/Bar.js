@@ -48,8 +48,6 @@ const Bar = props => {
         }, 2000);
     }
 
-    console.log("bartender " + bartenderClicked);
-
     return(
         <>
             <div 
