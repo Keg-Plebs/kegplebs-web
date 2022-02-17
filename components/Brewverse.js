@@ -52,13 +52,10 @@ const Brewverse = props => {
             component = <></>
             break;
         case SCENES.VERSE:
-            props.enterBrewverse(false)
             component =
                 <Verse enterBrewery={() => setBreweryScene(true)} callback={(newScene) => switchScene(newScene)} />
             break;
         case SCENES.BREWERY:
-            // setBreweryScene(true)
-            props.enterBrewverse(true);
             component =
                 <></>
             break;
