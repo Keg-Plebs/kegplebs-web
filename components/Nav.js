@@ -37,6 +37,8 @@ const Nav = props => {
     const screen = 1700;
 
     useEffect(() => {
+        setScreenWidth(window.innerWidth);
+
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
         }
@@ -49,6 +51,7 @@ const Nav = props => {
     }, []);
 
     const handleClick = () => {
+        console.log('handle click clicked')
         setActive(!active);
     }
 
@@ -112,8 +115,8 @@ const Nav = props => {
                     </div>) : (<></>)
                 }
             </div>
-            {(
-                (active || screenWidth > screen) && (
+            {
+                (active || screenWidth > screen) ? (
                 <>
                     <ul className={linkGroup}>
                         <li className={li}>
@@ -138,8 +141,9 @@ const Nav = props => {
                         </div>
                         <Connect onConnected={handleIconDisplay}/>
                     </div>
-                </>)
-            )}
+                </>) :
+                <></>
+            }
             
             <button className={menu} onClick={handleClick}>
                 <FontAwesomeIcon icon={faBars} id='hamburg'/>
