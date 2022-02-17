@@ -108,7 +108,7 @@
 }
 
 .moveCloudsLeft {
-    margin-left: -100vw;
+    margin-right: 100vw;
     transition: 8s;
 }
 

@@ -8,6 +8,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
+    padding-bottom: 50vh;
 }
 
 .sectionHeader {
@@ -20,7 +22,7 @@
 
 @media screen and (max-width: 800px) {
     .collabsContainer {
-        margin-bottom: -40vh;
+        padding-bottom: 40vh;
     }
 
     .sectionHeader {
