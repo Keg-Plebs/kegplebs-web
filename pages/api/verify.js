@@ -1,6 +1,8 @@
 import { ethers } from 'ethers'
 import { gun } from './services/database'
 
+import { NONCE_MESSAGE } from '../../utils/constants';
+
 // https://www.youtube.com/watch?v=tVyQZ0CiMWI
 // https://mirror.xyz/sha.eth/i6ry1Mxez53z91ef375sMe2rO1NvK2ipACyzKA4SR9g
 
@@ -23,7 +25,7 @@ const verify = (req, res) => {
         }
 
         // Creates the message that was signed on the client
-        const message = "Sign this nonce to connect: " + nonce;
+        const message = NONCE_MESSAGE + nonce;
 
         // Verifies the signature by returning the address of the signee
         const signerAddress = ethers.utils.verifyMessage(message, signature);

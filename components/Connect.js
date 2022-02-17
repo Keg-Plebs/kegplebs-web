@@ -4,6 +4,8 @@ import Web3Modal from 'web3modal'
 import { button, buttonWrapperConn, buttonDisconnect, buttonWrapperDisc } from '../styles/Connect.module.css';
 import ProviderContext from './ProviderContext';
 
+import { NONCE_MESSAGE } from '../utils/constants';
+
 // https://docs.alchemy.com/alchemy/tutorials/nft-minter#bonus-put-your-nft-minter-to-work
 // https://mirror.xyz/sha.eth/i6ry1Mxez53z91ef375sMe2rO1NvK2ipACyzKA4SR9g
 
@@ -73,7 +75,7 @@ const Connect = props => {
 
 			// Receives the generated nonce and prompts the user to sign the nonce
 			const { nonce } = await response.json();
-			const signature = await signer.signMessage('Sign this nonce to connect: ' + nonce);
+			const signature = await signer.signMessage(NONCE_MESSAGE + nonce);
 
 			// Verifies the signature was signed by the connected address on the server
 			response = await fetch('../../api/verify', {
