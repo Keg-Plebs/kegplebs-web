@@ -23,9 +23,9 @@ import {
  } from '../styles/Roadmap.module.css';
 
 const Roadmap = () => {
-    const [hovered, setHovered] = useState('');
+    const [clicked, setClicked] = useState(0);
     const [screenWidth, setScreenWidth] = useState(20000);
-    const mobile = screenWidth < 500 ? true : false;
+    const mobile = screenWidth < 800 ? true : false;
 
     const ref = useRef();
     
@@ -41,6 +41,10 @@ const Roadmap = () => {
         }
 
     }, []);
+
+    const handleBackgroundClick = () => {
+        if(clicked) setClicked(0)
+    }
 
 
     const data = {
@@ -98,194 +102,139 @@ const Roadmap = () => {
         }
     }
 
-    const infoTags = {
-        "one": ( <div 
-                className={milestoneInfo}
-                style={{ display: hovered === 'one' ? "flex" : "none"}}
-            >
-                {   
-                    Object.values(data.one.desc).map((child, key) => {
-                        return <p key={key}>{child}</p> 
-                    })
-                }
-            </div> 
-        ),
-        "two": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'two' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.two.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "three": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'three' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.three.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "four": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'four' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.four.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "five": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'five' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.five.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "six": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'six' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.six.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        )
-    }
-
     return(
         <div className={`${sectionStyles.main} ${roadmap}`}>
-            
-            <div className={sectionHeader}></div>
-            <div className={contentContainer}>
+            <div className={contentContainer}
+                onClick={handleBackgroundClick}
+            >
                 
                 <div className={timeline}>
+                    <div className={sectionHeader}></div>
                     <div className={`${left} ${one}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('one')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(1)}
+                            style={{ width: (clicked === 1 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.one.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.one : <></>
-                        }
                     </div>
-                    {
-                        mobile ? <></> : infoTags.one
-                    }
+                    <div 
+                        className={milestoneInfo}
+                        style={{ display: clicked === 1 ? "flex" : "none"}}
+                    >
+                        {   
+                            Object.values(data.one.desc).map((child, key) => {
+                                return <p key={key}>{child}</p> 
+                            })
+                        }
+                    </div> 
 
                     <div className={`${left} ${two}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('two')
-                            }}
-                            onPointerOut={() => {
-                                setHovered(''); 
+                            onClick={() => setClicked(2)}
+                            style={{ width: (clicked === 2 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.two.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.two : <></>
+                    </div>
+                    <div 
+                        className={milestoneInfo}
+                        style={{ display: clicked === 2 ? "flex" : "none" }}
+                    >
+                        { 
+                            Object.values(data.two.desc).map((child, key) => {
+                                return <p key={key}>{child}</p> 
+                            })
                         }
                     </div>
-                    {
-                        mobile ? <></> : infoTags.two
-                    }
                     
                     <div className={`${left} ${three}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('three')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(3)}
+                            style={{ width: (clicked === 3 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.three.milestone}
                         </h2>
-                    {
-                            mobile ? infoTags.three : <></>
+                    </div>
+                    <div 
+                        className={milestoneInfo}
+                        style={{ display: clicked === 3 ? "flex" : "none" }}
+                    >
+                        { 
+                            Object.values(data.three.desc).map((child, key) => {
+                                return <p key={key}>{child}</p> 
+                            })
                         }
                     </div>
-                    {
-                        mobile ? <></> : infoTags.three
-                    }
                     
                     <div className={`${left} ${four}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('four')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(4)}
+                            style={{ width: (clicked === 4 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.four.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.four : <></>
+                    </div>
+                    <div 
+                        className={milestoneInfo}
+                        style={{ display: clicked === 4 ? "flex" : "none" }}
+                    >
+                        { 
+                            Object.values(data.four.desc).map((child, key) => {
+                                return <p key={key}>{child}</p> 
+                            })
                         }
                     </div>
-                    {
-                        mobile ? <></> : infoTags.four
-                    }
                     
                     <div className={`${left} ${five}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('five')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(5)}
+                            style={{ width: (clicked === 5 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.five.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.five : <></>
+                    </div>
+                    <div 
+                        className={milestoneInfo}
+                        style={{ display: clicked === 5 ? "flex" : "none" }}
+                    >
+                        { 
+                            Object.values(data.five.desc).map((child, key) => {
+                                return <p key={key}>{child}</p> 
+                            })
                         }
                     </div>
-                    {
-                        mobile ? <></> : infoTags.five
-                    }
+
                     <div className={`${left} ${six}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('six')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(6)}
+                            style={{ width: (clicked === 6 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.six.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.six : <></>
+                    </div>
+                    <div 
+                        className={milestoneInfo}
+                        style={{ display: clicked === 6 ? "flex" : "none" }}
+                    >
+                        { 
+                            Object.values(data.six.desc).map((child, key) => {
+                                return <p key={key}>{child}</p> 
+                            })
                         }
                     </div>
-                    {
-                        mobile ? <></> : infoTags.six
-                    }
                 </div>
                 <div className={rightImg}></div>
                 <div className={beerDrip}></div>

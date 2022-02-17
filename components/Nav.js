@@ -21,7 +21,8 @@ import {
     menu, 
     userInfo, 
     userIconContainer,
-    userAddi
+    userAddi,
+    navLogo
 } from '../styles/Nav.module.css';
 
 import Connect from './Connect';
@@ -63,7 +64,7 @@ const Nav = props => {
         scroller.scrollTo('about', {
             duration: 500,
             smooth: true,
-            offset: -5
+            offset: -100
         })
     }
 
@@ -95,7 +96,8 @@ const Nav = props => {
         <nav className={nav}>
             <div className={logoGroup}>
                 <a onClick={toTop}>
-                    <Image src={NavLogo} quality={100} priority={true} height={190} width={337}></Image>
+                    <div className={navLogo}></div>
+                    {/* <Image src={NavLogo} quality={100} priority={true} height={190} width={337}></Image> */}
                 </a>
                 {
                     userAddress.length > 0 ? (
@@ -140,7 +142,7 @@ const Nav = props => {
             )}
             
             <button className={menu} onClick={handleClick}>
-                <FontAwesomeIcon icon={faBars} id='hamburg' className={socialIcons}/>
+                <FontAwesomeIcon icon={faBars} id='hamburg'/>
             </button>
         </nav>
     )

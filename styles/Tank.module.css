@@ -39,7 +39,8 @@
     align-items: center;
     position: relative;
 
-    width: 42%;
+    width: 40%;
+    padding-left: 2%;
     height: inherit;
 }
 
@@ -113,6 +114,26 @@
     .sectionContainer {
         margin-bottom: 15vh;
     }
+
+    .mainContent {
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .sectionHeader {
+        padding-right: 0;
+        margin: auto;
+        width: 24vw;
+        height: 12vw;
+    }
+
+    .sectionText {
+        margin: 0;
+    }
+
+    .sectionText p {
+        margin-bottom: 2vh;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -131,6 +152,8 @@
     .sectionHeader {
         margin: 0;
         margin-top: 5vh;
+        width: 46vw;
+        height: 23vw;
     }
 
     .visualContent {
