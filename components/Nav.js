@@ -51,7 +51,6 @@ const Nav = props => {
     }, []);
 
     const handleClick = () => {
-        console.log('handle click clicked')
         setActive(!active);
     }
 
