@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  height: 85px;
+  height: 80px;
   width: 100%;
   background: #000;
   color: #fff;
@@ -10,6 +10,17 @@
   justify-content: center;
   font-size: 1.5rem;
   z-index: 4;
+}
+
+.navLogo {
+  background-image: url('../public/navbarLogo.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  height: 20vh;
+  width: 25vh;
+  margin-top: auto;
 }
   
 .nav ul {
@@ -82,10 +93,15 @@
 }
 
 .menu {
+  position: absolute;
   display: none;
   background-color: transparent;
   color: white;
   border: none;
+  height: 40px;
+  width: 40px;
+  top: 25px;
+  right: 5vh;
 }
 
 .menu:hover {
@@ -136,9 +152,8 @@
   .nav {
     position: relative;
     flex-direction: column;
-    min-height: 110px;
-    padding: 20px 0;
-    min-height: 85px;
+    height: 80px;
+    padding: 15px 0;
     height: auto;
     margin-bottom: -120px;
   }
@@ -152,8 +167,6 @@
   .menu {
     display: block;
     position: absolute;
-    top: 30px;
-    right: 20px;
     color: white;
   }
 
@@ -191,7 +204,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 7vh;
   }
 
   .logoGroup {
@@ -222,7 +234,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 7vh;
   }
 
   .logoGroup {

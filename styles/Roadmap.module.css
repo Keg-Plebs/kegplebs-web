@@ -1,10 +1,10 @@
 .roadmap {
     width: 100vw;
-    height: 100vh;
     background-color: transparent;
     position: relative;
     margin-bottom: 14%;
-    margin-top: -100px;
+    padding: 0;
+    height: 100vh;
 }
 
 .contentContainer {
@@ -13,64 +13,66 @@
     height: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .timeline {
-    position: relative;
-    width: 50%;
-    height: 100%;
+    width: 50vw;
     /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin-top: 5vh;
 }
 
 .sectionHeader {
     z-index: 2;
-    position: absolute;
+    position: relative;
     display: block;
     background-image: url('../public/ROADMAP.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 120px;
-    width: 560px;
+    background-position: center;
+    height: 7.5vw;
+    width: 35vw;
     padding: 0;
-    
+}
+
+.left {
+    position: relative;
+    width: 45vw;
+    padding: 0;
+    text-transform: uppercase;
+    opacity: 0.825;
 }
 
 .milestoneHeadings {
     letter-spacing: 2px;
-    font-weight: 500;
-    display: inline-block;
+    font-weight: bold;
     background-color: white;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 5px;
     font-size: 2.5vh;
+
+
+    transition: ease-in-out 1.5s,
 }
 
 .milestoneHeadings:hover {
     cursor:pointer;
-    z-index: 3;
-    position: absolute;
-}
-
-.left {
-    width: 55vw;
-    padding: 0;
-    margin-left: 28vw;
-    text-transform: uppercase;
 }
 
 .milestoneInfo {
+    left: 9%;
     letter-spacing: 2px;
-    pointer-events: none;
     position: absolute;
-    margin-left: 50vw;
-    top: 25%;
     width: 82vw;
     height: 62vh;
-    background-color: rgba(0,0,0, 0.9);
+    top: 19vh;
+    background-color: rgba(0,0,0, 0.85);
     border-radius: 25px;
     z-index: 2;
     color: white;
@@ -79,104 +81,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: display 2s;
+    transition: ease-in-out 1s;
 }
 
 .milestoneInfo p {
     text-align: left;
     text-transform: uppercase;
-}
-
-
-.one {
-    top: 29%;
-    position: absolute;
-}
-
-.two {
-    top: 40%;
-    position: absolute;
-}
-
-.three {
-    top: 51%;
-    position: absolute;
-}
-
-.four {
-    top: 62%;
-    position: absolute;
-}
-
-.five {
-    top: 73%;
-    position: absolute;
-}
-
-.six {
-    top: 84%;
-    position: absolute;
-}
-
-.one::after {
-    content: '';
-    height: 4px;
-    background-color: whitesmoke;
-    position: absolute;
-    top: 5vh;
-    right: -20%;
-    left: 22%;
-    
-}
-
-.two::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: whitesmoke;
-    top: 5vh;
-    right: -20%;
-    left: 30%;
-}
-
-.three::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: whitesmoke;
-    top: 5vh;
-    right: -20%;
-    left: 21%;
-}
-
-.four::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: whitesmoke;
-    top: 5vh;
-    right: -20%;
-    left: 21%;
-}
-
-.five::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: whitesmoke;
-    top: 5vh;
-    right: -20%;
-    left: 23%;
-}
-
-.six::after {
-    content: '';
-    position: absolute;
-    height: 4px;
-    background-color: whitesmoke;
-    top: 5vh;
-    right: -20%;
-    left: 22%;
 }
 
 .rightImg {
@@ -185,11 +95,15 @@
     background-image: url('../public/beerArmUpdated.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     transform: rotateY(180deg);
-    margin-right: -25vw;
-    width: 85%;
-    height: 100vh;
-    margin-left: -7%;
+
+    position: absolute;
+
+    margin-left: 40vw;
+    margin-top: -10vh;
+    width: 140vh;
+    height: 140vh;
 }
 
 .beerDrip {
@@ -197,11 +111,12 @@
     background-image: url('../public/roadmapBeerDrip.webp');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     width: 100%;
     height: 120%;
-    top: 15%;
-    left: 9%;
+    margin-top: 30vh;
+    left: -6vw;
 }
 
 .beerFoam {
@@ -210,29 +125,28 @@
     background-image: url('../public/roadmapCloudFoam.webp');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     width: 100%;
-    height: 140%;
+    height: 100vh;
     margin-left: 0;
-    top: 15%;
+    margin-top: 42vh;
 }
 
-@media screen and (max-width: 500px) {
-    .roadmap {
-        position: relative;
-    }
+@media screen and (max-width: 1200px) {
 
     .sectionHeader {
-        height: 17vw;
-        width: 80vw;
-        margin-bottom: 0;
+        top: 0;
+        margin-bottom: 3vh;
+        
+        height: 7.5vw;
     }
 
     .timeline {
-        justify-content: center;
-        margin-top: -10vh;
-        margin-left: 0;
-        width: 100vw;
+
+        margin-top: 6vh;
+        margin-left: 10vw;
+        width: 60vw;
         text-align: center;
     }
 
@@ -241,18 +155,12 @@
         width: 100%;
     }
 
-    .milestoneHeadings:hover {
-        cursor: pointer;
-        left: 0;
-        position: relative;
-    }
-
     .milestoneInfo {
-        margin-left: 0;
+        top: 19vh;
+        left: 5vw;
         font-size: 0.75rem;
-        position: absolute;
-        top: 0;
-        height: 60vh;
+        height: 62vh;
+        width: 90vw;
     }
 
     .milestoneInfo p{
@@ -260,49 +168,94 @@
     }
 
     .left {
-        position: absolute;
-        margin-left: 0;
-        display: flex;
-        flex-direction: column;
+        margin-bottom: 1vw;
+    }
+
+
+    .beerFoam {
+        margin-top: 30vh;
+        width: 140vw;
+        height: 70vw;
+    }
+
+    .beerDrip {
+        /* top: 0vh;
+        left: -7vw;
+        width: 80vw;
+        height: 100vw; */
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .sectionHeader {
+        margin-left: -1vw;
+        top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .roadmap {
+        height: auto;
+    }
+
+    .sectionHeader {
+        margin: 0;
+        margin-bottom: 2vh;
+        
+        height: 17vw;
+        width: 80vw;
+    }
+
+    .contentContainer {
+        height: 80vh;
+    }
+
+    .timeline {
         justify-content: center;
         align-items: center;
+        margin: 0;
+        width: 100vw;
+        text-align: center;
     }
 
-    .one::after {
-        display: none;
+    .milestoneHeadings {
+        font-size: 1rem;
+        width: 100%;
+        
+        text-align: center;
     }
 
-    .two::after {
-        display: none;
+    .milestoneInfo {
+        top: 19vh;
+        left: 5vw;
+        font-size: 0.75rem;
+        height: 60vh;
+        width: 90vw;
     }
 
-    .three::after {
-        display: none;
+    .milestoneInfo p{
+        text-align: center
     }
 
-    .four::after {
-        display: none;
+    .left {
+        margin-bottom: 1vw;
+        width: 80vw;
+        
     }
 
-    .five::after {
-        display: none;
-    }
-
-    .six::after {
-        display: none;
-    }
-
-    .rightImg {
-        display: none;
+    .beerFoam {
+        width: 140vw;
+        height: 70vh;
+        margin-top: 32vh;
     }
 
     .beerDrip {
         display: none;
     }
 
-    .beerFoam {
-        width: 140vw;
-        height: 100vh;
-        top: 30vh;
+    .rightImg {
+        display: none;
     }
 }
