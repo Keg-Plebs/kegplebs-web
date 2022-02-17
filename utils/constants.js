@@ -27,3 +27,5 @@ export const SCENES = {
     DISCORD: 'DISCORD',
     VERSE: 'VERSE'
 }
+
+export const NONCE_MESSAGE = "DAPP UNDER DEVELOPMENT"
