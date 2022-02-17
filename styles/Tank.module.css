@@ -16,8 +16,6 @@
     position: relative;
     margin-left: 8%;
     padding-right: 2%;
-    margin-bottom: -10%;
-
 }
 
 .mainContent {
@@ -56,7 +54,6 @@
     position: relative;
     margin-left: 8%;
     padding-right: 2%;
-    height: 40vw;
     color: white;
     display: flex;
     flex-direction: column;

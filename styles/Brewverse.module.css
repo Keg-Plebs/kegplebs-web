@@ -73,12 +73,13 @@
     background-image: url('../public/cloudsLeft.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vw;
+    background-position: center;
+    height: 85vw;
     width: 125vw;
     z-index: 2;
     pointer-events: none;
     right: -12vw;
-    top: 0vh;
+    top: 10vh;
 }
 
 #cloudRight {
@@ -87,10 +88,11 @@
     background-image: url('../public/cloudsRight.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vw;
+    background-position: center;
+    height: 85vw;
     width: 125vw;
     z-index: 2;
-    top: -1vh; bottom: 0;
+    top: 9vh; bottom: 0;
     left: -20vw;
     pointer-events: none;
 }
