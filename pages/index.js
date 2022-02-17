@@ -18,12 +18,6 @@ import { container, backgroundImage, navElement } from '../styles/Layout.module.
 import { siteTitle } from '../components/Layout'
 
 const Home = () => {
-  const [brewverseEntered, setBrewverseEntered] = useState(false)
-
-  const handleEnterBrewverse = bool => {
-    // setBrewverseEntered(bool);
-  }
-
   return (
     <>
       
@@ -39,7 +33,7 @@ const Home = () => {
           </Element>
           <Showcase></Showcase>
           <Element id='brewverse' name='brewverse' className={navElement}>
-            <Brewverse enterBrewverse={handleEnterBrewverse}></Brewverse>
+            <Brewverse></Brewverse>
           </Element>
           <Collabs></Collabs>
           <Element id='about' name='about' className={navElement}>
