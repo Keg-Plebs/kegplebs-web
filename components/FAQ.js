@@ -19,11 +19,11 @@ const FAQ = () => {
         },
         sectionThree: {
             question: "Why Purchase a Keg Pleb NFT?",
-            answer: "The Keg Plebs community is the official “collabrewery” of the NFT space. What does this mean you ask? We’re bringing the craft beer community into the digital world, and YOU are the ultimate brew master. As a holder and member of the tribe, your input will drive not only the types of brewery collaborations we pursue, but the creation of the ultimate ale trail. Oh…and did we mention we’ll be partnering with some of your favorite NFT projects for exclusive, real world, beer drops, can art and pop-up events? If that’s not enough (being the sendiest project out there), just remember the fermentation process takes time. You’ve got to stick around if you want to see what we have brewing in the back."
+            answer: "The Keg Plebs community is the official “collabrewery” of the NFT space. What does this mean you ask? We're bringing the craft beer community into the digital world, and YOU are the ultimate brew master. As a holder and member of the tribe, your input will drive not only the types of brewery collaborations we pursue, but the creation of the ultimate ale trail. Oh…and did we mention we'll be partnering with some of your favorite NFT projects for exclusive, real world, beer drops, can art and pop-up events? If that's not enough (being the sendiest project out there), just remember the fermentation process takes time. You've got to stick around if you want to see what we have brewing in the back."
         },
         sectionFour: {
             question: "What is an Ale Trail?",
-            answer: "The “Ale Trail” is the physical meets digital brewery hop developed in the Phase 1 of Keg Plebs. This will be the centerpiece of the Keg Pleb community. For every brewery collab, a new location on the ale trail is built. This virtual village will provide an interactive and immersive experience through “NFT-ified” real life craft breweries, and integrations with your favorite NFT projects. As a Keg Pleb holder you will have the exclusive opportunity to experience the ale trail in multiple mediums (but that’s all were spilling for now)."
+            answer: "The “Ale Trail” is the physical meets digital brewery hop developed in the Phase 1 of Keg Plebs. This will be the centerpiece of the Keg Pleb community. For every brewery collab, a new location on the ale trail is built. This virtual village will provide an interactive and immersive experience through “NFT-ified” real life craft breweries, and integrations with your favorite NFT projects. As a Keg Pleb holder you will have the exclusive opportunity to experience the ale trail in multiple mediums (but that's all were spilling for now)."
         },
         sectionFive: {
             question: "Who is Izaac? The artist behind Keg Plebs",
@@ -37,7 +37,11 @@ const FAQ = () => {
         },
         sectionSeven: {
             question: "When is the launch?",
-            answer: "TBA! We are aiming for a release in early feBREWary but are taking as much time as needed to refine and build the project to come out with a full tap of content day one and not just a trickle."
+            answer: "We are launching 2/24 with Pre-Sale starting at 6pm EST and Public Sale starting at 10pm EST."
+        },
+        sectionEight: {
+            question: "How much is the mint price?",
+            answer: "The mint price will be 0.05 ETH."
         }
     }
 

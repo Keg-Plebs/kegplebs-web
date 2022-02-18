@@ -96,7 +96,7 @@ const Team = () => {
                         <h3 className={name}>TSIZ</h3>
                         <a href='https://twitter.com/secondhandgains'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ADVISOR</p>
+                    <p className={title}>ADVISOR / CO-FOUNDER</p>
                 </div>
                 <div className={card} id="shdw">
                     <div className={imgContainer}>
