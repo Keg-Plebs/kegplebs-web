@@ -116,6 +116,13 @@ const Nav = props => {
 						 	String(userAddress).substring(38) }</div>
                     </div>) : (<></>)
                 }
+                {
+                    screenWidth < screen ? 
+                    <button className={menu} onClick={handleClick}>
+                        <Fade direction='left'/>
+                    </button> :
+                    <></>
+                }
             </div>
             {
                 (active || screenWidth > screen) ? (
@@ -144,13 +151,6 @@ const Nav = props => {
                         <Connect onConnected={handleIconDisplay}/>
                     </div>
                 </>) :
-                <></>
-            }
-            {
-                screenWidth < screen ? 
-                <button className={menu} onClick={handleClick}>
-                    <Fade direction='left'/>
-                </button> :
                 <></>
             }
         </nav>

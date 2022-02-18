@@ -52,11 +52,7 @@
     margin-left: auto;
 }
 
-@media screen and (max-width: 500px) {
-    .container {
-        margin: 0 15px;
-    }
-
+@media screen and (max-width: 800px) {
     .content {
         font-size: 15px;
         line-height: 20px;

@@ -1,30 +1,29 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
 import { 
     milestoneInfo
 } from '../styles/Roadmap.module.css';
 
 const MilestoneInfo = ({data}) => {
-    const [screenWidth, setScreenWidth] = useState(20000);
-
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    
+    const mobile = screenWidth < 800;
 
     useEffect(() => {
-        setScreenWidth(window.innerWidth);
-        document.body.style.overflowY = screenWidth < 800 ? 'hidden' : 'visible';
-
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
         }
 
         window.addEventListener('resize', changeWidth)
 
+        document.body.style.overflow = mobile ? 'hidden' : 'visible';
+        document.body.style.position = mobile ? 'relative' : '';
+
         return () => {
             document.body.style.overflow = 'visible';
             window.removeEventListener('resize', changeWidth);
         }
     }, []);
-
-    console.log(screenWidth);
 
     return(
         <div 

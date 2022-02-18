@@ -166,8 +166,9 @@
     }
 
     .desc {
-        font-size: 2vh;
-        line-height: 2vh;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        letter-spacing: normal;
         text-align: center;
         width: 80vw;
         margin-left: auto;

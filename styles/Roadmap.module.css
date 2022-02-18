@@ -5,6 +5,10 @@
     margin-bottom: 14%;
     padding: 0;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contentContainer {
@@ -197,12 +201,13 @@
 
 @media screen and (max-width: 800px) {
     .roadmap {
-        height: auto;
+        height: 100vh;
     }
 
     .sectionHeader {
         margin: 0;
         margin-bottom: 2vh;
+        margin-top: 2vh;
         
         height: 17vw;
         width: 82vw;
@@ -229,10 +234,11 @@
 
     .milestoneInfo {
         left: 0;
-        top: 0;
+        top: -5vh;
         font-size: 0.75rem;
-        height: 100vh;
+        height: 110vh;
         width: 100vw;
+        position: fixed;
     }
 
     .milestoneInfo p{
@@ -248,7 +254,7 @@
     .beerFoam {
         width: 140vw;
         height: 70vh;
-        margin-top: 32vh;
+        margin-top: 43vh;
     }
 
     .beerDrip {
