@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  height: 80px;
+  height: auto;
   width: 100%;
   background: #000;
   color: #fff;
@@ -94,14 +94,18 @@
 
 .menu {
   position: absolute;
-  display: none;
+  display: flex;
   background-color: transparent;
   color: white;
   border: none;
   height: 40px;
   width: 40px;
-  top: 25px;
-  right: 5vh;
+  top: 23.25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  right: 20px;
 }
 
 .menu:hover {

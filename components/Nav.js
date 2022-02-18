@@ -146,10 +146,13 @@ const Nav = props => {
                 </>) :
                 <></>
             }
-            
-            <button className={menu} onClick={handleClick}>
-                <Fade direction='left'/>
-            </button>
+            {
+                screenWidth < screen ? 
+                <button className={menu} onClick={handleClick}>
+                    <Fade direction='left'/>
+                </button> :
+                <></>
+            }
         </nav>
     )
 }
