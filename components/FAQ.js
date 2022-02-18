@@ -19,7 +19,7 @@ const FAQ = () => {
         },
         sectionThree: {
             question: "Why Purchase a Keg Pleb NFT?",
-            answer: "The Keg Plebs community is the official “collabrewery” of the NFT space. What does this mean you ask? We're bringing the craft beer community into the digital world, and YOU are the ultimate brew master. As a holder and member of the tribe, your input will drive not only the types of brewery collaborations we pursue, but the creation of the ultimate ale trail. Oh…and did we mention we'll be partnering with some of your favorite NFT projects for exclusive, real world, beer drops, can art and pop-up events? If that's not enough (being the sendiest project out there), just remember the fermentation process takes time. You've got to stick around if you want to see what we have brewing in the back."
+            answer: "Keg Plebs is a collaBREWERY ecosystem combining and building with breweries and NFT partnerships to educate, market, and explore the boundaries of what makes web3 so special. Keg Pleb holders will help to produce and create real world beer partnerships, receive real world brewery benefits and have access to our brewery network and charity fund with profits and events that return value to the community (in-person & online) through Pleb Passport."
         },
         sectionFour: {
             question: "What is an Ale Trail?",
