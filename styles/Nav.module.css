@@ -93,15 +93,14 @@
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   display: none;
   background-color: transparent;
   color: white;
   border: none;
   height: 40px;
   width: 40px;
-  top: 25px;
-  right: 5vh;
+  right: 0;
 }
 
 .menu:hover {

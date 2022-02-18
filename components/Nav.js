@@ -114,6 +114,9 @@ const Nav = props => {
 						 	String(userAddress).substring(38) }</div>
                     </div>) : (<></>)
                 }
+                <button className={menu} onClick={handleClick}>
+                    <FontAwesomeIcon icon={faBars} id='hamburg'/>
+                </button>
             </div>
             {
                 (active || screenWidth > screen) ? (
@@ -145,9 +148,6 @@ const Nav = props => {
                 <></>
             }
             
-            <button className={menu} onClick={handleClick}>
-                <FontAwesomeIcon icon={faBars} id='hamburg'/>
-            </button>
         </nav>
     )
 }
