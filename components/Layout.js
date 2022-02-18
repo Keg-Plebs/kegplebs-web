@@ -1,5 +1,4 @@
 import styles from '../styles/Layout.module.css';
-import Nav from '../components/Nav';
 import Head from 'next/head';
 
 export const siteTitle = 'Keg Plebs'

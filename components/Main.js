@@ -1,7 +1,5 @@
 import sectionStyles from '../styles/Section.module.css'
-import { main, logoContainer, logo, hook, background, slide, slideContent1, slideContent2} from '../styles/Main.module.css';
-import Image from 'next/image';
-import { NavLogo, NeonSign } from '../public/images'
+import { main, background} from '../styles/Main.module.css';
 
 const Main = () => {
     return(

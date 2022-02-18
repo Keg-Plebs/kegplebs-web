@@ -1,10 +1,5 @@
-
-import Image from 'next/image'
-
-import { SectionBorder } from '../public/images';
-
 import sectionStyles from '../styles/Section.module.css';
-import { faq, sectionHeader, accordion, panel, sectionBorderImg } from '../styles/FAQ.module.css';
+import { faq, sectionHeader, sectionBorderImg } from '../styles/FAQ.module.css';
 import Accordion from './Accordion';
 
 const FAQ = () => {

@@ -15,10 +15,8 @@ import {
     four,
     five,
     six,
-    seven,
     beerDrip,
     beerFoam,
-    milestoneInfo,
     milestoneHeadings
  } from '../styles/Roadmap.module.css';
 

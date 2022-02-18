@@ -1,16 +1,13 @@
 
 import { useEffect, useState } from 'react';
 import {
-    background,
     door,
     bartender,
     bartenderSelect,
     open,
     closed,
     sorryBubble,
-    mintOptions,
     exitOption,
-    exitClick,
     cheersOption
 } from '../styles/Bar.module.css';
 
