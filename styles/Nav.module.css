@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  height: 80px;
+  height: auto;
   width: 100%;
   background: #000;
   color: #fff;
@@ -93,24 +93,34 @@
 }
 
 .menu {
-  position: fixed;
-  display: none;
+  position: absolute;
+  display: flex;
   background-color: transparent;
   color: white;
   border: none;
   height: 40px;
   width: 40px;
-  right: 0;
+  top: 23.25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  right: 20px;
 }
 
 .menu:hover {
   cursor: pointer;
+  color: rgb(245,150,195);
 }
 
 .linkGroup {
   position: absolute;
   display: flex;
   flex-direction: row;
+}
+
+.nav span:hover {
+  color: rgb(245,150,195);
 }
 
 .li {
@@ -140,6 +150,10 @@
   color: white;
   display: inline;
   height: 30px;
+}
+
+.socialIcons:hover {
+  color: rgb(245,150,195);
 }
 
 .icons {

@@ -22,14 +22,20 @@ import {
     milestoneHeadings
  } from '../styles/Roadmap.module.css';
 
+import MilestoneInfo from './MilestoneInfo';
+
 const Roadmap = () => {
     const [clicked, setClicked] = useState(0);
     const [screenWidth, setScreenWidth] = useState(20000);
     const mobile = screenWidth < 800 ? true : false;
 
+    console.log(mobile)
+
     const ref = useRef();
     
     useEffect(() => {
+        setScreenWidth(window.innerWidth);
+
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
         }
@@ -120,16 +126,10 @@ const Roadmap = () => {
                             {data.one.milestone}
                         </h2>
                     </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: clicked === 1 ? "flex" : "none"}}
-                    >
-                        {   
-                            Object.values(data.one.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
-                        }
-                    </div> 
+                    {
+                        clicked === 1 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                    }
+                    
 
                     <div className={`${left} ${two}`}>
                         <h2 className={milestoneHeadings}
@@ -141,16 +141,9 @@ const Roadmap = () => {
                             {data.two.milestone}
                         </h2>
                     </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: clicked === 2 ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.two.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
-                        }
-                    </div>
+                    {
+                        clicked === 2 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                    }
                     
                     <div className={`${left} ${three}`}>
                         <h2 className={milestoneHeadings}
@@ -162,16 +155,9 @@ const Roadmap = () => {
                             {data.three.milestone}
                         </h2>
                     </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: clicked === 3 ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.three.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
-                        }
-                    </div>
+                    {
+                        clicked === 3 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                    }
                     
                     <div className={`${left} ${four}`}>
                         <h2 className={milestoneHeadings}
@@ -183,16 +169,9 @@ const Roadmap = () => {
                             {data.four.milestone}
                         </h2>
                     </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: clicked === 4 ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.four.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
-                        }
-                    </div>
+                    {
+                        clicked === 4 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                    }
                     
                     <div className={`${left} ${five}`}>
                         <h2 className={milestoneHeadings}
@@ -204,16 +183,9 @@ const Roadmap = () => {
                             {data.five.milestone}
                         </h2>
                     </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: clicked === 5 ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.five.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
-                        }
-                    </div>
+                    {
+                        clicked === 5 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                    }
 
                     <div className={`${left} ${six}`}>
                         <h2 className={milestoneHeadings}
@@ -225,16 +197,9 @@ const Roadmap = () => {
                             {data.six.milestone}
                         </h2>
                     </div>
-                    <div 
-                        className={milestoneInfo}
-                        style={{ display: clicked === 6 ? "flex" : "none" }}
-                    >
-                        { 
-                            Object.values(data.six.desc).map((child, key) => {
-                                return <p key={key}>{child}</p> 
-                            })
-                        }
-                    </div>
+                    {
+                        clicked === 6 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                    }
                 </div>
                 <div className={rightImg}></div>
                 <div className={beerDrip}></div>

@@ -15,9 +15,22 @@
 }
 
 .sectionHeader {
-    letter-spacing: 3px;
-    font-size: 5rem;
-    left: 10vw;
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerKeg {
+    background-image: url('../public/teamheader.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 10vw;
+    width: 55%;
+    margin-bottom: 5vh;
 }
 
 .card {
@@ -92,16 +105,14 @@
     margin: 0;
 }
 
-@media screen and (max-width: 500px) {
-    .sectionHeader {
-        font-size: 3rem;
-        width: 100vw;
-        text-align: center;
-        margin-top: 0;
-    }
-
+@media screen and (max-width: 800px) {
     .container {
         flex-direction: column;
+    }
+
+    .headerKeg {
+        height: 17vw;
+        width: 100%;
     }
 
     .img {

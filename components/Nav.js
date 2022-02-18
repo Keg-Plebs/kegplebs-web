@@ -7,6 +7,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Passport from '../public/pdfs/Pleb_Passport_2.pdf';
 
+import { Fade, Fade as Hamburger } from 'hamburger-react'
+
 import { Opensea, Etherscan, NavLogo, Icon } from '../public/images';
 import { 
     nav, 
@@ -114,9 +116,6 @@ const Nav = props => {
 						 	String(userAddress).substring(38) }</div>
                     </div>) : (<></>)
                 }
-                <button className={menu} onClick={handleClick}>
-                    <FontAwesomeIcon icon={faBars} id='hamburg'/>
-                </button>
             </div>
             {
                 (active || screenWidth > screen) ? (
@@ -147,7 +146,13 @@ const Nav = props => {
                 </>) :
                 <></>
             }
-            
+            {
+                screenWidth < screen ? 
+                <button className={menu} onClick={handleClick}>
+                    <Fade direction='left'/>
+                </button> :
+                <></>
+            }
         </nav>
     )
 }
