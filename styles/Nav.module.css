@@ -94,14 +94,17 @@
 
 .menu {
   position: absolute;
-  display: none;
+  display: flex;
   background-color: transparent;
   color: white;
   border: none;
   height: 40px;
   width: 40px;
   top: 25px;
-  right: 5vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .menu:hover {
