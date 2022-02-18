@@ -53,6 +53,10 @@
 }
 
 @media screen and (max-width: 800px) {
+    .container {
+        margin: 0 5vw;
+    }
+
     .content {
         font-size: 15px;
         line-height: 20px;
