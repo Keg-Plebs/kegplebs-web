@@ -21,13 +21,20 @@
 }
 
 .backgroundImage {
-  width: 100%;
+  width: 100vw;
   background-image: linear-gradient(to top left, rgba(143, 124, 38, 0.2), rgba(56, 64, 44, 0.2)100), url('../public/barsceneone.webp');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  top: 0; left: 0;
+  bottom: 0;
 }
 
 .navElement {
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  
 }
