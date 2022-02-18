@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import sectionStyles from '../styles/Section.module.css';
 import { 
@@ -14,10 +14,8 @@ import {
     four,
     five,
     six,
-    seven,
     beerDrip,
     beerFoam,
-    milestoneInfo,
     milestoneHeadings
  } from '../styles/Roadmap.module.css';
 

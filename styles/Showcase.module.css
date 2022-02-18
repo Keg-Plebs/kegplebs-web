@@ -47,7 +47,7 @@
     transform: translate3d(0,0,0);
     width: 4950px;
 
-    animation: moveSlideshowLeft 35s linear infinite;
+    animation: moveSlideshowLeft 40s linear infinite;
 }
 
 .second {
@@ -58,7 +58,7 @@
     width:4950px;
 
     
-    animation: moveSlideshowRight 38s linear infinite;
+    animation: moveSlideshowRight 42s linear infinite;
 }
 
 .third {
@@ -69,7 +69,7 @@
     width: 4950px;
     margin-bottom: 400px;
 
-    animation: moveSlideshowLeft 25s linear infinite;
+    animation: moveSlideshowLeft 38s linear infinite;
 }
 
 .imgContainer {

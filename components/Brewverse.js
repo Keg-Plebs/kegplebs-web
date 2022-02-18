@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 import { Suspense, useState, useRef, useEffect, useLayoutEffect, useContext } from 'react'
+=======
+import { Suspense, useState, useContext } from 'react'
+>>>>>>> Stashed changes
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
@@ -14,6 +18,11 @@ import {
 import Interior from './brewverse/Interior'
 import Verse from './brewverse/Verse'
 
+<<<<<<< Updated upstream
+=======
+import Bar from './Bar';
+
+>>>>>>> Stashed changes
 import ProviderContext from './ProviderContext';
 
 import { DISCORD_LINK, SCENES } from '../lib/constants'
@@ -23,6 +32,14 @@ import { DISCORD_LINK, SCENES } from '../lib/constants'
 const Brewverse = () => {
 
     const [scene, switchScene] = useState(SCENES.VERSE);
+<<<<<<< Updated upstream
+=======
+    const [breweryScene, setBreweryScene] = useState(false)
+
+    const { provider, setProvider } = useContext(ProviderContext);
+    
+    let component;
+>>>>>>> Stashed changes
 
     const {provider, setProvider} = useContext(ProviderContext);
 
