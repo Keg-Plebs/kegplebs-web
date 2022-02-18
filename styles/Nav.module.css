@@ -106,12 +106,17 @@
 
 .menu:hover {
   cursor: pointer;
+  color: rgb(245,150,195);
 }
 
 .linkGroup {
   position: absolute;
   display: flex;
   flex-direction: row;
+}
+
+.nav span:hover {
+  color: rgb(245,150,195);
 }
 
 .li {
@@ -141,6 +146,10 @@
   color: white;
   display: inline;
   height: 30px;
+}
+
+.socialIcons:hover {
+  color: rgb(245,150,195);
 }
 
 .icons {
