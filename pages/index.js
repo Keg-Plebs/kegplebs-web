@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import Head from 'next/head'
 import Scroll from 'react-scroll'
 const Element = Scroll.Element;
@@ -18,6 +16,7 @@ import { container, backgroundImage, navElement } from '../styles/Layout.module.
 import { siteTitle } from '../components/Layout'
 
 const Home = () => {
+  
   return (
     <>
       
