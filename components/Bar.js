@@ -1,13 +1,23 @@
 
 import { useEffect, useState } from 'react';
 import {
+<<<<<<< HEAD
+=======
+    background,
+>>>>>>> develop
     door,
     bartender,
     bartenderSelect,
     open,
     closed,
     sorryBubble,
+<<<<<<< HEAD
     exitOption,
+=======
+    mintOptions,
+    exitOption,
+    exitClick,
+>>>>>>> develop
     cheersOption
 } from '../styles/Bar.module.css';
 

@@ -8,7 +8,11 @@ import {
     Flowers,
     Bitchass,
     Jeff,
-    Glow
+    TheOozic,
+    TheJeff,
+    TheSJ,
+    TheShdw,
+    TheTSIZ
 } from '../public/images';
 
 import { 
@@ -22,7 +26,10 @@ import {
     name, 
     twitter, 
     title,
-    sectionHeader
+    sectionHeader,
+    headerKeg,
+    headerPleb,
+    headerTeam
 } from '../styles/Team.module.css';
 import sectionStyles from '../styles/Section.module.css';
 import { useEffect, useState } from 'react';
@@ -30,7 +37,7 @@ import { useEffect, useState } from 'react';
 
 const Team = () => {
     const [screenWidth, setScreenWidth] = useState(20000);
-    const size = screenWidth < 400 ? 275 : 350;
+    const size = screenWidth < 400 ? 150 : 250;
 
     useEffect(() => {
         const changeWidth = () => {
@@ -46,7 +53,11 @@ const Team = () => {
 
     return(
         <div className={`${sectionStyles.main} ${team}`}>
-            <h1 className={sectionHeader}>KEG PLEB SCIENTISTS</h1>
+            <div className={sectionHeader}>
+                <div className={headerKeg}></div>
+                <div className={headerPleb}></div>
+                <div className={headerTeam}></div>
+            </div>
             <div className={container}>
                 <div className={card} id="sj">
                     <div className={imgContainer}>
@@ -54,7 +65,7 @@ const Team = () => {
                             <Image src={Flowers} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheSJ} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -69,7 +80,7 @@ const Team = () => {
                             <Image src={Oozic} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheOozic} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -84,7 +95,7 @@ const Team = () => {
                             <Image src={Drooly} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheTSIZ} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     
@@ -92,7 +103,7 @@ const Team = () => {
                         <h3 className={name}>TSIZ</h3>
                         <a href='https://twitter.com/secondhandgains'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ADVISOR</p>
+                    <p className={title}>ADVISOR / CO-FOUNDER</p>
                 </div>
                 <div className={card} id="shdw">
                     <div className={imgContainer}>
@@ -100,7 +111,7 @@ const Team = () => {
                             <Image src={Bitchass} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheShdw} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     <div className={heading}>
@@ -115,7 +126,7 @@ const Team = () => {
                             <Image src={Jeff} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgBack}>
-                            <Image src={Glow} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={TheJeff} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                     </div>
                     

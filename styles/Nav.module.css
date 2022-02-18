@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  height: 110px;
+  height: auto;
   width: 100%;
   background: #000;
   color: #fff;
@@ -8,8 +8,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   z-index: 4;
+}
+
+.navLogo {
+  background-image: url('../public/navbarLogo.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  height: 20vh;
+  width: 25vh;
+  margin-top: auto;
 }
   
 .nav ul {
@@ -34,7 +45,6 @@
 .logoGroup {
   position: absolute;
   left: 25px;
-  top: -60px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -83,20 +93,35 @@
 }
 
 .menu {
-  display: none;
+  position: absolute;
+  display: flex;
   background-color: transparent;
   color: white;
   border: none;
+  width: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  right: 20px;
+
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .menu:hover {
   cursor: pointer;
+  color: rgb(245,150,195);
 }
 
 .linkGroup {
   position: absolute;
   display: flex;
   flex-direction: row;
+}
+
+.nav span:hover {
+  color: rgb(245,150,195);
 }
 
 .li {
@@ -125,7 +150,11 @@
 .socialIcons {
   color: white;
   display: inline;
-  height: 40px;
+  height: 30px;
+}
+
+.socialIcons:hover {
+  color: rgb(245,150,195);
 }
 
 .icons {
@@ -135,26 +164,30 @@
 
 @media screen and (max-width: 1700px) {
   .nav {
-    position: relative;
+    position: fixed;
     flex-direction: column;
-    min-height: 110px;
-    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    padding: 15px 0;
+    
     height: auto;
     margin-bottom: -120px;
   }
 
   .logoGroup {
-    position: absolute;
-    display: block;
-    left: -30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+    
+    left: 0;
   }
 
-  .menu {
-    display: block;
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    color: white;
+  .navLogo {
+    position: static;
   }
 
   .linkGroup {
@@ -163,10 +196,22 @@
     flex-direction: column;
   }
 
+  .menu {
+    display: block;
+    margin-left: auto;
+
+    color: white;
+    margin-left: 0;
+    margin-right: 2vw;
+  }
+
   .socialGroup {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     margin: 0;
   }
 
@@ -174,8 +219,10 @@
     margin-top: 15px;
   }
 
+
   .li:nth-of-type(1) {
-    padding-top: 85px;
+    padding-top: 0vh;
+    margin-top: 5vh;
   }
 
   .icons {
@@ -185,28 +232,31 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 800px) {
   .nav {
     position: relative;
     flex-direction: column;
-    min-height: 110px;
-    padding: 20px 0;
-    height: auto;
-    margin-bottom: -120px;
+    justify-content: center;
+    align-items: center;
   }
 
   .logoGroup {
-    position: absolute;
-    display: block;
-    left: -30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
   }
+
+
 
   .menu {
     display: block;
-    position: absolute;
-    top: 30px;
-    right: 10px;
+    margin-left: auto;
+
     color: white;
+    margin-left: 0;
   }
 
   .linkGroup {
@@ -219,14 +269,12 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .li, .a {
     margin-top: 15px;
-  }
-
-  .li:nth-of-type(1) {
-    padding-top: 85px;
   }
 
   .icons {

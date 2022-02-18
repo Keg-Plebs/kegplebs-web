@@ -11,23 +11,24 @@
     overflow: hidden;
     max-width: 100vw;
     transform: translate3d(0,0,0);
+    height: auto;
 }
 
 .sectionHeader {
     position: relative;
-    margin-left: 48%;
+    margin-left: 50%;
     z-index: 3;
     background-image: url('../public/navbarLogo.webp');
     background-repeat: no-repeat;
     background-size: cover;
-    height: 650px;
+    background-position: center;
+    
+    height: 30vh;
     width: 40%;
 }
 
 .showcaseOverlay {
-    margin-top: -100px;
-    top: -45px;
-    height: 100%;
+    top: 0;
     background-image: linear-gradient(to right, rgba(0,0,0,0) 25%,rgba(0,0,0, 1) 55%,
     rgba(0, 0, 0, 1) 100%);
     position: absolute;
@@ -36,6 +37,7 @@
     justify-content: center;
     align-items: center;
 
+    height: 750px;
     z-index: 1;
 }
 
@@ -45,7 +47,7 @@
     display: flex;
     flex-direction: row;
     transform: translate3d(0,0,0);
-    width: 4950px;
+    width: 4500px;
 
     animation: moveSlideshowLeft 40s linear infinite;
 }
@@ -55,7 +57,7 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    width:4950px;
+    width:4500px;
 
     
     animation: moveSlideshowRight 42s linear infinite;
@@ -66,8 +68,8 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    width: 4950px;
-    margin-bottom: 400px;
+    width: 4500px;
+    margin-bottom: 200px;
 
     animation: moveSlideshowLeft 38s linear infinite;
 }
@@ -76,19 +78,16 @@
     margin: 0;
     padding: 0;
     position: relative;
-    height:275px;
-    width: 275px;
+    height:250px;
+    width: 250px;
 }
 
 .desc {
-    margin-top: -25px;
-    height: 100%;
-    font-size: 25px;
-    font-weight: 300;
+    font-size: 1.2rem;
     letter-spacing: 2px;
-    line-height: 50px;
-    margin-left: 55%;
-    margin-right: 8%;
+    line-height: 1.7rem;
+    margin-left: 60%;
+    margin-right: 10%;
     text-align: center;
 }
 
@@ -105,50 +104,75 @@
 }
 
 @media screen and (max-width: 1700px) {
+    .first, .second, .third {
+        width: 3600px;
+    }
+
+    .second {
+        left: -2500px;
+    }
+
+    .sectionHeader {
+        position: relative;
+        margin-left: 50%;
+        z-index: 3;
+        background-image: url('../public/navbarLogo.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 40vw;
+        height: 30%;
+    }
+
+    .showcaseOverlay {
+        height: 600px;
+    }
+
+
+    .imgContainer {
+        height: 200px;
+        width: 200px;
+    }
+    
+
+}
+
+@media screen and (max-width: 800px) {
+    .sectionHeader {
+        height: 25vw;
+        width: 85vw;
+        margin-left: 0vw;
+        margin-top: -2vh;
+    }
+
     .showcaseOverlay {
         position: relative;
+        height: auto;
+        background-image: none;
+    }
+
+    .first {
+        margin-top: 0vh;
+        width: 2700px;
+    }
+
+    .second {
+        width: 2700px;
+        left: -1900px;
     }
 
     .third {
-        margin-bottom: 5px;
+        width: 2700px;
+        margin-bottom: 5vh;
     }
 
     .desc {
-        margin-top: 0;
-        margin-bottom: 75px;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        letter-spacing: normal;
         text-align: center;
         width: 80vw;
         margin-left: auto;
         margin-right: auto;
-        font-size: 25px;
-    }
-
-}
-
-@media screen and (max-width: 400px) {
-    .sectionHeader {
-        font-size: 30px;
-        margin-bottom: -35px;
-    }
-
-    .first {
-        left: 2000px;
-    }
-
-    .second {
-        left: 1400px;
-    }
-
-    .third {
-        left: 2200px;
-        margin-bottom: -25px;
-    }
-
-    .desc {
-        margin-top: -65px;
-        font-size: 17px;
-        line-height: 25px;
-        margin-bottom: 35px;
     }
 
     .imgContainer {

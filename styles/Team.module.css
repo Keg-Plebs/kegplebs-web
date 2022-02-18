@@ -15,9 +15,22 @@
 }
 
 .sectionHeader {
-    letter-spacing: 1px;
-    font-size: 75px;
-    left: 10vw;
+    display: flex;
+    flex-direction: row;
+    width: 90vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerKeg {
+    background-image: url('../public/teamheader.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 10vw;
+    width: 55%;
+    margin-bottom: 5vh;
 }
 
 .card {
@@ -25,6 +38,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.2rem;
 }
 
 .imgContainer {
@@ -33,13 +47,15 @@
     transform-style: preserve-3d;
     transition: all 1.0s linear;
     perspective: 1000;
+    display: flex;
+    justify-content: center;
 }
 
 .img {
     position: absolute;
-    height: 350px;
-    width: 350px;
-    border-radius: 25%;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
     overflow: hidden;
     backface-visibility: hidden;
 }
@@ -50,9 +66,9 @@
 }
 
 .imgBack {
-    height: 349px;
-    width: 349px;
-    border-radius: 25%;
+    height: 249px;
+    width: 249px;
+    border-radius: 50%;
     overflow: hidden;
     transform: rotateY(180deg);
     color: white;
@@ -74,7 +90,7 @@
 .twitter {
     margin-left: 15px;
     display: inline;
-    height: 35px;
+    height: 30px;
 }
 
 .twitter:hover {
@@ -89,24 +105,23 @@
     margin: 0;
 }
 
-@media screen and (max-width: 400px) {
-    .sectionHeader {
-        font-size: 45px;
-        width: 100vw;
-        text-align: center;
-    }
-
+@media screen and (max-width: 800px) {
     .container {
         flex-direction: column;
     }
 
+    .headerKeg {
+        height: 17vw;
+        width: 100%;
+    }
+
     .img {
-        height: 275px;
-        width: 275px;
+        height: 150px;
+        width: 150px;
     }
 
     .imgBack {
-        height: 274px;
-        width: 274px;
+        height: 149px;
+        width: 149px;
     }
 }
