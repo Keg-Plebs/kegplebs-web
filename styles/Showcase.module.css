@@ -84,7 +84,6 @@
 
 .desc {
     font-size: 1.2rem;
-    font-weight: 300;
     letter-spacing: 2px;
     line-height: 1.7rem;
     margin-left: 60%;
@@ -140,9 +139,9 @@
 @media screen and (max-width: 800px) {
     .sectionHeader {
         height: 25vw;
-        width: 75vw;
+        width: 85vw;
         margin-left: 0vw;
-        margin-top: -5vh;
+        margin-top: -2vh;
     }
 
     .showcaseOverlay {
