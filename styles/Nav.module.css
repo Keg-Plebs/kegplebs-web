@@ -98,14 +98,15 @@
   background-color: transparent;
   color: white;
   border: none;
-  height: 40px;
   width: 40px;
-  top: 23.25px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   
   right: 20px;
+
+  margin-left: auto;
+  margin-right: 20px;
 }
 
 .menu:hover {
@@ -163,24 +164,30 @@
 
 @media screen and (max-width: 1700px) {
   .nav {
-    position: relative;
+    position: fixed;
     flex-direction: column;
-    height: 80px;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
     padding: 15px 0;
+    
     height: auto;
     margin-bottom: -120px;
   }
 
   .logoGroup {
-    position: absolute;
-    display: block;
-    left: -30px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+    
+    left: 0;
   }
 
-  .menu {
-    display: block;
-    position: absolute;
-    color: white;
+  .navLogo {
+    position: static;
   }
 
   .linkGroup {
@@ -189,10 +196,22 @@
     flex-direction: column;
   }
 
+  .menu {
+    display: block;
+    margin-left: auto;
+
+    color: white;
+    margin-left: 0;
+    margin-right: 2vw;
+  }
+
   .socialGroup {
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     margin: 0;
   }
 
@@ -200,8 +219,10 @@
     margin-top: 15px;
   }
 
+
   .li:nth-of-type(1) {
-    padding-top: 85px;
+    padding-top: 0vh;
+    margin-top: 5vh;
   }
 
   .icons {
@@ -211,37 +232,7 @@
   }
 }
 
-@media screen and (max-width: 1700px) {
-  .nav {
-    position: fixed;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logoGroup {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    left: 1vw;
-    height: 7vh;
-  }
-
-  .socialGroup {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .li:nth-of-type(1) {
-    padding-top: 0vh;
-    margin-top: 5vh;
-  }
-}
-
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
   .nav {
     position: relative;
     flex-direction: column;
@@ -252,16 +243,20 @@
   .logoGroup {
     position: relative;
     display: flex;
-    flex-direction: column;
-    left: 2vw;
+    flex-direction: row;
+    align-items: center;
     height: 7vh;
+    width: 100%;
   }
+
+
 
   .menu {
     display: block;
-    position: absolute;
-    right: 10px;
+    margin-left: auto;
+
     color: white;
+    margin-left: 0;
   }
 
   .linkGroup {

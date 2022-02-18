@@ -29,8 +29,6 @@ const Roadmap = () => {
     const [screenWidth, setScreenWidth] = useState(20000);
     const mobile = screenWidth < 800 ? true : false;
 
-    console.log(mobile)
-
     const ref = useRef();
     
     useEffect(() => {
@@ -142,7 +140,7 @@ const Roadmap = () => {
                         </h2>
                     </div>
                     {
-                        clicked === 2 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                        clicked === 2 ? <MilestoneInfo data={data.two}></MilestoneInfo> : <></>
                     }
                     
                     <div className={`${left} ${three}`}>
@@ -156,7 +154,7 @@ const Roadmap = () => {
                         </h2>
                     </div>
                     {
-                        clicked === 3 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                        clicked === 3 ? <MilestoneInfo data={data.three}></MilestoneInfo> : <></>
                     }
                     
                     <div className={`${left} ${four}`}>
@@ -170,7 +168,7 @@ const Roadmap = () => {
                         </h2>
                     </div>
                     {
-                        clicked === 4 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                        clicked === 4 ? <MilestoneInfo data={data.four}></MilestoneInfo> : <></>
                     }
                     
                     <div className={`${left} ${five}`}>
@@ -184,7 +182,7 @@ const Roadmap = () => {
                         </h2>
                     </div>
                     {
-                        clicked === 5 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                        clicked === 5 ? <MilestoneInfo data={data.five}></MilestoneInfo> : <></>
                     }
 
                     <div className={`${left} ${six}`}>
@@ -198,7 +196,7 @@ const Roadmap = () => {
                         </h2>
                     </div>
                     {
-                        clicked === 6 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
+                        clicked === 6 ? <MilestoneInfo data={data.six}></MilestoneInfo> : <></>
                     }
                 </div>
                 <div className={rightImg}></div>

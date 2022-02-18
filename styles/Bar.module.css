@@ -38,7 +38,7 @@
 
 .bartender {
     position: absolute;
-    top: 5vh;
+    top: 3vw;
     left: 24vw;
     height: 55vh;
     width: 55vw;
@@ -112,4 +112,15 @@
     width: 55vw;
     
     pointer-events: none;
+}
+
+@media screen and (max-width: 1700px) {
+    .bartender {
+        top: 4vw;
+    }
+
+    .exitOption {
+        left: 23vw;
+        top: -7.5vh;
+    }
 }
