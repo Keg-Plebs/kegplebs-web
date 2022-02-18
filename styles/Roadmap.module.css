@@ -210,11 +210,11 @@
         margin-top: 2vh;
         
         height: 17vw;
-        width: 77vw;
+        width: 79vw;
     }
 
     .contentContainer {
-        height: 80vh;
+        height: 100vh;
     }
 
     .timeline {
@@ -254,7 +254,7 @@
     .beerFoam {
         width: 140vw;
         height: 70vh;
-        margin-top: 43vh;
+        margin-top: 55vh;
     }
 
     .beerDrip {

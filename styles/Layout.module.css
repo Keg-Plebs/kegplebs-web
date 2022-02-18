@@ -29,10 +29,15 @@
   background-attachment: fixed;
   top: 0; left: 0;
   bottom: 0;
-
-  pointer-events: none;
 }
 
 .navElement {
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .backgroundImage {
+    background-color: #b5d9dc;
+    background-image: none;
+  }
 }
