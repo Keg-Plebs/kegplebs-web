@@ -7,6 +7,8 @@ import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Passport from '../public/pdfs/Pleb_Passport_2.pdf';
 
+import { Fade, Fade as Hamburger } from 'hamburger-react'
+
 import { Opensea, Etherscan, NavLogo, Icon } from '../public/images';
 import { 
     nav, 
@@ -146,7 +148,7 @@ const Nav = props => {
             }
             
             <button className={menu} onClick={handleClick}>
-                <FontAwesomeIcon icon={faBars} id='hamburg'/>
+                <Fade direction='left'/>
             </button>
         </nav>
     )
