@@ -187,11 +187,12 @@
     width: 100%;
     
     left: 0;
-    margin-left: 0;
   }
 
   .navLogo {
     position: static;
+    
+    margin-left: 0px;
   }
 
   .linkGroup {
