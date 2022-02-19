@@ -72,7 +72,7 @@ const Team = () => {
                         <h3 className={name}>SJ</h3>
                         <a href='https://twitter.com/Sjams_'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>MARKETING / CO-FOUNDER</p>
+                    <p className={title}>PARTNERSHIPS & COMMUNITY DIRECTOR</p>
                 </div>
                 <div className={card} id="oozic">
                     <div className={imgContainer}>
@@ -87,7 +87,7 @@ const Team = () => {
                         <h3 className={name}>IZAAC</h3>
                         <a href='https://twitter.com/izaactoonks'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ART LEAD / CO-FOUNDER</p>
+                    <p className={title}>ART LEAD</p>
                 </div>
                 <div className={card} id="tsiz">
                     <div className={imgContainer}>
@@ -103,7 +103,7 @@ const Team = () => {
                         <h3 className={name}>TSIZ</h3>
                         <a href='https://twitter.com/secondhandgains'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ADVISOR / CO-FOUNDER</p>
+                    <p className={title}>ADVISOR</p>
                 </div>
                 <div className={card} id="shdw">
                     <div className={imgContainer}>
