@@ -1,9 +1,6 @@
-
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { TankIcon } from '../public/images';
 
 import {
     sectionContainer,

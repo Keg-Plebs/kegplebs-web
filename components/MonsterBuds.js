@@ -5,8 +5,6 @@ import {
     sectionText,
     sectionImage,
     centerLogo,
-    digital,
-    arrow
 } from '../styles/MonsterBuds.module.css';
  
 const MonsterBuds = () => {
