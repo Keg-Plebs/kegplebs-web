@@ -1,4 +1,6 @@
-import { Suspense, useState, componentWillMount, componentWillUnmount, useContext } from 'react'
+
+import { Suspense, useState, useContext } from 'react'
+
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';
@@ -19,9 +21,7 @@ import {
 } from '../styles/Brewverse.module.css';
 
 import Verse from './brewverse/Verse'
-
 import Bar from './Bar';
-import Team from './Team'
 
 import ProviderContext from './ProviderContext';
 

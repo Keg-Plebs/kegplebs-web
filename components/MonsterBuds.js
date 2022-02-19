@@ -4,9 +4,7 @@ import {
     visualContent,
     sectionText,
     sectionImage,
-    centerLogo,
-    digital,
-    arrow
+    centerLogo
 } from '../styles/MonsterBuds.module.css';
  
 const MonsterBuds = () => {

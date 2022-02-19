@@ -3,13 +3,12 @@ import Image from 'next/image';
 import { scroller } from 'react-scroll';
 
 import { faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Passport from '../public/pdfs/Pleb_Passport_2.pdf';
 
 import { Fade, Fade as Hamburger } from 'hamburger-react'
 
-import { Opensea, Etherscan, NavLogo, Icon } from '../public/images';
+import { Opensea, Etherscan, Icon } from '../public/images';
 import { 
     nav, 
     logoGroup, 
