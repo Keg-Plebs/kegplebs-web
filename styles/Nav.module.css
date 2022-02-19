@@ -10,6 +10,8 @@
   justify-content: center;
   font-size: 1.5rem;
   z-index: 4;
+  
+  padding: 1vh 0;
 }
 
 .navLogo {
@@ -21,6 +23,7 @@
   height: 20vh;
   width: 25vh;
   margin-top: auto;
+  margin-left: 68px;
 }
   
 .nav ul {
@@ -184,6 +187,7 @@
     width: 100%;
     
     left: 0;
+    margin-left: 0;
   }
 
   .navLogo {
