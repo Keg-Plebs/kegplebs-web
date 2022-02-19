@@ -152,8 +152,7 @@
         width: 125vw;
         z-index: 2;
         top: 0vh;
-        right: 15vw;
-        right: -8vw;
+        right: -12vw;
         
         pointer-events: none;
     }
