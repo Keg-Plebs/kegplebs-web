@@ -42,6 +42,10 @@ import {
 import sectionStyles from '../styles/Section.module.css';
 import { showcase, first, second, third, imgContainer, sectionHeader, showcaseOverlay, desc, contentContainer } from '../styles/Showcase.module.css';
 
+const myLoader = ({ src, width, quality }) => {
+    return `https://dspp4aqyru269.cloudfront.net/${src}`
+  }
+
 const Showcase = () => {
     const [screenWidth, setScreenWidth] = useState(20000);
     let size;

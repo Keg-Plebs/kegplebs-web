@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-import ReactCSSTransitionGroup from 'react-transition-group';
 
 import sectionStyles from '../styles/Section.module.css';
 import { 

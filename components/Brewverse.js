@@ -1,6 +1,4 @@
-
 import { Suspense, useState, useContext } from 'react'
-
 import { Canvas } from '@react-three/fiber'
 
 import sectionStyles from '../styles/Section.module.css';

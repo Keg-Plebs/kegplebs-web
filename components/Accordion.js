@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { container, button, content, holder, toggleIcon } from '../styles/Accordion.module.css';
 import { faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
