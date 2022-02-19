@@ -4,22 +4,22 @@
 }
 
 .sectionHeader {
-    height: 6vw;
-    width: 12vw;
+    height: 10vw;
+    width: 20vw;  
     background-image: url('../public/FAQ.webp');
     background-size: cover;
     margin-top: 5%;
     margin-bottom: 75px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
     .sectionHeader {
         margin-left: 0;
         padding: 0;
 
-        width: 30vw;
-        height: 7vh;
+        height: 17vw;
+        width: 34vw;    
         margin: 5vw 0;
-        margin-top: -10vw;
+        margin-top: -1vh;
     }
 }

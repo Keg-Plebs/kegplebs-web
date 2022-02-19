@@ -4,10 +4,14 @@
     margin-right: 90px;
     display: block;
     border: 1px solid rgba(209, 213, 219, 0.5);
+    border-radius: 10px;
+    
 }
 
 .holder {
     width: 100vw;
+    
+    margin-bottom: 2vh;
 }
 
 /* .container:hover {
@@ -27,6 +31,8 @@
     cursor: pointer;
     transition: 0.4s;
     align-items: center;
+    border-radius: 10px;
+
 }
 
 .content {
@@ -36,6 +42,8 @@
     width: 100%;
     transition: 1s ease-out;
     letter-spacing: 1px;
+    border-radius: 0px 0px 10px 10px;
+
 }
 
 .toggleIcon {
@@ -44,9 +52,9 @@
     margin-left: auto;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
     .container {
-        margin: 0 15px;
+        margin: 0 5vw;
     }
 
     .content {

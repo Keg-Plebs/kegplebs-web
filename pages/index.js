@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import Head from 'next/head'
 import Scroll from 'react-scroll'
 const Element = Scroll.Element;
@@ -18,12 +16,7 @@ import { container, backgroundImage, navElement } from '../styles/Layout.module.
 import { siteTitle } from '../components/Layout'
 
 const Home = () => {
-  const [brewverseEntered, setBrewverseEntered] = useState(false)
-
-  const handleEnterBrewverse = bool => {
-    // setBrewverseEntered(bool);
-  }
-
+  
   return (
     <>
       
@@ -39,7 +32,7 @@ const Home = () => {
           </Element>
           <Showcase></Showcase>
           <Element id='brewverse' name='brewverse' className={navElement}>
-            <Brewverse enterBrewverse={handleEnterBrewverse}></Brewverse>
+            <Brewverse></Brewverse>
           </Element>
           <Collabs></Collabs>
           <Element id='about' name='about' className={navElement}>
@@ -54,6 +47,17 @@ const Home = () => {
       <Footer></Footer>
     </>
   )
+}
+
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
+
+  return {
+    props: {},
+  }
 }
 
 export default Home;

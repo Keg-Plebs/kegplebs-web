@@ -42,9 +42,17 @@ import {
 import sectionStyles from '../styles/Section.module.css';
 import { showcase, first, second, third, imgContainer, sectionHeader, showcaseOverlay, desc, contentContainer } from '../styles/Showcase.module.css';
 
+const myLoader = ({ src, width, quality }) => {
+    return `https://dspp4aqyru269.cloudfront.net/${src}`
+  }
+
 const Showcase = () => {
     const [screenWidth, setScreenWidth] = useState(20000);
-    const size = screenWidth < 500 ? 150 : 250;
+    let size;
+
+    if(screenWidth < 800) size = 150
+    else if(screenWidth < 1700) size = 200
+    else size = 250
 
     const ref = useRef();
     
@@ -67,25 +75,25 @@ const Showcase = () => {
                 <div className={contentContainer}>
                     <div className={first}>
                         <div className={imgContainer}>
-                            <Image src={Two} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Two} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Raincoat} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Five} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Five} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Seven} quality={100} loading="lazy" width={size} height={size} ></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Eight} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Eight} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Three} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={One} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={One} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Space} quality={100} loading="lazy" width={size} height={size}></Image>
@@ -212,7 +220,7 @@ const Showcase = () => {
                             <Image src={TwentyTwo} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Twenty} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Twenty} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Goat} quality={100} loading="lazy" width={size} height={size}></Image>

@@ -1,25 +1,61 @@
 .sectionContainer {
     width: 100vw;
-    height: 75vh;
     display: flex;
     flex-direction: row;
     margin-top: 150px;
+    margin-bottom: 10vh;;
+}
+
+.sectionHeader {
+    background-image: url('../public/optTankTransp.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 28vw;
+    height: 14vw;
+    position: relative;
+    margin-left: 8%;
+    padding-right: 2%;
+}
+
+.mainContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    width: 42%;
+    margin-left: 6%;
+    margin-right: 2%;
+}
+
+.visualContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    width: 40%;
+    padding-left: 2%;
+    height: inherit;
 }
 
 .sectionImage {
-    background-image: url('../public/tankVertAnnounce.webp');
+    background-image: url('../public/tankcollabs.webp');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 40%;
-    height: 40vw;
-    margin-right: 10%;
+    height: 72%;
+    width: 100%;
 }
 
 .sectionText {
-    width: 40%;
+    position: relative;
     margin-left: 8%;
     padding-right: 2%;
-    height: 40vw;
     color: white;
     display: flex;
     flex-direction: column;
@@ -50,7 +86,6 @@
 }
 
 .physical {
-    margin-top: 150px;
     width: 80%;
     color: white;
 }
@@ -64,7 +99,6 @@
 .physical h2 {
     font-weight: 300;
     letter-spacing: 5px;
-    
 }
 
 .physical:after {
@@ -76,20 +110,59 @@
     left: 5%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1700px) {
     .sectionContainer {
-        margin-top: 10vh;
-        width: 80vw;
+        margin-bottom: 15vh;
     }
 
-    .physical {
-        font-size: 1rem;
+    .mainContent {
+        margin-right: 0;
+        padding-right: 0;
+    }
+
+    .sectionHeader {
+        padding-right: 0;
+        margin: auto;
+        width: 24vw;
+        height: 12vw;
+    }
+
+    .sectionText {
+        margin: 0;
+    }
+
+    .sectionText p {
+        margin-bottom: 2vh;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .sectionContainer {
+        margin-top: 0vh;
+        width: 100vw;
+        margin-bottom: 5vh;
+    }
+
+    .mainContent {
+        width: 100%;
+        margin: 0;
+        height: auto;
+    }
+
+    .sectionHeader {
+        margin: 0;
         margin-top: 5vh;
+        width: 46vw;
+        height: 23vw;
     }
 
-    .arrow {
-        height: 20px;
-        margin-right: 10px;
+    .visualContent {
+        margin-top: 5vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .sectionContainer {
@@ -101,17 +174,15 @@
         width: 80vw;
         position: relative;
         margin-bottom: 0;
+        height: auto;
     }
 
     .sectionText h1 {
         font-size: 1.5rem;
         line-height: 1.6rem;
-        margin-top: 35vh;
-        margin-bottom: 40vh;
     }
 
     .sectionText p {
-
         font-size: 1rem;
         line-height: 1.1rem;
         width: 80vw;
@@ -119,8 +190,23 @@
 
     .sectionImage {
         position: relative;
-        width: 80vw;
-        height: 80vw;
-        margin-top: -34vh;
+        height: 72vw;
+        width: 100vw;
+    }
+
+    .physical {
+        margin-top: 5vh;
+        font-size: 1rem;
+        position: relative;
+    }
+
+    .physical::after {
+        width: 90vw;
+        left: -5vw;
+    }
+
+    .arrow {
+        height: 20px;
+        margin-right: 10px;
     }
 }

@@ -1,20 +1,20 @@
 // Mugshot exports
-export { default as Bitchass } from './mugshots/bitchass.webp';
+export { default as Bitchass } from './mugshots/teamshdw.webp';
 export { default as Raincoat } from './mugshots/raincoat.webp';
 export { default as Goggs } from './mugshots/goggs.webp';
-export { default as Flowers } from './mugshots/flowers.webp';
-export { default as Drooly } from './mugshots/drooly.webp';
+export { default as Flowers } from './mugshots/teamsj.webp';
+export { default as Drooly } from './mugshots/teamtsiz.webp';
 export { default as Cowb } from './mugshots/cowb.webp';
 export { default as Hipp } from './mugshots/hipp.webp';
 export { default as Vort } from './mugshots/vort.webp';
 export { default as Space } from './mugshots/space.webp';
 export { default as Hoodee } from './mugshots/hoodee.webp';
-export { default as Jeff } from './mugshots/jefftheworm.webp';
+export { default as Jeff } from './mugshots/teamjeff.webp';
 export { default as Puffer } from './mugshots/puffer.webp';
 export { default as Paris } from './mugshots/paris.webp';
 export { default as Glow } from './mugshots/glow.webp';
 export { default as Cam } from './mugshots/camera.webp';
-export { default as Oozic } from './mugshots/oozic.webp';
+export { default as Oozic } from './mugshots/teamizaac.webp';
 export { default as Baseball } from './mugshots/baseball.webp';
 export { default as Budder } from './mugshots/budder.webp';
 export { default as Doodle } from './mugshots/doodle.webp';

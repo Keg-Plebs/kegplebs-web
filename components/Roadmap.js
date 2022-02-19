@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-import ReactCSSTransitionGroup from 'react-transition-group';
 
 import sectionStyles from '../styles/Section.module.css';
 import { 
@@ -15,21 +14,23 @@ import {
     four,
     five,
     six,
-    seven,
     beerDrip,
     beerFoam,
-    milestoneInfo,
     milestoneHeadings
  } from '../styles/Roadmap.module.css';
 
+import MilestoneInfo from './MilestoneInfo';
+
 const Roadmap = () => {
-    const [hovered, setHovered] = useState('');
+    const [clicked, setClicked] = useState(0);
     const [screenWidth, setScreenWidth] = useState(20000);
-    const mobile = screenWidth < 500 ? true : false;
+    const mobile = screenWidth < 800 ? true : false;
 
     const ref = useRef();
     
     useEffect(() => {
+        setScreenWidth(window.innerWidth);
+
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
         }
@@ -41,6 +42,10 @@ const Roadmap = () => {
         }
 
     }, []);
+
+    const handleBackgroundClick = () => {
+        if(clicked) setClicked(0)
+    }
 
 
     const data = {
@@ -98,193 +103,97 @@ const Roadmap = () => {
         }
     }
 
-    const infoTags = {
-        "one": ( <div 
-                className={milestoneInfo}
-                style={{ display: hovered === 'one' ? "flex" : "none"}}
-            >
-                {   
-                    Object.values(data.one.desc).map((child, key) => {
-                        return <p key={key}>{child}</p> 
-                    })
-                }
-            </div> 
-        ),
-        "two": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'two' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.two.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "three": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'three' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.three.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "four": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'four' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.four.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "five": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'five' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.five.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        ),
-        "six": (<div 
-                    className={milestoneInfo}
-                    style={{ display: hovered === 'six' ? "flex" : "none" }}
-                >
-                    { 
-                        Object.values(data.six.desc).map((child, key) => {
-                            return <p key={key}>{child}</p> 
-                        })
-                    }
-                </div>
-        )
-    }
-
     return(
         <div className={`${sectionStyles.main} ${roadmap}`}>
-            
-            <div className={sectionHeader}></div>
-            <div className={contentContainer}>
+            <div className={contentContainer}
+                onClick={handleBackgroundClick}
+            >
                 
                 <div className={timeline}>
+                    <div className={sectionHeader}></div>
                     <div className={`${left} ${one}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('one')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(1)}
+                            style={{ width: (clicked === 1 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.one.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.one : <></>
-                        }
                     </div>
                     {
-                        mobile ? <></> : infoTags.one
+                        clicked === 1 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
                     }
+                    
 
                     <div className={`${left} ${two}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('two')
-                            }}
-                            onPointerOut={() => {
-                                setHovered(''); 
+                            onClick={() => setClicked(2)}
+                            style={{ width: (clicked === 2 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.two.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.two : <></>
-                        }
                     </div>
                     {
-                        mobile ? <></> : infoTags.two
+                        clicked === 2 ? <MilestoneInfo data={data.two}></MilestoneInfo> : <></>
                     }
                     
                     <div className={`${left} ${three}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('three')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(3)}
+                            style={{ width: (clicked === 3 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.three.milestone}
                         </h2>
-                    {
-                            mobile ? infoTags.three : <></>
-                        }
                     </div>
                     {
-                        mobile ? <></> : infoTags.three
+                        clicked === 3 ? <MilestoneInfo data={data.three}></MilestoneInfo> : <></>
                     }
                     
                     <div className={`${left} ${four}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('four')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(4)}
+                            style={{ width: (clicked === 4 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.four.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.four : <></>
-                        }
                     </div>
                     {
-                        mobile ? <></> : infoTags.four
+                        clicked === 4 ? <MilestoneInfo data={data.four}></MilestoneInfo> : <></>
                     }
                     
                     <div className={`${left} ${five}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('five')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(5)}
+                            style={{ width: (clicked === 5 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.five.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.five : <></>
-                        }
                     </div>
                     {
-                        mobile ? <></> : infoTags.five
+                        clicked === 5 ? <MilestoneInfo data={data.five}></MilestoneInfo> : <></>
                     }
+
                     <div className={`${left} ${six}`}>
                         <h2 className={milestoneHeadings}
-                            onPointerOver={() => {
-                                setHovered('six')
-                            }}
-                            onPointerOut={() => {
-                                setHovered('');
+                            onClick={() => setClicked(6)}
+                            style={{ width: (clicked === 6 && !mobile) ? '50vw': 'auto' ,
+                                textAlign: mobile ? 'center' : 'left',
                             }}
                         >
                             {data.six.milestone}
                         </h2>
-                        {
-                            mobile ? infoTags.six : <></>
-                        }
                     </div>
                     {
-                        mobile ? <></> : infoTags.six
+                        clicked === 6 ? <MilestoneInfo data={data.six}></MilestoneInfo> : <></>
                     }
                 </div>
                 <div className={rightImg}></div>

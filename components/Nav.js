@@ -3,11 +3,12 @@ import Image from 'next/image';
 import { scroller } from 'react-scroll';
 
 import { faTwitter, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Passport from '../public/pdfs/Pleb_Passport_2.pdf';
 
-import { Opensea, Etherscan, NavLogo, Icon } from '../public/images';
+import { Fade, Fade as Hamburger } from 'hamburger-react'
+
+import { Opensea, Etherscan, Icon } from '../public/images';
 import { 
     nav, 
     logoGroup, 
@@ -21,7 +22,8 @@ import {
     menu, 
     userInfo, 
     userIconContainer,
-    userAddi
+    userAddi,
+    navLogo
 } from '../styles/Nav.module.css';
 
 import Connect from './Connect';
@@ -36,6 +38,8 @@ const Nav = props => {
     const screen = 1700;
 
     useEffect(() => {
+        setScreenWidth(window.innerWidth);
+
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
         }
@@ -48,6 +52,7 @@ const Nav = props => {
     }, []);
 
     const handleClick = () => {
+        console.log('handle click clicked')
         setActive(!active);
     }
 
@@ -63,7 +68,7 @@ const Nav = props => {
         scroller.scrollTo('about', {
             duration: 500,
             smooth: true,
-            offset: -5
+            offset: -100
         })
     }
 
@@ -95,7 +100,8 @@ const Nav = props => {
         <nav className={nav}>
             <div className={logoGroup}>
                 <a onClick={toTop}>
-                    <Image src={NavLogo} quality={100} priority={true} height={190} width={337}></Image>
+                    <div className={navLogo}></div>
+                    {/* <Image src={NavLogo} quality={100} priority={true} height={190} width={337}></Image> */}
                 </a>
                 {
                     userAddress.length > 0 ? (
@@ -109,9 +115,16 @@ const Nav = props => {
 						 	String(userAddress).substring(38) }</div>
                     </div>) : (<></>)
                 }
+                {
+                    screenWidth < screen ? 
+                    <button className={menu} onClick={handleClick}>
+                        <Fade direction='left'/>
+                    </button> :
+                    <></>
+                }
             </div>
-            {(
-                (active || screenWidth > screen) && (
+            {
+                (active || screenWidth > screen) ? (
                 <>
                     <ul className={linkGroup}>
                         <li className={li}>
@@ -136,12 +149,9 @@ const Nav = props => {
                         </div>
                         <Connect onConnected={handleIconDisplay}/>
                     </div>
-                </>)
-            )}
-            
-            <button className={menu} onClick={handleClick}>
-                <FontAwesomeIcon icon={faBars} id='hamburg' className={socialIcons}/>
-            </button>
+                </>) :
+                <></>
+            }
         </nav>
     )
 }

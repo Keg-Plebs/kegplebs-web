@@ -6,9 +6,9 @@ import * as THREE from 'three'
 import Background from './Background'
 import Building from './Building'
 import {
-    MAX_ZOOM, INIT_CAM_POS, INIT_ZOOM_LEVEL, INIT_STEP, STEP_FAC, ZOOM_FAC, UP, FAR,
-    BACKGROUND_COLOR, BREWERY_POS, DISCORD_POS, BUILDING_SCALE, X_OFFSET, Y_OFFSET,
-    SCENES, MAP_SCALE
+    MAX_ZOOM, INIT_CAM_POS, INIT_ZOOM_LEVEL, INIT_STEP, ZOOM_FAC, UP, FAR,
+    BACKGROUND_COLOR, BREWERY_POS, BUILDING_SCALE, X_OFFSET, Y_OFFSET,
+    SCENES
 } from '../../utils/constants'
 import Controls from './Controls'
 import { KegPlebsBrewery, KegPlebsBrewerySelect } from '../../public/images'

@@ -27,6 +27,9 @@ import {
     twitter, 
     title,
     sectionHeader,
+    headerKeg,
+    headerPleb,
+    headerTeam
 } from '../styles/Team.module.css';
 import sectionStyles from '../styles/Section.module.css';
 import { useEffect, useState } from 'react';
@@ -50,7 +53,11 @@ const Team = () => {
 
     return(
         <div className={`${sectionStyles.main} ${team}`}>
-            <h1 className={sectionHeader}>KEG PLEB TEAM</h1>
+            <div className={sectionHeader}>
+                <div className={headerKeg}></div>
+                <div className={headerPleb}></div>
+                <div className={headerTeam}></div>
+            </div>
             <div className={container}>
                 <div className={card} id="sj">
                     <div className={imgContainer}>
@@ -65,7 +72,7 @@ const Team = () => {
                         <h3 className={name}>SJ</h3>
                         <a href='https://twitter.com/Sjams_'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>MARKETING / CO-FOUNDER</p>
+                    <p className={title}>PARTNERSHIPS & COMMUNITY DIRECTOR</p>
                 </div>
                 <div className={card} id="oozic">
                     <div className={imgContainer}>
@@ -80,7 +87,7 @@ const Team = () => {
                         <h3 className={name}>IZAAC</h3>
                         <a href='https://twitter.com/izaactoonks'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ART LEAD / CO-FOUNDER</p>
+                    <p className={title}>ART LEAD</p>
                 </div>
                 <div className={card} id="tsiz">
                     <div className={imgContainer}>
