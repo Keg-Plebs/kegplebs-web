@@ -168,7 +168,7 @@
     }
 }
 
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1200px) {
     #cloudLeft {
         pointer-events: auto;
     }

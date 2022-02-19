@@ -22,7 +22,7 @@
 
 .backgroundImage {
   width: 100vw;
-  background-image: linear-gradient(to top left, rgba(143, 124, 38, 0.2), rgba(56, 64, 44, 0.2)100), url('../public/barsceneone.webp');
+  background-image: url('../public/barsceneone.webp');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
