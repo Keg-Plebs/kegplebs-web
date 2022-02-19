@@ -9,6 +9,7 @@
     background-image: url('../public/interior/dooropen_wide.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     
 }
 
@@ -22,39 +23,29 @@
     background-image: url('../public/interior/doorclosed_wide.webp');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .door {
     background-color: transparent;
     position: absolute;
-    left: 230px;
+    left: 10vw;
     top: 9vh;
-    width: 330px;
-    height: 540px;
+    width: 25vw;
+    height: 67vh;
 
     cursor: pointer;
     z-index: 1;
-}
-
-.bartender {
-    position: absolute;
-    top: 80px;
-    left: 400px;
-    height: 400px;
-    width: 800px;
-    background-image: url('../public/interior/Bartender.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .bartenderSelect {
     background-color: transparent;
     position: absolute;
 
-    width: 190px;
-    height: 34.5vh;
-    top: 160px;
-    left: 925px;
+    width: 16vw;
+    height: 36vh;
+    top: 19vh;
+    left: 59vw;
     cursor: pointer;
 }
 
@@ -76,20 +67,6 @@
     pointer-events: none;
 }
 
-.exitOption {
-    position: absolute;
-    background-image: url('../public/interior/exit.webp');
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    left: 360px;
-    top: -50px;
-    height: 375px;
-    width: 375px;
-
-    pointer-events: none;
-}
-
 .cheersOption {
     position: absolute;
     background-image: url('../public/interior/cheers.webp');
@@ -102,4 +79,21 @@
     width: 55vw;
     
     pointer-events: none;
+}
+
+@media screen and (max-width: 1500px) {
+    .door {
+        left: 3vw;
+        top: 9vh;
+        width: 25vw;
+        height: 67vh;
+    }
+    
+    .bartenderSelect {
+    
+        width: 25vw;
+        height: 36vh;
+        top: 19vh;
+        left: 59vw;
+    }
 }
