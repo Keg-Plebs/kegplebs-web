@@ -27,7 +27,7 @@ import { DISCORD_LINK, SCENES } from '../utils/constants'
 
 // https://github.com/pmndrs/react-three-fiber#what-does-it-look-like
 // https://drei.pmnd.rs/?path=/story/controls-mapcontrols--map-controls-scene-st
-const Brewverse = props => {
+const Brewverse = (props) => {
 
     const [scene, switchScene] = useState(SCENES.VERSE);
     const [breweryScene, setBreweryScene] = useState(false)
@@ -42,6 +42,8 @@ const Brewverse = props => {
     const leftCloudClass = breweryScene ? `${moveCloudsLeft}` : `${cloudLeftInfinite}`;
     const rightCloudClass = breweryScene ? `${moveCloudsRight}` : `${cloudRightInfinite}`;
 
+    if(breweryScene) props.enableNavbar(false);
+    else props.enableNavbar(true);
 
     // Changes the scene component in the Canvas
     switch (scene) {

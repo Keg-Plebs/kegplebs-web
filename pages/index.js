@@ -14,13 +14,14 @@ import Footer from '../components/Footer'
 
 import { container, backgroundImage, navElement } from '../styles/Layout.module.css'
 import { siteTitle } from '../components/Layout'
+import { useState } from 'react';
 
 const Home = () => {
-  
+  const [ navbarEnabled, setNavbarEnabled ] = useState(true);
+
   return (
     <>
-      
-      <Nav />
+      <Nav enabled={navbarEnabled}/>
       <div className={container}>
         <Head>
           <title>{siteTitle}</title>
@@ -32,7 +33,7 @@ const Home = () => {
           </Element>
           <Showcase></Showcase>
           <Element id='brewverse' name='brewverse' className={navElement}>
-            <Brewverse></Brewverse>
+            <Brewverse  enableNavbar={(bool) => setNavbarEnabled(bool)}></Brewverse>
           </Element>
           <Collabs></Collabs>
           <Element id='about' name='about' className={navElement}>

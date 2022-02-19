@@ -28,7 +28,7 @@ import {
 
 import Connect from './Connect';
 
-const Nav = props => {
+const Nav = ({enabled}) => {
     const [active, setActive] = useState(false);
     const [screenWidth, setScreenWidth] = useState(20000); 
     const [userIcon, setUserIcon] = useState('');
@@ -45,7 +45,6 @@ const Nav = props => {
         }
 
         window.addEventListener('resize', changeWidth)
-
         return () => {
             window.removeEventListener('resize', changeWidth);
         }
@@ -97,7 +96,12 @@ const Nav = props => {
     }
 
     return (
-        <nav className={nav}>
+        <nav 
+            className={nav}
+            style={{
+                pointerEvents: enabled ? 'auto' : 'none'
+            }}
+        >
             <div className={logoGroup}>
                 <a onClick={toTop}>
                     <div className={navLogo}></div>
@@ -116,7 +120,7 @@ const Nav = props => {
                     </div>) : (<></>)
                 }
                 {
-                    screenWidth < screen ? 
+                    (screenWidth < screen) && (enabled) ? 
                     <button className={menu} onClick={handleClick}>
                         <Fade direction='left'/>
                     </button> :
