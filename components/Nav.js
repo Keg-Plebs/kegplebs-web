@@ -130,7 +130,11 @@ const Nav = ({enabled}) => {
             {
                 (active || screenWidth > screen) ? (
                 <>
-                    <ul className={linkGroup}>
+                    <ul className={linkGroup}
+                        style={{
+                            visibility: enabled ? 'visible' : 'hidden'
+                        }}
+                    >
                         <li className={li}>
                             <span className={link}><a onClick={toBrewverse} href="#">MINT</a></span>
                         </li>
@@ -144,7 +148,11 @@ const Nav = ({enabled}) => {
                             <span className={link}><a href='/pdfs/Pleb_Passport_2.pdf'>PLEBPASS</a></span>
                         </li>
                     </ul>
-                    <div className={socialGroup}>
+                    <div className={socialGroup}
+                        style={{
+                            visibility: enabled ? 'visible' : 'hidden'
+                        }}
+                    >
                         <div className={icons}>
                             <a className={a} href='https://twitter.com/KegPlebs'><FontAwesomeIcon icon={faTwitter} className={socialIcons}/></a>
                             <a className={a} href='https://discord.gg/xjfpxWajXH'><FontAwesomeIcon icon={faDiscord} className={socialIcons}/></a>
