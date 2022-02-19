@@ -75,25 +75,25 @@ const Showcase = () => {
                 <div className={contentContainer}>
                     <div className={first}>
                         <div className={imgContainer}>
-                            <Image src={Two} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Two} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Raincoat} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Five} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Five} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Seven} quality={100} loading="lazy" width={size} height={size} ></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Eight} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Eight} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Three} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={One} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={One} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Space} quality={100} loading="lazy" width={size} height={size}></Image>
@@ -220,7 +220,7 @@ const Showcase = () => {
                             <Image src={TwentyTwo} quality={100} loading="lazy" width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
-                            <Image src={Twenty} quality={100} loading="lazy" width={size} height={size}></Image>
+                            <Image src={Twenty} quality={100} loading="lazy"width={size} height={size}></Image>
                         </div>
                         <div className={imgContainer}>
                             <Image src={Goat} quality={100} loading="lazy" width={size} height={size}></Image>

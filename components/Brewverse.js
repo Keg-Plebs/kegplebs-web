@@ -19,9 +19,7 @@ import {
 } from '../styles/Brewverse.module.css';
 
 import Verse from './brewverse/Verse'
-
 import Bar from './Bar';
-import Team from './Team'
 
 import ProviderContext from './ProviderContext';
 
