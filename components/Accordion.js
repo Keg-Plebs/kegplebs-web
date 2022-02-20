@@ -17,9 +17,7 @@ const Accordion = ({title, content}) =>  {
 
   return (
     <div className={accordion}>
-      <div
-        className={container}
-      >
+      <div className={container}>
         <button
           style={{ backgroundColor: isShowing ? "transparent" : "#eee",
             color: isShowing ? 'white' : 'black'
