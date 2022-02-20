@@ -23,23 +23,21 @@ import {
     imgBack,
     imgContainer,
     heading, 
-    name, 
-    twitter, 
-    title,
-    sectionHeader,
+    twitter,
+    containerHeader,
     headerKeg,
-    headerPleb,
-    headerTeam
 } from '../styles/Team.module.css';
-import sectionStyles from '../styles/Section.module.css';
+import { main } from '../styles/Section.module.css';
 import { useEffect, useState } from 'react';
 
 
 const Team = () => {
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+    const [screenWidth, setScreenWidth] = useState(0);
     const size = screenWidth < 400 ? 150 : 250;
 
     useEffect(() => {
+        setScreenWidth(window.innerWidth);
+
         const changeWidth = () => {
             setScreenWidth(window.innerWidth);
         }
@@ -52,11 +50,9 @@ const Team = () => {
     }, []);
 
     return(
-        <div className={`${sectionStyles.main} ${team}`}>
-            <div className={sectionHeader}>
+        <div className={`${main} ${team}`}>
+            <div className={containerHeader}>
                 <div className={headerKeg}></div>
-                <div className={headerPleb}></div>
-                <div className={headerTeam}></div>
             </div>
             <div className={container}>
                 <div className={card} id="sj">
@@ -69,10 +65,10 @@ const Team = () => {
                         </div>
                     </div>
                     <div className={heading}>
-                        <h3 className={name}>SJ</h3>
+                        <h3>SJ</h3>
                         <a href='https://twitter.com/Sjams_'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>PARTNERSHIPS & COMMUNITY DIRECTOR</p>
+                    <p>PARTNERSHIPS & COMMUNITY DIRECTOR</p>
                 </div>
                 <div className={card} id="oozic">
                     <div className={imgContainer}>
@@ -84,10 +80,10 @@ const Team = () => {
                         </div>
                     </div>
                     <div className={heading}>
-                        <h3 className={name}>IZAAC</h3>
+                        <h3>IZAAC</h3>
                         <a href='https://twitter.com/izaactoonks'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ILLUSTRATOR</p>
+                    <p>ILLUSTRATOR</p>
                 </div>
                 <div className={card} id="tsiz">
                     <div className={imgContainer}>
@@ -100,10 +96,10 @@ const Team = () => {
                     </div>
                     
                     <div className={heading}>
-                        <h3 className={name}>TSIZ</h3>
+                        <h3>TSIZ</h3>
                         <a href='https://twitter.com/secondhandgains'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>STRATEGIC LEAD</p>
+                    <p>STRATEGIC LEAD</p>
                 </div>
                 <div className={card} id="shdw">
                     <div className={imgContainer}>
@@ -115,10 +111,10 @@ const Team = () => {
                         </div>
                     </div>
                     <div className={heading}>
-                        <h3 className={name}>SHDW</h3>
+                        <h3>SHDW</h3>
                         <a href='https://twitter.com/shdw_dev'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>DEVELOPER</p>
+                    <p>DEVELOPER</p>
                 </div>
                 <div className={card} id="jefftheworm">
                     <div className={imgContainer}>
@@ -131,10 +127,10 @@ const Team = () => {
                     </div>
                     
                     <div className={heading}>
-                        <h3 className={name}>JEFFTHEWORM</h3>
+                        <h3>JEFFTHEWORM</h3>
                         <a href='https://twitter.com/JefftheWorm'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>DEVELOPER</p>
+                    <p>DEVELOPER</p>
                 </div>
             </div>
         </div>
