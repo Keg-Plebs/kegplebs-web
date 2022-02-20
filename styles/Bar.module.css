@@ -38,6 +38,8 @@
     z-index: 1;
 }
 
+
+
 .bartenderSelect {
     background-color: transparent;
     position: absolute;
@@ -50,7 +52,9 @@
 }
 
 .bartenderSelect:hover {
-    box-shadow: 5px 5px 15px, -5px 5px 15px;
+    outline: solid;
+    outline-color: rgb(234, 160, 196);
+    outline-width: 15px;
 }
 
 .sorryBubble {
