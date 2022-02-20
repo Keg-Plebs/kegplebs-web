@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { container, button, content, holder, toggleIcon } from '../styles/Accordion.module.css';
+import { 
+  accordion, 
+  container, 
+  answer, 
+  toggleIcon 
+} from '../styles/Accordion.module.css';
 import { faPlus, faMinus} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Accordion = props =>  {
+const Accordion = ({title, content}) =>  {
   const [isShowing, setIsShowing] = useState(false);
 
   const toggle = () => {
@@ -11,19 +16,16 @@ const Accordion = props =>  {
   };
 
   return (
-    <div className={holder}>
-      <div
-        className={container}
-      >
+    <div className={accordion}>
+      <div className={container}>
         <button
-          className={button}
           style={{ backgroundColor: isShowing ? "transparent" : "#eee",
             color: isShowing ? 'white' : 'black'
           }}
           onClick={toggle}
           type="button"
         >
-          <p>{props.title}</p>
+          <p>{title}</p>
 
           {
             isShowing ?
@@ -32,10 +34,10 @@ const Accordion = props =>  {
           }
         </button>
         <div
-          className={content}
+          className={answer}
           style={{ display: isShowing ? "block" : "none"}}
           dangerouslySetInnerHTML={{
-            __html: props.content
+            __html: content
           }}
         > 
         </div>

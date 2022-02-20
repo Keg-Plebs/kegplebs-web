@@ -24,8 +24,8 @@
     background-size: cover;
     z-index: 3;
     position: absolute;
-    height: 15vh;
-    width: 80vh;
+    height: 7.5vw;
+    width: 40.5vw;
     margin-top: 0;
 }
 
@@ -152,7 +152,7 @@
         width: 125vw;
         z-index: 2;
         top: 0vh;
-        right: -12vw;
+        right: -14vw;
         
         pointer-events: none;
     }
@@ -184,8 +184,8 @@
 @media screen and (max-width: 800px) {
 
     .sectionHeader {
-        height: 11vw;
-        width: 60vw;
+        height: 14vw;
+        width: 75.5vw;
         margin-top: 0;
     }
 

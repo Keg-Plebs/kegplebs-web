@@ -22,28 +22,26 @@ const Home = () => {
   return (
     <>
       <Nav enabled={navbarEnabled}/>
-      <div className={container}>
-        <Head>
-          <title>{siteTitle}</title>
-        </Head>
-          
-        <div className={backgroundImage}>
-          <Element id='top' name='top' className={navElement}>
-            <Main></Main>
-          </Element>
-          <Showcase></Showcase>
-          <Element id='brewverse' name='brewverse' className={navElement}>
-            <Brewverse  enableNavbar={(bool) => setNavbarEnabled(bool)}></Brewverse>
-          </Element>
-          <Collabs></Collabs>
-          <Element id='about' name='about' className={navElement}>
-            <Roadmap></Roadmap>
-          </Element>
-          <FAQ></FAQ>
-          <Element id='team' name='team' className={navElement}>
-            <Team></Team>
-          </Element>
-        </div>
+      <Head>
+        <title>{siteTitle}</title>
+      </Head>
+        
+      <div className={backgroundImage}>
+        <Element id='top' name='top' className={navElement}>
+          <Main></Main>
+        </Element>
+        <Showcase></Showcase>
+        <Element id='brewverse' name='brewverse' className={navElement}>
+          <Brewverse  enableNavbar={(bool) => setNavbarEnabled(bool)}></Brewverse>
+        </Element>
+        <Collabs></Collabs>
+        <Element id='about' name='about' className={navElement}>
+          <Roadmap></Roadmap>
+        </Element>
+        <FAQ></FAQ>
+        <Element id='team' name='team' className={navElement}>
+          <Team></Team>
+        </Element>
       </div>
       <Footer></Footer>
     </>
