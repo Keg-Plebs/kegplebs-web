@@ -87,7 +87,7 @@ const Team = () => {
                         <h3 className={name}>IZAAC</h3>
                         <a href='https://twitter.com/izaactoonks'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ART LEAD</p>
+                    <p className={title}>ILLUSTRATOR</p>
                 </div>
                 <div className={card} id="tsiz">
                     <div className={imgContainer}>
@@ -103,7 +103,7 @@ const Team = () => {
                         <h3 className={name}>TSIZ</h3>
                         <a href='https://twitter.com/secondhandgains'><FontAwesomeIcon icon={faTwitter} className={twitter}/></a>
                     </div>
-                    <p className={title}>ADVISOR</p>
+                    <p className={title}>STRATEGIC LEAD</p>
                 </div>
                 <div className={card} id="shdw">
                     <div className={imgContainer}>

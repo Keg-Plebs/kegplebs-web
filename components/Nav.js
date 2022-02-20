@@ -147,6 +147,9 @@ const Nav = ({enabled}) => {
                         <li className={li}>
                             <span className={link}><a href='/pdfs/Pleb_Passport_2.pdf'>PLEBPASS</a></span>
                         </li>
+                        <li className={li}>
+                            <span className={link}><a href='/pdfs/The_CollaBREWERY_Ecosystem.pdf'>ECOSYSTEM</a></span>
+                        </li>
                     </ul>
                     <div className={socialGroup}
                         style={{
