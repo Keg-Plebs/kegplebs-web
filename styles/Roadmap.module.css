@@ -86,7 +86,7 @@
     position: absolute;
     width: 82vw;
     height: 62vh;
-    top: 19vh;
+    top: 43vh;
     background-color: rgba(0,0,0, 0.85);
     border-radius: 25px;
     z-index: 2;
@@ -204,10 +204,6 @@
     .beerDrip {
         display: none;
     }
-}
-
-@media screen and (max-width: 1000px) {
-    
 }
 
 @media screen and (max-width: 800px) {
