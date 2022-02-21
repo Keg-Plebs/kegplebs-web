@@ -74,11 +74,11 @@
 
     object-fit: cover;
     background-position-y: bottom;
-    background-size: 145%;
+    background-size: 130%;
 
-    height: 120%;
+    height: 109%;
     width: 100%;
-    left: -20vw;
+    left: -13vw;
     
     z-index: 2;
     pointer-events: none;
@@ -93,11 +93,11 @@
     object-fit: cover;
     background-position-y: bottom;
     background-position-x: right;
-    background-size: 145%;
+    background-size: 130%;
 
-    height: 120%;
+    height: 109%;
     width: 100%;
-    right: -20vw;
+    right: -9vw;
 
 
     z-index: 2;
@@ -150,6 +150,26 @@
 @keyframes slowBlink {
     50% {opacity: 0;}
     100%{opacity: 1;}
+}
+
+@media screen and (max-width: 1700px) {
+    #cloudRight {
+        
+        background-size: 145%;
+
+        height: 120%;
+        width: 100%;
+        right: -16vw;
+    }
+
+    #cloudLeft {
+        
+        background-size: 145%;
+
+        height: 120%;
+        width: 100%;
+        left: -20vw;
+    }
 }
 
 @media screen and (max-width: 1200px) {
