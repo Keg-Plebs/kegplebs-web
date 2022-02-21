@@ -1,5 +1,5 @@
-import sectionStyles from '../styles/Section.module.css';
-import { faq, sectionHeader, sectionBorderImg } from '../styles/FAQ.module.css';
+import { main } from '../styles/Section.module.css';
+import { faq, sectionHeader } from '../styles/FAQ.module.css';
 import Accordion from './Accordion';
 
 const FAQ = () => {
@@ -42,10 +42,7 @@ const FAQ = () => {
 
     return(
         <>
-            <div className={`${sectionStyles.main} ${faq}`}>
-                <div 
-                    className={sectionBorderImg}
-                ></div>
+            <div className={`${main} ${faq}`}>
                 <div className={sectionHeader}></div>
                 {Object.values(accordionData).map(({question, answer}, i) => {
                     return <Accordion key={i} title={question} content={answer}/>;

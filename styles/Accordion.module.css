@@ -18,7 +18,6 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    font-size: 1.4rem;
     position: relative;
     text-align: left;
     padding: 5px 90px;
@@ -29,6 +28,10 @@
     align-items: center;
     border-radius: 10px;
 
+}
+
+.container button p {
+    font-size: 1.1rem;
 }
 
 .answer {
@@ -52,7 +55,7 @@
 /* Tablet */
 @media screen and (max-width: 800px) {
     .container {
-        margin: 0 5vw;
+        margin: 0 10vw;
     }
 
     .container button {
