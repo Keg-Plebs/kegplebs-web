@@ -67,14 +67,15 @@ const Nav = ({enabled}) => {
         scroller.scrollTo('about', {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: 120
         })
     }
 
     const toTeam = () => {
         scroller.scrollTo('team', {
             duration: 500,
-            smooth: true
+            smooth: true,
+            offset: -100
         })
     }
 

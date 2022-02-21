@@ -10,7 +10,7 @@ const FAQ = () => {
         }, 
         sectionTwo: {
             question: "Craft beer and NFTs?",
-            answer: "Keg Plebs is a passion project born out of two of our teams favorite things. Craft beer and NFTs. Both empower creators to build and explore without judgement, expectations, or conventional barriers. Whether it's a wacky and zany brew or a wild and unexpected character, this creative freedom leads to innovation and joy to all that can experience it. In addition, both craft beer and NFTs have the unique and amazing ability to bring people of all walks of life together to form a passionate, inclusive and tight nit community."
+            answer: "Keg Plebs is a passion project born out of two of our teams favorite things. Craft beer and NFTs. Both empower creators to build and explore without judgement, expectations, or conventional barriers. Whether it's a wacky and zany brew or a wild and unexpected character, this creative freedom leads to innovation and joy to all that can experience it. In addition, both craft beer and NFTs have the unique and amazing ability to bring people of all walks of life together to form a passionate, inclusive and tight-knit community."
         },
         sectionThree: {
             question: "Why Purchase a Keg Pleb NFT?",
