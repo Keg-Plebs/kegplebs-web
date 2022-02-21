@@ -1,7 +1,6 @@
 .brewverse {
     background-color: rgb(0,0,0);
     /* height: 100vh; */
-    overflow: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -15,7 +14,7 @@
     position: relative;
     top:0;bottom:0; 
     left:0;right:0;
-    
+
 } 
 
 .sectionHeader {
@@ -62,9 +61,9 @@
     overflow: hidden;
 
     width: 100%;
-    height: 85vw;
-    
-    margin-top: -22vw;
+    height: 76.25vw;
+    margin-top: -10vw;
+
 }
 
 #cloudLeft {
@@ -72,14 +71,17 @@
     overflow: hidden;
     background-image: url('../public/cloudsLeft.webp');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 85vw;
-    width: 125vw;
+
+    object-fit: cover;
+    background-position-y: bottom;
+    background-size: 145%;
+
+    height: 120%;
+    width: 100%;
+    left: -20vw;
+    
     z-index: 2;
     pointer-events: none;
-    right: -12vw;
-    top: 10vh;
 }
 
 #cloudRight {
@@ -87,13 +89,18 @@
     overflow: hidden;
     background-image: url('../public/cloudsRight.webp');
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 85vw;
-    width: 125vw;
+
+    object-fit: cover;
+    background-position-y: bottom;
+    background-position-x: right;
+    background-size: 145%;
+
+    height: 120%;
+    width: 100%;
+    right: -20vw;
+
+
     z-index: 2;
-    top: 9vh; bottom: 0;
-    left: -20vw;
     pointer-events: none;
 }
 
@@ -143,28 +150,6 @@
 @keyframes slowBlink {
     50% {opacity: 0;}
     100%{opacity: 1;}
-}
-
-@media screen and (max-width: 1700px) {
-
-    #cloudLeft {
-        height: 100vw;
-        width: 125vw;
-        z-index: 2;
-        top: 0vh;
-        right: -14vw;
-        
-        pointer-events: none;
-    }
-
-    #cloudRight {
-        height: 103vw;
-        width: 125vw;
-        z-index: 2;
-        top: -3vw; bottom: 0;
-        left: -20vw;
-        pointer-events: none;
-    }
 }
 
 @media screen and (max-width: 1200px) {
