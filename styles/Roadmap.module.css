@@ -148,7 +148,13 @@
     height: 100vh;
     margin-left: 0;
     
-    bottom: -16vh;
+    bottom: -13vh;
+}
+
+@media screen and (max-width: 1700) {
+    .beerFoam {
+        bottom: -16vh;
+    }
 }
 
 @media screen and (max-width: 1200px) {
