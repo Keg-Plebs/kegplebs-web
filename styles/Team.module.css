@@ -1,20 +1,33 @@
 .team {
-    /* padding-top: 200px; */
+    background-image: url("../public/barsceneone.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+
+    padding-top: 0vh;
+    padding-bottom: 0vh;
+}
+
+.gradient {
     background-image: linear-gradient(to top, rgba(0,0,0, 1) 0,
     rgba(0,0,0, 0.4) 25%,
     rgba(0,0,0, 0.4) 65%,
-    rgba(0,0,0, 1) 85%);
+    rgba(0,0,0, 1) 85%); 
     color: whitesmoke;
-}
 
-.container {
+    height: 100%;
+    width: 100%;
+
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 0;
 }
 
-.sectionHeader {
+/* section header */
+.containerHeader {
     display: flex;
     flex-direction: row;
     width: 90vw;
@@ -28,11 +41,20 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    height: 10vw;
-    width: 55%;
+    height: 7.5vw;
+    width: 36.5vw;
     margin-bottom: 5vh;
 }
 
+/* section content */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* card content */
 .card {
     padding: 20px;
     display: flex;
@@ -87,6 +109,10 @@
     align-items: center;
 }
 
+.heading h3 {
+    margin: 0;
+}
+
 .twitter {
     margin-left: 15px;
     margin-right: 0;
@@ -98,43 +124,45 @@
     opacity: 0.75;
 }
 
-.name {
-    margin: 0;
-}
-
-.title {
+.card p {
     margin: 0;
     width: 250px;
     display: flex;
     flex-direction: column;
     text-align: center;
-
 }
 
+/* Desktop */
 @media screen and(max-width: 1700px) {
     
 }
 
+/* Tablet */
 @media screen and (max-width: 800px) {
+    /* Try commenting out the below for mobile */
+    .team {
+        background-image: none;
+        background-color: #b5d9dc;
+    }
+
+    .gradient {
+        background-image: linear-gradient(to top, rgba(0,0,0, 1) 0,
+        rgba(0,0,0, 0.25) 25%,
+        rgba(0,0,0, 0.25) 65%,
+        rgba(0,0,0, 1) 85%);
+    }
+
+    .headerKeg {
+        height: 14vw;
+        width: 68.3vw;
+    }
+
     .container {
         flex-direction: column;
     }
 
     .imgContainer {
         height: 175px;
-    }
-
-    .team {
-        /* padding-top: 200px; */
-        background-image: linear-gradient(to top, rgba(0,0,0, 1) 0,
-        rgba(0,0,0, 0.25) 25%,
-        rgba(0,0,0, 0.25) 65%,
-        rgba(0,0,0, 1) 85%);
-        color: whitesmoke;
-    }
-    .headerKeg {
-        height: 17vw;
-        width: 100%;
     }
 
     .img {

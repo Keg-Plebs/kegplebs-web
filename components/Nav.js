@@ -67,14 +67,15 @@ const Nav = ({enabled}) => {
         scroller.scrollTo('about', {
             duration: 500,
             smooth: true,
-            offset: -100
+            offset: 120
         })
     }
 
     const toTeam = () => {
         scroller.scrollTo('team', {
             duration: 500,
-            smooth: true
+            smooth: true,
+            offset: -100
         })
     }
 
@@ -158,7 +159,7 @@ const Nav = ({enabled}) => {
                     >
                         <div className={icons}>
                             <a className={a} href='https://twitter.com/KegPlebs'><FontAwesomeIcon icon={faTwitter} className={socialIcons}/></a>
-                            <a className={a} href='https://discord.gg/xjfpxWajXH'><FontAwesomeIcon icon={faDiscord} className={socialIcons}/></a>
+                            <a className={a} href='https://discord.gg/zEWcPMS7Uf'><FontAwesomeIcon icon={faDiscord} className={socialIcons}/></a>
                             <a className={a} href='#'><Image src={Opensea} quality={100} height={30} width={30}></Image></a>
                             <a className={a} href='#'><Image src={Etherscan} quality={100} height={30} width={30}></Image></a>
                         </div>

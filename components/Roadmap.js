@@ -1,22 +1,17 @@
 import { useState, useRef, useEffect } from 'react'
 
-import sectionStyles from '../styles/Section.module.css';
+import { main } from '../styles/Section.module.css';
 import { 
     roadmap,
     sectionHeader,
-    contentContainer,
+    container,
     timeline,
     rightImg,
     left,
-    one,
-    two,
-    three,
-    four,
-    five,
-    six,
     beerDrip,
     beerFoam,
-    milestoneHeadings
+    milestoneHeadings,
+    gradient
  } from '../styles/Roadmap.module.css';
 
 import MilestoneInfo from './MilestoneInfo';
@@ -104,14 +99,17 @@ const Roadmap = () => {
     }
 
     return(
-        <div className={`${sectionStyles.main} ${roadmap}`}>
-            <div className={contentContainer}
+        <div className={`${main} ${roadmap}`}>
+            <div className={gradient}>
+            </div>
+            <div 
+                className={container}
                 onClick={handleBackgroundClick}
             >
                 
                 <div className={timeline}>
                     <div className={sectionHeader}></div>
-                    <div className={`${left} ${one}`}>
+                    <div className={`${left}`}>
                         <h2 className={milestoneHeadings}
                             onClick={() => setClicked(1)}
                             style={{ width: (clicked === 1 && !mobile) ? '50vw': 'auto' ,
@@ -124,9 +122,8 @@ const Roadmap = () => {
                     {
                         clicked === 1 ? <MilestoneInfo data={data.one}></MilestoneInfo> : <></>
                     }
-                    
 
-                    <div className={`${left} ${two}`}>
+                    <div className={`${left}`}>
                         <h2 className={milestoneHeadings}
                             onClick={() => setClicked(2)}
                             style={{ width: (clicked === 2 && !mobile) ? '50vw': 'auto' ,
@@ -140,7 +137,7 @@ const Roadmap = () => {
                         clicked === 2 ? <MilestoneInfo data={data.two}></MilestoneInfo> : <></>
                     }
                     
-                    <div className={`${left} ${three}`}>
+                    <div className={`${left}`}>
                         <h2 className={milestoneHeadings}
                             onClick={() => setClicked(3)}
                             style={{ width: (clicked === 3 && !mobile) ? '50vw': 'auto' ,
@@ -154,7 +151,7 @@ const Roadmap = () => {
                         clicked === 3 ? <MilestoneInfo data={data.three}></MilestoneInfo> : <></>
                     }
                     
-                    <div className={`${left} ${four}`}>
+                    <div className={`${left}`}>
                         <h2 className={milestoneHeadings}
                             onClick={() => setClicked(4)}
                             style={{ width: (clicked === 4 && !mobile) ? '50vw': 'auto' ,
@@ -168,7 +165,7 @@ const Roadmap = () => {
                         clicked === 4 ? <MilestoneInfo data={data.four}></MilestoneInfo> : <></>
                     }
                     
-                    <div className={`${left} ${five}`}>
+                    <div className={`${left}`}>
                         <h2 className={milestoneHeadings}
                             onClick={() => setClicked(5)}
                             style={{ width: (clicked === 5 && !mobile) ? '50vw': 'auto' ,
@@ -182,7 +179,7 @@ const Roadmap = () => {
                         clicked === 5 ? <MilestoneInfo data={data.five}></MilestoneInfo> : <></>
                     }
 
-                    <div className={`${left} ${six}`}>
+                    <div className={`${left}`}>
                         <h2 className={milestoneHeadings}
                             onClick={() => setClicked(6)}
                             style={{ width: (clicked === 6 && !mobile) ? '50vw': 'auto' ,
@@ -195,6 +192,7 @@ const Roadmap = () => {
                     {
                         clicked === 6 ? <MilestoneInfo data={data.six}></MilestoneInfo> : <></>
                     }
+
                 </div>
                 <div className={rightImg}></div>
                 <div className={beerDrip}></div>
