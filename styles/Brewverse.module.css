@@ -115,12 +115,12 @@
 }
 
 .moveCloudsLeft {
-    margin-right: 100vw;
+    transform: translateX(-100vw);
     transition: 8s;
 }
 
 .moveCloudsRight {
-    margin-left: 100vw;
+    transform: translateX(100vw);
     transition: 8s;
 }
 
