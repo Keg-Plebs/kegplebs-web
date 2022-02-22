@@ -19,18 +19,36 @@
     margin: auto;
 }
 
-.mintTitle {
+.mintButtonContainer {
     position: absolute;
-    background-image: url('../public/interior/Mint.webp');
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    background-position: center;
     width: 20vw;
     height: 8vw;
     margin: auto;
 
     top: 45%;
     left: 18%;
+}
+
+.mintButton {
+    position: absolute;
+    background-image: url('../public/interior/Mint.webp');
+    background-size: cover;
+
+    background-position: center;
+    width: 19vw;
+    height: 7.6vw;
+    margin: auto;
+
+    cursor: pointer;
+}
+
+.mintButton:hover {
+    width: 20vw;
+    height: 8vw;
 }
 
 .mintCount {
@@ -169,7 +187,7 @@
     left: 48.5%;
     color: white;
 
-    cursor: hover;
+    cursor: pointer;
 }
 
 .exitIcon {

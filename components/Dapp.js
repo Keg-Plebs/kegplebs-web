@@ -5,7 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     dapp,
     mintBottle,
-    mintTitle,
+    mintButton,
+    mintButtonContainer,
     mintCount,
     countChangeContainer,
     decrement,
@@ -33,10 +34,16 @@ const Dapp = (props) => {
         if(mintCounter > 0) setMintCounter(mintCounter - 1);
     }
 
+    const handleMint = () => {
+
+    }
+
     return(
         <div className={dapp}>
             <div className={mintBottle}>
-                <div className={mintTitle}></div>
+                <div className={mintButtonContainer}>
+                    <div className={mintButton} onClick={handleMint}></div>
+                </div>
                 <div className={mintCount}>
                     <h1>{mintCounter}</h1>
                 </div>

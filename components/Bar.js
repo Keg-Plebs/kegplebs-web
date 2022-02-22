@@ -41,7 +41,7 @@ const Bar = props => {
             setTimeout(() => {
                 setMintScreen(true);
                 setBartenderClicked(false);
-            }, 4000);
+            }, 3000);
         }
     }
 
