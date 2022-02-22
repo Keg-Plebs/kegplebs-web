@@ -86,7 +86,7 @@
     position: absolute;
     width: 82vw;
     height: 62vh;
-    top: 19vh;
+    top: 43vh;
     background-color: rgba(0,0,0, 0.85);
     border-radius: 25px;
     z-index: 2;
@@ -181,12 +181,13 @@
     .milestoneInfo {
         top: 19vh;
         left: 5vw;
-        font-size: 0.75rem;
         height: 62vh;
         width: 90vw;
     }
 
     .milestoneInfo p{
+        font-size: .8rem;
+        line-height: 1rem;
         text-align: center
     }
 
@@ -204,10 +205,6 @@
     .beerDrip {
         display: none;
     }
-}
-
-@media screen and (max-width: 1000px) {
-    
 }
 
 @media screen and (max-width: 800px) {
@@ -246,7 +243,6 @@
     .milestoneInfo {
         left: 0;
         top: -5vh;
-        font-size: 0.75rem;
         height: 110vh;
         width: 100vw;
         position: fixed;
