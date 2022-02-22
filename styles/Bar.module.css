@@ -71,6 +71,20 @@
     pointer-events: none;
 }
 
+.toMint {
+    position: absolute;
+    background-image: url('../public/interior/wherepleb.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    top: -2vh;
+    left: 20vw;
+    height: 60vh;
+    width: 60vw;
+    
+    pointer-events: none;
+}
+
 .cheersOption {
     position: absolute;
     background-image: url('../public/interior/cheers.webp');
