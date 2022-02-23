@@ -110,7 +110,7 @@ const Nav = ({enabled}) => {
                     (
                         (!enabled && screenWidth < screen) ? 
                         <div className={smallScreenRightSide}>
-                            <Connect onConnected={handleIconDisplay}/>
+                            <Connect onConnected={handleConnect}/>
                         </div> :
                         <></>
                     ) 

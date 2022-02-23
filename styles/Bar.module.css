@@ -99,6 +99,23 @@
     pointer-events: none;
 }
 
+.warningNotice {
+    position: absolute;
+    height: 30vw;
+    width: 40vw;
+    margin: auto;
+    top: 60vh;
+    left: 30vw;
+    
+    color: rgb(234, 160, 196);
+    font-size: 3rem;
+    text-align: center;
+
+    -webkit-text-stroke: 3px black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 @media screen and (max-width: 1500px) {
     .door {
         left: 3vw;
