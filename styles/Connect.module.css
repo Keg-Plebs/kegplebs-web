@@ -5,6 +5,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-right: 75px;
 }
 
 .buttonWrapperDisc {
@@ -14,6 +16,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    margin-right: 75px;
 }
 
 .button {
@@ -50,4 +54,16 @@
     height: 50px;
     width: 175px;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1700px) {
+    .buttonWrapperConn {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .buttonWrapperDisc {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
