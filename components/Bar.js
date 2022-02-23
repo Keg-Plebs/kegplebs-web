@@ -7,16 +7,20 @@ import {
     closed,
     sorryBubble,
     exitOption,
-    cheersOption
+    cheersOption,
+    toMint
 } from '../styles/Bar.module.css';
 
+import Dapp from './Dapp';
+
 const Bar = props => {
+    // will later on get mintAvailable from props
+
     const [doorState, setDoorState] = useState(false);
-    const [doorClicked, setDoorClicked] = useState(false);
     const [bartenderClicked, setBartenderClicked] = useState(false);
-    const [cheers, setCheers] = useState(false);
-    const [sorry, setSorry] = useState(true);
-    const [mintAvailable, setMintAvailable] = useState(false);
+    const [cheersScreen, setCheersScreen] = useState(false);
+    const [mintAvailable, setMintAvailable] = useState(true);
+    const [mintScreen, setMintScreen] = useState(false);
 
     useEffect( () => {
         document.body.style.overflow = 'hidden';
@@ -31,27 +35,42 @@ const Bar = props => {
     }
 
     const handleBartenderClicked = () => {
-        if(mintAvailable) setSorry(false);
-        if(doorClicked) setDoorClicked(false);
+        
         setBartenderClicked(true);
+        if(mintAvailable) {
+            setTimeout(() => {
+                setMintScreen(true);
+                setBartenderClicked(false);
+            }, 3000);
+        }
+    }
+
+    const handleMintScreenExit = () => {
+        setMintScreen(false);
     }
 
     const handleExitBrewery = () => {
-        setCheers(true);
+        setCheersScreen(true);
 
         setTimeout(() => {
             props.exitBrewery();
         }, 2000);
     }
 
+    let dialogue = <></>;
+
+    if(bartenderClicked && !mintAvailable) dialogue = <div className={sorryBubble}></div>
+    else if(bartenderClicked && mintAvailable) dialogue = <div className={toMint}></div>
+
     return(
         <>
             <div 
-                className={`${doorState ? `${open}` : `${closed}`}`}
+                className={`${doorState ? open : closed}`}
                 onClick={() => {
                     handleBackgroundClick();
                 }}
             >
+                
                 <div className={door}
                     onPointerOver={() => {
                         setDoorState(true);
@@ -60,14 +79,16 @@ const Bar = props => {
                         setDoorState(false);
                     }}
                     onClick={handleExitBrewery}
+                    style={{
+                        pointerEvents: mintScreen ? 'none' : 'auto'
+                    }}
                 ></div>
                 <div className={bartender}></div>
                 <div className={bartenderSelect}
                     onClick={handleBartenderClicked}
                 ></div> 
                 {
-                    bartenderClicked ? <div className={sorryBubble}></div> : <></>
-                    // <div className={mintOptions}></div>
+                    dialogue
                 }
                 {/* {
                     doorClicked ? 
@@ -82,7 +103,12 @@ const Bar = props => {
                     <></>
                 } */}
                 {
-                    cheers ? <div className={cheersOption}></div> : <></>
+                    cheersScreen ? <div className={cheersOption}></div> : <></>
+                }
+                {
+                    mintScreen ? 
+                    <Dapp exitMint={handleMintScreenExit}></Dapp> :
+                    <></>
                 }
             </div>
         </>
