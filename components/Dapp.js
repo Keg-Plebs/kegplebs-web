@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -25,6 +25,11 @@ const PRICE = 0.05;
 
 const Dapp = (props) => {
     const [mintCounter, setMintCounter] = useState(0);
+    const [walletAddress, setWallet] = useState(""); // check if we can already get this from props
+    const [status, setStatus] = useState(""); // the walletResponse - also get from props
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [url, setUrl] = useState("");
 
     const incrementCounter = () => {
         if(mintCounter < MAXPUBMINTS) setMintCounter(mintCounter + 1);
@@ -34,8 +39,10 @@ const Dapp = (props) => {
         if(mintCounter > 0) setMintCounter(mintCounter - 1);
     }
 
-    const handleMint = () => {
+    const handleMint = async () => {
+        if(!walletAddress.length) return; // if walletAddress is still an empty string - add 'status' into the if()
 
+        // window.contract = await 
     }
 
     return(

@@ -96,7 +96,7 @@ const Connect = (props) => {
       const { verified } = await response.json();
       if (verified) {
         setLoggedIn(true);
-        props.onConnected(address, "../public/mugshots/icon.jpeg");
+        props.onConnected(address);
       } else {
         disconnect();
       }
@@ -116,7 +116,7 @@ const Connect = (props) => {
       setLoggedIn(false);
       setAccount("");
 
-      props.onConnected("", "");
+      props.onConnected("");
     } else {
       connect();
     }
