@@ -10,6 +10,7 @@ import {
 import ProviderContext from "./ProviderContext";
 
 import { NONCE_MESSAGE } from "../utils/constants";
+import supabase from '../services/database'
 
 // https://docs.alchemy.com/alchemy/tutorials/nft-minter#bonus-put-your-nft-minter-to-work
 // https://mirror.xyz/sha.eth/i6ry1Mxez53z91ef375sMe2rO1NvK2ipACyzKA4SR9g
@@ -86,6 +87,7 @@ const Connect = (props) => {
 				body: JSON.stringify({
 					address,
 					signature,
+					nonce
 				}),
 				headers: {
 					"Content-Type": "application/json"
@@ -93,23 +95,25 @@ const Connect = (props) => {
 			});
 
 			// Receives the verification and updates the connection
-			const { verified } = await response.json();
+			const { user, token } = await response.json();
 
-			// MAKES A POST 
-			response = await fetch("../../api/proof", {
-				method: "POST",
-				body: JSON.stringify({
-					address
-				}),
-				headers: {
-					"Content-Type": "application/json"
-				}
-			});
+			await supabase.auth.setAuth(token);
 
-			const { hexProof } = await response.json();
-			console.log(hexProof)
+			// MAKES A POST TO GET PROOF 
+			// response = await fetch("../../api/proof", {
+			// 	method: "POST",
+			// 	body: JSON.stringify({
+			// 		address
+			// 	}),
+			// 	headers: {
+			// 		"Content-Type": "application/json"
+			// 	}
+			// });
 
-			if (verified) {
+			// const { hexProof } = await response.json();
+			// console.log(hexProof)
+
+			if (user) {
 				setLoggedIn(true);
 				props.onConnected(address);
 			} else {
