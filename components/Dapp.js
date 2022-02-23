@@ -1,4 +1,8 @@
-import { useState, useEffect } from 'react';
+const contractAbi = ''
+const contractAddress = ''
+
+
+import { useState, useEffect, useContext } from 'react';
 import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -16,21 +20,26 @@ import {
     costContainer,
     currency,
     exit,
-    exitIcon
+    exitIcon,
+    request
 } from '../styles/Dapp.module.css'; 
+import ProviderContext from './ProviderContext';
+import { ethers } from 'ethers';
 
-const MAXALLOWMINTS = 2;
-const MAXPUBMINTS = 10;
+const MAXALLOWLISTMINTS = 3;
+const MAXPUBMINTS = 20;
 const PRICE = 0.05;
 
 const Dapp = (props) => {
+    const { provider, setProvider } = useContext(ProviderContext);
     const [mintCounter, setMintCounter] = useState(0);
+    const [maxMintPerTx, setMaxMintPerTx] = useState(0);
     const [walletAddress, setWallet] = useState(""); // check if we can already get this from props
-    const [status, setStatus] = useState(""); // the walletResponse - also get from props
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [url, setUrl] = useState("");
 
+  
     const incrementCounter = () => {
         if(mintCounter < MAXPUBMINTS) setMintCounter(mintCounter + 1);
     }
@@ -40,9 +49,24 @@ const Dapp = (props) => {
     }
 
     const handleMint = async () => {
-        if(!walletAddress.length) return; // if walletAddress is still an empty string - add 'status' into the if()
+        // load smart contract
+        const contract = await ethers.Contract(contractAddress, contractAbi, provider);
 
-        // window.contract = await 
+        const isPaused = await contract.paused();
+        const isAllow = await contract.allowlistMintPeriod();
+
+        try {
+            return {
+                success: true,
+                status: 'Check out your transaction on Etherscan: https://ropsten.etherscan.io/tx' + txHash
+            }
+        } catch (e) {
+            return {
+                success: false,
+                status: 'Something went wrong' + e.message
+            }
+        }
+
     }
 
     return(
@@ -50,7 +74,7 @@ const Dapp = (props) => {
             <div className={mintBottle}>
                 <div className={mintButtonContainer}>
                     <div className={mintButton} onClick={handleMint}></div>
-                </div>
+                </div> 
                 <div className={mintCount}>
                     <h1>{mintCounter}</h1>
                 </div>
@@ -69,6 +93,7 @@ const Dapp = (props) => {
                 <div className={exit} onClick={props.exitMint}>
                     <FontAwesomeIcon icon={faAngleDoubleUp} className={exitIcon}/>
                 </div>
+                
             </div>
         </div>
     )

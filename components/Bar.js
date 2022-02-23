@@ -37,6 +37,8 @@ const Bar = props => {
     const handleBartenderClicked = () => {
         
         setBartenderClicked(true);
+        
+
         if(mintAvailable) {
             setTimeout(() => {
                 setMintScreen(true);

@@ -199,3 +199,19 @@
     width: 4vw;
     height: 4vw;
 }
+
+.request {
+    position: absolute;
+    
+    width: 20vw;
+    height: 8vw;
+
+    margin: auto;
+
+    top: 45%;
+    left: 18%;
+    color: white;
+
+    font-size: 1rem;
+    text-align: center;
+}
