@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  height: auto;
+  height: 95px;
   width: 100%;
   background: #000;
   color: #fff;
@@ -142,7 +142,7 @@
   margin-left: auto;
   display: flex;
   flex-direction: row;
-  margin-right: 5px;
+  margin-right: 90px;
 }
 
 .a {
@@ -221,6 +221,7 @@
     align-items: center;
     
     margin: 0;
+    margin-bottom: 4vh;
   }
 
   .li, .a {
@@ -237,6 +238,7 @@
     justify-content: center;
     margin: 0;
     padding: 0;
+    margin-bottom: 4vh;
   }
 }
 
