@@ -751,31 +751,34 @@ const Bar = props => {
     }
 
     const handleBartenderClicked = async () => {
-        if(!provider) {
-            // render 'please connect wallet' message at bottom of screeen
-            setWarning(true);
-            setTimeout(() => {
-                setWarning(false);
-            }, 3000)
-            return;
-        } else {
-            // connect to contract -> check public paused
-            const contract = new ethers.Contract(contractAddress, contractAbi, provider);
-            const paused = await contract.paused();
-            const isAllow = await contract.allowlistMintPeriod();
+
+        // if(!provider) {
+        //     // render 'please connect wallet' message at bottom of screeen
+        //     setWarning(true);
+        //     setTimeout(() => {
+        //         setWarning(false);
+        //     }, 3000)
+        //     return;
+        // } else {
+        //     // connect to contract -> check public paused
+        //     const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+        //     const paused = await contract.paused();
+        //     const isAllow = await contract.allowlistMintPeriod();
             
-            setMintAvailable(!paused); // for displaying html
-            setAllowlistPeriod(isAllow); // for props
+        //     setMintAvailable(!paused); // for displaying html
+        //     setAllowlistPeriod(isAllow); // for props
 
-            setBartenderClicked(true);
+        //     setBartenderClicked(true);
 
-            if(!paused) {
-                setTimeout(() => {
-                    setMintScreen(true);
-                    setBartenderClicked(false);
-                }, 3000);
-            } 
-        }
+        //     if(!paused) {
+        //         setTimeout(() => {
+        //             setMintScreen(true);
+        //             setBartenderClicked(false);
+        //         }, 3000);
+        //     } 
+        // }
+
+        setBartenderClicked(true);
     }
 
 
