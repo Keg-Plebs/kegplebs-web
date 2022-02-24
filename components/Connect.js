@@ -1,6 +1,9 @@
 import { ethers } from "ethers";
 import { useState, useContext } from "react";
 import Web3Modal from "web3modal";
+import Web3 from "web3";
+// import WalletConnectProvider from "@walletconnect/web3-provider";
+
 import {
 	button,
 	buttonWrapperConn,
@@ -24,12 +27,19 @@ const Connect = (props) => {
 
 	// Using Web3Modal we can add options for other providers besides metamask, like coinbase.
 	// for coinbase, it looks like we need to create an infura account
-	const providerOptions = {}
+	const providerOptions = {
+    // walletConnect: {
+    //   package: WalletConnectProvider,
+    //   options: {
+    //     infuraId: '508517094bb740d181d607782638b5b3'
+    //   }
+    // }
+  }
 
 	// Creates a Web3Modal instance for connecting multiple providers
 	const getWeb3Modal = async () => {
 		const web3Modal = new Web3Modal({
-			network: "mainnet",
+      network: "ropsten", //might want to set this to ropsten for testing
 			cacheProvider: false,
 			providerOptions: providerOptions,
 		});
@@ -48,8 +58,31 @@ const Connect = (props) => {
 
 			// Creates an ethers provider using the connection and requests all the
 			// accounts of the wallet.
+
+      
 			const provider = new ethers.providers.Web3Provider(connection);
-			await provider.send("eth_requestAccounts", []);
+			await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
+        .then((permissions) => {
+          const accountsPermission = permissions.find(
+            (permission) => permission.parentCapability === 'eth_accounts'
+          );
+          if (accountsPermission) {
+            console.log('eth_accounts permission successfully requested!');
+          }
+        })
+        .catch((error) => {
+          if (error.code === 4001) {
+            // EIP-1193 userRejectedRequest error
+            console.log('Permissions needed to continue.');
+          } else {
+            console.error(error);
+          }
+
+          throw new Error('No wallet connected.');
+        });
+
+        
+
 			const signer = provider.getSigner();
 
 			// Gets the address of the wallet

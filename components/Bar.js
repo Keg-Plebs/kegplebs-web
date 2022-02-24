@@ -730,13 +730,16 @@ const Bar = props => {
     const [doorState, setDoorState] = useState(false);
     const [bartenderClicked, setBartenderClicked] = useState(false);
     const [cheersScreen, setCheersScreen] = useState(false);
-    const [mintAvailable, setMintAvailable] = useState(true);
+    const [mintAvailable, setMintAvailable] = useState(false);
     const [mintScreen, setMintScreen] = useState(false);
     const [warning, setWarning] = useState(false);
-    const [allowlistPeriod, setAllowlistPeriod] = useState(false);
+    const [isAllowlistPeriod, setAllowlistPeriod] = useState(false);
 
     useEffect( () => {
         document.body.style.overflow = 'hidden';
+
+        // check if wallet is connected - this data needs to persist when we move from scene to scene
+
 
         return () => {
             document.body.style.overflow = 'visible';
@@ -748,31 +751,36 @@ const Bar = props => {
     }
 
     const handleBartenderClicked = async () => {
-        if(!provider) {
-            // render 'please connect wallet' message at bottom of screeen
-            setWarning(true);
-            setTimeout(() => {
-                setWarning(false);
-            }, 3000)
-            return;
-        } else {
-            // connect to contract -> check public paused
-            const contract = await new ethers.Contract(contractAddress, contractAbi, provider);
-            const paused = await contract.paused();
-            const isAllow = await contract.allowlistMintPeriod();
-            setMintAvailable(paused);
-            setAllowlistPeriod(isAllow);
-        }
+
+        // if(!provider) {
+        //     // render 'please connect wallet' message at bottom of screeen
+        //     setWarning(true);
+        //     setTimeout(() => {
+        //         setWarning(false);
+        //     }, 3000)
+        //     return;
+        // } else {
+        //     // connect to contract -> check public paused
+        //     const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+        //     const paused = await contract.paused();
+        //     const isAllow = await contract.allowlistMintPeriod();
+            
+        //     setMintAvailable(!paused); // for displaying html
+        //     setAllowlistPeriod(isAllow); // for props
+
+        //     setBartenderClicked(true);
+
+        //     if(!paused) {
+        //         setTimeout(() => {
+        //             setMintScreen(true);
+        //             setBartenderClicked(false);
+        //         }, 3000);
+        //     } 
+        // }
 
         setBartenderClicked(true);
-
-        if(mintAvailable) {
-            setTimeout(() => {
-                setMintScreen(true);
-                setBartenderClicked(false);
-            }, 3000);
-        } 
     }
+
 
     const handleMintScreenExit = () => {
         setMintScreen(false);
@@ -836,7 +844,7 @@ const Bar = props => {
                 }
                 {
                     mintScreen ? 
-                    <Dapp exitMint={handleMintScreenExit} allowPeriod={allowlistPeriod}></Dapp> :
+                    <Dapp exitMint={handleMintScreenExit} allowPeriod={isAllowlistPeriod}></Dapp> :
                     <></>
                 }
                 {

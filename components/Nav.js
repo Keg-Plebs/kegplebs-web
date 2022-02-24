@@ -21,15 +21,12 @@ import {
     li, 
     menu,
     smallScreenRightSide,
-    userInfo, 
-    userIconContainer,
-    userAddi,
     navLogo
 } from '../styles/Nav.module.css';
 
 import Connect from './Connect';
 
-const Nav = ({enabled}) => {
+const Nav = ({enabled: navEnabled}) => {
     const [active, setActive] = useState(false);
     const [screenWidth, setScreenWidth] = useState(0); 
     const [userIcon, setUserIcon] = useState('');
@@ -101,17 +98,19 @@ const Nav = ({enabled}) => {
                     <div className={navLogo}></div>
                 </a>
                 {
-                    (screenWidth < screen) && (enabled) ? 
+                    (screenWidth < screen) && (navEnabled) ? 
                     (
                         <button className={`${menu} ${smallScreenRightSide}`} onClick={handleClick}>
                             <Fade direction='left'/>
                         </button>
                     ): 
                     (
-                        (!enabled && screenWidth < screen) ? 
-                        <div className={smallScreenRightSide}>
-                            <Connect onConnected={handleConnect}/>
-                        </div> :
+                        (!navEnabled && screenWidth < screen) ? 
+                        // <div className={smallScreenRightSide}>
+                        //     <Connect onConnected={handleConnect}/>
+                        // </div> 
+                        <></>
+                        :
                         <></>
                     ) 
                 }
@@ -121,7 +120,7 @@ const Nav = ({enabled}) => {
                     <>
                         <ul className={linkGroup}
                             style={{
-                                visibility: enabled ? 'visible' : 'hidden'
+                                visibility: navEnabled ? 'visible' : 'hidden'
                             }}
                         >
                             <li className={li}>
@@ -143,7 +142,7 @@ const Nav = ({enabled}) => {
 
                         <div className={socialGroup}
                             style={{
-                                visibility: enabled ? 'visible' : 'hidden'
+                                visibility: navEnabled ? 'visible' : 'hidden'
                             }}
                         >
                             <div className={icons}>
@@ -153,7 +152,6 @@ const Nav = ({enabled}) => {
                                 <a className={a} href='#'><Image src={Etherscan} quality={100} height={30} width={30}></Image></a>
                             </div>
                         </div>
-                        <Connect onConnected={handleConnect}/>
                     </> :
                 <></>
             }

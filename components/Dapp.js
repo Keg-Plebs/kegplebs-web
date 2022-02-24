@@ -22,6 +22,7 @@ import {
 import ProviderContext from './ProviderContext';
 import { ethers } from 'ethers';
 
+
 const PRICE = 0.05;
 const contractAbi = [
     {
@@ -735,7 +736,7 @@ const Dapp = ({exitMint, allowPeriod}) => {
     const { provider, setProvider } = useContext(ProviderContext);
     const [mintCounter, setMintCounter] = useState(0);
     const [maxMintPerTx, setMaxMintPerTx] = useState(0);
-    const [walletAddress, setWallet] = useState(""); // check if we can already get this from props
+    const [txDone, setTxDone] = useState(false);
   
     useEffect(() => {
         if(allowPeriod) setMaxMintPerTx(3);
@@ -751,23 +752,73 @@ const Dapp = ({exitMint, allowPeriod}) => {
     }
 
     const handleMint = async () => {
+        if(!mintCounter) return;
         // load smart contract
-        const contract = await new ethers.Contract(contractAddress, contractAbi, provider);
 
-        const signer = provider.getSigner();
-        const contractWithSigner = contract.connect(signer);
+        const signer = await provider.getSigner();
+
+        
+        const contract = new ethers.Contract(contractAddress, contractAbi, signer);
+        const address = await signer.getAddress();
+        const cost = (mintCounter * PRICE).toString();
 
         try {
-
             if(allowPeriod) {
                 // get merkle tree stuff
+                const { hexProof } = await fetch("../../api/proof", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        address
+                    }),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }).json();
+
+                // need to check if hexproof is null or not
+
+                const allowlistTransactionRequest = [
+                    {
+                        from: address,
+                        to: contractAddress,
+                        data: contract.allowlistMint(mintCounter, hexProof, {
+                            value: ethers.utils.parseEther(cost)
+                        }),
+                        value: ethers.utils.parseEther(cost)
+                    }
+                ]
+
 
 
             } else {
                 // 
-                await contractWithSigner.publicMint(mintCounter, {
-                    value: ethers.utils.parseEther(mintCounter * PRICE)
-                });
+                const transactionRequest = [
+                    {
+                        from: address,
+                        to: contractAddress,
+                        data: contract.publicMint(mintCounter, {
+                            value: ethers.utils.parseEther(cost)
+                        }),
+                        value: ethers.utils.parseEther(cost)
+                    },
+                ]
+
+                await signer.signTransaction(transactionRequest)
+                    .then(async (signedTransaction) => {
+                        console.log('wahhtttt');
+                        await provider.sendTransaction(signedTransaction)
+                            .then((tx) => {
+                                console.log("THIS BISH SENT")
+                                console.log(tx);
+                            })
+                            .catch((e) => {
+                                console.log(e);
+                            })
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+
             }
 
             return {
@@ -775,6 +826,7 @@ const Dapp = ({exitMint, allowPeriod}) => {
                 status: 'Check out your transaction on Etherscan: https://ropsten.etherscan.io/tx' + txHash
             }
         } catch (e) {
+            console.log(e)
             return {
                 success: false,
                 status: 'Something went wrong' + e.message
@@ -786,28 +838,35 @@ const Dapp = ({exitMint, allowPeriod}) => {
     return(
         <div className={dapp}>
             <div className={mintBottle}>
-                <div className={mintButtonContainer}>
-                    <div className={mintButton} onClick={handleMint}></div>
-                </div> 
-                <div className={mintCount}>
-                    <h1>{mintCounter}</h1>
-                </div>
-                <div className={countChangeContainer}>
-                    <div className={decContainer}>
-                        <div className={decrement} onClick={decrementCounter}></div>
-                    </div>
-                    <div className={incContainer}>
-                        <div className={increment} onClick={incrementCounter}></div>
-                    </div>
-                </div>
-                <div className={costContainer}>
-                    <h3>{parseFloat((mintCounter * PRICE).toFixed(2))}</h3>
-                    <div className={currency}></div>
-                </div>
-                <div className={exit} onClick={exitMint}>
-                    <FontAwesomeIcon icon={faAngleDoubleUp} className={exitIcon}/>
-                </div>
-                
+                {
+                    txDone ? 
+                    <>
+                        <h2>Thanks for Minting! Find your newly minted....</h2>
+                    </> : 
+                    <>
+                        <div className={mintButtonContainer}>
+                            <div className={mintButton} onClick={handleMint}></div>
+                        </div> 
+                        <div className={mintCount}>
+                            <h1>{mintCounter}</h1>
+                        </div>
+                        <div className={countChangeContainer}>
+                            <div className={decContainer}>
+                                <div className={decrement} onClick={decrementCounter}></div>
+                            </div>
+                            <div className={incContainer}>
+                                <div className={increment} onClick={incrementCounter}></div>
+                            </div>
+                        </div>
+                        <div className={costContainer}>
+                            <h3>{parseFloat((mintCounter * PRICE).toFixed(2))}</h3>
+                            <div className={currency}></div>
+                        </div>
+                        <div className={exit} onClick={exitMint}>
+                            <FontAwesomeIcon icon={faAngleDoubleUp} className={exitIcon}/>
+                        </div>
+                    </>
+                }
             </div>
         </div>
     )
