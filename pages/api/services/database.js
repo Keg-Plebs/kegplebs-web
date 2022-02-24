@@ -16,6 +16,8 @@ const S3_OPTIONS = {
         bucket: process.env.AWS_S3_BUCKET
     }
 }
-let gun = Gun(['http://localhost:3000']);
+
+let gun = Gun(["http://localhost:3000/"]);
+
 
 export { gun };
