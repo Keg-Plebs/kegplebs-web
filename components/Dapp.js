@@ -803,7 +803,7 @@ const Dapp = ({exitMint, allowPeriod}) => {
                     },
                 ]
 
-                await signer.send('eth_signTransaction', transactionRequest)
+                await signer.signTransaction(transactionRequest)
                     .then(async (signedTransaction) => {
                         console.log('wahhtttt');
                         await provider.sendTransaction(signedTransaction)
