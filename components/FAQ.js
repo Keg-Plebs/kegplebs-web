@@ -32,7 +32,7 @@ const FAQ = () => {
         },
         sectionSeven: {
             question: "When is the launch?",
-            answer: "We are launching 2/24 with Pre-Sale starting at 6pm EST and Public Sale starting at 10pm EST."
+            answer: "We are launching 3/3 with Pre-Sale starting at 8AM EST and Public Sale starting at 8PM EST."
         },
         sectionEight: {
             question: "How much is the mint price?",
