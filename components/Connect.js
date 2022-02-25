@@ -31,7 +31,7 @@ const Connect = (props) => {
     // walletConnect: {
     //   package: WalletConnectProvider,
     //   options: {
-    //     infuraId: '508517094bb740d181d607782638b5b3'
+    //     infuraId: ''
     //   }
     // }
   }
