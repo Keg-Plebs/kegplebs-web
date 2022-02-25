@@ -17,7 +17,9 @@ import {
     currency,
     exit,
     exitIcon,
-    request
+    request,
+    mintCompletionAlertContainer,
+    plainBottle
 } from '../styles/Dapp.module.css'; 
 import ProviderContext from './ProviderContext';
 import { ethers } from 'ethers';
@@ -736,7 +738,8 @@ const Dapp = ({exitMint, allowPeriod}) => {
     const { provider, setProvider } = useContext(ProviderContext);
     const [mintCounter, setMintCounter] = useState(0);
     const [maxMintPerTx, setMaxMintPerTx] = useState(0);
-    const [txDone, setTxDone] = useState(false);
+    const [txComplete, setTxComplete] = useState(false);
+    const [txResult, setTxResult] = useState('');
   
     useEffect(() => {
         if(allowPeriod) setMaxMintPerTx(3);
@@ -753,13 +756,11 @@ const Dapp = ({exitMint, allowPeriod}) => {
 
     const handleMint = async () => {
         if(!mintCounter) return;
-        // load smart contract
-
         const signer = await provider.getSigner();
 
-        
         const contract = new ethers.Contract(contractAddress, contractAbi, signer);
         const address = await signer.getAddress();
+
         const cost = (mintCounter * PRICE).toString();
 
         try {
@@ -776,55 +777,44 @@ const Dapp = ({exitMint, allowPeriod}) => {
                 }).json();
 
                 // need to check if hexproof is null or not
+                if(!hexProof) return; // will need to notify the user that they are not whitelisted
 
-                const allowlistTransactionRequest = [
+                const nonce = await signer.getTransactionCount();
+                const data = await contract.interface.encodeFunctionData('allowlistMint', [mintCounter, hexProof]);
+
+                const allowlistTransactionRequest =  
                     {
                         from: address,
                         to: contractAddress,
-                        data: contract.allowlistMint(mintCounter, hexProof, {
-                            value: ethers.utils.parseEther(cost)
-                        }),
+                        nonce: nonce,
+                        data: data,
                         value: ethers.utils.parseEther(cost)
                     }
-                ]
 
-
+                const tx = await signer.sendTransaction(allowlistTransactionRequest);
+                setTxComplete(true);
+                setTxResult(tx);
 
             } else {
+                const nonce = await signer.getTransactionCount();
+                const data = await contract.interface.encodeFunctionData('publicMint', [mintCounter]);
+
+
                 // 
-                const transactionRequest = [
+                const transactionRequest = 
                     {
                         from: address,
                         to: contractAddress,
-                        data: contract.publicMint(mintCounter, {
-                            value: ethers.utils.parseEther(cost)
-                        }),
+                        nonce: nonce,
+                        data: data,
                         value: ethers.utils.parseEther(cost)
-                    },
-                ]
+                    }
 
-                await signer.signTransaction(transactionRequest)
-                    .then(async (signedTransaction) => {
-                        console.log('wahhtttt');
-                        await provider.sendTransaction(signedTransaction)
-                            .then((tx) => {
-                                console.log("THIS BISH SENT")
-                                console.log(tx);
-                            })
-                            .catch((e) => {
-                                console.log(e);
-                            })
-                    })
-                    .catch((error) => {
-                        console.log(error)
-                    })
-
+                const tx = await signer.sendTransaction(transactionRequest);
+                setTxComplete(true);
+                setTxResult(tx);
             }
 
-            return {
-                success: true,
-                status: 'Check out your transaction on Etherscan: https://ropsten.etherscan.io/tx' + txHash
-            }
         } catch (e) {
             console.log(e)
             return {
@@ -837,11 +827,25 @@ const Dapp = ({exitMint, allowPeriod}) => {
 
     return(
         <div className={dapp}>
-            <div className={mintBottle}>
+            <div className={
+                txComplete ? plainBottle : mintBottle
+            }
+            >
                 {
-                    txDone ? 
+                    txComplete ? 
                     <>
-                        <h2>Thanks for Minting! Find your newly minted....</h2>
+                        <div className={mintCompletionAlertContainer}>
+                            <div>
+                                {
+                                    mintCounter === 1 ? <h2>You've Minted a Pleb!</h2> : <h2>You've Minted some Plebs!</h2>
+                                }
+                                
+                                <p>Here is a link to your Metadata: </p>
+                                <p>Mainnet Transaction Hash: <span>{txResult.hash}</span></p>
+                            </div>
+                            <div></div>
+                        </div>
+                        
                     </> : 
                     <>
                         <div className={mintButtonContainer}>
@@ -862,11 +866,11 @@ const Dapp = ({exitMint, allowPeriod}) => {
                             <h3>{parseFloat((mintCounter * PRICE).toFixed(2))}</h3>
                             <div className={currency}></div>
                         </div>
-                        <div className={exit} onClick={exitMint}>
-                            <FontAwesomeIcon icon={faAngleDoubleUp} className={exitIcon}/>
-                        </div>
                     </>
                 }
+            </div>
+            <div className={exit} onClick={exitMint}>
+                <FontAwesomeIcon icon={faAngleDoubleUp} className={exitIcon}/>
             </div>
         </div>
     )

@@ -51,16 +51,17 @@ const Connect = (props) => {
 	const connect = async () => {
 		try {
 			// Gets a new Web3Modal instance and creates a connection
-			const web3Modal = await getWeb3Modal();
-			const connection = await web3Modal.connect();
+			// const web3Modal = await getWeb3Modal();
+			// const connection = await web3Modal.connect();
 
 			setConnection(connection);
 
-			// Creates an ethers provider using the connection and requests all the
-			// accounts of the wallet.
+      
+			if(!window.ethereum) 
+        throw new Error("No crypto wallet found. Please install it -");
 
       
-			const provider = new ethers.providers.Web3Provider(connection);
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
 			await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
         .then((permissions) => {
           const accountsPermission = permissions.find(
@@ -80,8 +81,6 @@ const Connect = (props) => {
 
           throw new Error('No wallet connected.');
         });
-
-        
 
 			const signer = provider.getSigner();
 

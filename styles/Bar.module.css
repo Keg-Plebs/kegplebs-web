@@ -85,6 +85,18 @@
     pointer-events: none;
 }
 
+.connectWallet {
+    position: absolute;
+    background-image: url('../public/interior/connectwallet.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    top: -2vh;
+    left: 5vw;
+    height: 80vh;
+    width: 80vw;
+}
+
 .cheersOption {
     position: absolute;
     background-image: url('../public/interior/cheers.webp');

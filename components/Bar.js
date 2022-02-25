@@ -9,7 +9,8 @@ import {
     exitOption,
     cheersOption,
     toMint,
-    warningNotice
+    warningNotice,
+    connectWallet
 } from '../styles/Bar.module.css';
 import ProviderContext from './ProviderContext';
 import { ethers } from 'ethers';
@@ -752,33 +753,30 @@ const Bar = props => {
 
     const handleBartenderClicked = async () => {
 
-        // if(!provider) {
-        //     // render 'please connect wallet' message at bottom of screeen
-        //     setWarning(true);
-        //     setTimeout(() => {
-        //         setWarning(false);
-        //     }, 3000)
-        //     return;
-        // } else {
-        //     // connect to contract -> check public paused
-        //     const contract = new ethers.Contract(contractAddress, contractAbi, provider);
-        //     const paused = await contract.paused();
-        //     const isAllow = await contract.allowlistMintPeriod();
+        if(provider) {
+            // connect to contract -> check public paused
+            const contract = new ethers.Contract(contractAddress, contractAbi, provider);
+            const paused = await contract.paused();
+            const isAllow = await contract.allowlistMintPeriod();
             
-        //     setMintAvailable(!paused); // for displaying html
-        //     setAllowlistPeriod(isAllow); // for props
+            setMintAvailable(!paused); // for displaying html
+            setAllowlistPeriod(isAllow); // for props
 
-        //     setBartenderClicked(true);
+            
+            setBartenderClicked(true);
+            if(!paused) {
+                setTimeout(() => {
+                    setMintScreen(true);
+                    setBartenderClicked(false);
+                }, 3000);
+            } 
+        } else {
+            setBartenderClicked(true);
+            setTimeout(() => {
+                setBartenderClicked(false);
+            }, 3000)
+        }
 
-        //     if(!paused) {
-        //         setTimeout(() => {
-        //             setMintScreen(true);
-        //             setBartenderClicked(false);
-        //         }, 3000);
-        //     } 
-        // }
-
-        setBartenderClicked(true);
     }
 
 
@@ -796,7 +794,8 @@ const Bar = props => {
 
     
     let dialogue = <></>;
-    if(bartenderClicked && !mintAvailable) dialogue = <div className={sorryBubble}></div>
+    if(bartenderClicked && !provider) dialogue = <div className={connectWallet}></div>
+    else if(bartenderClicked && !mintAvailable) dialogue = <div className={sorryBubble}></div>
     else if(bartenderClicked && mintAvailable) dialogue = <div className={toMint}></div>
 
     return(
