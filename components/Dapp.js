@@ -19,6 +19,7 @@ import {
     exitIcon,
     request,
     mintCompletionAlertContainer,
+    mintErrorAlertContainer,
     plainBottle
 } from '../styles/Dapp.module.css'; 
 import ProviderContext from './ProviderContext';
@@ -740,6 +741,8 @@ const Dapp = ({exitMint, allowPeriod}) => {
     const [maxMintPerTx, setMaxMintPerTx] = useState(0);
     const [txComplete, setTxComplete] = useState(false);
     const [txResult, setTxResult] = useState('');
+    const [txError, setTxError] = useState(false);
+    const [txErrorMsg, setTxErrorMsg] = useState('');
   
     useEffect(() => {
         if(allowPeriod) setMaxMintPerTx(3);
@@ -791,7 +794,12 @@ const Dapp = ({exitMint, allowPeriod}) => {
                         value: ethers.utils.parseEther(cost)
                     }
 
-                const tx = await signer.sendTransaction(allowlistTransactionRequest);
+                const tx = await signer.sendTransaction(allowlistTransactionRequest)
+                    .catch((error) => {
+                        setTxError(true);
+                        setTxErrorMsg('Transaction error occured during Allowlist Minting. Please close the mint screen and try again.')
+                        throw new Error('Allowlist minting error: ' + error.message)
+                    });
                 setTxComplete(true);
                 setTxResult(tx);
 
@@ -810,7 +818,12 @@ const Dapp = ({exitMint, allowPeriod}) => {
                         value: ethers.utils.parseEther(cost)
                     }
 
-                const tx = await signer.sendTransaction(transactionRequest);
+                const tx = await signer.sendTransaction(transactionRequest)
+                    .catch((error) => {
+                        setTxError(true);
+                        setTxErrorMsg('Transaction error occured during Public Minting. Please close the mint screen and try again.')
+                        throw new Error('Public minting error: ' + error.message)
+                    });
                 setTxComplete(true);
                 setTxResult(tx);
             }
@@ -832,41 +845,43 @@ const Dapp = ({exitMint, allowPeriod}) => {
             }
             >
                 {
-                    txComplete ? 
-                    <>
-                        <div className={mintCompletionAlertContainer}>
-                            <div>
-                                {
-                                    mintCounter === 1 ? <h2>You've Minted a Pleb!</h2> : <h2>You've Minted some Plebs!</h2>
-                                }
-                                
-                                <p>Here is a link to your Metadata: </p>
-                                <p>Mainnet Transaction Hash: <span>{txResult.hash}</span></p>
+                    !txError ? (
+                        txComplete ? 
+                        <>
+                            <div className={mintCompletionAlertContainer}>
+                                <div>
+                                    {
+                                        mintCounter === 1 ? <h2>You've Minted a Pleb!</h2> : <h2>You've Minted some Plebs!</h2>
+                                    }
+                                    <p>Here is a link to your Metadata: </p>
+                                    <p>Mainnet Transaction Hash: <span>{txResult.hash}</span></p>
+                                </div>
                             </div>
-                            <div></div>
-                        </div>
-                        
-                    </> : 
-                    <>
-                        <div className={mintButtonContainer}>
-                            <div className={mintButton} onClick={handleMint}></div>
-                        </div> 
-                        <div className={mintCount}>
-                            <h1>{mintCounter}</h1>
-                        </div>
-                        <div className={countChangeContainer}>
-                            <div className={decContainer}>
-                                <div className={decrement} onClick={decrementCounter}></div>
+                        </> : 
+                        <>
+                            <div className={mintButtonContainer}>
+                                <div className={mintButton} onClick={handleMint}></div>
+                            </div> 
+                            <div className={mintCount}>
+                                <h1>{mintCounter}</h1>
                             </div>
-                            <div className={incContainer}>
-                                <div className={increment} onClick={incrementCounter}></div>
+                            <div className={countChangeContainer}>
+                                <div className={decContainer}>
+                                    <div className={decrement} onClick={decrementCounter}></div>
+                                </div>
+                                <div className={incContainer}>
+                                    <div className={increment} onClick={incrementCounter}></div>
+                                </div>
                             </div>
-                        </div>
-                        <div className={costContainer}>
-                            <h3>{parseFloat((mintCounter * PRICE).toFixed(2))}</h3>
-                            <div className={currency}></div>
-                        </div>
-                    </>
+                            <div className={costContainer}>
+                                <h3>{parseFloat((mintCounter * PRICE).toFixed(2))}</h3>
+                                <div className={currency}></div>
+                            </div>
+                        </>
+                    ) : 
+                    <div className={mintErrorAlertContainer}>
+                        <h2>{txErrorMsg}</h2>
+                    </div>
                 }
             </div>
             <div className={exit} onClick={exitMint}>
