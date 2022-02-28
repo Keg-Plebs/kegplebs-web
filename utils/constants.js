@@ -28,7 +28,7 @@ export const SCENES = {
     VERSE: 'VERSE'
 }
 
-export const contractAbi = [
+export const contractABI = [
     {
         "inputs": [
         {

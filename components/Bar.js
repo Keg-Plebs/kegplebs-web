@@ -20,7 +20,8 @@ import { ethers } from 'ethers';
 
 import Dapp from './Dapp';
 
-const contractAddress = '0x19Fc8c2eA485E78ea8ad4a60B16e0937F6472B19'
+// const contractAddress = '0x19Fc8c2eA485E78ea8ad4a60B16e0937F6472B19'
+const contractAddress = '0x0246F43B49AdF223b90D31D312150253ed050753'
 
 
 const Bar = props => {
@@ -52,6 +53,7 @@ const Bar = props => {
     const handleBartenderClicked = async () => {
 
         if(provider) {
+
             // connect to contract -> check public paused
             const contract = new ethers.Contract(contractAddress, contractABI, provider);
             const paused = await contract.paused();

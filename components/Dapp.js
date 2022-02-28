@@ -66,7 +66,7 @@ const Dapp = ({exitMint, allowPeriod}) => {
         try {
             if(allowPeriod) {
                 // get merkle tree stuff
-                const { hexProof } = await fetch("../../api/proof", {
+                const response = await fetch("../../api/proof", {
                     method: "POST",
                     body: JSON.stringify({
                         address
@@ -74,7 +74,9 @@ const Dapp = ({exitMint, allowPeriod}) => {
                     headers: {
                         "Content-Type": "application/json"
                     }
-                }).json();
+                })
+                
+                const { hexProof } = await response.json()
 
                 // need to check if hexproof is null or not
                 if(!hexProof) return; // will need to notify the user that they are not whitelisted

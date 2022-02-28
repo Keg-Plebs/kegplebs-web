@@ -10,7 +10,8 @@ let whitelistsAddresses = [
     "0xee43b18Cd6934DeFE55a47C4c36B92209e1b5290",
     "0x920627f361E968aa9da4302EbB09ba59754e1c50",
     "0x6DaE362F6cbb47e1D1db8BFbFf91Cb005904808b",
-    "0xe2CF5f31Ec67691398769Ca7192cca11f1c94227"
+    "0xe2CF5f31Ec67691398769Ca7192cca11f1c94227",
+    "0x4f0725D78e4333C5Fa3c62805a715D6084258935"
 ];
 
 // Hashes all the leaf nodes (addresses) using the keccak256 hash function
@@ -18,6 +19,7 @@ const leafNodes = whitelistsAddresses.map(address => keccak256(address));
 
 // Creates the merkle tree using the leafnodes and the hash function
 const merkleTree = new MerkleTree(leafNodes, keccak256, { sortPairs: true });
+console.log(merkleTree.getHexRoot())
 
 // MerkleTree proof API
 const proof = (req, res) => {
