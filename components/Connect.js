@@ -131,20 +131,6 @@ const Connect = (props) => {
 
 			await supabase.auth.setAuth(token);
 
-			// MAKES A POST TO GET PROOF 
-			// response = await fetch("../../api/proof", {
-			// 	method: "POST",
-			// 	body: JSON.stringify({
-			// 		address
-			// 	}),
-			// 	headers: {
-			// 		"Content-Type": "application/json"
-			// 	}
-			// });
-
-			// const { hexProof } = await response.json();
-			// console.log(hexProof)
-
 			if (user) {
 				setLoggedIn(true);
 				props.onConnected(address);

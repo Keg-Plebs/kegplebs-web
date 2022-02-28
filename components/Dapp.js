@@ -30,7 +30,7 @@ import { ethers } from 'ethers';
 
 
 const PRICE = 0.05;
-const contractAddress = '0x19Fc8c2eA485E78ea8ad4a60B16e0937F6472B19'
+const contractAddress = '0x78498286355A61c7E2c3826EEF2C812580d930C4'
 
 const Dapp = ({exitMint, allowPeriod}) => {
     const { provider, setProvider } = useContext(ProviderContext);
