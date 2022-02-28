@@ -24,20 +24,14 @@
     "@next/bundle-analyzer": "^12.1.0",
     "@react-three/drei": "^8.10.2",
     "@react-three/fiber": "^7.0.26",
-<<<<<<< HEAD
     "@walletconnect/web3-provider": "^1.7.1",
-=======
     "@supabase/supabase-js": "^1.30.6",
->>>>>>> 513f1cdc1f12eddf21ca3cce35c0a318426157ab
     "aws-sdk": "^2.1075.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
     "gun": "^0.2020.1235",
     "hamburger-react": "^2.4.1",
-<<<<<<< HEAD
-=======
     "jsonwebtoken": "^8.5.1",
->>>>>>> 513f1cdc1f12eddf21ca3cce35c0a318426157ab
     "keccak256": "^1.0.6",
     "merkletreejs": "^0.2.30",
     "next": "12.1.0",
