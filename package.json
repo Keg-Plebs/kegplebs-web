@@ -14,6 +14,7 @@
     "@alch/alchemy-web3": "^1.2.4",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "@ethersproject/abi": "^5.5.0",
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -24,11 +25,12 @@
     "@next/bundle-analyzer": "^12.1.0",
     "@react-three/drei": "^8.10.2",
     "@react-three/fiber": "^7.0.26",
-    "@walletconnect/web3-provider": "^1.7.1",
     "@supabase/supabase-js": "^1.30.6",
+    "@walletconnect/web3-provider": "^1.7.1",
     "aws-sdk": "^2.1075.0",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
+    "ethers": "^5.5.4",
     "fs": "^0.0.1-security",
     "gun": "^0.2020.1235",
     "hamburger-react": "^2.4.1",
@@ -48,7 +50,6 @@
   },
   "devDependencies": {
     "eslint": "8.5.0",
-    "eslint-config-next": "12.0.7",
-    "ethers": "^5.5.4"
+    "eslint-config-next": "12.0.7"
   }
 }
