@@ -21,7 +21,7 @@ import { ethers } from 'ethers';
 import Dapp from './Dapp';
 
 // const contractAddress = '0x19Fc8c2eA485E78ea8ad4a60B16e0937F6472B19'
-const contractAddress = '0x0246F43B49AdF223b90D31D312150253ed050753'
+const contractAddress = '0xAC6E09d4FE91B8ae1924d5C3fa14E8D6eFef2640'
 
 
 const Bar = props => {
