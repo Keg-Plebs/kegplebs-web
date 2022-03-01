@@ -11,7 +11,8 @@ let whitelistsAddresses = [
     "0x920627f361E968aa9da4302EbB09ba59754e1c50",
     "0x6DaE362F6cbb47e1D1db8BFbFf91Cb005904808b",
     "0xe2CF5f31Ec67691398769Ca7192cca11f1c94227",
-    "0x4f0725D78e4333C5Fa3c62805a715D6084258935"
+    "0x4f0725D78e4333C5Fa3c62805a715D6084258935",
+    "0x84e950B2d8B70Dc899aaE64880dD2c2A833d785C"
 ];
 
 // Hashes all the leaf nodes (addresses) using the keccak256 hash function
