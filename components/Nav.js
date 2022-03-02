@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Fade, Fade as Hamburger } from 'hamburger-react'
 
-import { Opensea, Etherscan, Icon } from '../public/images';
+import { Opensea, Etherscan } from '../public/images';
 import { 
     nav, 
     logoGroup, 

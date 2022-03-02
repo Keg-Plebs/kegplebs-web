@@ -12,7 +12,7 @@ import Roadmap from '../components/Roadmap'
 import Collabs from '../components/Collabs'
 import Footer from '../components/Footer'
 
-import { container, backgroundImage, navElement } from '../styles/Layout.module.css'
+import { backgroundImage, navElement } from '../styles/Layout.module.css'
 import { siteTitle } from '../components/Layout'
 import { useState } from 'react';
 
@@ -32,7 +32,7 @@ const Home = () => {
         </Element>
         <Showcase></Showcase>
         <Element id='brewverse' name='brewverse' className={navElement}>
-          <Brewverse  enableNavbar={(bool) => setNavbarEnabled(bool)}></Brewverse>
+          <Brewverse enableNavbar={(bool) => setNavbarEnabled(bool)}></Brewverse>
         </Element>
         <Collabs></Collabs>
         <Element id='about' name='about' className={navElement}>

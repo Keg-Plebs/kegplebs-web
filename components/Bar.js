@@ -35,7 +35,7 @@ const Bar = props => {
     const [warning, setWarning] = useState(false);
     const [isAllowlistPeriod, setAllowlistPeriod] = useState(false);
 
-    useEffect( () => {
+    useEffect(() => {
         document.body.style.overflow = 'hidden';
 
         // check if wallet is connected - this data needs to persist when we move from scene to scene
@@ -47,29 +47,29 @@ const Bar = props => {
     }, []);
 
     const handleBackgroundClick = () => {
-        if(bartenderClicked) setBartenderClicked(false);
+        if (bartenderClicked) setBartenderClicked(false);
     }
 
     const handleBartenderClicked = async () => {
 
-        if(provider) {
+        if (provider) {
 
             // connect to contract -> check public paused
             const contract = new ethers.Contract(contractAddress, contractABI, provider);
             const paused = await contract.paused();
             const isAllow = await contract.allowlistMintPeriod();
-            
+
             setMintAvailable(!paused); // for displaying html
             setAllowlistPeriod(isAllow); // for props
 
-            
+
             setBartenderClicked(true);
-            if(!paused) {
+            if (!paused) {
                 setTimeout(() => {
                     setMintScreen(true);
                     setBartenderClicked(false);
                 }, 3000);
-            } 
+            }
         } else {
             setBartenderClicked(true);
             setTimeout(() => {
@@ -92,21 +92,21 @@ const Bar = props => {
         }, 2000);
     }
 
-    
-    let dialogue = <></>;
-    if(bartenderClicked && !provider) dialogue = <div className={connectWallet}></div>
-    else if(bartenderClicked && !mintAvailable) dialogue = <div className={sorryBubble}></div>
-    else if(bartenderClicked && mintAvailable) dialogue = <div className={toMint}></div>
 
-    return(
+    let dialogue = <></>;
+    if (bartenderClicked && !provider) dialogue = <div className={connectWallet}></div>
+    else if (bartenderClicked && !mintAvailable) dialogue = <div className={sorryBubble}></div>
+    else if (bartenderClicked && mintAvailable) dialogue = <div className={toMint}></div>
+
+    return (
         <>
-            <div 
+            <div
                 className={`${doorState ? open : closed}`}
                 onClick={() => {
                     handleBackgroundClick();
                 }}
             >
-                
+
                 <div className={door}
                     onPointerOver={() => {
                         setDoorState(true);
@@ -122,36 +122,25 @@ const Bar = props => {
                 <div className={bartender}></div>
                 <div className={bartenderSelect}
                     onClick={handleBartenderClicked}
-                ></div> 
+                ></div>
                 {
                     dialogue
                 }
-                {/* {
-                    doorClicked ? 
-                    <> */}
-                        <div className={exitOption}></div> 
-                        {/* <div 
-                            className={exitClick}
-                            onClick={handleExitBrewery}
-                        ></div> */}
-                    {/* </>
-                    : 
-                    <></>
-                } */}
+                <div className={exitOption}></div>
                 {
                     cheersScreen ? <div className={cheersOption}></div> : <></>
                 }
                 {
-                    mintScreen ? 
-                    <Dapp exitMint={handleMintScreenExit} allowPeriod={isAllowlistPeriod}></Dapp> :
-                    <></>
+                    mintScreen ?
+                        <Dapp exitMint={handleMintScreenExit} allowPeriod={isAllowlistPeriod}></Dapp> :
+                        <></>
                 }
                 {
                     warning ?
-                    <div className={warningNotice}>
-                        <h3>Please Connect Your Wallet</h3>
-                    </div> :
-                    <></>
+                        <div className={warningNotice}>
+                            <h3>Please Connect Your Wallet</h3>
+                        </div> :
+                        <></>
                 }
             </div>
         </>

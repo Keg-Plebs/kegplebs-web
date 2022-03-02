@@ -1,8 +1,7 @@
 import { ethers } from "ethers";
 import { useState, useContext } from "react";
 import Web3Modal from "web3modal";
-import Web3 from "web3";
-// import WalletConnectProvider from "@walletconnect/web3-provider";
+import WalletConnectProvider from "@walletconnect/web3-provider";
 
 import {
 	button,
@@ -27,60 +26,69 @@ const Connect = (props) => {
 
 	// Using Web3Modal we can add options for other providers besides metamask, like coinbase.
 	// for coinbase, it looks like we need to create an infura account
-	const providerOptions = {
-    // walletConnect: {
-    //   package: WalletConnectProvider,
-    //   options: {
-    //     infuraId: ''
-    //   }
-    // }
-  }
+	// const providerOptions = {
+	// 	walletConnect: {
+	// 		package: WalletConnectProvider,
+	// 		options: {
+	// 			infuraId: 
+	// 		}
+	// 	}
+	// }
 
 	// Creates a Web3Modal instance for connecting multiple providers
-	const getWeb3Modal = async () => {
-		const web3Modal = new Web3Modal({
-      network: "ropsten", //might want to set this to ropsten for testing
-			cacheProvider: false,
-			providerOptions: providerOptions,
-		});
+	// const getWeb3Modal = async () => {
+	// 	const web3Modal = new Web3Modal({
+	// 		network: "rinkeby", //might want to set this to ropsten for testing
+	// 		cacheProvider: false,
+	// 		disableInjectedProvider: false,
+	// 		providerOptions
+	// 	});
 
-		return web3Modal;
-	};
+	// 	return web3Modal;
+	// };
 
 	// Connects user to the website
 	const connect = async () => {
 		try {
 			// Gets a new Web3Modal instance and creates a connection
 			// const web3Modal = await getWeb3Modal();
-			// const connection = await web3Modal.connect();
+			// const web3Connect = await web3Modal.connect();
 
-			setConnection(connection);
+			setConnection(true);
 
-      
-			if(!window.ethereum) 
-        throw new Error("No crypto wallet found. Please install it -");
+			if (!window.ethereum)
+				throw new Error("No crypto wallet found. Please install it -");
 
-      
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
+
+			const provider = new ethers.providers.Web3Provider(window.ethereum);
+			console.log(provider)
 			await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
-        .then((permissions) => {
-          const accountsPermission = permissions.find(
-            (permission) => permission.parentCapability === 'eth_accounts'
-          );
-          if (accountsPermission) {
-            console.log('eth_accounts permission successfully requested!');
-          }
-        })
-        .catch((error) => {
-          if (error.code === 4001) {
-            // EIP-1193 userRejectedRequest error
-            console.log('Permissions needed to continue.');
-          } else {
-            console.error(error);
-          }
+				.then((permissions) => {
+					const accountsPermission = permissions.find(
+						(permission) => permission.parentCapability === 'eth_accounts'
+					);
+					if (accountsPermission) {
+						console.log('eth_accounts permission successfully requested!');
+					}
+				})
+				.catch((error) => {
+					if (error.code === 4001) {
+						// EIP-1193 userRejectedRequest error
+						console.log('Permissions needed to continue.');
+					} else {
+						console.error(error);
+					}
 
-          throw new Error('No wallet connected.');
-        });
+					throw new Error('No wallet connected.');
+				});
+
+			// Gets the network of the provider as an ID
+			const { chainId } = await provider.getNetwork()
+
+			// Throws an error if the network is not mainnet (mainnet ID being 1)
+			// if (chainId != 1) {
+			// 	throw new Error('Not connected to Mainnet')
+			// }
 
 			const signer = provider.getSigner();
 
@@ -129,7 +137,7 @@ const Connect = (props) => {
 			// Receives the verification and updates the connection
 			const { user, token } = await response.json();
 
-			await supabase.auth.setAuth(token);
+			supabase.auth.setAuth(token);
 
 			if (user) {
 				setLoggedIn(true);
