@@ -61,7 +61,9 @@ const Dapp = ({exitMint, allowPeriod}) => {
         const contract = new ethers.Contract(contractAddress, contractABI, signer);
         const address = await signer.getAddress();
 
-        const cost = (mintCounter * PRICE).toString();
+        const cost = (mintCounter * PRICE).toFixed(2);
+        console.log(mintCounter, PRICE);
+        console.log(cost);
 
         try {
             if(allowPeriod) {
@@ -140,7 +142,7 @@ const Dapp = ({exitMint, allowPeriod}) => {
     return(
         <div className={dapp}>
             <div className={
-                txComplete ? plainBottle : mintBottle
+                (txComplete || txError) ? plainBottle : mintBottle
             }
             >
                 {

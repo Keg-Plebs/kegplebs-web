@@ -260,8 +260,8 @@
     position: absolute;
 
     margin: auto;
-    width: 60%;
-    height: 50%;
+    width: 65%;
+    height: 52%;
     
     top: 25%;
     left: 20%;
@@ -274,5 +274,5 @@
 
     color: white;
     text-transform: uppercase;
-    line-height: 1.4rem;
+    line-height: 2rem;
 }
