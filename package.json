@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@alch/alchemy-web3": "^1.2.4",
+    "@coinbase/wallet-sdk": "^3.0.1",
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@ethersproject/abi": "^5.5.0",

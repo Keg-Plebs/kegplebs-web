@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import { useState, useContext } from "react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
 
 import {
 	button,
@@ -47,18 +48,23 @@ const Connect = (props) => {
 	// 	return web3Modal;
 	// };
 
-	async function fetchWithTimeout(resource, options = {}) {
-		const { timeout = 5000 } = options; // 5s
+	const APP_NAME = 'Keg Plebs'
+	const APP_LOGO_URL = 'https://kegplebs.com/sun.png'
+	const DEFAULT_ETH_JSONRPC_URL = 'https://mainnet.infura.io/v3/ad114c65375d43c4865cf483897e70d6'
+	const DEFAULT_CHAIN_ID = 1
 
-		const controller = new AbortController();
-		const id = setTimeout(() => controller.abort(), timeout);
-		const response = await fetch(resource, {
-			...options,
-			signal: controller.signal
-		});
-		clearTimeout(id);
-		return response;
-	}
+	// async function fetchWithTimeout(resource, options = {}) {
+	// 	const { timeout = 5000 } = options; // 5s
+
+	// 	const controller = new AbortController();
+	// 	const id = setTimeout(() => controller.abort(), timeout);
+	// 	const response = await fetch(resource, {
+	// 		...options,
+	// 		signal: controller.signal
+	// 	});
+	// 	clearTimeout(id);
+	// 	return response;
+	// }
 
 	// Connects user to the website
 	const connect = async () => {
@@ -67,32 +73,67 @@ const Connect = (props) => {
 			// const web3Modal = await getWeb3Modal();
 			// const web3Connect = await web3Modal.connect();
 
-			setConnection(true);
-
 			if (!window.ethereum)
 				throw new Error("No crypto wallet found. Please install it -");
 
+			// const coinbaseProvider = coinbaseWallet.makeWeb3Provider(DEFAULT_ETH_JSONRPC_URL, DEFAULT_CHAIN_ID)
+			let provider
 
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
-				.then((permissions) => {
-					const accountsPermission = permissions.find(
-						(permission) => permission.parentCapability === 'eth_accounts'
-					);
-					if (accountsPermission) {
-						console.log('eth_accounts permission successfully requested!');
-					}
-				})
-				.catch((error) => {
-					if (error.code === 4001) {
-						// EIP-1193 userRejectedRequest error
-						console.log('Permissions needed to continue.');
-					} else {
-						console.error(error);
-					}
+			console.log(window.ethereum)
 
-					throw new Error('No wallet connected.');
-				});
+			if (!window.ethereum.isCoinbaseWallet) {
+				setConnection(true);
+				provider = new ethers.providers.Web3Provider(window.ethereum);
+				await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
+					.then((permissions) => {
+						const accountsPermission = permissions.find(
+							(permission) => permission.parentCapability === 'eth_accounts'
+						);
+						if (accountsPermission) {
+							console.log('eth_accounts permission successfully requested!');
+						}
+					})
+					.catch((error) => {
+						if (error.code === 4001) {
+							// EIP-1193 userRejectedRequest error
+							console.log('Permissions needed to continue.');
+						} else {
+							console.error(error);
+						}
+
+						throw new Error('No wallet connected.');
+					});
+
+			} else {
+				try {
+					setConnection(true);
+					const coinbaseWallet = new CoinbaseWalletSDK({
+						appName: APP_NAME,
+						appLogoUrl: APP_LOGO_URL,
+						darkMode: false
+					})
+
+					const connection = coinbaseWallet.makeWeb3Provider(DEFAULT_ETH_JSONRPC_URL, DEFAULT_CHAIN_ID)
+					provider = new ethers.providers.Web3Provider(connection);
+					await provider.send('eth_requestAccounts')
+						.then((accounts) => {
+						})
+						.catch((error) => {
+							if (error.code === 4001) {
+								// EIP-1193 userRejectedRequest error
+								console.log('Permissions needed to continue.');
+							} else {
+								console.error(error);
+							}
+
+							throw new Error('No wallet connected.');
+						});
+				} catch (err) {
+					throw new Error("No crypto wallet found. Please install it -");
+				}
+			}
+
+
 
 			// Gets the network of the provider as an ID
 			const { chainId } = await provider.getNetwork()
@@ -163,6 +204,9 @@ const Connect = (props) => {
 			setProvider(null);
 			setLoggedIn(false);
 			setAccount("");
+			if (window.ethereum.isCoinbaseWallet) {
+				coinbaseWallet.disconnect()
+			}
 		}
 	};
 
@@ -173,6 +217,9 @@ const Connect = (props) => {
 			setProvider(null);
 			setLoggedIn(false);
 			setAccount("");
+			if (window.ethereum.isCoinbaseWallet) {
+				coinbaseWallet.disconnect()
+			}
 
 			props.onConnected("");
 		} else {
