@@ -12,51 +12,56 @@ import Roadmap from '../components/Roadmap'
 import Collabs from '../components/Collabs'
 import Footer from '../components/Footer'
 
-import { container, backgroundImage, navElement } from '../styles/Layout.module.css'
+import { backgroundImage, navElement } from '../styles/Layout.module.css'
 import { siteTitle } from '../components/Layout'
 import { useState } from 'react';
 
 const Home = () => {
-  const [ navbarEnabled, setNavbarEnabled ] = useState(true);
+	const [navbarEnabled, setNavbarEnabled] = useState(true);
+	const [barEnabled, setBarEnabled] = useState(false);
 
-  return (
-    <>
-      <Nav enabled={navbarEnabled}/>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-        
-      <div className={backgroundImage}>
-        <Element id='top' name='top' className={navElement}>
-          <Main></Main>
-        </Element>
-        <Showcase></Showcase>
-        <Element id='brewverse' name='brewverse' className={navElement}>
-          <Brewverse  enableNavbar={(bool) => setNavbarEnabled(bool)}></Brewverse>
-        </Element>
-        <Collabs></Collabs>
-        <Element id='about' name='about' className={navElement}>
-          <Roadmap></Roadmap>
-        </Element>
-        <FAQ></FAQ>
-        <Element id='team' name='team' className={navElement}>
-          <Team></Team>
-        </Element>
-      </div>
-      <Footer></Footer>
-    </>
-  )
+	return (
+		<>
+			<Nav enabled={navbarEnabled} enableBar={(bool) => setBarEnabled(bool)} />
+			<Head>
+				<title>{siteTitle}</title>
+			</Head>
+
+			<div className={backgroundImage}>
+				<Element id='top' name='top' className={navElement}>
+					<Main></Main>
+				</Element>
+				<Showcase></Showcase>
+				<Element id='brewverse' name='brewverse' className={navElement}>
+					<Brewverse
+						enabled={barEnabled}
+						enableNavbar={(bool) => setNavbarEnabled(bool)}
+						enableBar={(bool) => setBarEnabled(bool)}
+					></Brewverse>
+				</Element>
+				<Collabs></Collabs>
+				<Element id='about' name='about' className={navElement}>
+					<Roadmap></Roadmap>
+				</Element>
+				<FAQ></FAQ>
+				<Element id='team' name='team' className={navElement}>
+					<Team></Team>
+				</Element>
+			</div>
+			<Footer></Footer>
+		</>
+	)
 }
 
 export async function getServerSideProps({ req, res }) {
-  res.setHeader(
-    'Cache-Control',
-    'public, s-maxage=10, stale-while-revalidate=59'
-  )
+	res.setHeader(
+		'Cache-Control',
+		'public, s-maxage=10, stale-while-revalidate=59'
+	)
 
-  return {
-    props: {},
-  }
+	return {
+		props: {},
+	}
 }
 
 export default Home;

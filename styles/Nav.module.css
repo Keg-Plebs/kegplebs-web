@@ -1,6 +1,6 @@
 .nav {
   position: fixed;
-  height: auto;
+  height: 95px;
   width: 100%;
   background: #000;
   color: #fff;
@@ -96,7 +96,6 @@
 }
 
 .menu {
-  position: absolute;
   display: flex;
   background-color: transparent;
   color: white;
@@ -105,7 +104,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.smallScreenRightSide {
   
+  position: absolute;
   right: 20px;
 
   margin-left: auto;
@@ -218,6 +221,7 @@
     align-items: center;
     
     margin: 0;
+    margin-bottom: 4vh;
   }
 
   .li, .a {
@@ -234,6 +238,7 @@
     justify-content: center;
     margin: 0;
     padding: 0;
+    margin-bottom: 4vh;
   }
 }
 

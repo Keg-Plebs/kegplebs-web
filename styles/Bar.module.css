@@ -71,6 +71,32 @@
     pointer-events: none;
 }
 
+.toMint {
+    position: absolute;
+    background-image: url('../public/interior/wherepleb.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    top: -2vh;
+    left: 20vw;
+    height: 60vh;
+    width: 60vw;
+    
+    pointer-events: none;
+}
+
+.connectWallet {
+    position: absolute;
+    background-image: url('../public/interior/connectwallet.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    top: -2vh;
+    left: 5vw;
+    height: 80vh;
+    width: 80vw;
+}
+
 .cheersOption {
     position: absolute;
     background-image: url('../public/interior/cheers.webp');
@@ -83,6 +109,23 @@
     width: 55vw;
     
     pointer-events: none;
+}
+
+.warningNotice {
+    position: absolute;
+    height: 30vw;
+    width: 40vw;
+    margin: auto;
+    top: 60vh;
+    left: 30vw;
+    
+    color: rgb(234, 160, 196);
+    font-size: 3rem;
+    text-align: center;
+
+    -webkit-text-stroke: 3px black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 @media screen and (max-width: 1500px) {
