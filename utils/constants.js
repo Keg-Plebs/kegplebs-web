@@ -28,14 +28,17 @@ export const SCENES = {
     VERSE: 'VERSE'
 }
 
+export const contractAddress = "0x74ba9caaa5847e142263d5F7645fFeD92e5087E5"
+export const PRICE = 0.05
+
 export const contractABI = [
     {
         "inputs": [
-        {
-            "internalType": "string",
-            "name": "_initURI",
-            "type": "string"
-        }
+            {
+                "internalType": "string",
+                "name": "_initURI",
+                "type": "string"
+            }
         ],
         "stateMutability": "nonpayable",
         "type": "constructor"
@@ -43,24 +46,24 @@ export const contractABI = [
     {
         "anonymous": false,
         "inputs": [
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "owner",
-            "type": "address"
-        },
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "approved",
-            "type": "address"
-        },
-        {
-            "indexed": true,
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        }
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "approved",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "Approval",
         "type": "event"
@@ -68,24 +71,24 @@ export const contractABI = [
     {
         "anonymous": false,
         "inputs": [
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "owner",
-            "type": "address"
-        },
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "operator",
-            "type": "address"
-        },
-        {
-            "indexed": false,
-            "internalType": "bool",
-            "name": "approved",
-            "type": "bool"
-        }
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
+            }
         ],
         "name": "ApprovalForAll",
         "type": "event"
@@ -93,18 +96,18 @@ export const contractABI = [
     {
         "anonymous": false,
         "inputs": [
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "previousOwner",
-            "type": "address"
-        },
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "newOwner",
-            "type": "address"
-        }
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "previousOwner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            }
         ],
         "name": "OwnershipTransferred",
         "type": "event"
@@ -112,24 +115,24 @@ export const contractABI = [
     {
         "anonymous": false,
         "inputs": [
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "from",
-            "type": "address"
-        },
-        {
-            "indexed": true,
-            "internalType": "address",
-            "name": "to",
-            "type": "address"
-        },
-        {
-            "indexed": true,
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        }
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "Transfer",
         "type": "event"
@@ -145,27 +148,27 @@ export const contractABI = [
         "inputs": [],
         "name": "allowlistMerkleRoot",
         "outputs": [
-        {
-            "internalType": "bytes32",
-            "name": "",
-            "type": "bytes32"
-        }
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "uint256",
-            "name": "_mintAmt",
-            "type": "uint256"
-        },
-        {
-            "internalType": "bytes32[]",
-            "name": "proof",
-            "type": "bytes32[]"
-        }
+            {
+                "internalType": "uint256",
+                "name": "_mintAmt",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bytes32[]",
+                "name": "proof",
+                "type": "bytes32[]"
+            }
         ],
         "name": "allowlistMint",
         "outputs": [],
@@ -176,27 +179,27 @@ export const contractABI = [
         "inputs": [],
         "name": "allowlistMintPeriod",
         "outputs": [
-        {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-        }
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "to",
-            "type": "address"
-        },
-        {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        }
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "approve",
         "outputs": [],
@@ -205,38 +208,32 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-        }
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            }
         ],
-        "name": "approvedProxy",
+        "name": "balanceOf",
         "outputs": [
-        {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-        }
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
-        "inputs": [
-        {
-            "internalType": "address",
-            "name": "owner",
-            "type": "address"
-        }
-        ],
-        "name": "balanceOf",
+        "inputs": [],
+        "name": "baseExtension",
         "outputs": [
-        {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -245,80 +242,54 @@ export const contractABI = [
         "inputs": [],
         "name": "baseURI",
         "outputs": [
-        {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-        }
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "_proxyAddress",
-            "type": "address"
-        }
-        ],
-        "name": "flipProxyState",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-        {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        }
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "getApproved",
         "outputs": [
-        {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-        }
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
-        "inputs": [],
-        "name": "getCost",
-        "outputs": [
-        {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }
-        ],
-        "stateMutability": "pure",
-        "type": "function"
-    },
-    {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "owner",
-            "type": "address"
-        },
-        {
-            "internalType": "address",
-            "name": "operator",
-            "type": "address"
-        }
+            {
+                "internalType": "address",
+                "name": "owner",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            }
         ],
         "name": "isApprovedForAll",
         "outputs": [
-        {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-        }
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -327,11 +298,11 @@ export const contractABI = [
         "inputs": [],
         "name": "maxAllowlistMintPerAddress",
         "outputs": [
-        {
-            "internalType": "uint128",
-            "name": "",
-            "type": "uint128"
-        }
+            {
+                "internalType": "uint128",
+                "name": "",
+                "type": "uint128"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -340,11 +311,11 @@ export const contractABI = [
         "inputs": [],
         "name": "maxPublicMintPerTx",
         "outputs": [
-        {
-            "internalType": "uint128",
-            "name": "",
-            "type": "uint128"
-        }
+            {
+                "internalType": "uint128",
+                "name": "",
+                "type": "uint128"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -353,11 +324,11 @@ export const contractABI = [
         "inputs": [],
         "name": "name",
         "outputs": [
-        {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-        }
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -366,41 +337,41 @@ export const contractABI = [
         "inputs": [],
         "name": "owner",
         "outputs": [
-        {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-        }
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        }
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "ownerOf",
         "outputs": [
-        {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-        }
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "bool",
-            "name": "_state",
-            "type": "bool"
-        }
+            {
+                "internalType": "bool",
+                "name": "_state",
+                "type": "bool"
+            }
         ],
         "name": "pause",
         "outputs": [],
@@ -411,11 +382,11 @@ export const contractABI = [
         "inputs": [],
         "name": "paused",
         "outputs": [
-        {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-        }
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -424,35 +395,22 @@ export const contractABI = [
         "inputs": [],
         "name": "price",
         "outputs": [
-        {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "proxyRegistryAddress",
-        "outputs": [
-        {
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-        }
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "uint256",
-            "name": "_mintAmt",
-            "type": "uint256"
-        }
+            {
+                "internalType": "uint256",
+                "name": "_mintAmt",
+                "type": "uint256"
+            }
         ],
         "name": "publicMint",
         "outputs": [],
@@ -470,32 +428,32 @@ export const contractABI = [
         "inputs": [],
         "name": "reveal",
         "outputs": [
-        {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-        }
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "from",
-            "type": "address"
-        },
-        {
-            "internalType": "address",
-            "name": "to",
-            "type": "address"
-        },
-        {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        }
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "safeTransferFrom",
         "outputs": [],
@@ -504,26 +462,26 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "from",
-            "type": "address"
-        },
-        {
-            "internalType": "address",
-            "name": "to",
-            "type": "address"
-        },
-        {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        },
-        {
-            "internalType": "bytes",
-            "name": "_data",
-            "type": "bytes"
-        }
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bytes",
+                "name": "_data",
+                "type": "bytes"
+            }
         ],
         "name": "safeTransferFrom",
         "outputs": [],
@@ -532,11 +490,11 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "bytes32",
-            "name": "_allowlistMerkleRoot",
-            "type": "bytes32"
-        }
+            {
+                "internalType": "bytes32",
+                "name": "_allowlistMerkleRoot",
+                "type": "bytes32"
+            }
         ],
         "name": "setAllowlistMerkleRoot",
         "outputs": [],
@@ -545,16 +503,16 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "operator",
-            "type": "address"
-        },
-        {
-            "internalType": "bool",
-            "name": "approved",
-            "type": "bool"
-        }
+            {
+                "internalType": "address",
+                "name": "operator",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "approved",
+                "type": "bool"
+            }
         ],
         "name": "setApprovalForAll",
         "outputs": [],
@@ -563,11 +521,24 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "string",
-            "name": "_newURI",
-            "type": "string"
-        }
+            {
+                "internalType": "string",
+                "name": "_newBaseExtension",
+                "type": "string"
+            }
+        ],
+        "name": "setBaseExtension",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_newURI",
+                "type": "string"
+            }
         ],
         "name": "setBaseURI",
         "outputs": [],
@@ -576,32 +547,19 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "_proxyRegistryAddress",
-            "type": "address"
-        }
-        ],
-        "name": "setProxyRegistryAddress",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-        {
-            "internalType": "bytes4",
-            "name": "interfaceId",
-            "type": "bytes4"
-        }
+            {
+                "internalType": "bytes4",
+                "name": "interfaceId",
+                "type": "bytes4"
+            }
         ],
         "name": "supportsInterface",
         "outputs": [
-        {
-            "internalType": "bool",
-            "name": "",
-            "type": "bool"
-        }
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -610,37 +568,37 @@ export const contractABI = [
         "inputs": [],
         "name": "symbol",
         "outputs": [
-        {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-        }
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [],
-        "name": "toggleWhitelisted",
+        "name": "toggleAllowlisted",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "uint256",
-            "name": "_tokenId",
-            "type": "uint256"
-        }
+            {
+                "internalType": "uint256",
+                "name": "_tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "tokenURI",
         "outputs": [
-        {
-            "internalType": "string",
-            "name": "",
-            "type": "string"
-        }
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -649,11 +607,11 @@ export const contractABI = [
         "inputs": [],
         "name": "totalMints",
         "outputs": [
-        {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
@@ -662,32 +620,32 @@ export const contractABI = [
         "inputs": [],
         "name": "totalSupply",
         "outputs": [
-        {
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
         ],
         "stateMutability": "view",
         "type": "function"
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "from",
-            "type": "address"
-        },
-        {
-            "internalType": "address",
-            "name": "to",
-            "type": "address"
-        },
-        {
-            "internalType": "uint256",
-            "name": "tokenId",
-            "type": "uint256"
-        }
+            {
+                "internalType": "address",
+                "name": "from",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "to",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
         ],
         "name": "transferFrom",
         "outputs": [],
@@ -696,11 +654,11 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "newOwner",
-            "type": "address"
-        }
+            {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            }
         ],
         "name": "transferOwnership",
         "outputs": [],
@@ -709,19 +667,19 @@ export const contractABI = [
     },
     {
         "inputs": [
-        {
-            "internalType": "address",
-            "name": "_owner",
-            "type": "address"
-        }
+            {
+                "internalType": "address",
+                "name": "_owner",
+                "type": "address"
+            }
         ],
         "name": "walletOfOwner",
         "outputs": [
-        {
-            "internalType": "uint256[]",
-            "name": "",
-            "type": "uint256[]"
-        }
+            {
+                "internalType": "uint256[]",
+                "name": "",
+                "type": "uint256[]"
+            }
         ],
         "stateMutability": "view",
         "type": "function"

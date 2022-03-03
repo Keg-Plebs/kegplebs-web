@@ -98,9 +98,9 @@ const Connect = (props) => {
 			const { chainId } = await provider.getNetwork()
 
 			// Throws an error if the network is not mainnet (mainnet ID being 1)
-			// if (chainId != 1) {
-			// 	throw new Error('Not connected to Mainnet')
-			// }
+			if (chainId != 1) {
+				throw new Error('Not connected to Mainnet')
+			}
 
 			const signer = provider.getSigner();
 

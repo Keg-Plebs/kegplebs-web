@@ -158,7 +158,7 @@ const Nav = ({enabled: navEnabled, enableBar}) => {
             {   
                 (!navEnabled && screenWidth > screen) ? 
                 <div className={smallScreenRightSide}>
-                    {/* <Connect onConnected={handleConnect}/> */}
+                    <Connect onConnected={handleConnect}/>
                 </div> 
                 :
                 <></>
@@ -166,18 +166,5 @@ const Nav = ({enabled: navEnabled, enableBar}) => {
         </nav>
     )
 }
-
-// {
-//     userAddress.length > 0 ? (
-//     <div className={userInfo}>
-//         <div className={userIconContainer}>
-//             <Image src={userIcon} quality={100} height={50} width={50}></Image>
-//         </div>
-//         <div className={userAddi}>{ 
-//             String(userAddress).substring(0, 6) +
-//              "..." +
-//              String(userAddress).substring(38) }</div>
-//     </div>) : (<></>)
-// }
 
 export default Nav

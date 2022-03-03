@@ -17,20 +17,17 @@ import {
     currency,
     exit,
     exitIcon,
-    request,
     mintCompletionAlertContainer,
     mintErrorAlertContainer,
     plainBottle
 } from '../styles/Dapp.module.css'; 
 import {
-    contractABI
+    contractABI,
+    contractAddress,
+    PRICE
 } from '../utils/constants'
 import ProviderContext from './ProviderContext';
 import { ethers } from 'ethers';
-
-
-const PRICE = 0.05;
-const contractAddress = '0xd7D1A11946E1FbaB296Bb1f2Ca8a6f554A662eA7'
 
 const Dapp = ({exitMint, allowPeriod}) => {
     const { provider, setProvider } = useContext(ProviderContext);
@@ -154,7 +151,6 @@ const Dapp = ({exitMint, allowPeriod}) => {
                                     {
                                         mintCounter === 1 ? <h2>You've Minted a Pleb!</h2> : <h2>You've Minted some Plebs!</h2>
                                     }
-                                    <p>Here is a link to your Metadata: </p>
                                     <p>Mainnet Transaction Hash: <span>{txResult.hash}</span></p>
                                 </div>
                             </div>
