@@ -73,8 +73,6 @@ const Connect = (props) => {
 			// const web3Modal = await getWeb3Modal();
 			// const web3Connect = await web3Modal.connect();
 
-			setConnection(true);
-
 			if (!window.ethereum)
 				throw new Error("No crypto wallet found. Please install it -");
 
@@ -84,10 +82,10 @@ const Connect = (props) => {
 			console.log(window.ethereum)
 
 			if (!window.ethereum.isCoinbaseWallet) {
-				try {
-					console.log('metamask')
-					provider = new ethers.providers.Web3Provider(window.ethereum);
-					await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
+				setConnection(true);
+				console.log('metamask')
+				provider = new ethers.providers.Web3Provider(window.ethereum);
+				await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
 					.then((permissions) => {
 						const accountsPermission = permissions.find(
 							(permission) => permission.parentCapability === 'eth_accounts'
@@ -106,12 +104,10 @@ const Connect = (props) => {
 
 						throw new Error('No wallet connected.');
 					});
-				} catch {
-					throw new Error("No crypto wallet found. Please install it -");
-				}
+
 			} else {
 				try {
-
+					setConnection(true);
 					const coinbaseWallet = new CoinbaseWalletSDK({
 						appName: APP_NAME,
 						appLogoUrl: APP_LOGO_URL,
@@ -121,38 +117,33 @@ const Connect = (props) => {
 					const connection = coinbaseWallet.makeWeb3Provider(DEFAULT_ETH_JSONRPC_URL, DEFAULT_CHAIN_ID)
 					provider = new ethers.providers.Web3Provider(connection);
 					await provider.send('eth_requestAccounts')
-					.then((accounts) => {
-						const accountsPermission = accounts.find(
-							(permission) => permission.parentCapability === 'eth_accounts'
-						);
-						if (accountsPermission) {
-							console.log('eth_accounts permission successfully requested!');
-						}
-					})
-					.catch((error) => {
-						if (error.code === 4001) {
-							// EIP-1193 userRejectedRequest error
-							console.log('Permissions needed to continue.');
-						} else {
-							console.error(error);
-						}
+						.then((accounts) => {
+							console.log('accounts', accounts)
+						})
+						.catch((error) => {
+							if (error.code === 4001) {
+								// EIP-1193 userRejectedRequest error
+								console.log('Permissions needed to continue.');
+							} else {
+								console.error(error);
+							}
 
-						throw new Error('No wallet connected.');
-					});
+							throw new Error('No wallet connected.');
+						});
 				} catch (err) {
 					throw new Error("No crypto wallet found. Please install it -");
 				}
 			}
-			
+
 
 
 			// Gets the network of the provider as an ID
 			const { chainId } = await provider.getNetwork()
 
 			// Throws an error if the network is not mainnet (mainnet ID being 1)
-			if (chainId != 1) {
-				throw new Error('Not connected to Mainnet')
-			}
+			// if (chainId != 1) {
+			// 	throw new Error('Not connected to Mainnet')
+			// }
 
 			const signer = provider.getSigner();
 
