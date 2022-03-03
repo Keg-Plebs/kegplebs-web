@@ -49,22 +49,22 @@ const Connect = (props) => {
 	// };
 
 	const APP_NAME = 'Keg Plebs'
-	const APP_LOGO_URL = 'https://example.com/logo.png'
+	const APP_LOGO_URL = 'https://kegplebs.com/sun.png'
 	const DEFAULT_ETH_JSONRPC_URL = 'https://mainnet.infura.io/v3/ad114c65375d43c4865cf483897e70d6'
 	const DEFAULT_CHAIN_ID = 1
 
-	async function fetchWithTimeout(resource, options = {}) {
-		const { timeout = 5000 } = options; // 5s
+	// async function fetchWithTimeout(resource, options = {}) {
+	// 	const { timeout = 5000 } = options; // 5s
 
-		const controller = new AbortController();
-		const id = setTimeout(() => controller.abort(), timeout);
-		const response = await fetch(resource, {
-			...options,
-			signal: controller.signal
-		});
-		clearTimeout(id);
-		return response;
-	}
+	// 	const controller = new AbortController();
+	// 	const id = setTimeout(() => controller.abort(), timeout);
+	// 	const response = await fetch(resource, {
+	// 		...options,
+	// 		signal: controller.signal
+	// 	});
+	// 	clearTimeout(id);
+	// 	return response;
+	// }
 
 	// Connects user to the website
 	const connect = async () => {
@@ -83,7 +83,6 @@ const Connect = (props) => {
 
 			if (!window.ethereum.isCoinbaseWallet) {
 				setConnection(true);
-				console.log('metamask')
 				provider = new ethers.providers.Web3Provider(window.ethereum);
 				await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
 					.then((permissions) => {
@@ -118,7 +117,6 @@ const Connect = (props) => {
 					provider = new ethers.providers.Web3Provider(connection);
 					await provider.send('eth_requestAccounts')
 						.then((accounts) => {
-							console.log('accounts', accounts)
 						})
 						.catch((error) => {
 							if (error.code === 4001) {
@@ -141,9 +139,9 @@ const Connect = (props) => {
 			const { chainId } = await provider.getNetwork()
 
 			// Throws an error if the network is not mainnet (mainnet ID being 1)
-			// if (chainId != 1) {
-			// 	throw new Error('Not connected to Mainnet')
-			// }
+			if (chainId != 1) {
+				throw new Error('Not connected to Mainnet')
+			}
 
 			const signer = provider.getSigner();
 
@@ -206,6 +204,9 @@ const Connect = (props) => {
 			setProvider(null);
 			setLoggedIn(false);
 			setAccount("");
+			if (window.ethereum.isCoinbaseWallet) {
+				coinbaseWallet.disconnect()
+			}
 		}
 	};
 
@@ -216,6 +217,9 @@ const Connect = (props) => {
 			setProvider(null);
 			setLoggedIn(false);
 			setAccount("");
+			if (window.ethereum.isCoinbaseWallet) {
+				coinbaseWallet.disconnect()
+			}
 
 			props.onConnected("");
 		} else {
