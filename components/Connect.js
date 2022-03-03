@@ -204,9 +204,9 @@ const Connect = (props) => {
 			setProvider(null);
 			setLoggedIn(false);
 			setAccount("");
-			if (window.ethereum.isCoinbaseWallet) {
-				coinbaseWallet.disconnect()
-			}
+			// if (window.ethereum.isCoinbaseWallet) {
+			// 	coinbaseWallet.disconnect()
+			// }
 		}
 	};
 
@@ -217,9 +217,9 @@ const Connect = (props) => {
 			setProvider(null);
 			setLoggedIn(false);
 			setAccount("");
-			if (window.ethereum.isCoinbaseWallet) {
-				coinbaseWallet.disconnect()
-			}
+			// if (window.ethereum.isCoinbaseWallet) {
+			// 	coinbaseWallet.disconnect()
+			// }
 
 			props.onConnected("");
 		} else {
