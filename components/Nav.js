@@ -158,7 +158,7 @@ const Nav = ({enabled: navEnabled, enableBar}) => {
             {   
                 (!navEnabled && screenWidth > screen) ? 
                 <div className={smallScreenRightSide}>
-                    <Connect onConnected={handleConnect}/>
+                    {/* <Connect onConnected={handleConnect}/> */}
                 </div> 
                 :
                 <></>
