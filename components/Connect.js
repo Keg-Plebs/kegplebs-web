@@ -47,6 +47,19 @@ const Connect = (props) => {
 	// 	return web3Modal;
 	// };
 
+	async function fetchWithTimeout(resource, options = {}) {
+		const { timeout = 5000 } = options; // 5s
+
+		const controller = new AbortController();
+		const id = setTimeout(() => controller.abort(), timeout);
+		const response = await fetch(resource, {
+			...options,
+			signal: controller.signal
+		});
+		clearTimeout(id);
+		return response;
+	}
+
 	// Connects user to the website
 	const connect = async () => {
 		try {
@@ -61,7 +74,6 @@ const Connect = (props) => {
 
 
 			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			console.log(provider)
 			await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
 				.then((permissions) => {
 					const accountsPermission = permissions.find(
@@ -107,6 +119,7 @@ const Connect = (props) => {
 
 			// Authenticates the address by creating a data base entry and unqiue corresponding nonce
 			// on the server
+
 			let response = await fetch("../../api/authenticate", {
 				method: "POST",
 				body: JSON.stringify({

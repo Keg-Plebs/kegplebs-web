@@ -25,7 +25,7 @@ import { SCENES } from '../utils/constants'
 
 // https://github.com/pmndrs/react-three-fiber#what-does-it-look-like
 // https://drei.pmnd.rs/?path=/story/controls-mapcontrols--map-controls-scene-st
-const Brewverse = ({ enableNavbar }) => {
+const Brewverse = ({enabled: barEnabled, enableNavbar, enableBar }) => {
 
     const [scene, switchScene] = useState(SCENES.VERSE);
     const [breweryScene, setBreweryScene] = useState(false)
@@ -51,12 +51,20 @@ const Brewverse = ({ enableNavbar }) => {
     }
 
     useEffect(() => {
+
+        if (barEnabled) {
+            setBreweryScene(true)
+        }
+
         if (breweryScene) {
             enableNavbar(false);
         } else {
-            enableNavbar(true);   
+            enableNavbar(true); 
+            if (barEnabled) {
+                enableBar(false)
+            } 
         }
-    }, [breweryScene])
+    }, [breweryScene, barEnabled])
 
     return (
         <div className={`${sectionStyles.main} ${brewverse}`}>
@@ -85,6 +93,8 @@ const Brewverse = ({ enableNavbar }) => {
                         breweryScene ? <Bar exitBrewery={() => {
                             setBreweryScene(false);
                             switchScene(SCENES.VERSE)
+                            
+                            
                         }}></Bar> :
                             <Canvas>
                                 <Suspense fallback={null} r3f>

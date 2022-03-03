@@ -4,9 +4,6 @@ import { v4 as uuidv4 } from 'uuid';
 // https://www.youtube.com/watch?v=tVyQZ0CiMWI
 // https://mirror.xyz/sha.eth/i6ry1Mxez53z91ef375sMe2rO1NvK2ipACyzKA4SR9g
 
-// TODO: Look into creating a user session when they connect their wallet
-// by creating an access token
-
 // Wallet authentication API
 const authenticate = async (req, res) => {
 

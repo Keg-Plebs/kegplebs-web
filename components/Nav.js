@@ -26,7 +26,7 @@ import {
 
 import Connect from './Connect';
 
-const Nav = ({enabled: navEnabled}) => {
+const Nav = ({enabled: navEnabled, enableBar}) => {
     const [active, setActive] = useState(false);
     const [screenWidth, setScreenWidth] = useState(0); 
     const [userIcon, setUserIcon] = useState('');
@@ -54,11 +54,12 @@ const Nav = ({enabled: navEnabled}) => {
     }
 
     const toBrewverse = () => {
-        scroller.scrollTo('brewverse', {
-            duration: 500,
-            smooth: true,
-            offset: -50  
-        })
+        // scroller.scrollTo('brewverse', {
+        //     duration: 500,
+        //     smooth: true,
+        //     offset: -50  
+        // })
+        enableBar(true)
     }
 
     const toAbout = () => {
