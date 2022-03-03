@@ -49,7 +49,6 @@ const Nav = ({enabled: navEnabled, enableBar}) => {
     }, []);
 
     const handleClick = () => {
-        console.log('handle click clicked')
         setActive(!active);
     }
 
@@ -60,6 +59,7 @@ const Nav = ({enabled: navEnabled, enableBar}) => {
         //     offset: -50  
         // })
         enableBar(true)
+        setActive(!active);
     }
 
     const toAbout = () => {
