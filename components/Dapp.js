@@ -151,7 +151,6 @@ const Dapp = ({exitMint, allowPeriod}) => {
                                     {
                                         mintCounter === 1 ? <h2>You've Minted a Pleb!</h2> : <h2>You've Minted some Plebs!</h2>
                                     }
-                                    <p>Here is a link to your Metadata: </p>
                                     <p>Mainnet Transaction Hash: <span>{txResult.hash}</span></p>
                                 </div>
                             </div>
