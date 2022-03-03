@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import { useState, useContext } from "react";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import CoinbaseWalletSDK from '@coinbase/wallet-sdk'
 
 import {
 	button,
@@ -47,6 +48,11 @@ const Connect = (props) => {
 	// 	return web3Modal;
 	// };
 
+	const APP_NAME = 'Keg Plebs'
+	const APP_LOGO_URL = 'https://example.com/logo.png'
+	const DEFAULT_ETH_JSONRPC_URL = 'https://mainnet.infura.io/v3/ad114c65375d43c4865cf483897e70d6'
+	const DEFAULT_CHAIN_ID = 1
+
 	async function fetchWithTimeout(resource, options = {}) {
 		const { timeout = 5000 } = options; // 5s
 
@@ -72,27 +78,73 @@ const Connect = (props) => {
 			if (!window.ethereum)
 				throw new Error("No crypto wallet found. Please install it -");
 
+			// const coinbaseProvider = coinbaseWallet.makeWeb3Provider(DEFAULT_ETH_JSONRPC_URL, DEFAULT_CHAIN_ID)
+			let provider
 
-			const provider = new ethers.providers.Web3Provider(window.ethereum);
-			await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
-				.then((permissions) => {
-					const accountsPermission = permissions.find(
-						(permission) => permission.parentCapability === 'eth_accounts'
-					);
-					if (accountsPermission) {
-						console.log('eth_accounts permission successfully requested!');
-					}
-				})
-				.catch((error) => {
-					if (error.code === 4001) {
-						// EIP-1193 userRejectedRequest error
-						console.log('Permissions needed to continue.');
-					} else {
-						console.error(error);
-					}
+			console.log(window.ethereum)
 
-					throw new Error('No wallet connected.');
-				});
+			if (!window.ethereum.isCoinbaseWallet) {
+				try {
+					console.log('metamask')
+					provider = new ethers.providers.Web3Provider(window.ethereum);
+					await provider.send("wallet_requestPermissions", [{ eth_accounts: {} }])
+					.then((permissions) => {
+						const accountsPermission = permissions.find(
+							(permission) => permission.parentCapability === 'eth_accounts'
+						);
+						if (accountsPermission) {
+							console.log('eth_accounts permission successfully requested!');
+						}
+					})
+					.catch((error) => {
+						if (error.code === 4001) {
+							// EIP-1193 userRejectedRequest error
+							console.log('Permissions needed to continue.');
+						} else {
+							console.error(error);
+						}
+
+						throw new Error('No wallet connected.');
+					});
+				} catch {
+					throw new Error("No crypto wallet found. Please install it -");
+				}
+			} else {
+				try {
+
+					const coinbaseWallet = new CoinbaseWalletSDK({
+						appName: APP_NAME,
+						appLogoUrl: APP_LOGO_URL,
+						darkMode: false
+					})
+
+					const connection = coinbaseWallet.makeWeb3Provider(DEFAULT_ETH_JSONRPC_URL, DEFAULT_CHAIN_ID)
+					provider = new ethers.providers.Web3Provider(connection);
+					await provider.send('eth_requestAccounts')
+					.then((accounts) => {
+						const accountsPermission = accounts.find(
+							(permission) => permission.parentCapability === 'eth_accounts'
+						);
+						if (accountsPermission) {
+							console.log('eth_accounts permission successfully requested!');
+						}
+					})
+					.catch((error) => {
+						if (error.code === 4001) {
+							// EIP-1193 userRejectedRequest error
+							console.log('Permissions needed to continue.');
+						} else {
+							console.error(error);
+						}
+
+						throw new Error('No wallet connected.');
+					});
+				} catch (err) {
+					throw new Error("No crypto wallet found. Please install it -");
+				}
+			}
+			
+
 
 			// Gets the network of the provider as an ID
 			const { chainId } = await provider.getNetwork()

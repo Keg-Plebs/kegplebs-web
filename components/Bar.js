@@ -53,6 +53,7 @@ const Bar = props => {
 
             // connect to contract -> check public paused
             const contract = new ethers.Contract(contractAddress, contractABI, provider);
+            console.log(contract)
             const paused = await contract.paused();
             const isAllow = await contract.allowlistMintPeriod();
 
