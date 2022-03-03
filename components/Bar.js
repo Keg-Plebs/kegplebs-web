@@ -13,16 +13,13 @@ import {
     connectWallet
 } from '../styles/Bar.module.css';
 import {
-    contractABI
+    contractABI,
+    contractAddress
 } from '../utils/constants'
 import ProviderContext from './ProviderContext';
 import { ethers } from 'ethers';
 
 import Dapp from './Dapp';
-
-// const contractAddress = '0x19Fc8c2eA485E78ea8ad4a60B16e0937F6472B19'
-const contractAddress = '0xd7D1A11946E1FbaB296Bb1f2Ca8a6f554A662eA7'
-
 
 const Bar = props => {
     // will later on get mintAvailable from props
