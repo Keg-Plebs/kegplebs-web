@@ -148,8 +148,8 @@ const Nav = ({enabled: navEnabled, enableBar}) => {
                             <div className={icons}>
                                 <a className={a} href='https://twitter.com/KegPlebs'><FontAwesomeIcon icon={faTwitter} className={socialIcons}/></a>
                                 <a className={a} href='https://discord.gg/zEWcPMS7Uf'><FontAwesomeIcon icon={faDiscord} className={socialIcons}/></a>
-                                <a className={a} href='#'><Image src={Opensea} quality={100} height={30} width={30}></Image></a>
-                                <a className={a} href='#'><Image src={Etherscan} quality={100} height={30} width={30}></Image></a>
+                                <a className={a} href='https://opensea.io/collection/kegplebs'><Image src={Opensea} quality={100} height={30} width={30}></Image></a>
+                                <a className={a} href='https://etherscan.io/address/0x74ba9caaa5847e142263d5F7645fFeD92e5087E5'><Image src={Etherscan} quality={100} height={30} width={30}></Image></a>
                             </div>
                         </div>
                     </> :
